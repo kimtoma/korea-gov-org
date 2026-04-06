@@ -10,7 +10,7 @@
 - `index.html` — 모든 것이 인라인 (CSS, 데이터, JS/D3 차트)
 - `data.js` — 데이터 원본 참조용 (index.html에 인라인 복사본 존재)
 - `favicon.svg`, `og-image.png/.svg` — 정적 에셋
-- `CHANGELOG.md` — v0~v14 변경 이력
+- `CHANGELOG.md` — v0~v17 변경 이력
 - `CLAUDE.md` — 이 파일 (Claude Code 작업 지침)
 - `README.md` — 프로젝트 문서
 
@@ -27,7 +27,8 @@
 
 - `people{}` — 이름 → {role, date, photo?, bio?}
 - `govData{}` — 트리 구조: name, nameEn, type, head?, url?, desc?, budget?, divisions?[], children?[]
-- `colorMap{}` — type → {fill, stroke, text}
+- `colorMapLight{}` / `colorMapDark{}` — 테마별 SVG 노드 색상
+- `colorMap` — 현재 활성 테마의 colorMap (light 또는 dark)
 
 ## 뷰 모드
 
@@ -35,6 +36,18 @@
 - `org` — HTML 카드 레이아웃, `renderOrgChart()`. 예산 모드 시 순위 배지 + 상대비율 바
 - `budgetMode` — 토글, 양쪽 뷰에 영향. 레이디얼: 노드 크기 비례, 조직도: 정렬+바
 - 모바일 상세 패널 → 바텀시트 (55vh ↔ 92vh ↔ 닫힘, 스와이프)
+
+## 다크 모드
+
+- `[data-theme="dark"]` CSS 변수 오버라이드
+- `toggleTheme()` → `applyTheme('light'|'dark')` → colorMap 교체 + 재렌더링
+- `localStorage.theme`에 저장, `prefers-color-scheme` 자동 감지
+
+## 딥링크 & 공유
+
+- URL 해시 `#기관명` → `loadFromHash()` → `showDetail()`
+- `shareOrg(name)` → clipboard 복사 + 토스트
+- showDetail/hideDetail를 래핑하여 해시 자동 동기화
 
 ## 반응형 브레이크포인트
 
