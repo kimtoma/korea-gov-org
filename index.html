@@ -175,7 +175,7 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
   .topbar-brand .sep,.topbar-brand .sub{display:none;}
   .view-btn{font-size:12px;padding:5px 12px;}
   .view-btn svg{width:14px;height:14px;}
-  .budget-label-text{display:none;}
+  .budget-label-text{font-size:11px;}
   .org-dual{grid-template-columns:1fr;gap:20px;}
   .org-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}
   .org-grid.compact{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}
@@ -196,8 +196,9 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
   .detail-panel .detail-body{padding:12px 20px 32px;}
   .detail-panel .detail-close{top:20px;right:16px;}
   .hover-tooltip{display:none!important;}
-  .legend{bottom:12px;left:12px;padding:10px 14px;gap:4px;}
+  .legend{bottom:12px;left:12px;}
   .legend-item{font-size:11px;}
+  .legend-body{gap:4px;}
   .zoom-controls{bottom:12px;right:12px;}
   .sources-btn{bottom:12px;font-size:10px;padding:5px 12px;}
 }
@@ -210,7 +211,7 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
   .org-tier-card{padding:14px 20px;gap:12px;}
   .org-tier-name{font-size:20px;}
   .org-tier-photo,.org-tier-avatar{width:44px;height:44px;}
-  .legend{display:none;}
+  .legend{bottom:8px;left:8px;}
   .sources-modal{padding:20px;max-height:90vh;}
   .detail-header h2{font-size:18px;}
 }
@@ -223,8 +224,14 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 .zoom-btn:hover{background:var(--gray-5);color:var(--gray-80);border-color:var(--gray-30);}
 
 .legend{position:absolute;bottom:20px;left:20px;background:var(--gray-0);border:1px solid var(--gray-10);
-  border-radius:var(--radius-md);padding:14px 18px;display:flex;flex-direction:column;gap:6px;z-index:10;}
-.legend-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-40);margin-bottom:2px;}
+  border-radius:var(--radius-md);padding:0;z-index:10;overflow:hidden;transition:all .25s;}
+.legend-toggle{display:flex;align-items:center;gap:6px;padding:10px 14px;border:none;background:none;cursor:pointer;
+  font-family:var(--font);width:100%;}
+.legend-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-40);}
+.legend-chevron{width:10px;height:10px;color:var(--gray-40);margin-left:auto;transition:transform .25s;transform:rotate(180deg);}
+.legend.collapsed .legend-chevron{transform:rotate(0deg);}
+.legend-body{display:flex;flex-direction:column;gap:5px;padding:0 14px 12px;transition:all .25s;max-height:200px;opacity:1;}
+.legend.collapsed .legend-body{max-height:0;opacity:0;padding:0 14px;overflow:hidden;}
 .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-60);}
 .legend-circle{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
 
@@ -342,14 +349,19 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
   <div class="chart-area active" id="radialView">
     <svg id="radialSvg"></svg>
     <div class="hover-tooltip" id="hoverTooltip"></div>
-    <div class="legend">
-      <div class="legend-title">범례</div>
-      <div class="legend-item"><div class="legend-circle" style="background:var(--c-president)"></div>대통령 직속</div>
-      <div class="legend-item"><div class="legend-circle" style="background:var(--c-pm)"></div>국무총리 소속</div>
-      <div class="legend-item"><div class="legend-circle" style="background:var(--c-ministry)"></div>행정각부(부)</div>
-      <div class="legend-item"><div class="legend-circle" style="background:var(--c-office)"></div>처</div>
-      <div class="legend-item"><div class="legend-circle" style="background:var(--c-commission)"></div>위원회</div>
-      <div class="legend-item"><div class="legend-circle" style="background:var(--c-agency)"></div>청</div>
+    <div class="legend" id="legend">
+      <button class="legend-toggle" id="legendToggle" onclick="document.getElementById('legend').classList.toggle('collapsed')">
+        <span class="legend-title">범례</span>
+        <svg class="legend-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l3-3 3 3M3 9l3-3 3 3"/></svg>
+      </button>
+      <div class="legend-body">
+        <div class="legend-item"><div class="legend-circle" style="background:var(--c-president)"></div>대통령 직속</div>
+        <div class="legend-item"><div class="legend-circle" style="background:var(--c-pm)"></div>국무총리 소속</div>
+        <div class="legend-item"><div class="legend-circle" style="background:var(--c-ministry)"></div>행정각부(부)</div>
+        <div class="legend-item"><div class="legend-circle" style="background:var(--c-office)"></div>처</div>
+        <div class="legend-item"><div class="legend-circle" style="background:var(--c-commission)"></div>위원회</div>
+        <div class="legend-item"><div class="legend-circle" style="background:var(--c-agency)"></div>청</div>
+      </div>
     </div>
     <div class="zoom-controls">
       <button class="zoom-btn" id="zoomIn">+</button>
@@ -1320,6 +1332,8 @@ window.showDetail=showDetail;
 // ══════════════════════════════════════
 // INIT
 // ══════════════════════════════════════
+// Mobile: start legend collapsed
+if(window.innerWidth<768)document.getElementById("legend").classList.add("collapsed");
 renderRadial();
 window.addEventListener("resize",()=>{if(currentView==="radial")renderRadial();});
 radialSvg.on("click",()=>hideDetail());
