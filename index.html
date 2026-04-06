@@ -228,8 +228,15 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 .legend-toggle{display:flex;align-items:center;gap:6px;padding:10px 14px;border:none;background:none;cursor:pointer;
   font-family:var(--font);width:100%;}
 .legend-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-40);}
-.legend-chevron{width:10px;height:10px;color:var(--gray-40);margin-left:auto;transition:transform .25s;transform:rotate(180deg);}
-.legend.collapsed .legend-chevron{transform:rotate(0deg);}
+.legend-icon{width:10px;height:10px;margin-left:auto;position:relative;flex-shrink:0;}
+.legend-icon::before,.legend-icon::after{content:"";position:absolute;background:var(--gray-40);border-radius:1px;
+  transition:transform .3s cubic-bezier(.4,0,.2,1);}
+.legend-icon::before{width:10px;height:1.5px;top:4.25px;left:0;}
+.legend-icon::after{width:1.5px;height:10px;top:0;left:4.25px;}
+.legend.collapsed .legend-icon::before{transform:rotate(0deg);}
+.legend.collapsed .legend-icon::after{transform:rotate(0deg);}
+.legend:not(.collapsed) .legend-icon::before{transform:rotate(45deg);}
+.legend:not(.collapsed) .legend-icon::after{transform:rotate(45deg);}
 .legend-body{display:flex;flex-direction:column;gap:5px;padding:0 14px 12px;transition:all .25s;max-height:200px;opacity:1;}
 .legend.collapsed .legend-body{max-height:0;opacity:0;padding:0 14px;overflow:hidden;}
 .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-60);}
@@ -352,7 +359,7 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
     <div class="legend" id="legend">
       <button class="legend-toggle" id="legendToggle" onclick="document.getElementById('legend').classList.toggle('collapsed')">
         <span class="legend-title">범례</span>
-        <svg class="legend-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l3-3 3 3M3 9l3-3 3 3"/></svg>
+        <span class="legend-icon"></span>
       </button>
       <div class="legend-body">
         <div class="legend-item"><div class="legend-circle" style="background:var(--c-president)"></div>대통령 직속</div>
