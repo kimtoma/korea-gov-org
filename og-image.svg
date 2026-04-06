@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7F8FA"/>
+      <stop offset="100%" stop-color="#E8F0FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Top accent line -->
+  <rect y="0" width="1200" height="4" fill="#246BEB"/>
+  <!-- Flag -->
+  <text x="80" y="200" font-size="64">🇰🇷</text>
+  <!-- Title -->
+  <text x="160" y="195" font-family="system-ui,-apple-system,sans-serif" font-size="48" font-weight="800" fill="#1E2430">대한민국 정부조직도</text>
+  <!-- Subtitle -->
+  <text x="80" y="260" font-family="system-ui,-apple-system,sans-serif" font-size="24" fill="#6D727D">Machinery of Government — Republic of Korea</text>
+  <!-- Stats -->
+  <rect x="80" y="300" width="100" height="44" rx="22" fill="#E8F0FE"/>
+  <text x="130" y="328" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#246BEB" text-anchor="middle">19부</text>
+  <rect x="196" y="300" width="100" height="44" rx="22" fill="#FEF2F2"/>
+  <text x="246" y="328" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#E5503C" text-anchor="middle">5위원회</text>
+  <rect x="312" y="300" width="88" height="44" rx="22" fill="#FFFBEB"/>
+  <text x="356" y="328" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#F59E0B" text-anchor="middle">6처</text>
+  <rect x="416" y="300" width="88" height="44" rx="22" fill="#F5F3FF"/>
+  <text x="460" y="328" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#8B5CF6" text-anchor="middle">19청</text>
+  <!-- Decorative circles (radial chart hint) -->
+  <circle cx="950" cy="320" r="120" fill="none" stroke="#246BEB" stroke-opacity="0.08" stroke-width="2"/>
+  <circle cx="950" cy="320" r="80" fill="none" stroke="#246BEB" stroke-opacity="0.12" stroke-width="2"/>
+  <circle cx="950" cy="320" r="40" fill="none" stroke="#246BEB" stroke-opacity="0.18" stroke-width="2"/>
+  <circle cx="950" cy="320" r="8" fill="#246BEB" opacity="0.3"/>
+  <!-- Small dots around -->
+  <circle cx="870" cy="280" r="5" fill="#0FA573" opacity="0.5"/>
+  <circle cx="1030" cy="280" r="5" fill="#0FA573" opacity="0.5"/>
+  <circle cx="890" cy="380" r="4" fill="#F59E0B" opacity="0.5"/>
+  <circle cx="1010" cy="380" r="4" fill="#E5503C" opacity="0.5"/>
+  <circle cx="950" cy="220" r="5" fill="#6366F1" opacity="0.5"/>
+  <circle cx="950" cy="420" r="4" fill="#8B5CF6" opacity="0.5"/>
+  <circle cx="840" cy="320" r="4" fill="#0FA573" opacity="0.4"/>
+  <circle cx="1060" cy="320" r="4" fill="#0FA573" opacity="0.4"/>
+  <!-- Unofficial badge -->
+  <rect x="80" y="400" width="120" height="32" rx="6" fill="#FEF2F2" stroke="#E5503C" stroke-opacity="0.3"/>
+  <text x="140" y="422" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#E5503C" text-anchor="middle">비공식 UNOFFICIAL</text>
+  <!-- Description -->
+  <text x="80" y="480" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#8D929B">이재명 정부 (2025.06~) 인터랙티브 정부조직도</text>
+  <text x="80" y="510" font-family="system-ui,-apple-system,sans-serif" font-size="15" fill="#AEB2BA">공개된 정보를 기반으로 제작 · 공식 자료와 차이가 있을 수 있음</text>
+  <!-- Bottom bar -->
+  <rect y="590" width="1200" height="40" fill="#1E2430"/>
+  <text x="80" y="616" font-family="system-ui,sans-serif" font-size="13" fill="#8D929B">korea-gov-org.pages.dev · Made by kimtoma</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#246BEB"/>
+  <circle cx="16" cy="15" r="9" fill="none" stroke="#fff" stroke-width="1.5" stroke-opacity=".3"/>
+  <circle cx="16" cy="15" r="5.5" fill="none" stroke="#fff" stroke-width="1.5" stroke-opacity=".5"/>
+  <circle cx="16" cy="15" r="2.5" fill="#fff"/>
+  <circle cx="16" cy="7" r="1.5" fill="#fff" opacity=".7"/>
+  <circle cx="23" cy="12" r="1.5" fill="#fff" opacity=".7"/>
+  <circle cx="21" cy="21" r="1.5" fill="#fff" opacity=".7"/>
+  <circle cx="9" cy="12" r="1.5" fill="#fff" opacity=".7"/>
+  <circle cx="11" cy="21" r="1.5" fill="#fff" opacity=".7"/>
+  <text x="16" y="29" font-family="system-ui,sans-serif" font-size="5" fill="#fff" text-anchor="middle" opacity=".6">GOV</text>
+</svg>

@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>대한민국 정부조직도 (비공식) — Machinery of Government</title>
+<meta name="description" content="이재명 정부(2025.06~) 인터랙티브 정부조직도. 19부 6처 19청 5위원회의 조직 구조, 기관장, 예산, 업무를 시각화합니다. 비공식 자료로 공식 발표와 차이가 있을 수 있습니다.">
+<meta name="author" content="kimtoma">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="대한민국 정부조직도 (비공식)">
+<meta property="og:description" content="이재명 정부 인터랙티브 조직도 — 19부 6처 19청 5위원회, 기관장 프로필, 예산 시각화. 공개 정보 기반 비공식 자료.">
+<meta property="og:image" content="https://korea-gov-org.pages.dev/og-image.png">
+<meta property="og:url" content="https://korea-gov-org.pages.dev">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="대한민국 정부조직도 (비공식)">
+<meta name="twitter:description" content="이재명 정부 인터랙티브 조직도 — 레이디얼 차트, 예산 시각화, 기관장 프로필">
+<meta name="twitter:image" content="https://korea-gov-org.pages.dev/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fav.farm/🇰🇷">
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css');
+:root {
+  --primary-50:#246BEB;--primary-40:#4B88F0;--primary-60:#1A56C4;--primary-70:#12429D;
+  --primary-10:#E8F0FE;--primary-20:#B8D4FC;--primary-80:#0B2F76;
+  --gray-0:#FFF;--gray-5:#F7F8FA;--gray-10:#F0F1F4;--gray-20:#DCDEE3;--gray-30:#C5C8CE;
+  --gray-40:#AEB2BA;--gray-50:#8D929B;--gray-60:#6D727D;--gray-70:#4E535F;
+  --gray-80:#353A44;--gray-90:#1E2430;--gray-100:#0A0F1A;
+  --font:'Pretendard Variable',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
+  --radius-sm:6px;--radius-md:12px;--radius-lg:16px;
+  --c-president:#246BEB;--c-pm:#6366F1;--c-ministry:#0FA573;
+  --c-office:#F59E0B;--c-commission:#E5503C;--c-agency:#8B5CF6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overflow:hidden;height:100vh;display:flex;flex-direction:column;}
+
+/* ── Topbar ── */
+.topbar{background:var(--gray-0);border-bottom:1px solid var(--gray-10);display:flex;align-items:center;padding:0 24px;height:56px;flex-shrink:0;z-index:100;gap:8px;}
+.topbar-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;flex-shrink:0;}
+.topbar-brand .flag{font-size:22px;} .topbar-brand .sep{width:1px;height:20px;background:var(--gray-20);margin:0 6px;}
+.topbar-brand .sub{font-weight:400;font-size:13px;color:var(--gray-50);}
+.topbar-center{margin-left:auto;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.topbar-stat{display:flex;align-items:baseline;gap:4px;padding:4px 12px;background:var(--gray-5);border-radius:20px;font-size:12px;color:var(--gray-60);}
+.topbar-stat strong{font-size:15px;font-weight:700;color:var(--gray-80);}
+
+/* ── View toggle ── */
+.view-toggle{display:flex;background:var(--gray-10);border-radius:8px;padding:3px;gap:2px;}
+.view-btn{border:none;background:transparent;font-family:var(--font);font-size:13px;font-weight:500;color:var(--gray-50);
+  padding:6px 16px;border-radius:6px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.view-btn:hover{color:var(--gray-70);}
+.view-btn.active{background:var(--gray-0);color:var(--gray-90);box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.view-btn svg{width:16px;height:16px;}
+
+/* ── Main ── */
+.main{display:flex;flex:1;overflow:hidden;position:relative;min-height:0;}
+.chart-area{flex:1;position:relative;overflow:hidden;min-width:0;}
+.chart-area svg{width:100%;height:100%;touch-action:none;}
+
+/* ── Radial styles ── */
+.radial-link{fill:none;stroke:var(--gray-20);stroke-width:1.2;}
+.radial-node{cursor:pointer;}
+.radial-node circle{transition:all .2s;}
+.radial-node:hover circle{filter:brightness(1.1);stroke-width:2.5;}
+.radial-node text{font-family:var(--font);fill:var(--gray-80);pointer-events:none;}
+.radial-ring{fill:none;stroke:var(--gray-10);stroke-dasharray:4 4;}
+
+/* ── Org chart view ── */
+.org-view{display:none;flex:1;overflow-y:auto;padding:40px 24px 60px;}
+.org-view.active{display:block;}
+.chart-area.active{display:block;}
+.chart-area:not(.active){display:none;}
+
+.org-section{max-width:1200px;margin:0 auto 40px;}
+.org-tier{text-align:center;margin-bottom:32px;}
+.org-tier-card{display:inline-flex;align-items:center;gap:16px;background:var(--gray-0);border:2px solid var(--primary-50);
+  border-radius:var(--radius-lg);padding:20px 36px;box-shadow:0 2px 12px rgba(36,107,235,.08);}
+.org-tier-card.pm{border-color:var(--c-pm);}
+.org-tier-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gray-10);}
+.org-tier-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:22px;font-weight:700;background:var(--primary-10);color:var(--primary-60);}
+.org-tier-info{text-align:left;}
+.org-tier-role{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--primary-50);}
+.org-tier-card.pm .org-tier-role{color:var(--c-pm);}
+.org-tier-name{font-size:24px;font-weight:800;margin-top:2px;}
+.org-tier-date{font-size:11px;color:var(--gray-50);margin-top:2px;}
+
+.org-connector{display:flex;justify-content:center;margin:0 auto 24px;}
+.org-connector .line{width:2px;height:32px;background:linear-gradient(to bottom,var(--primary-50),var(--gray-20));}
+.org-connector.pm .line{background:linear-gradient(to bottom,var(--c-pm),var(--gray-20));}
+
+.org-section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--gray-10);}
+.org-section-header .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.org-section-header h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray-50);}
+.org-section-header .count{font-size:11px;color:var(--gray-40);margin-left:auto;}
+
+.org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;}
+.org-grid.compact{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
+.org-card{background:var(--gray-0);border:1px solid var(--gray-10);border-radius:var(--radius-md);padding:16px;
+  transition:all .2s;cursor:default;position:relative;overflow:hidden;}
+.org-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.06);transform:translateY(-1px);}
+.org-card .accent{position:absolute;top:0;left:0;width:3px;height:100%;border-radius:var(--radius-md) 0 0 var(--radius-md);}
+.org-card-top{display:flex;align-items:center;gap:12px;padding-left:10px;}
+.org-card-photo{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--gray-10);flex-shrink:0;}
+.org-card-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;flex-shrink:0;background:var(--gray-5);color:var(--gray-50);}
+.org-card-info{flex:1;min-width:0;}
+.org-card-name{font-size:15px;font-weight:700;line-height:1.3;}
+.org-card-en{font-size:10px;color:var(--gray-40);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.org-card-head{font-size:12px;color:var(--gray-50);margin-top:2px;}
+.org-card-badges{display:flex;gap:4px;margin-top:6px;padding-left:10px;flex-wrap:wrap;}
+.badge{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.3px;}
+.badge.new{background:rgba(34,211,238,.1);color:#0891b2;border:1px solid rgba(34,211,238,.25);}
+.badge.vpm{background:rgba(251,191,36,.1);color:#b45309;border:1px solid rgba(251,191,36,.25);}
+.badge.renamed{background:rgba(167,139,250,.1);color:#7c3aed;border:1px solid rgba(167,139,250,.25);}
+.org-card-subs{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;padding-left:10px;}
+.org-card-sub{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--gray-5);color:var(--gray-60);border:1px solid var(--gray-10);}
+
+.org-dual{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+
+/* ── Detail panel (shared) — must be BEFORE media queries ── */
+.detail-panel{width:380px;background:var(--gray-0);border-left:1px solid var(--gray-10);overflow-y:auto;flex-shrink:0;
+  transition:width .3s ease,opacity .3s ease,transform .3s ease;z-index:50;}
+.detail-panel.hidden{width:0;opacity:0;border:none;overflow:hidden;padding:0;}
+.detail-header{padding:24px;border-bottom:1px solid var(--gray-10);position:relative;}
+.detail-header .cat-badge{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:8px;}
+.detail-header h2{font-size:22px;font-weight:700;line-height:1.3;}
+.detail-header .en-name{font-size:13px;color:var(--gray-50);margin-top:2px;}
+.detail-body{padding:20px 24px;}
+.detail-section{margin-bottom:20px;}
+.detail-section h3{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.2px;color:var(--gray-40);margin-bottom:8px;}
+.person-card{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--gray-5);border-radius:var(--radius-md);margin-bottom:8px;}
+.person-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gray-10);flex-shrink:0;background:var(--gray-10);}
+.person-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:20px;font-weight:700;flex-shrink:0;background:var(--primary-10);color:var(--primary-60);border:2px solid var(--primary-20);}
+.person-info{flex:1;min-width:0;}
+.person-name{font-size:16px;font-weight:700;}
+.person-role{font-size:12px;color:var(--gray-50);margin-top:1px;}
+.person-bio{font-size:11px;color:var(--gray-40);margin-top:3px;line-height:1.4;}
+.person-date{font-size:11px;color:var(--gray-40);margin-top:2px;}
+.sub-org-list{display:flex;flex-direction:column;gap:6px;}
+.sub-org-item{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--gray-5);border-radius:var(--radius-sm);
+  font-size:13px;font-weight:500;transition:background .15s;cursor:pointer;}
+.sub-org-item:hover{background:var(--gray-10);}
+.sub-org-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.sub-org-head{font-size:11px;color:var(--gray-50);font-weight:400;margin-left:auto;white-space:nowrap;}
+.new-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;
+  background:rgba(34,211,238,.1);color:#0891b2;border:1px solid rgba(34,211,238,.25);margin-left:6px;}
+
+/* ── Sheet backdrop (mobile) ── */
+.sheet-backdrop{display:none;}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .topbar{padding:0 16px;gap:6px;}
+  .topbar-brand .sub{display:none;}
+  .topbar-stat{padding:3px 8px;font-size:11px;}
+  .topbar-stat strong{font-size:13px;}
+  .detail-panel{width:320px;}
+}
+@media(max-width:768px){
+  .topbar{height:auto;min-height:48px;flex-wrap:wrap;padding:8px 12px;gap:6px;}
+  .topbar-brand{font-size:14px;order:1;}
+  .topbar-center{order:3;width:100%;justify-content:center;margin-left:0;}
+  .topbar-right{order:2;margin-left:auto;}
+  .topbar-stat{display:none;}
+  .topbar-brand .sep,.topbar-brand .sub{display:none;}
+  .view-btn{font-size:12px;padding:5px 12px;}
+  .view-btn svg{width:14px;height:14px;}
+  .budget-label-text{display:none;}
+  .org-dual{grid-template-columns:1fr;gap:20px;}
+  .org-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}
+  .org-grid.compact{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));}
+  .sheet-backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:199;
+    opacity:1;transition:opacity .3s;}
+  .sheet-backdrop.hidden{opacity:0;pointer-events:none;}
+  .detail-panel{position:fixed;bottom:0;left:0;right:0;top:auto;width:100%;height:55vh;
+    z-index:200;border:none;border-radius:20px 20px 0 0;border-top:1px solid var(--gray-10);
+    box-shadow:0 -8px 40px rgba(0,0,0,.12);transform:translateY(0);
+    transition:height .35s cubic-bezier(.32,.72,0,1),transform .35s cubic-bezier(.32,.72,0,1);
+    opacity:1;overflow-y:auto;padding:0;}
+  .detail-panel.hidden{transform:translateY(100%);width:100%;height:55vh;opacity:1;overflow:hidden;}
+  .detail-panel.expanded{height:92vh;border-radius:12px 12px 0 0;}
+  .detail-panel .detail-header{padding:16px 20px 12px;}
+  .detail-panel .detail-header::before{content:"";display:block;width:36px;height:4px;border-radius:2px;
+    background:var(--gray-20);margin:0 auto 12px;}
+  .detail-panel .detail-header h2{font-size:18px;}
+  .detail-panel .detail-body{padding:12px 20px 32px;}
+  .detail-panel .detail-close{top:20px;right:16px;}
+  .hover-tooltip{display:none!important;}
+  .legend{bottom:12px;left:12px;padding:10px 14px;gap:4px;}
+  .legend-item{font-size:11px;}
+  .zoom-controls{bottom:12px;right:12px;}
+  .sources-btn{bottom:12px;font-size:10px;padding:5px 12px;}
+}
+@media(max-width:480px){
+  .topbar-brand{font-size:13px;}
+  .topbar-brand .flag{font-size:18px;}
+  .org-view{padding:20px 12px 60px;}
+  .org-grid{grid-template-columns:1fr;}
+  .org-grid.compact{grid-template-columns:1fr;}
+  .org-tier-card{padding:14px 20px;gap:12px;}
+  .org-tier-name{font-size:20px;}
+  .org-tier-photo,.org-tier-avatar{width:44px;height:44px;}
+  .legend{display:none;}
+  .sources-modal{padding:20px;max-height:90vh;}
+  .detail-header h2{font-size:18px;}
+}
+
+/* ── Zoom controls ── */
+.zoom-controls{position:absolute;bottom:20px;right:20px;display:flex;flex-direction:column;gap:4px;z-index:10;}
+.zoom-btn{width:40px;height:40px;border:1px solid var(--gray-20);border-radius:var(--radius-sm);background:var(--gray-0);
+  color:var(--gray-60);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .15s;font-family:var(--font);}
+.zoom-btn:hover{background:var(--gray-5);color:var(--gray-80);border-color:var(--gray-30);}
+
+.legend{position:absolute;bottom:20px;left:20px;background:var(--gray-0);border:1px solid var(--gray-10);
+  border-radius:var(--radius-md);padding:14px 18px;display:flex;flex-direction:column;gap:6px;z-index:10;}
+.legend-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--gray-40);margin-bottom:2px;}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray-60);}
+.legend-circle{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+
+/* ── Detail: new sections ── */
+.detail-desc{font-size:13px;color:var(--gray-70);line-height:1.6;margin-bottom:4px;}
+.detail-url{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--primary-50);text-decoration:none;
+  padding:4px 10px;background:var(--primary-10);border-radius:6px;margin-top:6px;transition:background .15s;}
+.detail-url:hover{background:var(--primary-20);}
+.detail-url svg{width:12px;height:12px;}
+.detail-budget{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:var(--gray-5);border-radius:var(--radius-sm);font-size:14px;font-weight:700;color:var(--gray-80);}
+.detail-budget .label{font-size:11px;font-weight:400;color:var(--gray-50);}
+.detail-divisions{display:flex;flex-wrap:wrap;gap:4px;}
+.detail-div-tag{font-size:11px;padding:3px 10px;border-radius:20px;background:var(--gray-5);color:var(--gray-60);border:1px solid var(--gray-10);}
+.detail-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border:none;background:var(--gray-5);
+  border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gray-50);transition:all .15s;}
+.detail-close:hover{background:var(--gray-10);color:var(--gray-80);}
+.detail-header{position:relative;}
+
+/* ── Sources footer ── */
+.sources-btn{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;
+  background:var(--gray-0);border:1px solid var(--gray-10);border-radius:20px;padding:6px 16px;
+  font-family:var(--font);font-size:11px;color:var(--gray-50);cursor:pointer;transition:all .15s;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.sources-btn:hover{border-color:var(--gray-30);color:var(--gray-70);}
+.sources-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;align-items:center;justify-content:center;}
+.sources-overlay.open{display:flex;}
+.sources-modal{background:var(--gray-0);border-radius:var(--radius-lg);padding:32px;max-width:640px;width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2);}
+.sources-modal h2{font-size:18px;font-weight:700;margin-bottom:16px;}
+.sources-modal .src-item{padding:10px 0;border-bottom:1px solid var(--gray-10);}
+.sources-modal .src-item:last-child{border-bottom:none;}
+.sources-modal .src-name{font-size:14px;font-weight:600;}
+.sources-modal .src-name a{color:var(--primary-50);text-decoration:none;}
+.sources-modal .src-name a:hover{text-decoration:underline;}
+.sources-modal .src-desc{font-size:12px;color:var(--gray-50);margin-top:2px;}
+.sources-modal .close-modal{float:right;border:none;background:none;font-size:20px;color:var(--gray-40);cursor:pointer;}
+
+/* ── Budget mode ── */
+/* ── Budget toggle ── */
+.budget-toggle-btn{display:flex;align-items:center;gap:6px;border:1px solid var(--gray-20);border-radius:8px;
+  font-size:12px;padding:5px 12px;cursor:pointer;background:var(--gray-0);font-family:var(--font);
+  color:var(--gray-50);transition:all .2s;flex-shrink:0;}
+/* ── Hover relationship highlight ── */
+.radial-node.dimmed{opacity:.15;transition:opacity .3s;}
+.radial-link.dimmed{opacity:.05;transition:opacity .3s;}
+.radial-link.highlighted{stroke-opacity:1!important;stroke-width:2.5!important;filter:drop-shadow(0 0 3px rgba(36,107,235,.3));}
+.radial-node.highlighted circle{filter:brightness(1.05) drop-shadow(0 0 4px rgba(36,107,235,.25));}
+.hover-tooltip{position:absolute;pointer-events:none;z-index:60;background:var(--gray-0);
+  border:1px solid var(--gray-10);border-radius:var(--radius-md);padding:14px 18px;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);max-width:320px;opacity:0;transition:opacity .2s;font-size:13px;}
+.hover-tooltip.show{opacity:1;}
+.hover-tooltip .ht-path{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-size:11px;color:var(--gray-40);flex-wrap:wrap;}
+.hover-tooltip .ht-path .ht-arrow{color:var(--gray-30);}
+.hover-tooltip .ht-path .ht-seg{padding:2px 6px;border-radius:4px;font-weight:500;}
+.hover-tooltip .ht-name{font-size:16px;font-weight:700;margin-bottom:2px;}
+.hover-tooltip .ht-desc{font-size:12px;color:var(--gray-50);line-height:1.5;}
+.hover-tooltip .ht-head{display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid var(--gray-10);}
+.hover-tooltip .ht-head img{width:28px;height:28px;border-radius:50%;object-fit:cover;}
+.hover-tooltip .ht-head-avatar{width:28px;height:28px;border-radius:50%;background:var(--primary-10);color:var(--primary-60);
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.hover-tooltip .ht-head-info{font-size:12px;line-height:1.3;}
+.hover-tooltip .ht-head-name{font-weight:600;}
+.hover-tooltip .ht-head-role{color:var(--gray-50);}
+
+.budget-toggle-btn:hover{color:var(--gray-70);border-color:var(--gray-30);}
+.budget-indicator{width:32px;height:18px;border-radius:9px;background:var(--gray-20);position:relative;transition:background .25s;flex-shrink:0;}
+.budget-indicator::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+  background:var(--gray-0);box-shadow:0 1px 3px rgba(0,0,0,.15);transition:transform .25s;}
+.budget-toggle-btn.active{background:var(--primary-10);color:var(--primary-60);border-color:var(--primary-40);}
+.budget-toggle-btn.active .budget-indicator{background:var(--primary-50);}
+.budget-toggle-btn.active .budget-indicator::after{transform:translateX(14px);}
+.budget-label{font-family:var(--font);fill:var(--gray-50);font-size:9px;pointer-events:none;text-anchor:middle;}
+.budget-ring-label{font-family:var(--font);fill:var(--gray-30);font-size:10px;}
+.org-card-budget-bar{height:4px;border-radius:2px;background:var(--gray-10);margin:8px 10px 0;overflow:hidden;}
+.org-card-budget-fill{height:100%;border-radius:2px;background:var(--c-ministry);transition:width .4s ease;}
+.org-card-budget-text{font-size:11px;color:var(--gray-50);padding-left:10px;margin-top:4px;}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <span class="flag">🇰🇷</span><span>대한민국 정부조직도</span>
+    <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:#FEF2F2;color:#E5503C;border:1px solid rgba(229,80,60,.2);margin-left:4px;vertical-align:middle">비공식</span>
+    <span class="sep"></span><span class="sub">이재명 정부 · 2026.04 현재</span>
+  </div>
+  <div class="topbar-center">
+    <div class="view-toggle">
+      <button class="view-btn active" data-view="radial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="2 3"/><circle cx="12" cy="3" r="1.5" fill="currentColor" stroke="none"/><circle cx="20" cy="8" r="1.5" fill="currentColor" stroke="none"/><circle cx="20" cy="16" r="1.5" fill="currentColor" stroke="none"/><circle cx="4" cy="8" r="1.5" fill="currentColor" stroke="none"/><circle cx="4" cy="16" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="21" r="1.5" fill="currentColor" stroke="none"/></svg>
+        레이디얼
+      </button>
+      <button class="view-btn" data-view="org">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="5" rx="1"/><rect x="2" y="17" width="7" height="5" rx="1"/><rect x="15" y="17" width="7" height="5" rx="1"/><line x1="12" y1="7" x2="12" y2="12"/><line x1="5.5" y1="17" x2="5.5" y2="12"/><line x1="18.5" y1="17" x2="18.5" y2="12"/><line x1="5.5" y1="12" x2="18.5" y2="12"/></svg>
+        조직도
+      </button>
+    </div>
+    <button class="budget-toggle-btn" id="budgetToggle">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><rect x="1" y="10" width="3" height="5" rx=".5"/><rect x="6" y="6" width="3" height="9" rx=".5"/><rect x="11" y="2" width="3" height="13" rx=".5"/></svg>
+      <span class="budget-label-text">예산 규모</span>
+      <span class="budget-indicator"></span>
+    </button>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-stat"><strong>19</strong>부</div>
+    <div class="topbar-stat"><strong>6</strong>처</div>
+    <div class="topbar-stat"><strong>19</strong>청</div>
+    <div class="topbar-stat"><strong>5</strong>위원회</div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+  <!-- Radial view -->
+  <div class="chart-area active" id="radialView">
+    <svg id="radialSvg"></svg>
+    <div class="hover-tooltip" id="hoverTooltip"></div>
+    <div class="legend">
+      <div class="legend-title">범례</div>
+      <div class="legend-item"><div class="legend-circle" style="background:var(--c-president)"></div>대통령 직속</div>
+      <div class="legend-item"><div class="legend-circle" style="background:var(--c-pm)"></div>국무총리 소속</div>
+      <div class="legend-item"><div class="legend-circle" style="background:var(--c-ministry)"></div>행정각부(부)</div>
+      <div class="legend-item"><div class="legend-circle" style="background:var(--c-office)"></div>처</div>
+      <div class="legend-item"><div class="legend-circle" style="background:var(--c-commission)"></div>위원회</div>
+      <div class="legend-item"><div class="legend-circle" style="background:var(--c-agency)"></div>청</div>
+    </div>
+    <div class="zoom-controls">
+      <button class="zoom-btn" id="zoomIn">+</button>
+      <button class="zoom-btn" id="zoomOut">−</button>
+      <button class="zoom-btn" id="zoomReset" style="font-size:13px">↺</button>
+    </div>
+  </div>
+
+  <!-- Org chart view -->
+  <div class="org-view" id="orgView"></div>
+
+  <!-- Shared detail panel -->
+  <div class="sheet-backdrop hidden" id="sheetBackdrop" onclick="hideDetail()"></div>
+  <div class="detail-panel hidden" id="detailPanel"></div>
+</div>
+
+<!-- Sources button & modal -->
+<button class="sources-btn" onclick="document.getElementById('srcOverlay').classList.add('open')">출처 및 참고자료</button>
+<div class="sources-overlay" id="srcOverlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="sources-modal">
+    <button class="close-modal" onclick="document.getElementById('srcOverlay').classList.remove('open')">&times;</button>
+    <h2>데이터 출처 및 참고자료</h2>
+    <div id="sourcesList"></div>
+    <div style="margin-top:16px;padding:12px 16px;background:#FEF2F2;border-radius:8px;border:1px solid rgba(229,80,60,.15);">
+      <div style="font-size:12px;font-weight:700;color:#E5503C;margin-bottom:4px;">비공식 자료 안내</div>
+      <div style="font-size:11px;color:#991B1B;line-height:1.5;">
+        본 페이지는 공개된 정보를 기반으로 개인이 제작한 <strong>비공식</strong> 자료이며,
+        대한민국 정부가 운영하는 공식 사이트가 아닙니다.
+        기관 구조, 인사, 예산 등의 정보가 실제와 다를 수 있으며, 일부 데이터는 추정치를 포함합니다.
+        정확한 정보는 <a href="https://www.gov.kr/portal/orgInfo" target="_blank" style="color:#E5503C">정부24</a>를 참고해주세요.
+      </div>
+    </div>
+    <p style="margin-top:12px;font-size:11px;color:var(--gray-40);line-height:1.5;">
+      프로필 사진은 위키미디어 커먼즈의 공개 라이선스 이미지를 사용합니다.
+      <br><br>최종 업데이트: 2026년 4월 · Inspired by <a href="https://machineryofgovernment.uk" target="_blank" style="color:var(--primary-50)">machineryofgovernment.uk</a>
+    </p>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--gray-10);display:flex;align-items:center;gap:12px;">
+      <img src="https://github.com/kimtoma.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;" alt="kimtoma">
+      <div style="flex:1;">
+        <div style="font-size:13px;font-weight:600;color:var(--gray-80);">Made by kimtoma</div>
+        <div style="font-size:11px;color:var(--gray-50);margin-top:2px;display:flex;gap:12px;">
+          <a href="https://kimtoma.com" target="_blank" rel="noopener" style="color:var(--primary-50);text-decoration:none;">kimtoma.com</a>
+          <a href="https://www.linkedin.com/in/kimkyungsoo/" target="_blank" rel="noopener" style="color:var(--primary-50);text-decoration:none;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════
+// 대한민국 정부조직도 데이터
+// 출처: 위키백과, 정부24, 대한민국 정책브리핑, 각 부처 공식 홈페이지
+// 최종 업데이트: 2026년 4월
+// ══════════════════════════════════════
+const W="https://upload.wikimedia.org/wikipedia/commons/thumb/";
+
+const people={
+  "이재명":{role:"제21대 대통령",date:"2025.06.04 취임",photo:W+"5/59/President_Lee_Jae_Myung_20260306.jpg/200px-President_Lee_Jae_Myung_20260306.jpg",bio:"전 더불어민주당 대표, 전 경기도지사"},
+  "김민석":{role:"국무총리",date:"2025.07.03 취임",photo:W+"7/7e/Kim_Min-seok_20250807.jpg/200px-Kim_Min-seok_20250807.jpg",bio:"전 국회의원(3선), 전 보건복지부 차관"},
+  "강훈식":{role:"대통령비서실장",date:"2025.06.05 임명",bio:"전 국회의원(3선, 충남 아산)"},
+  "위성락":{role:"국가안보실장",date:"2025.06.05 임명",bio:"전 한반도평화교섭본부장"},
+  "황인권":{role:"대통령경호처장",date:"2025.06.05 임명",bio:"전 육군 대장, 제2작전사령관"},
+  "김호철":{role:"감사원장",date:"2025년 취임",bio:"최재해 전 원장 후임"},
+  "이종석":{role:"국가정보원장",date:"2025.06.25 임명",bio:"전 통일부 장관, 전 NSC 사무차장"},
+  "김종철":{role:"방송미디어통신위원장",date:"2025.10 취임",bio:"초대 위원장"},
+  "윤창렬":{role:"국무조정실장",date:"2025.06.23 임명",bio:"전 국무1차장, 전 사회수석비서관"},
+  "구윤철":{role:"경제부총리 겸 재정경제부 장관",date:"2026.01.02 취임",photo:W+"9/97/Koo_Yun-cheol_20250806.jpg/200px-Koo_Yun-cheol_20250806.jpg",bio:"서울대 경제학, 행시 32회"},
+  "배경훈":{role:"과학기술부총리 겸 장관",date:"2025.10.01 취임",photo:W+"8/8a/Bae_Kyung-hoon_250910.jpg/200px-Bae_Kyung-hoon_250910.jpg",bio:"AI 학자·기업인"},
+  "최교진":{role:"교육부 장관",date:"2025.10.01 취임",photo:W+"d/d2/Choi_Kyo-jin_20250918.jpg/200px-Choi_Kyo-jin_20250918.jpg",bio:"전 충남대학교 총장"},
+  "조현":{role:"외교부 장관",date:"2025.07.18 취임",photo:W+"9/9f/Cho_Hyun_20250806.jpg/200px-Cho_Hyun_20250806.jpg",bio:"전 외교부 1·2차관"},
+  "정동영":{role:"통일부 장관",date:"2025.07.25 취임",photo:W+"5/58/Chung_Dong-young_20250822.jpg/200px-Chung_Dong-young_20250822.jpg",bio:"전 통일부 장관(노무현 정부), 5선 의원"},
+  "정성호":{role:"법무부 장관",date:"2025.07.18 취임",photo:W+"9/9d/Chung_Sung-ho_20250806.jpg/200px-Chung_Sung-ho_20250806.jpg",bio:"5선 의원, 사법연수원 18기"},
+  "안규백":{role:"국방부 장관",date:"2025.07.25 취임",photo:W+"1/1f/Ahn_Gyu-back_250814.jpg/200px-Ahn_Gyu-back_250814.jpg",bio:"5선 의원, 64년 만의 민간인 국방장관"},
+  "윤호중":{role:"행정안전부 장관",date:"2025.07.19 취임",photo:W+"c/cc/Yun_Ho-jung_250818.jpg/200px-Yun_Ho-jung_250818.jpg",bio:"5선 의원, 전 당 원내대표"},
+  "권오을":{role:"국가보훈부 장관",date:"2025.07.25 취임",photo:W+"c/cd/Kwon_Oh-eul_20250804.jpg/200px-Kwon_Oh-eul_20250804.jpg",bio:"3선 의원(경북 안동)"},
+  "최휘영":{role:"문화체육관광부 장관",date:"2025.07.31 취임",photo:W+"a/a3/Choi_Hwi-Young%27s_portrait_%282025.08%29.jpg/200px-Choi_Hwi-Young%27s_portrait_%282025.08%29.jpg"},
+  "송미령":{role:"농림축산식품부 장관",date:"유임",photo:W+"3/37/Song_Mi-ryung_20241114.jpg/200px-Song_Mi-ryung_20241114.jpg",bio:"유일한 유임 장관"},
+  "김정관":{role:"산업통상부 장관",date:"2025.10.01 취임",photo:W+"0/03/Kim_Jung-kwan%27s_portrait_%282025.07%29.jpg/200px-Kim_Jung-kwan%27s_portrait_%282025.07%29.jpg",bio:"서울대 경제학, 전 두산에너빌리티 사장"},
+  "정은경":{role:"보건복지부 장관",date:"2025.07.21 취임",photo:W+"8/8b/Jeong_Eun-kyeong%27s_Portrait_%28c._2020%29.jpg/200px-Jeong_Eun-kyeong%27s_Portrait_%28c._2020%29.jpg",bio:"서울대 의대, 전 질병관리청 초대 청장"},
+  "김성환":{role:"기후에너지환경부 장관",date:"2025.10.01 취임",photo:W+"8/8e/Kim_Sung-hwan_20250818.jpg/200px-Kim_Sung-hwan_20250818.jpg",bio:"3선 의원, 기후위기특별위원회"},
+  "김영훈":{role:"고용노동부 장관",date:"2025.07.21 취임",photo:W+"7/77/Kim_Young-hoon_20250806.jpg/200px-Kim_Young-hoon_20250806.jpg",bio:"전 민주노총 위원장"},
+  "원민경":{role:"성평등가족부 장관",date:"2025.10.01 취임",photo:W+"b/be/Won_Min-kyong%27s_portrait_%282024.03%29.jpg/200px-Won_Min-kyong%27s_portrait_%282024.03%29.jpg"},
+  "김윤덕":{role:"국토교통부 장관",date:"2025.07.31 취임",photo:W+"0/0d/Kim_Yoon-deok_2021.jpg/200px-Kim_Yoon-deok_2021.jpg",bio:"전 국회의원(전북 전주)"},
+  "황종우":{role:"해양수산부 장관",date:"2026.03.25 취임",photo:W+"6/6a/%E9%BB%84%E9%92%9F%E5%AE%87%E7%85%A7%E7%89%87.jpg/200px-%E9%BB%84%E9%92%9F%E5%AE%87%E7%85%A7%E7%89%87.jpg",bio:"전재수 전 장관 후임"},
+  "한성숙":{role:"중소벤처기업부 장관",date:"2025.07.23 취임",photo:W+"9/9d/Han_Seong-suk%27s_portrait_%282025.07%29.jpg/200px-Han_Seong-suk%27s_portrait_%282025.07%29.jpg",bio:"전 네이버 대표이사"},
+  "박홍근":{role:"기획예산처 장관",date:"2026.03.25 취임",photo:W+"b/b7/Minister_Park_Hong-keun_20260331.jpg/200px-Minister_Park_Hong-keun_20260331.jpg",bio:"전 더불어민주당 원내대표"},
+  "오유경":{role:"식품의약품안전처장",date:"유임",bio:"윤석열 정부에서 유임"},
+  "조원철":{role:"법제처장",date:"2025.07 임명",bio:"26년 법관 경력, 사법연수원 동기"},
+  "최동석":{role:"인사혁신처장",date:"2025.07 임명",bio:"전 한국은행 인사조직개혁팀장, 전 교보생명 부사장"},
+  "주병기":{role:"공정거래위원장",date:"2025.09 임명",bio:"서울대 경제학부 교수, 분배정의연구센터 대표"},
+  "이억원":{role:"금융위원장",date:"2025.09 임명",bio:"전 기재부 1차관, 금융 전문가"},
+  "송경희":{role:"개인정보보호위원장",date:"2025년 임명",bio:"전 과기정통부 SW정책관, 성균관대 AI신뢰성센터장"},
+  "임광현":{role:"국세청장",date:"2025.07 취임",bio:"전 국회의원, 최초 현역의원 출신 국세청장"},
+  "이명구":{role:"관세청장",date:"2025년 임명"},
+  "유재성":{role:"경찰청장 직무대행",date:"2025.06 임명",bio:"전 경찰청 차장"},
+  "김승룡":{role:"소방청장",date:"2025.03 임명",bio:"소방위 공채, 전 강원소방본부장"},
+  "홍소영":{role:"병무청장",date:"2025.07 임명",bio:"55년 만의 최초 여성 병무청장"},
+  "오태석":{role:"우주항공청장",date:"2026.02 임명",bio:"전 KISTEP 원장"},
+  "임승관":{role:"질병관리청장",date:"2025.07 임명",bio:"전 국립중앙의료원 감염병원 설립추진단장"},
+  "허민":{role:"국가유산청장",date:"2025.07 임명",bio:"전남대 교수"},
+  "김의겸":{role:"새만금개발청장",date:"2025.07 임명",bio:"전 문재인 정부 청와대 대변인"},
+  "이승돈":{role:"농촌진흥청장",date:"2025년 임명"},
+  "김인호":{role:"산림청장",date:"2025년 임명"},
+  "이미선":{role:"기상청장",date:"2025년 임명"},
+};
+
+const govData={name:"대한민국 정부",nameEn:"Government of the Republic of Korea",type:"root",
+  desc:"대한민국 헌법에 의거하여 구성된 정부로, 대통령을 수반으로 하는 행정부와 그 산하기관으로 이루어져 있다. 19부 6처 19청 5위원회로 구성된다.",
+  url:"https://www.gov.kr",
+  children:[
+  // ═══ 대통령 ═══
+  {name:"대통령",nameEn:"President",type:"president",head:"이재명",
+    url:"https://www.president.go.kr",
+    desc:"국가 원수이자 행정부 수반. 국군 통수권, 외교권, 공무원 임명권, 법률안 거부권, 긴급명령권 등을 보유한다.",
+    divisions:["대통령비서실","국가안보실","대통령경호처"],
+    children:[
+    {name:"대통령비서실",nameEn:"Presidential Secretariat",type:"president-sub",head:"강훈식",
+      url:"https://www.president.go.kr",
+      desc:"대통령의 국정 운영을 보좌하는 핵심 조직. 정무, 홍보, 민정, 인사, 경제, 사회, AI미래기획 등 수석비서관실로 구성된다.",
+      divisions:["정무수석","홍보소통수석","경청통합수석","민정수석","인사수석","정책실장","경제성장수석","사회수석","AI미래기획수석"]},
+    {name:"국가안보실",nameEn:"National Security Office",type:"president-sub",head:"위성락",
+      url:"https://www.president.go.kr",
+      desc:"외교·안보·통일·국방 정책을 총괄 조정하고, 국가 위기관리 컨트롤타워 역할을 수행한다.",
+      divisions:["제1차장(외교)","제2차장(국방)","제3차장(사이버)","국가위기관리센터"]},
+    {name:"대통령경호처",nameEn:"Presidential Security Service",type:"president-sub",head:"황인권",
+      url:"https://www.pss.go.kr",
+      desc:"대통령과 그 가족, 전직 대통령 및 주요 요인의 경호와 안전을 담당한다."},
+    {name:"감사원",nameEn:"Board of Audit and Inspection",type:"president-sub",head:"김호철",note:"헌법기관",
+      url:"https://www.bai.go.kr",
+      desc:"국가 세입·세출의 결산 검사, 행정기관 및 공무원의 직무 감찰을 수행하는 헌법상 독립기관이다.",
+      budget:"3,800억",
+      divisions:["사무총장","감사교육원","감사연구원"]},
+    {name:"국가정보원",nameEn:"National Intelligence Service",type:"president-sub",head:"이종석",
+      url:"https://www.nis.go.kr",
+      desc:"국외 정보 및 보안 업무, 국가기밀 보호, 사이버안보를 담당하는 정보기관이다."},
+    {name:"고위공직자범죄수사처",nameEn:"Corruption Investigation Office",type:"president-sub",
+      url:"https://www.cio.go.kr",
+      desc:"고위공직자의 부패범죄를 독립적으로 수사·기소하는 기관이다. 2021년 출범."},
+    {name:"국가인권위원회",nameEn:"National Human Rights Commission",type:"president-sub",
+      url:"https://www.humanrights.go.kr",
+      desc:"인권 보호와 향상을 위한 정책 권고, 차별 행위 조사, 인권 교육을 수행하는 독립 국가기관이다.",
+      budget:"490억"},
+    {name:"방송미디어통신위원회",nameEn:"Broadcasting & Media Commission",type:"president-sub",head:"김종철",isNew:"2025.10 신설",
+      url:"https://www.kmcc.go.kr",
+      desc:"방송·미디어·통신 분야의 규제·감독, 미디어 다양성 보장, 이용자 보호 등을 담당한다. 방송통신위원회를 폐지하고 신설."}
+  ]},
+  // ═══ 국무총리 ═══
+  {name:"국무총리",nameEn:"Prime Minister",type:"pm",head:"김민석",
+    url:"https://www.opm.go.kr",
+    desc:"대통령을 보좌하고 행정에 관해 대통령의 명을 받아 행정각부를 통할한다. 국무회의 부의장으로서 국정 전반을 조정한다.",
+    children:[
+    {name:"국무총리 소속 처",nameEn:"PM Offices",type:"pm-group",children:[
+      {name:"법제처",nameEn:"Ministry of Legislation",type:"office",head:"조원철",
+        url:"https://www.moleg.go.kr",
+        desc:"법령의 입안·심사·해석, 법제 정비, 행정심판을 담당한다.",budget:"920억"},
+      {name:"인사혁신처",nameEn:"Ministry of Personnel Management",type:"office",head:"최동석",
+        url:"https://www.mpm.go.kr",
+        desc:"공무원 인사제도 기획, 채용·평가·보수, 공직윤리, 정부조직 관리를 담당한다.",budget:"7,600억"},
+      {name:"식품의약품안전처",nameEn:"Ministry of Food and Drug Safety",type:"office",head:"오유경",
+        url:"https://www.mfds.go.kr",
+        desc:"식품·의약품·의료기기·화장품의 안전관리, 인허가, 검사를 담당한다.",budget:"1.1조",
+        divisions:["식품안전정책국","의약품안전국","바이오생약국","의료기기안전국"]},
+      {name:"기획예산처",nameEn:"Ministry of Planning and Budget",type:"office",head:"박홍근",isNew:"2026.01 신설",
+        url:"https://www.mpb.go.kr",
+        desc:"국가 재정 운용 계획, 예산 편성·배분·집행 관리, 공공기관 관리를 담당한다. 기획재정부에서 예산 기능이 분리되어 신설.",
+        divisions:["예산총괄국","예산관리국","재정혁신국","공공기관관리국"]},
+      {name:"국가데이터처",nameEn:"Ministry of National Data",type:"office",isNew:"통계청 승격",
+        url:"https://mods.go.kr",
+        desc:"국가 통계 생산·관리, 공공데이터 개방·활용, 데이터 기반 행정 혁신을 담당한다. 통계청에서 승격."},
+      {name:"지식재산처",nameEn:"Ministry of Intellectual Property",type:"office",isNew:"특허청 승격",
+        url:"https://www.kipo.go.kr",
+        desc:"특허·실용신안·디자인·상표 등 산업재산권의 출원·심사·등록과 지식재산 정책을 담당한다. 특허청에서 승격."}
+    ]},
+    {name:"국무총리 소속 위원회",nameEn:"PM Commissions",type:"pm-group",children:[
+      {name:"공정거래위원회",nameEn:"Fair Trade Commission",type:"commission",head:"주병기",
+        url:"https://www.ftc.go.kr",
+        desc:"독과점 규제, 불공정거래 시정, 소비자 보호, 하도급 거래 감시 등 공정한 시장경쟁 질서를 확립한다.",budget:"1,900억",
+        divisions:["경쟁정책국","소비자정책국","기업거래정책국"]},
+      {name:"금융위원회",nameEn:"Financial Services Commission",type:"commission",head:"이억원",
+        url:"https://www.fsc.go.kr",
+        desc:"금융정책 수립, 금융기관 인허가·감독, 자본시장 규제, 금융소비자 보호를 담당한다.",budget:"5.5조",
+        divisions:["금융정책국","금융산업국","자본시장국","금융소비자국"]},
+      {name:"국가권익위원회",nameEn:"Anti-Corruption & Civil Rights Comm.",type:"commission",
+        url:"https://www.acrc.go.kr",
+        desc:"부패방지, 국민권익 보호, 고충민원 처리, 행정심판을 담당한다.",budget:"1,500억"},
+      {name:"개인정보보호위원회",nameEn:"Personal Information Protection Comm.",type:"commission",head:"송경희",
+        url:"https://www.pipc.go.kr",
+        desc:"개인정보 보호 정책 수립, 개인정보 침해 조사·처분, AI 시대 데이터 보호 정책을 담당한다.",budget:"1,200억"},
+      {name:"원자력안전위원회",nameEn:"Nuclear Safety and Security Comm.",type:"commission",
+        url:"https://www.nssc.go.kr",
+        desc:"원자력 시설의 안전규제, 방사선 방호, 원자력 안전 연구·기술 개발을 담당한다.",budget:"2,800억"}
+    ]},
+    {name:"총리 직속",nameEn:"PM Direct",type:"pm-group",children:[
+      {name:"국무조정실",nameEn:"Office for Govt Policy Coordination",type:"pm-sub",head:"윤창렬",
+        url:"https://www.opc.go.kr",
+        desc:"각 부처 간 정책 조정, 정부업무 평가, 규제개혁, 정부 합동감사를 담당한다."},
+      {name:"국무총리비서실",nameEn:"PM Secretariat",type:"pm-sub",
+        url:"https://www.opm.go.kr",
+        desc:"국무총리의 국정 운영을 보좌하고, 국무회의 안건 준비 등 비서 업무를 수행한다."}
+    ]}
+  ]},
+  // ═══ 행정각부 ═══
+  {name:"행정각부",nameEn:"Ministries",type:"ministries-group",children:[
+    {name:"재정경제부",nameEn:"Min. of Finance & Economy",type:"ministry",head:"구윤철",badge:"경제부총리",
+      url:"https://www.mofe.go.kr",
+      desc:"거시 경제정책, 금융·세제·국고·국유재산 관리, 대외경제 협력을 담당한다. 기획재정부에서 분리.",
+      budget:"29.2조",
+      divisions:["세제실","국고국","경제정책국","대외경제국","국제금융국"],
+      children:[
+        {name:"국세청",nameEn:"National Tax Service",type:"agency",head:"임광현",
+          url:"https://www.nts.go.kr",desc:"내국세의 부과·징수, 세무조사, 탈세 방지를 담당한다.",budget:"2.2조"},
+        {name:"관세청",nameEn:"Korea Customs Service",type:"agency",head:"이명구",
+          url:"https://www.customs.go.kr",desc:"수출입 통관, 관세 부과·징수, 밀수 단속, FTA 원산지 관리를 담당한다.",budget:"8,900억"},
+        {name:"조달청",nameEn:"Public Procurement Service",type:"agency",
+          url:"https://www.pps.go.kr",desc:"정부 물자 조달, 공공 계약, 나라장터 운영, 비축 물자 관리를 담당한다.",budget:"4,200억"}
+    ]},
+    {name:"과학기술정보통신부",nameEn:"Min. of Science & ICT",type:"ministry",head:"배경훈",badge:"과학기술부총리",
+      url:"https://www.msit.go.kr",
+      desc:"과학기술·ICT 정책, 국가 R&D, AI·데이터·우주·원자력 진흥, 정보통신 산업 육성을 담당한다.",
+      budget:"20.5조",
+      divisions:["과학기술혁신본부","연구개발정책국","정보통신정책국","AI디지털정책국","우주기술정책국"],
+      children:[
+        {name:"우주항공청",nameEn:"Korea AeroSpace Admin.",type:"agency",head:"오태석",
+          url:"https://www.kasa.go.kr",desc:"우주개발, 항공우주 연구, 위성 발사 및 운영을 담당한다. 2024년 신설.",budget:"8,000억"}
+    ]},
+    {name:"교육부",nameEn:"Min. of Education",type:"ministry",head:"최교진",
+      url:"https://www.moe.go.kr",
+      desc:"학교 교육·평생교육 정책, 교원 양성·관리, 학술·인재 양성, 교육과정 편성을 담당한다.",
+      budget:"96.5조",
+      divisions:["학교혁신지원국","교육자치협력국","인재양성정책국","평생직업교육국"]},
+    {name:"외교부",nameEn:"Min. of Foreign Affairs",type:"ministry",head:"조현",
+      url:"https://www.mofa.go.kr",
+      desc:"외교정책 수립·시행, 재외국민 보호, 국제기구 협력, 통상교섭 지원을 담당한다.",
+      budget:"3.2조",
+      divisions:["기획조정실","아시아태평양국","북미국","유럽국","국제기구국","통상교섭본부"],
+      children:[
+        {name:"재외동포청",nameEn:"Overseas Koreans Agency",type:"agency",
+          url:"https://www.oka.go.kr",desc:"재외동포의 권익 보호, 교육·문화 지원, 네트워크 구축을 담당한다. 2023년 신설."}
+    ]},
+    {name:"통일부",nameEn:"Min. of Unification",type:"ministry",head:"정동영",
+      url:"https://www.unikorea.go.kr",
+      desc:"남북관계 발전, 통일정책 수립, 남북 교류·협력, 북한이탈주민 정착 지원을 담당한다.",
+      budget:"2.1조",
+      divisions:["통일정책국","교류협력국","인도협력국"]},
+    {name:"법무부",nameEn:"Min. of Justice",type:"ministry",head:"정성호",
+      url:"https://www.moj.go.kr",
+      desc:"검찰·법무 행정, 인권 보호, 출입국·이민 관리, 교정·보호 업무를 담당한다.",
+      budget:"4.7조",
+      divisions:["기획조정실","법무실","인권국","교정본부","출입국·외국인정책본부"],
+      children:[
+        {name:"공소청",nameEn:"Prosecution Service",type:"agency",isNew:"2026.10 신설예정",
+          desc:"검찰청 폐지 후 기소 기능을 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
+    ]},
+    {name:"국방부",nameEn:"Min. of National Defense",type:"ministry",head:"안규백",
+      url:"https://www.mnd.go.kr",
+      desc:"국방정책 수립, 군사력 건설·운용, 병역 행정, 방위산업 육성을 담당한다.",
+      budget:"62.1조",
+      divisions:["국방정책실","전력자원관리실","국방개혁실"],
+      children:[
+        {name:"병무청",nameEn:"Military Manpower Admin.",type:"agency",head:"홍소영",
+          url:"https://www.mma.go.kr",desc:"병역 자원 관리, 징·소집, 병역 판정 검사, 대체복무 관리를 담당한다.",budget:"9,800억"},
+        {name:"방위사업청",nameEn:"DAPA",type:"agency",
+          url:"https://www.dapa.go.kr",desc:"무기 체계 획득, 방위산업 육성, 군수품 조달, 국방과학기술 연구를 담당한다.",budget:"18.7조"}
+    ]},
+    {name:"행정안전부",nameEn:"Min. of Interior & Safety",type:"ministry",head:"윤호중",
+      url:"https://www.mois.go.kr",
+      desc:"지방자치·행정, 재난안전 관리, 전자정부, 공무원 제도, 선거 지원을 담당한다.",
+      budget:"73.5조",
+      divisions:["기획조정실","지방자치분권실","안전정책실","디지털정부실"],
+      children:[
+        {name:"경찰청",nameEn:"National Police Agency",type:"agency",head:"유재성",
+          url:"https://www.police.go.kr",desc:"치안 유지, 범죄 수사, 교통 관리, 정보·보안 업무를 수행한다.",budget:"13.8조"},
+        {name:"소방청",nameEn:"National Fire Agency",type:"agency",head:"김승룡",
+          url:"https://www.nfa.go.kr",desc:"화재 예방·진압, 구조·구급, 소방산업 육성을 담당한다.",budget:"1.5조"},
+        {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",isNew:"2026.10 신설예정",
+          desc:"검찰청 폐지 후 중대범죄 수사를 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
+    ]},
+    {name:"문화체육관광부",nameEn:"Min. of Culture & Tourism",type:"ministry",head:"최휘영",
+      url:"https://www.mcst.go.kr",
+      desc:"문화·예술·체육·관광 정책, 콘텐츠 산업 육성, 국정 홍보, 종교 업무를 담당한다.",
+      budget:"7.5조",
+      divisions:["문화정책국","예술정책국","체육국","관광국","미디어정책국"],
+      children:[
+        {name:"국가유산청",nameEn:"Korea Heritage Service",type:"agency",head:"허민",
+          url:"https://www.khs.go.kr",desc:"국가유산(문화재)의 보존·관리·활용, 매장문화재 조사, 세계유산 등재를 담당한다.",budget:"1.3조"}
+    ]},
+    {name:"농림축산식품부",nameEn:"Min. of Agriculture",type:"ministry",head:"송미령",
+      url:"https://www.mafra.go.kr",
+      desc:"농업·축산·식품 산업 정책, 농가 소득 지원, 식량 안보, 농촌 발전을 담당한다.",
+      budget:"18.2조",
+      divisions:["농업정책국","식량정책국","축산정책국","식품산업정책국","농촌정책국"],
+      children:[
+        {name:"농촌진흥청",nameEn:"Rural Development Admin.",type:"agency",head:"이승돈",
+          url:"https://www.rda.go.kr",desc:"농업 기술 연구·개발, 농촌지도, 농업인 교육 훈련을 담당한다.",budget:"1.6조"},
+        {name:"산림청",nameEn:"Korea Forest Service",type:"agency",head:"김인호",
+          url:"https://www.forest.go.kr",desc:"산림 보전·조성, 산불 예방, 산림 자원 활용, 임업 육성을 담당한다.",budget:"3.1조"}
+    ]},
+    {name:"산업통상부",nameEn:"Min. of Trade & Industry",type:"ministry",head:"김정관",isNew:"명칭변경",
+      url:"https://www.motir.go.kr",
+      desc:"산업정책, 무역·통상, 에너지 자원 관리를 담당한다. 산업통상자원부에서 에너지 기능을 기후에너지환경부로 이관 후 명칭 변경.",
+      budget:"12.8조",
+      divisions:["산업정책국","첨단산업정책국","무역투자실","통상교섭본부"]},
+    {name:"보건복지부",nameEn:"Min. of Health & Welfare",type:"ministry",head:"정은경",
+      url:"https://www.mohw.go.kr",
+      desc:"보건의료, 사회복지, 연금·건강보험, 저출산·고령사회, 장애인 정책을 담당한다.",
+      budget:"110.4조",
+      divisions:["보건의료정책국","건강보험정책국","사회복지정책국","인구정책국","장애인정책국"],
+      children:[
+        {name:"질병관리청",nameEn:"KDCA",type:"agency",head:"임승관",
+          url:"https://www.kdca.go.kr",desc:"감염병 예방·관리, 예방접종, 만성질환 관리, 검역·방역을 담당한다.",budget:"1.8조"}
+    ]},
+    {name:"기후에너지환경부",nameEn:"Min. of Climate & Environment",type:"ministry",head:"김성환",isNew:"2025.10 개편",
+      url:"https://www.mcee.go.kr",
+      desc:"기후변화 대응, 탄소중립, 에너지 전환, 대기·수질·토양 환경보전, 자원순환을 담당한다. 환경부에 에너지 기능을 통합하여 개편.",
+      budget:"14.3조",
+      divisions:["기후정책국","에너지정책국","환경보전국","물환경정책국","자원순환국"],
+      children:[
+        {name:"기상청",nameEn:"KMA",type:"agency",head:"이미선",
+          url:"https://www.kma.go.kr",desc:"기상관측·예보, 기후변화 감시, 지진·화산 관측, 기상산업 육성을 담당한다.",budget:"5,200억"}
+    ]},
+    {name:"고용노동부",nameEn:"Min. of Employment & Labor",type:"ministry",head:"김영훈",
+      url:"https://www.moel.go.kr",
+      desc:"고용정책, 직업능력 개발, 근로조건·노사관계, 산업안전·보건, 고용보험을 담당한다.",
+      budget:"35.2조",
+      divisions:["고용정책실","노동정책실","산업안전보건정책관"]},
+    {name:"성평등가족부",nameEn:"Min. of Gender Equality",type:"ministry",head:"원민경",isNew:"명칭변경",
+      url:"https://www.mogef.go.kr",
+      desc:"성평등 정책, 가족·다문화 정책, 청소년 보호·육성, 양성평등 기본계획 수립을 담당한다. 여성가족부에서 명칭 변경.",
+      budget:"1.5조",
+      divisions:["성평등정책국","가족정책국","청소년정책국"]},
+    {name:"국토교통부",nameEn:"Min. of Land & Transport",type:"ministry",head:"김윤덕",
+      url:"https://www.molit.go.kr",
+      desc:"국토 관리, 주택·부동산 정책, 도로·철도·항공 교통, 건설 산업을 담당한다.",
+      budget:"28.9조",
+      divisions:["주택토지실","건설정책국","도로국","철도국","항공정책국","교통물류실"],
+      children:[
+        {name:"행정중심복합도시건설청",nameEn:"Sejong City Agency",type:"agency",
+          url:"https://www.naacc.go.kr",desc:"세종특별자치시 행정중심복합도시 건설을 총괄한다."},
+        {name:"새만금개발청",nameEn:"Saemangeum Agency",type:"agency",head:"김의겸",
+          url:"https://www.saemangeum.go.kr",desc:"새만금 종합개발 사업의 계획·시행·관리를 담당한다.",budget:"1.2조"}
+    ]},
+    {name:"해양수산부",nameEn:"Min. of Oceans & Fisheries",type:"ministry",head:"황종우",
+      url:"https://www.mof.go.kr",
+      desc:"해양정책, 수산업 진흥, 항만 건설·운영, 해양환경 보전, 해운·물류를 담당한다.",
+      budget:"7.8조",
+      divisions:["해양정책국","수산정책국","항만국","해운물류국"],
+      children:[
+        {name:"해양경찰청",nameEn:"Korea Coast Guard",type:"agency",
+          url:"https://www.kcg.go.kr",desc:"해양에서의 치안·경비, 해양 수색·구조, 해양오염 방제를 담당한다.",budget:"2.1조"}
+    ]},
+    {name:"중소벤처기업부",nameEn:"Min. of SMEs & Startups",type:"ministry",head:"한성숙",
+      url:"https://www.mss.go.kr",
+      desc:"중소기업·소상공인·벤처·스타트업 정책, 기술혁신 지원, 창업 생태계 조성을 담당한다.",
+      budget:"18.4조",
+      divisions:["기획조정실","중소기업정책국","창업벤처혁신국","소상공인정책국"]},
+    {name:"국가보훈부",nameEn:"Min. of Veterans Affairs",type:"ministry",head:"권오을",
+      url:"https://www.mpva.go.kr",
+      desc:"국가유공자·보훈대상자의 예우·지원, 보훈의료, 독립유공자 발굴·선양을 담당한다.",
+      budget:"6.8조",
+      divisions:["보훈정책국","보상정책국","제대군인정책국"]}
+  ]}
+]};
+
+// ═══ 데이터 출처 ═══
+const sources = [
+  {name:"정부24 중앙행정기관 조직도",url:"https://www.gov.kr/portal/orgInfo",desc:"정부24에서 제공하는 공식 정부 조직 정보"},
+  {name:"위키백과: 이재명 정부의 국무위원",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 정보"},
+  {name:"위키백과: 이재명 정부",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력, 대통령실 구성"},
+  {name:"대한민국 정책브리핑",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
+  {name:"나무위키: 이재명 정부/인사",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 종합"},
+  {name:"2026년 정부 예산안 (기획예산처)",url:"https://www.mpb.go.kr",desc:"부처별 예산 배분 (일부 추정치 포함)"},
+  {name:"각 부처 공식 홈페이지",url:"https://www.gov.kr/portal/orgInfo",desc:"업무 소개 및 조직도"},
+  {name:"KRDS 대한민국 정부 디자인 시스템",url:"https://www.krds.go.kr",desc:"UI/UX 디자인 가이드라인 참고"}
+];
+
+</script>
+<script>
+// ══════════════════════════════════════
+// DATA is loaded from data.js
+// ══════════════════════════════════════
+
+// Render sources list
+document.getElementById("sourcesList").innerHTML=sources.map(s=>
+  `<div class="src-item"><div class="src-name"><a href="${s.url}" target="_blank" rel="noopener">${s.name}</a></div><div class="src-desc">${s.desc}</div></div>`
+).join("");
+
+
+const colorMap={
+  root:{fill:"#E8F0FE",stroke:"#246BEB",text:"#1A56C4"},
+  president:{fill:"#DBEAFE",stroke:"#246BEB",text:"#12429D"},
+  "president-sub":{fill:"#EFF6FF",stroke:"#60A5FA",text:"#1E40AF"},
+  pm:{fill:"#EDE9FE",stroke:"#6366F1",text:"#4338CA"},
+  "pm-group":{fill:"#F0ECFE",stroke:"#818CF8",text:"#4F46E5"},
+  "pm-sub":{fill:"#F0ECFE",stroke:"#A5B4FC",text:"#4338CA"},
+  "ministries-group":{fill:"#ECFDF5",stroke:"#0FA573",text:"#065F46"},
+  ministry:{fill:"#F0FDF4",stroke:"#22C55E",text:"#166534"},
+  office:{fill:"#FFFBEB",stroke:"#F59E0B",text:"#92400E"},
+  commission:{fill:"#FEF2F2",stroke:"#E5503C",text:"#991B1B"},
+  agency:{fill:"#F5F3FF",stroke:"#8B5CF6",text:"#5B21B6"},
+};
+function gc(t){return colorMap[t]||colorMap.root;}
+const typeLabels={"root":"정부","president":"대통령","president-sub":"대통령 직속","pm":"국무총리",
+  "pm-group":"국무총리 소속","pm-sub":"국무총리 직속","ministries-group":"행정각부",
+  "ministry":"부","office":"처","commission":"위원회","agency":"청"};
+
+// ══════════════════════════════════════
+// BUDGET UTILITIES
+// ══════════════════════════════════════
+function parseBudget(s){
+  if(!s)return 0;
+  s=s.replace(/,/g,"");
+  if(s.includes("조")){
+    const n=parseFloat(s);
+    return isNaN(n)?0:n*10000; // 조→억
+  }
+  if(s.includes("억")){
+    const n=parseFloat(s);
+    return isNaN(n)?0:n;
+  }
+  return parseFloat(s)||0;
+}
+function fmtBudget(v){
+  if(v>=10000)return (v/10000).toFixed(1).replace(/\.0$/,"")+"조원";
+  if(v>=1)return v.toLocaleString()+"억원";
+  return "";
+}
+// Collect all budgets for scaling
+function collectBudgets(node,arr){
+  if(node.budget)arr.push(parseBudget(node.budget));
+  if(node.children)node.children.forEach(c=>collectBudgets(c,arr));
+  return arr;
+}
+
+// ══════════════════════════════════════
+// VIEW SWITCHING
+// ══════════════════════════════════════
+let budgetMode=false;
+let currentView="radial";
+
+document.getElementById("budgetToggle").addEventListener("click",function(){
+  budgetMode=!budgetMode;
+  this.classList.toggle("active",budgetMode);
+  if(currentView==="radial")renderRadial();
+  else renderOrgChart();
+});
+document.querySelectorAll(".view-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".view-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    currentView=btn.dataset.view;
+    hideDetail();
+    if(currentView==="radial"){
+      document.getElementById("radialView").classList.add("active");
+      document.getElementById("orgView").classList.remove("active");
+      document.getElementById("orgView").style.display="none";
+      document.getElementById("radialView").style.display="block";
+      renderRadial();
+    } else {
+      document.getElementById("radialView").classList.remove("active");
+      document.getElementById("radialView").style.display="none";
+      document.getElementById("orgView").style.display="block";
+      document.getElementById("orgView").classList.add("active");
+      renderOrgChart();
+    }
+  });
+});
+
+// ══════════════════════════════════════
+// SHARED: DETAIL PANEL
+// ══════════════════════════════════════
+function personHTML(name){
+  const p=people[name];
+  if(!p)return `<div class="person-card"><div class="person-avatar">${name[0]}</div><div class="person-info"><div class="person-name">${name}</div></div></div>`;
+  const ph=p.photo?`<img class="person-photo" src="${p.photo}" alt="${name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="person-avatar" style="display:none">${name[0]}</div>`
+    :`<div class="person-avatar">${name[0]}</div>`;
+  return `<div class="person-card">${ph}<div class="person-info"><div class="person-name">${name}</div>
+    <div class="person-role">${p.role||""}</div>${p.bio?`<div class="person-bio">${p.bio}</div>`:""}
+    ${p.date?`<div class="person-date">${p.date}</div>`:""}</div></div>`;
+}
+function showDetail(data){
+  const panel=document.getElementById("detailPanel");panel.classList.remove("hidden");
+  document.getElementById("sheetBackdrop").classList.remove("hidden");
+  const c=gc(data.type);
+  const linkIcon=`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 10l4-4M10 6v4M10 6H6M3 11V5a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`;
+  let h=`<div class="detail-header">
+    <button class="detail-close" onclick="hideDetail()">&times;</button>
+    <span class="cat-badge" style="background:${c.fill};color:${c.text};border:1px solid ${c.stroke}">${typeLabels[data.type]||"기관"}</span>
+    ${data.isNew?`<span class="new-badge">${data.isNew}</span>`:""}${data.badge?`<span class="new-badge" style="background:rgba(251,191,36,.1);color:#b45309;border-color:rgba(251,191,36,.3)">${data.badge}</span>`:""}
+    <h2>${data.name}</h2><div class="en-name">${data.nameEn||""}</div>
+    ${data.url?`<a class="detail-url" href="${data.url}" target="_blank" rel="noopener">${linkIcon} ${data.url.replace("https://","")}</a>`:""}
+  </div><div class="detail-body">`;
+
+  // 업무 설명
+  if(data.desc)h+=`<div class="detail-section"><h3>소관 업무</h3><p class="detail-desc">${data.desc}</p></div>`;
+
+  // 예산
+  if(data.budget)h+=`<div class="detail-section"><h3>예산 (2026)</h3><div class="detail-budget"><span class="label">총 예산</span> ${data.budget}</div></div>`;
+
+  // 기관장
+  if(data.head)h+=`<div class="detail-section"><h3>기관장</h3>${personHTML(data.head)}</div>`;
+
+  // 비고
+  if(data.note)h+=`<div class="detail-section"><h3>비고</h3><p style="font-size:13px;color:var(--gray-60)">${data.note}</p></div>`;
+
+  // 내부 조직 (실/국/본부)
+  if(data.divisions?.length){
+    h+=`<div class="detail-section"><h3>내부 조직</h3><div class="detail-divisions">`;
+    data.divisions.forEach(d=>h+=`<span class="detail-div-tag">${d}</span>`);
+    h+=`</div></div>`;
+  }
+
+  // 산하기관
+  if(data.children?.length){
+    h+=`<div class="detail-section"><h3>산하기관 (${data.children.length})</h3><div class="sub-org-list">`;
+    data.children.forEach(ch=>{
+      const cc=gc(ch.type);
+      h+=`<div class="sub-org-item" onclick="navChild('${ch.name.replace(/'/g,"\\'")}')">
+        <div class="sub-org-dot" style="background:${cc.stroke}"></div>
+        <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:500">${ch.name}${ch.isNew?`<span class="new-badge">${ch.isNew}</span>`:""}</div>
+        ${ch.head?`<div style="font-size:11px;color:var(--gray-50);margin-top:1px">${ch.head}</div>`:""}</div>
+        ${ch.children?`<span class="sub-org-head">${ch.children.length}개 ›</span>`:""}</div>`;
+    });
+    h+=`</div></div>`;
+  }
+  h+=`</div>`;panel.innerHTML=h;
+}
+function hideDetail(){
+  const p=document.getElementById("detailPanel");
+  p.classList.add("hidden");
+  p.classList.remove("expanded");
+  document.getElementById("sheetBackdrop").classList.add("hidden");
+}
+window.navChild=function(name){
+  function find(n){if(n.name===name)return n;if(n.children)for(const c of n.children){const f=find(c);if(f)return f;}return null;}
+  const t=find(govData);if(t)showDetail(t);
+};
+
+// ══════════════════════════════════════
+// RADIAL TREE VIEW
+// ══════════════════════════════════════
+const radialSvg=d3.select("#radialSvg");
+const radialG=radialSvg.append("g");
+const radialZoom=d3.zoom().scaleExtent([.3,5]).on("zoom",e=>radialG.attr("transform",e.transform));
+radialSvg.call(radialZoom);
+document.getElementById("zoomIn").onclick=()=>radialSvg.transition().duration(300).call(radialZoom.scaleBy,1.4);
+document.getElementById("zoomOut").onclick=()=>radialSvg.transition().duration(300).call(radialZoom.scaleBy,.7);
+document.getElementById("zoomReset").onclick=()=>renderRadial();
+
+function flattenForRadial(data){
+  // Flatten pm-group and ministries-group so children are directly under PM/ministries
+  const clone=JSON.parse(JSON.stringify(data));
+  function flatten(node){
+    if(!node.children)return node;
+    let newChildren=[];
+    for(const ch of node.children){
+      if(ch.type==="pm-group"||ch.type==="ministries-group"){
+        // Hoist the grandchildren, but keep group label for ref
+        if(ch.children)ch.children.forEach(gc=>{gc._group=ch.name;newChildren.push(flatten(gc));});
+      } else {
+        newChildren.push(flatten(ch));
+      }
+    }
+    node.children=newChildren;
+    return node;
+  }
+  // Only flatten 2nd level (president and pm children)
+  clone.children.forEach(top=>{
+    if(top.children){
+      let nc=[];
+      for(const ch of top.children){
+        if(ch.type==="pm-group"){
+          if(ch.children)ch.children.forEach(g=>{g._group=ch.name;nc.push(g);});
+        } else nc.push(ch);
+      }
+      top.children=nc;
+    }
+  });
+  // Also flatten ministries-group
+  let newTop=[];
+  for(const top of clone.children){
+    if(top.type==="ministries-group"){
+      if(top.children)top.children.forEach(m=>newTop.push(m));
+    } else newTop.push(top);
+  }
+  clone.children=newTop;
+  return clone;
+}
+
+// ══════════════════════════════════════
+// HOVER RELATIONSHIP HIGHLIGHT
+// ══════════════════════════════════════
+function getAncestors(d){
+  const path=[];let cur=d;
+  while(cur){path.unshift(cur);cur=cur.parent;}
+  return path;
+}
+function getDescendants(d){
+  const all=[];
+  function walk(n){all.push(n);if(n.children)n.children.forEach(walk);}
+  walk(d);return all;
+}
+function isMobileView(){return window.innerWidth<768;}
+function handleHover(event,d,allNodes,allLinks,root,isOver){
+  if(isMobileView())return; // Mobile: no hover, use bottom sheet via click
+  const tooltip=document.getElementById("hoverTooltip");
+  if(!isOver||d.depth===0){
+    // Reset
+    allNodes.classed("dimmed",false).classed("highlighted",false);
+    allLinks.classed("dimmed",false).classed("highlighted",false);
+    tooltip.classList.remove("show");
+    return;
+  }
+  // Build set of related node IDs: ancestors + descendants
+  const ancestors=getAncestors(d);
+  const descendants=getDescendants(d);
+  const related=new Set([...ancestors,...descendants].map(n=>n.data.name));
+
+  // Dim unrelated, highlight related
+  allNodes.classed("dimmed",n=>!related.has(n.data.name));
+  allNodes.classed("highlighted",n=>related.has(n.data.name));
+  allLinks.classed("dimmed",l=>!related.has(l.source.data.name)||!related.has(l.target.data.name));
+  allLinks.classed("highlighted",l=>related.has(l.source.data.name)&&related.has(l.target.data.name));
+
+  // Build tooltip
+  const data=d.data;
+  const c=gc(data.type);
+  const pathSegs=ancestors.map(a=>`<span class="ht-seg" style="background:${gc(a.data.type).fill};color:${gc(a.data.type).text}">${a.data.name}</span>`);
+  const pathHTML=pathSegs.join('<span class="ht-arrow">›</span>');
+
+  let headHTML="";
+  if(data.head){
+    const p=people[data.head];
+    const avatar=p?.photo?`<img src="${p.photo}" onerror="this.style.display='none'">`
+      :`<div class="ht-head-avatar">${data.head[0]}</div>`;
+    headHTML=`<div class="ht-head">${avatar}<div class="ht-head-info"><div class="ht-head-name">${data.head}</div><div class="ht-head-role">${p?.role||""}</div></div></div>`;
+  }
+
+  tooltip.innerHTML=`
+    <div class="ht-path">${pathHTML}</div>
+    <div class="ht-name">${data.name}</div>
+    ${data.desc?`<div class="ht-desc">${data.desc}</div>`:""}
+    ${data.budget?`<div style="margin-top:6px;font-size:12px;color:var(--gray-60)">예산: <strong style="color:var(--gray-80)">${data.budget}</strong></div>`:""}
+    ${headHTML}`;
+  tooltip.classList.add("show");
+
+  // Position tooltip near cursor
+  const area=document.getElementById("radialView").getBoundingClientRect();
+  let tx=event.clientX-area.left+16;
+  let ty=event.clientY-area.top+16;
+  // Keep within bounds
+  tooltip.style.left="0";tooltip.style.top="0";
+  const tw=tooltip.offsetWidth,th=tooltip.offsetHeight;
+  if(tx+tw>area.width-10)tx=event.clientX-area.left-tw-16;
+  if(ty+th>area.height-10)ty=event.clientY-area.top-th-16;
+  if(tx<10)tx=10;if(ty<10)ty=10;
+  tooltip.style.left=tx+"px";
+  tooltip.style.top=ty+"px";
+}
+
+function renderRadial(){
+  const area=document.getElementById("radialView");
+  const W2=area.clientWidth,H=area.clientHeight;
+  radialG.selectAll("*").remove();
+  const isMobile=W2<768;
+
+  // Desktop: fill viewport. Mobile: render large, then auto-fit.
+  const radius=isMobile?Math.max(340,Math.max(W2,H)/2-40):(Math.min(W2,H)/2-80);
+
+  const flat=flattenForRadial(govData);
+  const root=d3.hierarchy(flat);
+  const sep=isMobile?((a,b)=>(a.parent===b.parent?1:1.6)/a.depth):((a,b)=>(a.parent===b.parent?1:2)/a.depth);
+  const tree=d3.tree().size([2*Math.PI,radius]).separation(sep);
+  tree(root);
+
+  // Desktop: center in viewport. Mobile: render at origin, auto-fit later.
+  const cx=isMobile?0:W2/2, cy=isMobile?0:H/2;
+
+  // Concentric rings
+  [1,2,3].forEach(i=>{
+    const r=radius*i/3;
+    radialG.append("circle").attr("class","radial-ring").attr("cx",cx).attr("cy",cy).attr("r",r);
+  });
+
+  // Links
+  radialG.selectAll(".radial-link").data(root.links()).enter().append("path").attr("class","radial-link")
+    .attr("d",d3.linkRadial().angle(d=>d.x).radius(d=>d.y)
+      .source(d=>({...d.source,x:d.source.x,y:d.source.y}))
+      .target(d=>({...d.target,x:d.target.x,y:d.target.y})))
+    .attr("transform",`translate(${cx},${cy})`)
+    .attr("stroke",d=>{const c=gc(d.target.data.type);return c.stroke;}).attr("stroke-opacity",.4);
+
+  // Nodes
+  const allLinks=radialG.selectAll(".radial-link");
+  const node=radialG.selectAll(".radial-node").data(root.descendants()).enter().append("g")
+    .attr("class","radial-node")
+    .attr("transform",d=>{
+      if(d.depth===0)return `translate(${cx},${cy})`;
+      const a=d.x-Math.PI/2;
+      return `translate(${cx+d.y*Math.cos(a)},${cy+d.y*Math.sin(a)})`;
+    })
+    .on("click",(e,d)=>{e.stopPropagation();showDetail(d.data);})
+    .on("mouseover",(e,d)=>handleHover(e,d,node,allLinks,root,true))
+    .on("mouseout",(e,d)=>handleHover(e,d,node,allLinks,root,false));
+
+  // Root (president photo)
+  const rootNode=node.filter(d=>d.depth===0);
+  const pPhoto=people["이재명"]?.photo;
+  if(pPhoto){
+    const pr=36;
+    rootNode.append("defs").append("clipPath").attr("id","rootClip").append("circle").attr("r",pr);
+    rootNode.append("circle").attr("r",pr+3).attr("fill","#246BEB").attr("opacity",.15);
+    rootNode.append("circle").attr("r",pr+3).attr("fill","none").attr("stroke","#246BEB").attr("stroke-width",2);
+    rootNode.append("image").attr("href",pPhoto).attr("x",-pr).attr("y",-pr).attr("width",pr*2).attr("height",pr*2)
+      .attr("clip-path","url(#rootClip)").attr("pointer-events","none");
+    rootNode.append("text").attr("y",pr+18).attr("text-anchor","middle").attr("font-size","14px").attr("font-weight","800")
+      .attr("fill","#12429D").text("이재명");
+    rootNode.append("text").attr("y",pr+32).attr("text-anchor","middle").attr("font-size","10px").attr("fill","#8D929B").text("대통령");
+  }
+
+  // Budget scale for radial
+  const allBudgets=collectBudgets(govData,[]);
+  const maxBudget=Math.max(...allBudgets,1);
+  const budgetScale=d3.scaleSqrt().domain([0,maxBudget]).range([12,50]);
+
+  // Depth 1 nodes (president-sub, pm, ministries)
+  const d1=node.filter(d=>d.depth===1);
+  d1.each(function(d){
+    const el=d3.select(this);const c=gc(d.data.type);
+    const p=d.data.head?people[d.data.head]:null;
+    const hasPhoto=p?.photo;
+    const bv=parseBudget(d.data.budget);
+    const nr=budgetMode&&bv?budgetScale(bv):(hasPhoto?20:16);
+    if(hasPhoto&&!(budgetMode&&bv)){
+      const cid="clip"+Math.random().toString(36).substr(2,6);
+      el.append("defs").append("clipPath").attr("id",cid).append("circle").attr("r",nr);
+      el.append("circle").attr("r",nr+2).attr("fill",c.fill).attr("stroke",c.stroke).attr("stroke-width",2);
+      el.append("image").attr("href",p.photo).attr("x",-nr).attr("y",-nr).attr("width",nr*2).attr("height",nr*2)
+        .attr("clip-path",`url(#${cid})`).attr("pointer-events","none");
+    } else if(budgetMode&&bv){
+      el.append("circle").attr("r",nr).attr("fill",c.fill).attr("fill-opacity",.7).attr("stroke",c.stroke).attr("stroke-width",2);
+      el.append("text").attr("class","budget-label").attr("dy",".35em").attr("font-size",Math.max(8,nr/3)+"px")
+        .attr("fill",c.text).text(fmtBudget(bv));
+    } else {
+      el.append("circle").attr("r",nr).attr("fill",c.fill).attr("stroke",c.stroke).attr("stroke-width",2);
+      if(d.data.head)el.append("text").attr("text-anchor","middle").attr("dy",".35em").attr("font-size","10px")
+        .attr("font-weight","700").attr("fill",c.text).text(d.data.head[0]);
+    }
+    // Label
+    const a=d.x-Math.PI/2;const deg=a*180/Math.PI;
+    const flip=deg>90||deg<-90;
+    const labelG=el.append("g").attr("transform",`rotate(${flip?deg+180:deg})`);
+    const tx=flip?-(nr+8):(nr+8);
+    const fs1=isMobile?"10px":"12px";
+    const nameText=isMobile&&d.data.name.length>8?d.data.name.slice(0,7)+"…":d.data.name;
+    labelG.append("text").attr("x",tx).attr("dy","-0.2em").attr("text-anchor",flip?"end":"start")
+      .attr("font-size",fs1).attr("font-weight","600").attr("fill",c.text).text(nameText);
+    if(d.data.head&&!isMobile)labelG.append("text").attr("x",tx).attr("dy","1em").attr("text-anchor",flip?"end":"start")
+      .attr("font-size","10px").attr("fill","#8D929B").text(d.data.head);
+  });
+
+  // Depth 2 nodes (agencies)
+  const d2=node.filter(d=>d.depth===2);
+  d2.each(function(d){
+    const el=d3.select(this);const c=gc(d.data.type);
+    const bv2=parseBudget(d.data.budget);
+    const nr=budgetMode&&bv2?budgetScale(bv2):(d.data.head&&people[d.data.head]?.photo?12:8);
+    const p=d.data.head?people[d.data.head]:null;
+    if(budgetMode&&bv2){
+      el.append("circle").attr("r",nr).attr("fill",c.fill).attr("fill-opacity",.7).attr("stroke",c.stroke).attr("stroke-width",1.5);
+      if(nr>14)el.append("text").attr("class","budget-label").attr("dy",".35em").attr("font-size",Math.max(7,nr/3.5)+"px").attr("fill",c.text).text(fmtBudget(bv2));
+    } else if(p?.photo){
+      const cid="clip"+Math.random().toString(36).substr(2,6);
+      el.append("defs").append("clipPath").attr("id",cid).append("circle").attr("r",nr);
+      el.append("circle").attr("r",nr+1).attr("fill",c.fill).attr("stroke",c.stroke).attr("stroke-width",1.5);
+      el.append("image").attr("href",p.photo).attr("x",-nr).attr("y",-nr).attr("width",nr*2).attr("height",nr*2)
+        .attr("clip-path",`url(#${cid})`).attr("pointer-events","none");
+    } else {
+      el.append("circle").attr("r",nr).attr("fill",c.fill).attr("stroke",c.stroke).attr("stroke-width",1.5);
+    }
+    const a=d.x-Math.PI/2;const deg=a*180/Math.PI;const flip=deg>90||deg<-90;
+    const labelG=el.append("g").attr("transform",`rotate(${flip?deg+180:deg})`);
+    const tx=flip?-(nr+6):(nr+6);
+    const fs2=isMobile?"8px":"10px";
+    const maxLen=isMobile?6:10;
+    labelG.append("text").attr("x",tx).attr("dy",".35em").attr("text-anchor",flip?"end":"start")
+      .attr("font-size",fs2).attr("font-weight","500").attr("fill",c.text)
+      .text(d.data.name.length>maxLen?d.data.name.slice(0,maxLen-1)+"…":d.data.name);
+  });
+
+  // New badge dots
+  node.filter(d=>d.data.isNew).append("circle")
+    .attr("cx",d=>d.depth===0?0:8).attr("cy",d=>d.depth===0?0:-8)
+    .attr("r",4).attr("fill","#0891b2").attr("stroke","#fff").attr("stroke-width",1.5);
+
+  // Mobile only: auto-fit zoom to viewport
+  if(isMobile){
+    const bbox=radialG.node().getBBox();
+    if(bbox.width>0&&bbox.height>0){
+      const pad=20;
+      const scale=Math.min((W2-pad*2)/bbox.width,(H-pad*2)/bbox.height);
+      const tx=W2/2-(bbox.x+bbox.width/2)*scale;
+      const ty=H/2-(bbox.y+bbox.height/2)*scale;
+      radialSvg.call(radialZoom.transform,d3.zoomIdentity.translate(tx,ty).scale(scale));
+    }
+  } else {
+    radialSvg.call(radialZoom.transform,d3.zoomIdentity);
+  }
+
+  radialSvg.on("click",()=>{hideDetail();document.getElementById("hoverTooltip").classList.remove("show");});
+}
+
+// ══════════════════════════════════════
+// ORG CHART VIEW
+// ══════════════════════════════════════
+function orgCard(d,accentColor){
+  const c=gc(d.type);const p=d.head?people[d.head]:null;
+  const photo=p?.photo?`<img class="org-card-photo" src="${p.photo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="org-card-avatar" style="display:none">${d.head[0]}</div>`
+    :d.head?`<div class="org-card-avatar" style="background:${c.fill};color:${c.text}">${d.head[0]}</div>`:"";
+  const badges=[];
+  if(d.badge)badges.push(`<span class="badge vpm">${d.badge}</span>`);
+  if(d.isNew){
+    const cls=d.isNew.includes("명칭")?"renamed":"new";
+    badges.push(`<span class="badge ${cls}">${d.isNew}</span>`);
+  }
+  const subs=d.children?d.children.map(ch=>`<span class="org-card-sub">${ch.name}${ch.head?" · "+ch.head:""}</span>`).join(""):"";
+  const bv=parseBudget(d.budget);
+  const budgetBar=budgetMode&&bv?`<div class="org-card-budget-bar"><div class="org-card-budget-fill" style="width:${Math.min(100,bv/1200)}%;background:${c.stroke}"></div></div><div class="org-card-budget-text">${d.budget}</div>`:"";
+  return `<div class="org-card" onclick="showDetail(findNode('${d.name.replace(/'/g,"\\'")}'))">
+    <div class="accent" style="background:${accentColor||c.stroke}"></div>
+    <div class="org-card-top">${photo}
+      <div class="org-card-info"><div class="org-card-name">${d.name}</div><div class="org-card-en">${d.nameEn||""}</div>
+      ${d.head?`<div class="org-card-head">${d.head}${p?.role?" · "+p.role.split("겸")[0].trim():""}</div>`:""}</div>
+    </div>
+    ${badges.length?`<div class="org-card-badges">${badges.join("")}</div>`:""}
+    ${budgetBar}
+    ${subs?`<div class="org-card-subs">${subs}</div>`:""}
+  </div>`;
+}
+
+function tierCard(name,cls){
+  const p=people[name];if(!p)return"";
+  const photo=p.photo?`<img class="org-tier-photo" src="${p.photo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="org-tier-avatar" style="display:none">${name[0]}</div>`
+    :`<div class="org-tier-avatar">${name[0]}</div>`;
+  return `<div class="org-tier"><div class="org-tier-card ${cls||""}">
+    ${photo}<div class="org-tier-info"><div class="org-tier-role">${p.role?.split(",")[0]||""}</div>
+    <div class="org-tier-name">${name}</div><div class="org-tier-date">${p.date||""}</div></div></div></div>`;
+}
+
+function renderOrgChart(){
+  const el=document.getElementById("orgView");
+  const pres=govData.children[0];const pm=govData.children[1];const mins=govData.children[2];
+
+  let h=`<div class="org-section">`;
+  // President
+  h+=tierCard("이재명","");
+  h+=`<div class="org-connector"><div class="line"></div></div>`;
+
+  // Dual branch
+  h+=`<div class="org-dual"><div>`;
+
+  // 대통령 직속
+  h+=`<div class="org-section-header"><div class="dot" style="background:var(--c-president)"></div>
+    <h2>대통령 직속기관</h2><span class="count">${pres.children.length}개</span></div>`;
+  h+=`<div class="org-grid compact">`;
+  pres.children.forEach(d=>h+=orgCard(d,"#60A5FA"));
+  h+=`</div></div><div>`;
+
+  // 국무총리
+  h+=tierCard("김민석","pm");
+  h+=`<div class="org-connector pm"><div class="line"></div></div>`;
+
+  // 처
+  const offices=pm.children.find(c=>c.name.includes("처"));
+  if(offices){
+    h+=`<div class="org-section-header"><div class="dot" style="background:var(--c-office)"></div>
+      <h2>국무총리 소속 처</h2><span class="count">${offices.children.length}개</span></div>`;
+    h+=`<div class="org-grid compact">`;
+    offices.children.forEach(d=>h+=orgCard(d));
+    h+=`</div>`;
+  }
+  // 위원회
+  const comms=pm.children.find(c=>c.name.includes("위원회"));
+  if(comms){
+    h+=`<div class="org-section-header" style="margin-top:20px"><div class="dot" style="background:var(--c-commission)"></div>
+      <h2>국무총리 소속 위원회</h2><span class="count">${comms.children.length}개</span></div>`;
+    h+=`<div class="org-grid compact">`;
+    comms.children.forEach(d=>h+=orgCard(d));
+    h+=`</div>`;
+  }
+  // 직속
+  const direct=pm.children.find(c=>c.name.includes("직속"));
+  if(direct){
+    h+=`<div class="org-section-header" style="margin-top:20px"><div class="dot" style="background:var(--c-pm)"></div>
+      <h2>총리 직속</h2><span class="count">${direct.children.length}개</span></div>`;
+    h+=`<div class="org-grid compact">`;
+    direct.children.forEach(d=>h+=orgCard(d));
+    h+=`</div>`;
+  }
+
+  h+=`</div></div>`;// close dual
+
+  // 행정각부
+  const sortedMins=budgetMode?[...mins.children].sort((a,b)=>parseBudget(b.budget)-parseBudget(a.budget)):mins.children;
+  h+=`<div class="org-section-header" style="margin-top:36px"><div class="dot" style="background:var(--c-ministry)"></div>
+    <h2>행정각부 — 19부${budgetMode?" (예산순)":""}</h2><span class="count">Ministries</span></div>`;
+  h+=`<div class="org-grid">`;
+  sortedMins.forEach(d=>h+=orgCard(d));
+  h+=`</div></div>`;
+
+  el.innerHTML=h;
+}
+
+// Global helper
+window.findNode=function(name){
+  function f(n){if(n.name===name)return n;if(n.children)for(const c of n.children){const r=f(c);if(r)return r;}return null;}
+  return f(govData);
+};
+window.showDetail=showDetail;
+
+// ══════════════════════════════════════
+// BOTTOM SHEET SWIPE (mobile) — 3 snaps: closed / half(55vh) / full(92vh)
+// ══════════════════════════════════════
+(function(){
+  const panel=document.getElementById("detailPanel");
+  let startY=0,currentY=0,dragging=false;
+
+  panel.addEventListener("touchstart",e=>{
+    const t=e.touches[0];
+    const rect=panel.getBoundingClientRect();
+    if(t.clientY-rect.top>48)return; // only handle area
+    startY=t.clientY;currentY=startY;dragging=true;
+    panel.style.transition="none";
+  },{passive:true});
+
+  panel.addEventListener("touchmove",e=>{
+    if(!dragging)return;
+    currentY=e.touches[0].clientY;
+    const dy=currentY-startY;
+    // Drag down: translate down. Drag up: shrink translate (expand sheet).
+    if(dy>0){
+      panel.style.transform=`translateY(${dy}px)`;
+    } else {
+      // Resist upward drag slightly for feel
+      panel.style.transform=`translateY(${dy*0.4}px)`;
+    }
+  },{passive:true});
+
+  panel.addEventListener("touchend",()=>{
+    if(!dragging)return;
+    dragging=false;
+    panel.style.transition="";
+    panel.style.transform="";
+    const dy=currentY-startY;
+    const isExpanded=panel.classList.contains("expanded");
+
+    if(dy>80){
+      // Swipe down: if expanded → collapse to half, if half → close
+      if(isExpanded){panel.classList.remove("expanded");}
+      else{hideDetail();}
+    } else if(dy<-60){
+      // Swipe up: expand to full
+      panel.classList.add("expanded");
+    }
+  });
+})();
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+renderRadial();
+window.addEventListener("resize",()=>{if(currentView==="radial")renderRadial();});
+radialSvg.on("click",()=>hideDetail());
+</script>
+</body>
+</html>
