@@ -1251,7 +1251,7 @@ function renderRadial(){
     const hasPhoto=p?.photo;
     const bv=parseBudget(d.data.budget);
     const nr=budgetMode&&bv?budgetScale(bv):(hasPhoto?20:16);
-    if(hasPhoto&&!(budgetMode&&bv)){
+    if(hasPhoto&&!budgetMode){
       const cid="clip"+Math.random().toString(36).substr(2,6);
       el.append("defs").append("clipPath").attr("id",cid).append("circle").attr("r",nr);
       el.append("circle").attr("r",nr+2).attr("fill",c.fill).attr("stroke",c.stroke).attr("stroke-width",2);
@@ -1289,7 +1289,7 @@ function renderRadial(){
     if(budgetMode&&bv2){
       el.append("circle").attr("r",nr).attr("fill",c.fill).attr("fill-opacity",.7).attr("stroke",c.stroke).attr("stroke-width",1.5);
       if(nr>14)el.append("text").attr("class","budget-label").attr("dy",".35em").attr("font-size",Math.max(7,nr/3.5)+"px").attr("fill",c.text).text(fmtBudget(bv2));
-    } else if(p?.photo){
+    } else if(p?.photo&&!budgetMode){
       const cid="clip"+Math.random().toString(36).substr(2,6);
       el.append("defs").append("clipPath").attr("id",cid).append("circle").attr("r",nr);
       el.append("circle").attr("r",nr+1).attr("fill",c.fill).attr("stroke",c.stroke).attr("stroke-width",1.5);
