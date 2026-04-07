@@ -1,0 +1,118 @@
+import fs from "node:fs";
+import vm from "node:vm";
+
+const EXPECTED_COUNTS = {
+  ministry: 19,
+  office: 6,
+  agency: 18,
+  commission: 6,
+};
+
+const errors = [];
+
+function normalizeText(value) {
+  return value.replace(/\r\n/g, "\n").replace(/[ \t]+$/gm, "").trim();
+}
+
+function extractCore(source) {
+  const start = source.indexOf('const W="https://upload.wikimedia.org/wikipedia/commons/thumb/";');
+  const end = source.indexOf("const divisionHeads=");
+  if (start === -1 || end === -1 || end <= start) {
+    return null;
+  }
+  return source.slice(start, end);
+}
+
+function isPlannedNode(node) {
+  return node.status === "planned" || (typeof node.isNew === "string" && node.isNew.includes("신설예정"));
+}
+
+function isBudgetStringValid(value) {
+  if (typeof value !== "string") return false;
+  const input = value.replace(/\s+/g, "");
+  const chunk = "(?:\\d{1,3}(?:,\\d{3})*|\\d+)";
+  const amount = `${chunk}(?:\\.\\d+)?`;
+  const re = new RegExp(`^${amount}(?:조|억)$`);
+  return re.test(input);
+}
+
+const dataJs = fs.readFileSync("data.js", "utf8");
+const indexHtml = fs.readFileSync("index.html", "utf8");
+
+const dataCore = extractCore(dataJs);
+const inlineCore = extractCore(indexHtml);
+if (!dataCore || !inlineCore) {
+  errors.push("Failed to extract data blocks from index.html or data.js.");
+} else if (normalizeText(dataCore) !== normalizeText(inlineCore)) {
+  errors.push("index.html inline data is not synchronized with data.js.");
+}
+
+const context = {};
+vm.createContext(context);
+vm.runInContext(
+  `${dataJs}\nthis.__exported = { people, govData };`,
+  context,
+  { filename: "data.js" },
+);
+
+const { people, govData } = context.__exported ?? {};
+if (!people || !govData) {
+  errors.push("Failed to evaluate people/govData from data.js.");
+}
+
+const seenNodeNames = new Set();
+const duplicateNodeNames = new Set();
+const counts = { ministry: 0, office: 0, agency: 0, commission: 0 };
+
+function walk(node) {
+  if (!node || typeof node !== "object") return;
+
+  if (typeof node.name === "string" && node.name.length > 0) {
+    if (seenNodeNames.has(node.name)) {
+      duplicateNodeNames.add(node.name);
+    } else {
+      seenNodeNames.add(node.name);
+    }
+  }
+
+  if (node.head && !people?.[node.head]) {
+    errors.push(`Missing people entry for head "${node.head}" on node "${node.name}".`);
+  }
+
+  if (Object.prototype.hasOwnProperty.call(node, "budget") && node.budget && !isBudgetStringValid(node.budget)) {
+    errors.push(`Invalid budget format "${node.budget}" on node "${node.name}".`);
+  }
+
+  if (!isPlannedNode(node) && counts[node.type] !== undefined) {
+    counts[node.type] += 1;
+  }
+
+  if (Array.isArray(node.children)) {
+    node.children.forEach(walk);
+  }
+}
+
+walk(govData);
+
+if (duplicateNodeNames.size > 0) {
+  errors.push(`Duplicate node names: ${Array.from(duplicateNodeNames).sort().join(", ")}`);
+}
+
+for (const key of Object.keys(EXPECTED_COUNTS)) {
+  if (counts[key] !== EXPECTED_COUNTS[key]) {
+    errors.push(`Count mismatch for ${key}: expected ${EXPECTED_COUNTS[key]}, got ${counts[key]}.`);
+  }
+}
+
+if (errors.length > 0) {
+  console.error("Validation failed:");
+  for (const err of errors) {
+    console.error(`- ${err}`);
+  }
+  process.exit(1);
+}
+
+console.log("Validation passed.");
+console.log(
+  `Counts (current): ministries=${counts.ministry}, offices=${counts.office}, agencies=${counts.agency}, commissions=${counts.commission}`,
+);

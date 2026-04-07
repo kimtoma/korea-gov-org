@@ -25,7 +25,7 @@
 
 ### 데이터
 
-- **49개 기관** — 19부, 6처, 19청, 5위원회
+- **49개 기관** — 19부, 6처, 18청, 6위원회 (공식 현행 기준)
 - **기관장 프로필** — 40명+ 이름·직위·경력·취임일, 17장 Wikipedia 공식 사진
 - **예산 시각화** — 2026년 예산안 기준, 노드 크기 비례 + 정렬 모드
 - **업무 설명** — 각 기관 소관 업무 1~2문장
@@ -52,6 +52,7 @@
 - **D3.js v7** — radial tree layout, zoom, circle packing
 - **Vanilla HTML/CSS/JS** — 프레임워크 없음, 단일 `index.html` (인라인 데이터)
 - **Pretendard** — 폰트 (KRDS 정부 디자인시스템 참고)
+- **청와대 컬러 시스템** — [president.go.kr](https://www.president.go.kr) CSS 토큰 기반 라이트/다크 모드
 - **Cloudflare Pages** — 호스팅 + Web Analytics
 
 ## 파일 구조
@@ -62,7 +63,7 @@ data.js         # 데이터 원본 (index.html에도 인라인 복사본 포함)
 favicon.svg     # SVG 파비콘
 og-image.svg    # OG 이미지 소스 (SVG)
 og-image.png    # OG 이미지 (1200x630)
-CHANGELOG.md    # v0~v14 변경 이력
+CHANGELOG.md    # v0~v23 변경 이력
 CLAUDE.md       # Claude Code 작업 지침
 README.md       # 프로젝트 문서
 ```
@@ -74,6 +75,12 @@ README.md       # 프로젝트 문서
 wrangler pages deploy . --project-name korea-gov-org
 ```
 
+## 데이터 검증
+
+```bash
+node scripts/validate-data.mjs
+```
+
 ## 데이터 출처
 
 | 출처 | 용도 |
@@ -83,8 +90,9 @@ wrangler pages deploy . --project-name korea-gov-org
 | [대한민국 정책브리핑](https://www.korea.kr) | 장관 후보자 지명, 차관급 인사 |
 | [나무위키: 이재명 정부/인사](https://namu.wiki/w/이재명%20정부/인사) | 청장·처장·위원장급 인사 |
 | 각 부처 공식 홈페이지 | 업무 소개, 조직도 |
-| 2026년 정부 예산안 | 부처별 예산 (일부 추정치) |
+| 2026년 정부 예산안·보도자료 | 부처별 예산 규모 및 정책 변화 확인 |
 | [KRDS](https://www.krds.go.kr) | UI/UX 디자인 가이드라인 참고 |
+| [대한민국 대통령실](https://www.president.go.kr) | 컬러 시스템 (라이트/다크 모드 토큰) |
 | [machineryofgovernment.uk](https://machineryofgovernment.uk) | 인터랙션 디자인 참고 |
 
 ## 만든 사람

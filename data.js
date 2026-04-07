@@ -1,7 +1,7 @@
 // ══════════════════════════════════════
 // 대한민국 정부조직도 데이터
-// 출처: 위키백과, 정부24, 대한민국 정책브리핑, 각 부처 공식 홈페이지
-// 최종 업데이트: 2026년 4월
+// 출처: 정부24, 각 부처 공식 홈페이지, 대한민국 정책브리핑, 위키백과(보조)
+// 최종 검증 기준일: 2026-04-07
 // ══════════════════════════════════════
 const W="https://upload.wikimedia.org/wikipedia/commons/thumb/";
 
@@ -68,7 +68,7 @@ const people={
 };
 
 const govData={name:"대한민국 정부",nameEn:"Government of the Republic of Korea",type:"root",
-  desc:"대한민국 헌법에 의거하여 구성된 정부로, 대통령을 수반으로 하는 행정부와 그 산하기관으로 이루어져 있다. 19부 6처 19청 5위원회로 구성된다.",
+  desc:"대한민국 헌법에 의거하여 구성된 정부로, 대통령을 수반으로 하는 행정부와 그 산하기관으로 이루어져 있다. 19부 6처 18청 6위원회(공식 현행 기준)로 구성된다.",
   url:"https://www.gov.kr",
   children:[
   // ═══ 대통령 ═══
@@ -104,7 +104,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       desc:"인권 보호와 향상을 위한 정책 권고, 차별 행위 조사, 인권 교육을 수행하는 독립 국가기관이다.",
       budget:"490억",
         divisions:["정책교육국","침해조사국","차별시정국","군인권보호국"]},
-    {name:"방송미디어통신위원회",nameEn:"Broadcasting & Media Commission",type:"president-sub",head:"김종철",isNew:"2025.10 신설",
+    {name:"방송미디어통신위원회",nameEn:"Broadcasting & Media Commission",type:"commission",head:"김종철",isNew:"2025.10 신설",
       url:"https://www.kmcc.go.kr",
       desc:"방송·미디어·통신 분야의 규제·감독, 미디어 다양성 보장, 이용자 보호 등을 담당한다. 방송통신위원회를 폐지하고 신설.",
         divisions:["방송정책국","방송통신이용자정책국","방송미디어진흥국","방송기반국"]}
@@ -132,11 +132,13 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         desc:"국가 재정 운용 계획, 예산 편성·배분·집행 관리, 공공기관 관리를 담당한다. 기획재정부에서 예산 기능이 분리되어 신설.",
         divisions:["예산총괄국","예산관리국","재정혁신국","공공기관관리국"]},
       {name:"국가데이터처",nameEn:"Ministry of National Data",type:"office",head:"안형준",isNew:"통계청 승격",
-        url:"https://kostat.go.kr",
-        desc:"국가 통계 생산·관리, 공공데이터 개방·활용, 데이터 기반 행정 혁신을 담당한다. 통계청에서 승격.",budget:"4,567억"},
+        url:"https://mods.go.kr",
+        desc:"국가 통계 생산·관리, 공공데이터 개방·활용, 데이터 기반 행정 혁신을 담당한다. 통계청에서 승격.",budget:"4,567억",
+        divisions:["데이터정책국","통계기획국","통계분석국","국가통계센터"]},
       {name:"지식재산처",nameEn:"Ministry of Intellectual Property",type:"office",head:"김용선",isNew:"특허청 승격",
         url:"https://www.kipo.go.kr",
-        desc:"특허·실용신안·디자인·상표 등 산업재산권의 출원·심사·등록과 지식재산 정책을 담당한다. 특허청에서 승격.",budget:"6,308억"}
+        desc:"특허·실용신안·디자인·상표 등 산업재산권의 출원·심사·등록과 지식재산 정책을 담당한다. 특허청에서 승격.",budget:"6,308억",
+        divisions:["특허심사정책국","상표디자인심사국","국제지식재산국","지식재산정책국"]}
     ]},
     {name:"국무총리 소속 위원회",nameEn:"PM Commissions",type:"pm-group",children:[
       {name:"공정거래위원회",nameEn:"Fair Trade Commission",type:"commission",head:"주병기",
@@ -223,7 +225,10 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"4.7조",
       divisions:["기획조정실","법무실","인권국","교정본부","출입국·외국인정책본부"],
       children:[
-        {name:"공소청",nameEn:"Prosecution Service",type:"agency",isNew:"2026.10 신설예정",
+        {name:"검찰청",nameEn:"Prosecution Service",type:"agency",
+          url:"https://www.spo.go.kr",
+          desc:"검찰 사무를 총괄하며 공소 유지, 형사사법 절차 지원, 범죄 피해자 보호 등을 담당한다."},
+        {name:"공소청",nameEn:"Public Prosecution Office",type:"agency",status:"planned",isNew:"2026.10 신설예정",
           desc:"검찰청 폐지 후 기소 기능을 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
     ]},
     {name:"국방부",nameEn:"Min. of National Defense",type:"ministry",head:"안규백",
@@ -251,7 +256,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         {name:"소방청",nameEn:"National Fire Agency",type:"agency",head:"김승룡",
           url:"https://www.nfa.go.kr",desc:"화재 예방·진압, 구조·구급, 소방산업 육성을 담당한다.",budget:"1.5조",
         divisions:["119대응국","화재예방국","장비기술국","119종합상황실"]},
-        {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",isNew:"2026.10 신설예정",
+        {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",status:"planned",isNew:"2026.10 신설예정",
           desc:"검찰청 폐지 후 중대범죄 수사를 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
     ]},
     {name:"문화체육관광부",nameEn:"Min. of Culture & Tourism",type:"ministry",head:"최휘영",
@@ -350,13 +355,13 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
 
 // ═══ 데이터 출처 ═══
 const sources = [
-  {name:"정부24 중앙행정기관 조직도",url:"https://www.gov.kr/portal/orgInfo",desc:"정부24에서 제공하는 공식 정부 조직 정보"},
-  {name:"위키백과: 이재명 정부의 국무위원",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 정보"},
-  {name:"위키백과: 이재명 정부",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력, 대통령실 구성"},
-  {name:"대한민국 정책브리핑",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
-  {name:"나무위키: 이재명 정부/인사",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 종합"},
-  {name:"2026년 정부 예산안 (기획예산처)",url:"https://www.mpb.go.kr",desc:"부처별 예산 배분 (일부 추정치 포함)"},
-  {name:"각 부처 공식 홈페이지",url:"https://www.gov.kr/portal/orgInfo",desc:"업무 소개 및 조직도"},
+  {name:"정부24 중앙행정기관 조직도 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 분류·소속 체계의 1차 기준 (검증 기준일: 2026-04-07)"},
+  {name:"각 부처·기관 공식 홈페이지 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 업무·조직 설명, 공식 도메인 확인"},
+  {name:"대한민국 정책브리핑 (공식)",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
+  {name:"2026년 정부 예산안·보도자료 (공식)",url:"https://www.mpb.go.kr",desc:"부처별 예산 규모 및 정책 변화 확인"},
+  {name:"위키백과: 이재명 정부의 국무위원 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 이력 보조 확인"},
+  {name:"위키백과: 이재명 정부 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력 보조 확인"},
+  {name:"나무위키: 이재명 정부/인사 (보조)",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 교차 확인"},
   {name:"KRDS 대한민국 정부 디자인 시스템",url:"https://www.krds.go.kr",desc:"UI/UX 디자인 가이드라인 참고"}
 ];
 

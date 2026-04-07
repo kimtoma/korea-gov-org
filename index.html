@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>대한민국 정부조직도 (비공식) — Machinery of Government</title>
-<meta name="description" content="이재명 정부(2025.06~) 인터랙티브 정부조직도. 19부 6처 19청 5위원회의 조직 구조, 기관장, 예산, 업무를 시각화합니다. 비공식 자료로 공식 발표와 차이가 있을 수 있습니다.">
+<meta name="description" content="이재명 정부(2025.06~) 인터랙티브 정부조직도. 19부 6처 18청 6위원회의 조직 구조, 기관장, 예산, 업무를 시각화합니다. 비공식 자료로 공식 발표와 차이가 있을 수 있습니다.">
 <meta name="author" content="kimtoma">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="대한민국 정부조직도 (비공식)">
-<meta property="og:description" content="이재명 정부 인터랙티브 조직도 — 19부 6처 19청 5위원회, 기관장 프로필, 예산 시각화. 공개 정보 기반 비공식 자료.">
+<meta property="og:description" content="이재명 정부 인터랙티브 조직도 — 19부 6처 18청 6위원회, 기관장 프로필, 예산 시각화. 공개 정보 기반 비공식 자료.">
 <meta property="og:image" content="https://korea-gov-org.pages.dev/og-image.png">
 <meta property="og:url" content="https://korea-gov-org.pages.dev">
 <meta property="og:locale" content="ko_KR">
@@ -29,23 +29,23 @@
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css');
 :root {
-  --primary-50:#246BEB;--primary-40:#4B88F0;--primary-60:#1A56C4;--primary-70:#12429D;
-  --primary-10:#E8F0FE;--primary-20:#B8D4FC;--primary-80:#0B2F76;
-  --gray-0:#FFF;--gray-5:#F7F8FA;--gray-10:#F0F1F4;--gray-20:#DCDEE3;--gray-30:#C5C8CE;
-  --gray-40:#AEB2BA;--gray-50:#8D929B;--gray-60:#6D727D;--gray-70:#4E535F;
-  --gray-80:#353A44;--gray-90:#1E2430;--gray-100:#0A0F1A;
+  --primary-50:#0076D8;--primary-40:#4C87F6;--primary-60:#0B50D0;--primary-70:#083891;
+  --primary-10:#DAEEFF;--primary-20:#D3EBFF;--primary-80:#052F87;
+  --gray-0:#FFFFFF;--gray-5:#EEF2F7;--gray-10:#E9F1FC;--gray-20:#CDD1D5;--gray-30:#B1B8BE;
+  --gray-40:#8A949E;--gray-50:#6D7882;--gray-60:#58616A;--gray-70:#464C53;
+  --gray-80:#1B1936;--gray-90:#0D0B2C;--gray-100:#000000;
   --font:'Pretendard Variable',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif;
   --radius-sm:6px;--radius-md:12px;--radius-lg:16px;
-  --c-president:#246BEB;--c-pm:#6366F1;--c-ministry:#0FA573;
-  --c-office:#F59E0B;--c-commission:#E5503C;--c-agency:#8B5CF6;
+  --c-president:#0076D8;--c-pm:#6366F1;--c-ministry:#0FA573;
+  --c-office:#F59E0B;--c-commission:#D63D4A;--c-agency:#8B5CF6;
 }
 [data-theme="dark"] {
-  --primary-50:#60A5FA;--primary-40:#93C5FD;--primary-60:#3B82F6;--primary-70:#2563EB;
-  --primary-10:#1E293B;--primary-20:#1E3A5F;--primary-80:#BFDBFE;
-  --gray-0:#0F172A;--gray-5:#1E293B;--gray-10:#334155;--gray-20:#475569;--gray-30:#64748B;
-  --gray-40:#94A3B8;--gray-50:#94A3B8;--gray-60:#CBD5E1;--gray-70:#E2E8F0;
-  --gray-80:#F1F5F9;--gray-90:#F8FAFC;--gray-100:#FFFFFF;
-  --c-president:#60A5FA;--c-pm:#818CF8;--c-ministry:#34D399;
+  --primary-50:#4C87F6;--primary-40:#86AFF9;--primary-60:#0076D8;--primary-70:#0B50D0;
+  --primary-10:#03163A;--primary-20:#052F87;--primary-80:#D3EBFF;
+  --gray-0:#02001F;--gray-5:#0D0B2C;--gray-10:#1B1936;--gray-20:#464C53;--gray-30:#58616A;
+  --gray-40:#6D7882;--gray-50:#8A949E;--gray-60:#B1B8BE;--gray-70:#CDD1D5;
+  --gray-80:#E9F1FC;--gray-90:#EEF2F7;--gray-100:#FFFFFF;
+  --c-president:#4C87F6;--c-pm:#818CF8;--c-ministry:#34D399;
   --c-office:#FBBF24;--c-commission:#F87171;--c-agency:#A78BFA;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -91,7 +91,7 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 .org-section{max-width:1200px;margin:0 auto 40px;}
 .org-tier{text-align:center;margin-bottom:32px;}
 .org-tier-card{display:inline-flex;align-items:center;gap:16px;background:var(--gray-0);border:2px solid var(--primary-50);
-  border-radius:var(--radius-lg);padding:20px 36px;box-shadow:0 2px 12px rgba(36,107,235,.08);}
+  border-radius:var(--radius-lg);padding:20px 36px;box-shadow:0 2px 12px rgba(0,118,216,.08);}
 .org-tier-card.pm{border-color:var(--c-pm);}
 .org-tier-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gray-10);}
 .org-tier-avatar{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
@@ -290,8 +290,8 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 /* ── Hover relationship highlight ── */
 .radial-node.dimmed{opacity:.15;transition:opacity .3s;}
 .radial-link.dimmed{opacity:.05;transition:opacity .3s;}
-.radial-link.highlighted{stroke-opacity:1!important;stroke-width:2.5!important;filter:drop-shadow(0 0 3px rgba(36,107,235,.3));}
-.radial-node.highlighted circle{filter:brightness(1.05) drop-shadow(0 0 4px rgba(36,107,235,.25));}
+.radial-link.highlighted{stroke-opacity:1!important;stroke-width:2.5!important;filter:drop-shadow(0 0 3px rgba(0,118,216,.3));}
+.radial-node.highlighted circle{filter:brightness(1.05) drop-shadow(0 0 4px rgba(0,118,216,.25));}
 .hover-tooltip{position:absolute;pointer-events:none;z-index:60;background:var(--gray-0);
   border:1px solid var(--gray-10);border-radius:var(--radius-md);padding:14px 18px;
   box-shadow:0 8px 30px rgba(0,0,0,.12);max-width:320px;opacity:0;transition:opacity .2s;font-size:13px;}
@@ -363,7 +363,7 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 <div class="topbar">
   <div class="topbar-brand">
     <span class="flag">🇰🇷</span><span>대한민국 정부조직도</span>
-    <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:#FEF2F2;color:#E5503C;border:1px solid rgba(229,80,60,.2);margin-left:4px;vertical-align:middle">비공식</span>
+    <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;background:#FBEFF0;color:#D63D4A;border:1px solid rgba(214,61,74,.2);margin-left:4px;vertical-align:middle">비공식</span>
     <span class="sep"></span><span class="sub">이재명 정부 · 2026.04 현재</span>
   </div>
   <div class="topbar-center">
@@ -438,18 +438,18 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
     <button class="close-modal" onclick="document.getElementById('srcOverlay').classList.remove('open')">&times;</button>
     <h2>데이터 출처 및 참고자료</h2>
     <div id="sourcesList"></div>
-    <div style="margin-top:16px;padding:12px 16px;background:#FEF2F2;border-radius:8px;border:1px solid rgba(229,80,60,.15);">
-      <div style="font-size:12px;font-weight:700;color:#E5503C;margin-bottom:4px;">비공식 자료 안내</div>
+    <div style="margin-top:16px;padding:12px 16px;background:#FBEFF0;border-radius:8px;border:1px solid rgba(214,61,74,.15);">
+      <div style="font-size:12px;font-weight:700;color:#D63D4A;margin-bottom:4px;">비공식 자료 안내</div>
       <div style="font-size:11px;color:#991B1B;line-height:1.5;">
         본 페이지는 공개된 정보를 기반으로 개인이 제작한 <strong>비공식</strong> 자료이며,
         대한민국 정부가 운영하는 공식 사이트가 아닙니다.
         기관 구조, 인사, 예산 등의 정보가 실제와 다를 수 있으며, 일부 데이터는 추정치를 포함합니다.
-        정확한 정보는 <a href="https://www.gov.kr/portal/orgInfo" target="_blank" style="color:#E5503C">정부24</a>를 참고해주세요.
+        정확한 정보는 <a href="https://www.gov.kr/portal/orgInfo" target="_blank" style="color:#D63D4A">정부24</a>를 참고해주세요.
       </div>
     </div>
     <p style="margin-top:12px;font-size:11px;color:var(--gray-40);line-height:1.5;">
       프로필 사진은 위키미디어 커먼즈의 공개 라이선스 이미지를 사용합니다.
-      <br><br>최종 업데이트: 2026년 4월 · Inspired by <a href="https://machineryofgovernment.uk" target="_blank" style="color:var(--primary-50)">machineryofgovernment.uk</a>
+      <br><br>최종 검증 기준일: 2026-04-07 · Inspired by <a href="https://machineryofgovernment.uk" target="_blank" style="color:var(--primary-50)">machineryofgovernment.uk</a>
     </p>
     <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--gray-10);display:flex;align-items:center;gap:12px;">
       <img src="https://github.com/kimtoma.png" style="width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;" alt="kimtoma">
@@ -467,8 +467,8 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 <script>
 // ══════════════════════════════════════
 // 대한민국 정부조직도 데이터
-// 출처: 위키백과, 정부24, 대한민국 정책브리핑, 각 부처 공식 홈페이지
-// 최종 업데이트: 2026년 4월
+// 출처: 정부24, 각 부처 공식 홈페이지, 대한민국 정책브리핑, 위키백과(보조)
+// 최종 검증 기준일: 2026-04-07
 // ══════════════════════════════════════
 const W="https://upload.wikimedia.org/wikipedia/commons/thumb/";
 
@@ -535,7 +535,7 @@ const people={
 };
 
 const govData={name:"대한민국 정부",nameEn:"Government of the Republic of Korea",type:"root",
-  desc:"대한민국 헌법에 의거하여 구성된 정부로, 대통령을 수반으로 하는 행정부와 그 산하기관으로 이루어져 있다. 19부 6처 19청 5위원회로 구성된다.",
+  desc:"대한민국 헌법에 의거하여 구성된 정부로, 대통령을 수반으로 하는 행정부와 그 산하기관으로 이루어져 있다. 19부 6처 18청 6위원회(공식 현행 기준)로 구성된다.",
   url:"https://www.gov.kr",
   children:[
   // ═══ 대통령 ═══
@@ -571,7 +571,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       desc:"인권 보호와 향상을 위한 정책 권고, 차별 행위 조사, 인권 교육을 수행하는 독립 국가기관이다.",
       budget:"490억",
         divisions:["정책교육국","침해조사국","차별시정국","군인권보호국"]},
-    {name:"방송미디어통신위원회",nameEn:"Broadcasting & Media Commission",type:"president-sub",head:"김종철",isNew:"2025.10 신설",
+    {name:"방송미디어통신위원회",nameEn:"Broadcasting & Media Commission",type:"commission",head:"김종철",isNew:"2025.10 신설",
       url:"https://www.kmcc.go.kr",
       desc:"방송·미디어·통신 분야의 규제·감독, 미디어 다양성 보장, 이용자 보호 등을 담당한다. 방송통신위원회를 폐지하고 신설.",
         divisions:["방송정책국","방송통신이용자정책국","방송미디어진흥국","방송기반국"]}
@@ -692,7 +692,10 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"4.7조",
       divisions:["기획조정실","법무실","인권국","교정본부","출입국·외국인정책본부"],
       children:[
-        {name:"공소청",nameEn:"Prosecution Service",type:"agency",isNew:"2026.10 신설예정",
+        {name:"검찰청",nameEn:"Prosecution Service",type:"agency",
+          url:"https://www.spo.go.kr",
+          desc:"검찰 사무를 총괄하며 공소 유지, 형사사법 절차 지원, 범죄 피해자 보호 등을 담당한다."},
+        {name:"공소청",nameEn:"Public Prosecution Office",type:"agency",status:"planned",isNew:"2026.10 신설예정",
           desc:"검찰청 폐지 후 기소 기능을 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
     ]},
     {name:"국방부",nameEn:"Min. of National Defense",type:"ministry",head:"안규백",
@@ -720,7 +723,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         {name:"소방청",nameEn:"National Fire Agency",type:"agency",head:"김승룡",
           url:"https://www.nfa.go.kr",desc:"화재 예방·진압, 구조·구급, 소방산업 육성을 담당한다.",budget:"1.5조",
         divisions:["119대응국","화재예방국","장비기술국","119종합상황실"]},
-        {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",isNew:"2026.10 신설예정",
+        {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",status:"planned",isNew:"2026.10 신설예정",
           desc:"검찰청 폐지 후 중대범죄 수사를 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
     ]},
     {name:"문화체육관광부",nameEn:"Min. of Culture & Tourism",type:"ministry",head:"최휘영",
@@ -819,13 +822,13 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
 
 // ═══ 데이터 출처 ═══
 const sources = [
-  {name:"정부24 중앙행정기관 조직도",url:"https://www.gov.kr/portal/orgInfo",desc:"정부24에서 제공하는 공식 정부 조직 정보"},
-  {name:"위키백과: 이재명 정부의 국무위원",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 정보"},
-  {name:"위키백과: 이재명 정부",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력, 대통령실 구성"},
-  {name:"대한민국 정책브리핑",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
-  {name:"나무위키: 이재명 정부/인사",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 종합"},
-  {name:"2026년 정부 예산안 (기획예산처)",url:"https://www.mpb.go.kr",desc:"부처별 예산 배분 (일부 추정치 포함)"},
-  {name:"각 부처 공식 홈페이지",url:"https://www.gov.kr/portal/orgInfo",desc:"업무 소개 및 조직도"},
+  {name:"정부24 중앙행정기관 조직도 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 분류·소속 체계의 1차 기준 (검증 기준일: 2026-04-07)"},
+  {name:"각 부처·기관 공식 홈페이지 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 업무·조직 설명, 공식 도메인 확인"},
+  {name:"대한민국 정책브리핑 (공식)",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
+  {name:"2026년 정부 예산안·보도자료 (공식)",url:"https://www.mpb.go.kr",desc:"부처별 예산 규모 및 정책 변화 확인"},
+  {name:"위키백과: 이재명 정부의 국무위원 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 이력 보조 확인"},
+  {name:"위키백과: 이재명 정부 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력 보조 확인"},
+  {name:"나무위키: 이재명 정부/인사 (보조)",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 교차 확인"},
   {name:"KRDS 대한민국 정부 디자인 시스템",url:"https://www.krds.go.kr",desc:"UI/UX 디자인 가이드라인 참고"}
 ];
 
@@ -849,7 +852,6 @@ const divisionHeads={
   "부패방지국":"김남두","고충처리국":"양종삼",
   // 관세청 조사국 (별도 - 관세청과 국세청 중복 방지)
 };
-
 </script>
 <div class="share-toast" id="shareToast">링크가 복사되었습니다</div>
 
@@ -865,33 +867,33 @@ document.getElementById("sourcesList").innerHTML=sources.map(s=>
 
 
 const colorMapLight={
-  root:{fill:"#E8F0FE",stroke:"#246BEB",text:"#1A56C4"},
-  president:{fill:"#DBEAFE",stroke:"#246BEB",text:"#12429D"},
-  "president-sub":{fill:"#EFF6FF",stroke:"#60A5FA",text:"#1E40AF"},
+  root:{fill:"#DAEEFF",stroke:"#0076D8",text:"#0B50D0"},
+  president:{fill:"#DAEEFF",stroke:"#0076D8",text:"#083891"},
+  "president-sub":{fill:"#ECF2FE",stroke:"#4C87F6",text:"#052F87"},
   pm:{fill:"#EDE9FE",stroke:"#6366F1",text:"#4338CA"},
   "pm-group":{fill:"#F0ECFE",stroke:"#818CF8",text:"#4F46E5"},
   "pm-sub":{fill:"#F0ECFE",stroke:"#A5B4FC",text:"#4338CA"},
   "ministries-group":{fill:"#ECFDF5",stroke:"#0FA573",text:"#065F46"},
   ministry:{fill:"#F0FDF4",stroke:"#22C55E",text:"#166534"},
   office:{fill:"#FFFBEB",stroke:"#F59E0B",text:"#92400E"},
-  commission:{fill:"#FEF2F2",stroke:"#E5503C",text:"#991B1B"},
+  commission:{fill:"#FBEFF0",stroke:"#D63D4A",text:"#7A1F26"},
   agency:{fill:"#F5F3FF",stroke:"#8B5CF6",text:"#5B21B6"},
 };
 const colorMapDark={
-  root:{fill:"#1E293B",stroke:"#60A5FA",text:"#93C5FD"},
-  president:{fill:"#1E3A5F",stroke:"#60A5FA",text:"#BFDBFE"},
-  "president-sub":{fill:"#172554",stroke:"#3B82F6",text:"#93C5FD"},
+  root:{fill:"#0D0B2C",stroke:"#4C87F6",text:"#86AFF9"},
+  president:{fill:"#03163A",stroke:"#4C87F6",text:"#D3EBFF"},
+  "president-sub":{fill:"#052F87",stroke:"#0076D8",text:"#86AFF9"},
   pm:{fill:"#2E1065",stroke:"#818CF8",text:"#C4B5FD"},
   "pm-group":{fill:"#1E1B4B",stroke:"#6366F1",text:"#A5B4FC"},
   "pm-sub":{fill:"#1E1B4B",stroke:"#818CF8",text:"#C4B5FD"},
   "ministries-group":{fill:"#064E3B",stroke:"#34D399",text:"#6EE7B7"},
   ministry:{fill:"#052E16",stroke:"#22C55E",text:"#86EFAC"},
   office:{fill:"#451A03",stroke:"#FBBF24",text:"#FDE68A"},
-  commission:{fill:"#450A0A",stroke:"#F87171",text:"#FCA5A5"},
+  commission:{fill:"#310C0F",stroke:"#F87171",text:"#FCA5A5"},
   agency:{fill:"#2E1065",stroke:"#A78BFA",text:"#C4B5FD"},
 };
-const divisionColorLight={fill:"#F8FAFC",stroke:"#94A3B8",text:"#64748B"};
-const divisionColorDark={fill:"#1E293B",stroke:"#475569",text:"#94A3B8"};
+const divisionColorLight={fill:"#EEF2F7",stroke:"#8A949E",text:"#58616A"};
+const divisionColorDark={fill:"#0D0B2C",stroke:"#464C53",text:"#8A949E"};
 let colorMap=colorMapLight;
 function gc(t){
   if(t==="division") return document.documentElement.getAttribute("data-theme")==="dark"?divisionColorDark:divisionColorLight;
@@ -975,7 +977,9 @@ function personHTML(name){
     <div class="person-role">${p.role||""}</div>${p.bio?`<div class="person-bio">${p.bio}</div>`:""}
     ${p.date?`<div class="person-date">${p.date}</div>`:""}</div></div>`;
 }
-function showDetail(data){
+function showDetail(data,options={}){
+  if(!data)return;
+  const {syncHash=true,hashName=data.name}=options;
   const panel=document.getElementById("detailPanel");panel.classList.remove("hidden");
   document.getElementById("sheetBackdrop").classList.remove("hidden");
   const c=gc(data.type);
@@ -1022,16 +1026,30 @@ function showDetail(data){
     h+=`</div></div>`;
   }
   h+=`</div>`;panel.innerHTML=h;
+  if(syncHash)updateHash(hashName);
 }
-function hideDetail(){
+function hideDetail(options={}){
+  const {syncHash=true}=options;
   const p=document.getElementById("detailPanel");
   p.classList.add("hidden");
   p.classList.remove("expanded");
   document.getElementById("sheetBackdrop").classList.add("hidden");
+  if(syncHash)updateHash(null);
+}
+function showNodeDetail(node,options={}){
+  if(!node)return;
+  if(node.type==="division"&&node._parentName){
+    const parent=findNode(node._parentName);
+    if(parent){
+      showDetail(parent,{...options,hashName:node.name});
+      return;
+    }
+  }
+  showDetail(node,options);
 }
 window.navChild=function(name){
   function find(n){if(n.name===name)return n;if(n.children)for(const c of n.children){const f=find(c);if(f)return f;}return null;}
-  const t=find(govData);if(t)showDetail(t);
+  const t=find(govData);if(t)showNodeDetail(t);
 };
 
 // ══════════════════════════════════════
@@ -1215,11 +1233,7 @@ function renderRadial(){
       const a=d.x-Math.PI/2;
       return `translate(${cx+d.y*Math.cos(a)},${cy+d.y*Math.sin(a)})`;
     })
-    .on("click",(e,d)=>{e.stopPropagation();
-      if(d.data.type==="division"){
-        const p=d.data._parentName?findNode(d.data._parentName):null;
-        if(p){showDetail(p);updateHash(d.data.name);}else showDetail(d.data);
-      } else showDetail(d.data);})
+    .on("click",(e,d)=>{e.stopPropagation();showNodeDetail(d.data);})
     .on("mouseover",(e,d)=>handleHover(e,d,node,allLinks,root,true))
     .on("mouseout",(e,d)=>handleHover(e,d,node,allLinks,root,false));
 
@@ -1229,13 +1243,13 @@ function renderRadial(){
   if(pPhoto){
     const pr=36;
     rootNode.append("defs").append("clipPath").attr("id","rootClip").append("circle").attr("r",pr);
-    rootNode.append("circle").attr("r",pr+3).attr("fill","#246BEB").attr("opacity",.15);
-    rootNode.append("circle").attr("r",pr+3).attr("fill","none").attr("stroke","#246BEB").attr("stroke-width",2);
+    rootNode.append("circle").attr("r",pr+3).attr("fill","#0076D8").attr("opacity",.15);
+    rootNode.append("circle").attr("r",pr+3).attr("fill","none").attr("stroke","#0076D8").attr("stroke-width",2);
     rootNode.append("image").attr("href",pPhoto).attr("x",-pr).attr("y",-pr).attr("width",pr*2).attr("height",pr*2)
       .attr("clip-path","url(#rootClip)").attr("pointer-events","none");
     rootNode.append("text").attr("y",pr+18).attr("text-anchor","middle").attr("font-size","14px").attr("font-weight","800")
-      .attr("fill","#12429D").text("이재명");
-    rootNode.append("text").attr("y",pr+32).attr("text-anchor","middle").attr("font-size","10px").attr("fill","#8D929B").text("대통령");
+      .attr("fill","#083891").text("이재명");
+    rootNode.append("text").attr("y",pr+32).attr("text-anchor","middle").attr("font-size","10px").attr("fill","#6D7882").text("대통령");
   }
 
   // Budget scale for radial
@@ -1276,7 +1290,7 @@ function renderRadial(){
     labelG.append("text").attr("x",tx).attr("dy","-0.2em").attr("text-anchor",flip?"end":"start")
       .attr("font-size",fs1).attr("font-weight","600").attr("fill",c.text).text(nameText);
     if(d.data.head&&!isMobile)labelG.append("text").attr("x",tx).attr("dy","1em").attr("text-anchor",flip?"end":"start")
-      .attr("font-size","10px").attr("fill","#8D929B").text(d.data.head);
+      .attr("font-size","10px").attr("fill","#6D7882").text(d.data.head);
   });
 
   // Depth 2 nodes (agencies)
@@ -1406,7 +1420,7 @@ function renderOrgChart(){
   h+=`<div class="org-section-header"><div class="dot" style="background:var(--c-president)"></div>
     <h2>대통령 직속기관</h2><span class="count">${pres.children.length}개</span></div>`;
   h+=`<div class="org-grid compact">`;
-  pres.children.forEach(d=>h+=orgCard(d,"#60A5FA"));
+  pres.children.forEach(d=>h+=orgCard(d,"#4C87F6"));
   h+=`</div></div><div>`;
 
   // 국무총리
@@ -1474,6 +1488,7 @@ window.findNode=function(name){
   return findDiv(govData);
 };
 window.showDetail=showDetail;
+window.hideDetail=hideDetail;
 
 // ══════════════════════════════════════
 // BOTTOM SHEET SWIPE (mobile) — 3 snaps: closed / half(55vh) / full(92vh)
@@ -1563,36 +1578,16 @@ function showToast(){
 }
 window.shareOrg=shareOrg;
 
-// Patch showDetail to update hash
-const _origShowDetail=showDetail;
-function showDetailWithHash(data){
-  _origShowDetail(data);
-  updateHash(data.name);
-}
-window.showDetail=showDetailWithHash;
-
-// Patch hideDetail to clear hash
-const _origHideDetail=hideDetail;
-function hideDetailWithHash(){
-  _origHideDetail();
-  updateHash(null);
-}
-window.hideDetail=hideDetailWithHash;
-// Re-bind backdrop
-document.getElementById("sheetBackdrop").onclick=hideDetailWithHash;
-
 // Handle initial hash on load
 function loadFromHash(){
   const hash=decodeURIComponent(location.hash.slice(1));
-  if(!hash)return;
+  if(!hash){
+    hideDetail({syncHash:false});
+    return;
+  }
   const node=findNode(hash);
   if(!node)return;
-  setTimeout(()=>{
-    if(node.type==="division"&&node._parentName){
-      const parent=findNode(node._parentName);
-      if(parent){_origShowDetail(parent);updateHash(hash);}
-    } else showDetailWithHash(node);
-  },300);
+  setTimeout(()=>showNodeDetail(node,{syncHash:false}),300);
 }
 
 // ══════════════════════════════════════
@@ -1604,7 +1599,6 @@ renderRadial();
 loadFromHash();
 window.addEventListener("resize",()=>{if(currentView==="radial")renderRadial();});
 window.addEventListener("hashchange",()=>loadFromHash());
-radialSvg.on("click",()=>hideDetailWithHash());
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b811dd1a58fe4b1ab5aad3b0eeca7870"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
