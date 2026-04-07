@@ -8,13 +8,13 @@ const W="https://upload.wikimedia.org/wikipedia/commons/thumb/";
 const people={
   "이재명":{role:"제21대 대통령",date:"2025.06.04 취임",photo:W+"5/59/President_Lee_Jae_Myung_20260306.jpg/200px-President_Lee_Jae_Myung_20260306.jpg",bio:"전 더불어민주당 대표, 전 경기도지사"},
   "김민석":{role:"국무총리",date:"2025.07.03 취임",photo:W+"7/7e/Kim_Min-seok_20250807.jpg/200px-Kim_Min-seok_20250807.jpg",bio:"전 국회의원(3선), 전 보건복지부 차관"},
-  "강훈식":{role:"대통령비서실장",date:"2025.06.05 임명",bio:"전 국회의원(3선, 충남 아산)"},
-  "위성락":{role:"국가안보실장",date:"2025.06.05 임명",bio:"전 한반도평화교섭본부장"},
-  "황인권":{role:"대통령경호처장",date:"2025.06.05 임명",bio:"전 육군 대장, 제2작전사령관"},
+  "강훈식":{role:"대통령비서실장",date:"2025.06.05 임명",photo:W+"6/64/Kang_Hoon-sik%27s_Portrait_%282025.7%29.png/200px-Kang_Hoon-sik%27s_Portrait_%282025.7%29.png",bio:"전 국회의원(3선, 충남 아산)"},
+  "위성락":{role:"국가안보실장",date:"2025.06.05 임명",photo:W+"f/f8/Wi_Sung_Lac_20250203.jpg/200px-Wi_Sung_Lac_20250203.jpg",bio:"전 한반도평화교섭본부장"},
+  "황인권":{role:"대통령경호처장",date:"2025.06.05 임명",photo:W+"9/9d/Hwang_In-kwon%27s_portrait_%282025.08%29.jpg/200px-Hwang_In-kwon%27s_portrait_%282025.08%29.jpg",bio:"전 육군 대장, 제2작전사령관"},
   "김호철":{role:"감사원장",date:"2025년 취임",bio:"최재해 전 원장 후임"},
-  "이종석":{role:"국가정보원장",date:"2025.06.25 임명",bio:"전 통일부 장관, 전 NSC 사무차장"},
+  "이종석":{role:"국가정보원장",date:"2025.06.25 임명",photo:W+"1/10/%E6%9D%8E%E9%92%9F%E5%A5%AD%E7%85%A7%E7%89%87.jpg/200px-%E6%9D%8E%E9%92%9F%E5%A5%AD%E7%85%A7%E7%89%87.jpg",bio:"전 통일부 장관, 전 NSC 사무차장"},
   "김종철":{role:"방송미디어통신위원장",date:"2025.10 취임",bio:"초대 위원장"},
-  "윤창렬":{role:"국무조정실장",date:"2025.06.23 임명",bio:"전 국무1차장, 전 사회수석비서관"},
+  "윤창렬":{role:"국무조정실장",date:"2025.06.23 임명",photo:W+"6/67/%E5%B0%B9%E6%98%8C%E7%83%88%E7%85%A7%E7%89%87.jpg/200px-%E5%B0%B9%E6%98%8C%E7%83%88%E7%85%A7%E7%89%87.jpg",bio:"전 국무1차장, 전 사회수석비서관"},
   "구윤철":{role:"경제부총리 겸 재정경제부 장관",date:"2026.01.02 취임",photo:W+"9/97/Koo_Yun-cheol_20250806.jpg/200px-Koo_Yun-cheol_20250806.jpg",bio:"서울대 경제학, 행시 32회"},
   "배경훈":{role:"과학기술부총리 겸 장관",date:"2025.10.01 취임",photo:W+"8/8a/Bae_Kyung-hoon_250910.jpg/200px-Bae_Kyung-hoon_250910.jpg",bio:"AI 학자·기업인"},
   "최교진":{role:"교육부 장관",date:"2025.10.01 취임",photo:W+"d/d2/Choi_Kyo-jin_20250918.jpg/200px-Choi_Kyo-jin_20250918.jpg",bio:"전 충남대학교 총장"},
@@ -39,7 +39,7 @@ const people={
   "조원철":{role:"법제처장",date:"2025.07 임명",bio:"26년 법관 경력, 사법연수원 동기"},
   "최동석":{role:"인사혁신처장",date:"2025.07 임명",bio:"전 한국은행 인사조직개혁팀장, 전 교보생명 부사장"},
   "주병기":{role:"공정거래위원장",date:"2025.09 임명",bio:"서울대 경제학부 교수, 분배정의연구센터 대표"},
-  "이억원":{role:"금융위원장",date:"2025.09 임명",bio:"전 기재부 1차관, 금융 전문가"},
+  "이억원":{role:"금융위원장",date:"2025.09 임명",photo:W+"c/c1/Lee_Eog-weon%27s_portrait_%282025.09%29.jpg/200px-Lee_Eog-weon%27s_portrait_%282025.09%29.jpg",bio:"전 기재부 1차관, 금융 전문가"},
   "송경희":{role:"개인정보보호위원장",date:"2025년 임명",bio:"전 과기정통부 SW정책관, 성균관대 AI신뢰성센터장"},
   "임광현":{role:"국세청장",date:"2025.07 취임",bio:"전 국회의원, 최초 현역의원 출신 국세청장"},
   "이명구":{role:"관세청장",date:"2025년 임명"},
@@ -53,18 +53,18 @@ const people={
   "이승돈":{role:"농촌진흥청장",date:"2025년 임명"},
   "김인호":{role:"산림청장",date:"2025년 임명"},
   "이미선":{role:"기상청장",date:"2025년 임명"},
-  "김경협":{role:"재외동포청장",date:"2025.09.09 임명",bio:"전 국회의원(3선), 재외동포기본법 발의"},
+  "김경협":{role:"재외동포청장",date:"2025.09.09 임명",photo:W+"4/40/%EA%B9%80%EA%B2%BD%ED%98%91_%EC%9D%98%EC%9B%90_%EC%82%AC%EC%A7%84.jpg/200px-%EA%B9%80%EA%B2%BD%ED%98%91_%EC%9D%98%EC%9B%90_%EC%82%AC%EC%A7%84.jpg",bio:"전 국회의원(3선), 재외동포기본법 발의"},
   "장인식":{role:"해양경찰청장 직무대행",date:"2025.12 임명",bio:"전 남해지방해양경찰청장, 전 동해지방해양경찰청장"},
-  "오동운":{role:"고위공직자범죄수사처장",date:"2024.05.21 임명",bio:"사법연수원 27기, 전 부장판사(울산·수원성남)"},
-  "안창호":{role:"국가인권위원장",date:"2024.09.06 임명",bio:"사법시험 23회, 전 헌법재판소 재판관"},
-  "안형준":{role:"국가데이터처장",date:"2025.10.01 취임",bio:"행시 40회, 통계청 내부 승진 최초 청장→처장"},
-  "김용선":{role:"지식재산처장",date:"2025.11.05 취임",bio:"행시 37회, 전 특허청 차장, WIPO 조정위원회 부의장"},
-  "정일연":{role:"국민권익위원장",date:"2026.03.04 취임",bio:"사법연수원 20기, 전 서울중앙지법 부장판사"},
-  "최원호":{role:"원자력안전위원장",date:"2024.12.04 취임",bio:"기술고시 28회, 전 IAEA 파견, 전 대통령비서실 연구개발혁신비서관"},
-  "백승보":{role:"조달청장",date:"2025.08.13 임명",bio:"행시 39회, 조달청 29년 재직, 12년 만의 내부 승진 청장"},
-  "강주엽":{role:"행정중심복합도시건설청장",date:"2025.07.14 취임",bio:"기술고시 32회, 서울대 토목공학, 국토부 27년 재직"},
-  "민기":{role:"국무총리비서실장",date:"2025.07 임명",bio:"제주대 행정학과 명예교수, 전 한국지방재정학회 회장"},
-  "이용철":{role:"방위사업청장",date:"2025.11.14 임명",bio:"사법연수원 21기, 전 대통령비서실 법무비서관, 방위사업청 초대 차장"},
+  "오동운":{role:"고위공직자범죄수사처장",date:"2024.05.21 임명",photo:W+"c/cb/Oh_Dong-woon_%2820230528%2C_Seoul%29.jpg/200px-Oh_Dong-woon_%2820230528%2C_Seoul%29.jpg",bio:"사법연수원 27기, 전 부장판사(울산·수원성남)"},
+  "안창호":{role:"국가인권위원장",date:"2024.09.06 임명",photo:W+"f/f6/Justice_Ahn_Changho.png/200px-Justice_Ahn_Changho.png",bio:"사법시험 23회, 전 헌법재판소 재판관"},
+  "안형준":{role:"국가데이터처장",date:"2025.10.01 취임",bio:"고려대, 행시 40회. 통계청 내부 승진 최초 청장, 전 경제통계국장·통계청 차장"},
+  "김용선":{role:"지식재산처장",date:"2025.11.05 취임",bio:"전남 고흥, 서울시립대, 미국 워싱턴대 법학 박사. 행시 37회, 전 특허청 차장, WIPO 부의장"},
+  "정일연":{role:"국민권익위원장",date:"2026.03.04 취임",bio:"전북 전주, 건국대 법학, 사법연수원 20기. 전 서울중앙지법·서울동부지법 부장판사"},
+  "최원호":{role:"원자력안전위원장",date:"2024.12.04 취임",bio:"성균관대 기계설계학, 영국 버밍엄대 박사, 기술고시 28회. 전 IAEA 파견, 전 우주항공청설립추진단장"},
+  "백승보":{role:"조달청장",date:"2025.08.13 임명",bio:"부산, 고려대 경제학, 행시 39회. 조달청 29년 재직, 12년 만의 내부 승진 청장"},
+  "강주엽":{role:"행정중심복합도시건설청장",date:"2025.07.14 취임",bio:"대전, 서울대 토목공학, 영국 킹스칼리지 석사. 기술고시 32회, 국토부 27년 재직"},
+  "민기":{role:"국무총리비서실장",date:"2025.07 임명",bio:"제주대 행정학과 명예교수. 전 사회과학대학장, 한국지방재정학회 회장"},
+  "이용철":{role:"방위사업청장",date:"2025.11.14 임명",bio:"전북 순창, 연세대 법학, 사법연수원 21기. 전 대통령비서실 법무비서관, 방위사업청 초대 차장"},
 };
 
 const govData={name:"대한민국 정부",nameEn:"Government of the Republic of Korea",type:"root",
@@ -102,10 +102,12 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
     {name:"국가인권위원회",nameEn:"National Human Rights Commission",type:"president-sub",head:"안창호",
       url:"https://www.humanrights.go.kr",
       desc:"인권 보호와 향상을 위한 정책 권고, 차별 행위 조사, 인권 교육을 수행하는 독립 국가기관이다.",
-      budget:"490억"},
+      budget:"490억",
+        divisions:["정책교육국","침해조사국","차별시정국","군인권보호국"]},
     {name:"방송미디어통신위원회",nameEn:"Broadcasting & Media Commission",type:"president-sub",head:"김종철",isNew:"2025.10 신설",
       url:"https://www.kmcc.go.kr",
-      desc:"방송·미디어·통신 분야의 규제·감독, 미디어 다양성 보장, 이용자 보호 등을 담당한다. 방송통신위원회를 폐지하고 신설."}
+      desc:"방송·미디어·통신 분야의 규제·감독, 미디어 다양성 보장, 이용자 보호 등을 담당한다. 방송통신위원회를 폐지하고 신설.",
+        divisions:["방송정책국","방송통신이용자정책국","방송미디어진흥국","방송기반국"]}
   ]},
   // ═══ 국무총리 ═══
   {name:"국무총리",nameEn:"Prime Minister",type:"pm",head:"김민석",
@@ -115,10 +117,12 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
     {name:"국무총리 소속 처",nameEn:"PM Offices",type:"pm-group",children:[
       {name:"법제처",nameEn:"Ministry of Legislation",type:"office",head:"조원철",
         url:"https://www.moleg.go.kr",
-        desc:"법령의 입안·심사·해석, 법제 정비, 행정심판을 담당한다.",budget:"920억"},
+        desc:"법령의 입안·심사·해석, 법제 정비, 행정심판을 담당한다.",budget:"920억",
+        divisions:["법제정책국","행정법제국","경제법제국","사회문화법제국","법령해석국"]},
       {name:"인사혁신처",nameEn:"Ministry of Personnel Management",type:"office",head:"최동석",
         url:"https://www.mpm.go.kr",
-        desc:"공무원 인사제도 기획, 채용·평가·보수, 공직윤리, 정부조직 관리를 담당한다.",budget:"7,600억"},
+        desc:"공무원 인사제도 기획, 채용·평가·보수, 공직윤리, 정부조직 관리를 담당한다.",budget:"7,600억",
+        divisions:["인재채용국","인사혁신국","인사관리국","윤리복무국"]},
       {name:"식품의약품안전처",nameEn:"Ministry of Food and Drug Safety",type:"office",head:"오유경",
         url:"https://www.mfds.go.kr",
         desc:"식품·의약품·의료기기·화장품의 안전관리, 인허가, 검사를 담당한다.",budget:"1.1조",
@@ -145,13 +149,16 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         divisions:["금융정책국","금융산업국","자본시장국","금융소비자국"]},
       {name:"국민권익위원회",nameEn:"Anti-Corruption & Civil Rights Comm.",type:"commission",head:"정일연",
         url:"https://www.acrc.go.kr",
-        desc:"부패방지, 국민권익 보호, 고충민원 처리, 행정심판을 담당한다.",budget:"1,500억"},
+        desc:"부패방지, 국민권익 보호, 고충민원 처리, 행정심판을 담당한다.",budget:"1,500억",
+        divisions:["부패방지국","심사보호국","고충처리국","행정심판국","권익개선정책국"]},
       {name:"개인정보보호위원회",nameEn:"Personal Information Protection Comm.",type:"commission",head:"송경희",
         url:"https://www.pipc.go.kr",
-        desc:"개인정보 보호 정책 수립, 개인정보 침해 조사·처분, AI 시대 데이터 보호 정책을 담당한다.",budget:"1,200억"},
+        desc:"개인정보 보호 정책 수립, 개인정보 침해 조사·처분, AI 시대 데이터 보호 정책을 담당한다.",budget:"1,200억",
+        divisions:["개인정보정책국","조사조정국"]},
       {name:"원자력안전위원회",nameEn:"Nuclear Safety and Security Comm.",type:"commission",head:"최원호",
         url:"https://www.nssc.go.kr",
-        desc:"원자력 시설의 안전규제, 방사선 방호, 원자력 안전 연구·기술 개발을 담당한다.",budget:"2,800억"}
+        desc:"원자력 시설의 안전규제, 방사선 방호, 원자력 안전 연구·기술 개발을 담당한다.",budget:"2,800억",
+        divisions:["안전정책국","방사선방재국"]}
     ]},
     {name:"총리 직속",nameEn:"PM Direct",type:"pm-group",children:[
       {name:"국무조정실",nameEn:"Office for Govt Policy Coordination",type:"pm-sub",head:"윤창렬",
@@ -171,11 +178,14 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["세제실","국고국","경제정책국","대외경제국","국제금융국"],
       children:[
         {name:"국세청",nameEn:"National Tax Service",type:"agency",head:"임광현",
-          url:"https://www.nts.go.kr",desc:"내국세의 부과·징수, 세무조사, 탈세 방지를 담당한다.",budget:"2.2조"},
+          url:"https://www.nts.go.kr",desc:"내국세의 부과·징수, 세무조사, 탈세 방지를 담당한다.",budget:"2.2조",
+        divisions:["징세법무국","개인납세국","법인납세국","자산과세국","조사국","국제조세관리관"]},
         {name:"관세청",nameEn:"Korea Customs Service",type:"agency",head:"이명구",
-          url:"https://www.customs.go.kr",desc:"수출입 통관, 관세 부과·징수, 밀수 단속, FTA 원산지 관리를 담당한다.",budget:"8,900억"},
+          url:"https://www.customs.go.kr",desc:"수출입 통관, 관세 부과·징수, 밀수 단속, FTA 원산지 관리를 담당한다.",budget:"8,900억",
+        divisions:["통관국","심사국","조사국","국제관세협력국","관세국경위험관리센터"]},
         {name:"조달청",nameEn:"Public Procurement Service",type:"agency",head:"백승보",
-          url:"https://www.pps.go.kr",desc:"정부 물자 조달, 공공 계약, 나라장터 운영, 비축 물자 관리를 담당한다.",budget:"4,200억"}
+          url:"https://www.pps.go.kr",desc:"정부 물자 조달, 공공 계약, 나라장터 운영, 비축 물자 관리를 담당한다.",budget:"4,200억",
+        divisions:["디지털공정조달국","구매사업국","기술서비스국","시설사업국","공공물자국"]}
     ]},
     {name:"과학기술정보통신부",nameEn:"Min. of Science & ICT",type:"ministry",head:"배경훈",badge:"과학기술부총리",
       url:"https://www.msit.go.kr",
@@ -184,12 +194,13 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["과학기술혁신본부","연구개발정책국","정보통신정책국","AI디지털정책국","우주기술정책국"],
       children:[
         {name:"우주항공청",nameEn:"Korea AeroSpace Admin.",type:"agency",head:"오태석",
-          url:"https://www.kasa.go.kr",desc:"우주개발, 항공우주 연구, 위성 발사 및 운영을 담당한다. 2024년 신설.",budget:"8,000억"}
+          url:"https://www.kasa.go.kr",desc:"우주개발, 항공우주 연구, 위성 발사 및 운영을 담당한다. 2024년 신설.",budget:"8,000억",
+        divisions:["우주항공정책국","우주항공산업국","우주항공임무본부"]}
     ]},
     {name:"교육부",nameEn:"Min. of Education",type:"ministry",head:"최교진",
       url:"https://www.moe.go.kr",
       desc:"학교 교육·평생교육 정책, 교원 양성·관리, 학술·인재 양성, 교육과정 편성을 담당한다.",
-      budget:"96.5조",
+      budget:"106.4조",
       divisions:["학교혁신지원국","교육자치협력국","인재양성정책국","평생직업교육국"]},
     {name:"외교부",nameEn:"Min. of Foreign Affairs",type:"ministry",head:"조현",
       url:"https://www.mofa.go.kr",
@@ -198,7 +209,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["기획조정실","아시아태평양국","북미국","유럽국","국제기구국","통상교섭본부"],
       children:[
         {name:"재외동포청",nameEn:"Overseas Koreans Agency",type:"agency",head:"김경협",
-          url:"https://www.oka.go.kr",desc:"재외동포의 권익 보호, 교육·문화 지원, 네트워크 구축을 담당한다. 2023년 신설.",budget:"1,127억"}
+          url:"https://www.oka.go.kr",desc:"재외동포의 권익 보호, 교육·문화 지원, 네트워크 구축을 담당한다. 2023년 신설.",budget:"1,127억",
+        divisions:["재외동포정책국","교류협력국"]}
     ]},
     {name:"통일부",nameEn:"Min. of Unification",type:"ministry",head:"정동영",
       url:"https://www.unikorea.go.kr",
@@ -217,13 +229,15 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
     {name:"국방부",nameEn:"Min. of National Defense",type:"ministry",head:"안규백",
       url:"https://www.mnd.go.kr",
       desc:"국방정책 수립, 군사력 건설·운용, 병역 행정, 방위산업 육성을 담당한다.",
-      budget:"62.1조",
+      budget:"65.9조",
       divisions:["국방정책실","전력자원관리실","국방개혁실"],
       children:[
         {name:"병무청",nameEn:"Military Manpower Admin.",type:"agency",head:"홍소영",
-          url:"https://www.mma.go.kr",desc:"병역 자원 관리, 징·소집, 병역 판정 검사, 대체복무 관리를 담당한다.",budget:"9,800억"},
+          url:"https://www.mma.go.kr",desc:"병역 자원 관리, 징·소집, 병역 판정 검사, 대체복무 관리를 담당한다.",budget:"9,800억",
+        divisions:["병역자원국","입영동원국","사회복무국"]},
         {name:"방위사업청",nameEn:"DAPA",type:"agency",head:"이용철",
-          url:"https://www.dapa.go.kr",desc:"무기 체계 획득, 방위산업 육성, 군수품 조달, 국방과학기술 연구를 담당한다.",budget:"18.7조"}
+          url:"https://www.dapa.go.kr",desc:"무기 체계 획득, 방위산업 육성, 군수품 조달, 국방과학기술 연구를 담당한다.",budget:"18.7조",
+        divisions:["방위사업정책국","방위산업진흥국","국방기술개발보호국","기반전력사업본부","미래전력사업본부"]}
     ]},
     {name:"행정안전부",nameEn:"Min. of Interior & Safety",type:"ministry",head:"윤호중",
       url:"https://www.mois.go.kr",
@@ -232,9 +246,11 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["기획조정실","지방자치분권실","안전정책실","디지털정부실"],
       children:[
         {name:"경찰청",nameEn:"National Police Agency",type:"agency",head:"유재성",
-          url:"https://www.police.go.kr",desc:"치안 유지, 범죄 수사, 교통 관리, 정보·보안 업무를 수행한다.",budget:"13.8조"},
+          url:"https://www.police.go.kr",desc:"치안 유지, 범죄 수사, 교통 관리, 정보·보안 업무를 수행한다.",budget:"14.3조",
+        divisions:["생활안전교통국","범죄예방대응국","경비국","국제협력관","국가수사본부"]},
         {name:"소방청",nameEn:"National Fire Agency",type:"agency",head:"김승룡",
-          url:"https://www.nfa.go.kr",desc:"화재 예방·진압, 구조·구급, 소방산업 육성을 담당한다.",budget:"1.5조"},
+          url:"https://www.nfa.go.kr",desc:"화재 예방·진압, 구조·구급, 소방산업 육성을 담당한다.",budget:"1.5조",
+        divisions:["119대응국","화재예방국","장비기술국","119종합상황실"]},
         {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",isNew:"2026.10 신설예정",
           desc:"검찰청 폐지 후 중대범죄 수사를 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
     ]},
@@ -245,7 +261,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["문화정책국","예술정책국","체육국","관광국","미디어정책국"],
       children:[
         {name:"국가유산청",nameEn:"Korea Heritage Service",type:"agency",head:"허민",
-          url:"https://www.khs.go.kr",desc:"국가유산(문화재)의 보존·관리·활용, 매장문화재 조사, 세계유산 등재를 담당한다.",budget:"1.3조"}
+          url:"https://www.khs.go.kr",desc:"국가유산(문화재)의 보존·관리·활용, 매장문화재 조사, 세계유산 등재를 담당한다.",budget:"1.3조",
+        divisions:["유산정책국","문화유산국","자연유산국","무형유산국"]}
     ]},
     {name:"농림축산식품부",nameEn:"Min. of Agriculture",type:"ministry",head:"송미령",
       url:"https://www.mafra.go.kr",
@@ -254,9 +271,11 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["농업정책국","식량정책국","축산정책국","식품산업정책국","농촌정책국"],
       children:[
         {name:"농촌진흥청",nameEn:"Rural Development Admin.",type:"agency",head:"이승돈",
-          url:"https://www.rda.go.kr",desc:"농업 기술 연구·개발, 농촌지도, 농업인 교육 훈련을 담당한다.",budget:"1.6조"},
+          url:"https://www.rda.go.kr",desc:"농업 기술 연구·개발, 농촌지도, 농업인 교육 훈련을 담당한다.",budget:"1.6조",
+        divisions:["연구정책국","농촌지원국","기술협력국"]},
         {name:"산림청",nameEn:"Korea Forest Service",type:"agency",head:"김인호",
-          url:"https://www.forest.go.kr",desc:"산림 보전·조성, 산불 예방, 산림 자원 활용, 임업 육성을 담당한다.",budget:"3.1조"}
+          url:"https://www.forest.go.kr",desc:"산림 보전·조성, 산불 예방, 산림 자원 활용, 임업 육성을 담당한다.",budget:"3.1조",
+        divisions:["산림산업정책국","산림복지국","산림보호국","산림재난통제관"]}
     ]},
     {name:"산업통상부",nameEn:"Min. of Trade & Industry",type:"ministry",head:"김정관",isNew:"명칭변경",
       url:"https://www.motir.go.kr",
@@ -266,11 +285,12 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
     {name:"보건복지부",nameEn:"Min. of Health & Welfare",type:"ministry",head:"정은경",
       url:"https://www.mohw.go.kr",
       desc:"보건의료, 사회복지, 연금·건강보험, 저출산·고령사회, 장애인 정책을 담당한다.",
-      budget:"110.4조",
+      budget:"137.5조",
       divisions:["보건의료정책국","건강보험정책국","사회복지정책국","인구정책국","장애인정책국"],
       children:[
         {name:"질병관리청",nameEn:"KDCA",type:"agency",head:"임승관",
-          url:"https://www.kdca.go.kr",desc:"감염병 예방·관리, 예방접종, 만성질환 관리, 검역·방역을 담당한다.",budget:"1.8조"}
+          url:"https://www.kdca.go.kr",desc:"감염병 예방·관리, 예방접종, 만성질환 관리, 검역·방역을 담당한다.",budget:"1.8조",
+        divisions:["감염병정책국","감염병위기관리국","진단분석국","의료안전예방국","만성질환관리국"]}
     ]},
     {name:"기후에너지환경부",nameEn:"Min. of Climate & Environment",type:"ministry",head:"김성환",isNew:"2025.10 개편",
       url:"https://www.mcee.go.kr",
@@ -279,7 +299,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["기후정책국","에너지정책국","환경보전국","물환경정책국","자원순환국"],
       children:[
         {name:"기상청",nameEn:"KMA",type:"agency",head:"이미선",
-          url:"https://www.kma.go.kr",desc:"기상관측·예보, 기후변화 감시, 지진·화산 관측, 기상산업 육성을 담당한다.",budget:"5,200억"}
+          url:"https://www.kma.go.kr",desc:"기상관측·예보, 기후변화 감시, 지진·화산 관측, 기상산업 육성을 담당한다.",budget:"5,200억",
+        divisions:["예보국","관측기반국","기후과학국","기상서비스진흥국","지진화산국"]}
     ]},
     {name:"고용노동부",nameEn:"Min. of Employment & Labor",type:"ministry",head:"김영훈",
       url:"https://www.moel.go.kr",
@@ -298,9 +319,11 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["주택토지실","건설정책국","도로국","철도국","항공정책국","교통물류실"],
       children:[
         {name:"행정중심복합도시건설청",nameEn:"Sejong City Agency",type:"agency",head:"강주엽",
-          url:"https://www.naacc.go.kr",desc:"세종특별자치시 행정중심복합도시 건설을 총괄한다.",budget:"2,904억"},
+          url:"https://www.naacc.go.kr",desc:"세종특별자치시 행정중심복합도시 건설을 총괄한다.",budget:"2,904억",
+        divisions:["도시계획국","시설사업국"]},
         {name:"새만금개발청",nameEn:"Saemangeum Agency",type:"agency",head:"김의겸",
-          url:"https://www.saemangeum.go.kr",desc:"새만금 종합개발 사업의 계획·시행·관리를 담당한다.",budget:"1.2조"}
+          url:"https://www.saemangeum.go.kr",desc:"새만금 종합개발 사업의 계획·시행·관리를 담당한다.",budget:"1.2조",
+        divisions:["개발전략국","개발사업국"]}
     ]},
     {name:"해양수산부",nameEn:"Min. of Oceans & Fisheries",type:"ministry",head:"황종우",
       url:"https://www.mof.go.kr",
@@ -309,7 +332,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       divisions:["해양정책국","수산정책국","항만국","해운물류국"],
       children:[
         {name:"해양경찰청",nameEn:"Korea Coast Guard",type:"agency",head:"장인식",
-          url:"https://www.kcg.go.kr",desc:"해양에서의 치안·경비, 해양 수색·구조, 해양오염 방제를 담당한다.",budget:"2.1조"}
+          url:"https://www.kcg.go.kr",desc:"해양에서의 치안·경비, 해양 수색·구조, 해양오염 방제를 담당한다.",budget:"2.1조",
+        divisions:["경비국","구조안전국","수사국","국제정보국","해양오염방제국"]}
     ]},
     {name:"중소벤처기업부",nameEn:"Min. of SMEs & Startups",type:"ministry",head:"한성숙",
       url:"https://www.mss.go.kr",
@@ -335,3 +359,24 @@ const sources = [
   {name:"각 부처 공식 홈페이지",url:"https://www.gov.kr/portal/orgInfo",desc:"업무 소개 및 조직도"},
   {name:"KRDS 대한민국 정부 디자인 시스템",url:"https://www.krds.go.kr",desc:"UI/UX 디자인 가이드라인 참고"}
 ];
+
+// ═══ 국장/실장급 보직자 ═══
+const divisionHeads={
+  // 국세청
+  "징세법무국":"박해영","개인납세국":"박정열","법인납세국":"심욱기","자산과세국":"오상훈","조사국":"안덕수",
+  // 관세청
+  "통관국":"이진희","심사국":"손성수",
+  // 경찰청
+  "국가수사본부":"박성주","경비국":"김병기",
+  // 질병관리청
+  "감염병위기관리국":"최홍석","만성질환관리국":"오진희",
+  // 기상청
+  "예보국":"함동주","기후과학국":"유상진",
+  // 소방청
+  "119대응국":"주영국",
+  // 방위사업청
+  "기반전력사업본부":"정재준","미래전력사업본부":"정기영",
+  // 국민권익위원회
+  "부패방지국":"김남두","고충처리국":"양종삼",
+  // 관세청 조사국 (별도 - 관세청과 국세청 중복 방지)
+};
