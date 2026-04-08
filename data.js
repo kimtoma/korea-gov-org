@@ -236,7 +236,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"4.7조",
       divisions:["기획조정실","법무실","인권국","교정본부","출입국·외국인정책본부"],
       children:[
-        {name:"검찰청",nameEn:"Supreme Prosecutors' Office",nameEnAbbr:"SPO",type:"agency",
+        {name:"대검찰청",nameEn:"Supreme Prosecutors' Office",nameEnAbbr:"SPO",type:"agency",
           url:"https://www.spo.go.kr",
           desc:"검찰 사무를 총괄하며 공소 유지, 형사사법 절차 지원, 범죄 피해자 보호 등을 담당한다."},
         {name:"공소청",nameEn:"Public Prosecution Office",type:"agency",status:"planned",isNew:"2026.10 신설예정",
