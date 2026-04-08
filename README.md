@@ -28,6 +28,8 @@
 - **49개 기관** — 19부, 6처, 18청, 6위원회 (공식 현행 기준)
 - **기관장 프로필** — 40명+ 이름·직위·경력·취임일, 17장 Wikipedia 공식 사진
 - **예산 시각화** — 2026년 예산안 기준, 노드 크기 비례 + 정렬 모드
+- **공식 영문명** — 정부조직법 기준 공식 English name + 약어 (MOEF, MSIT 등)
+- **소속 공공기관** — 부처별 공기업·준정부기관 91개 (공공기관 지정현황 기반)
 - **업무 설명** — 각 기관 소관 업무 1~2문장
 - **공식 홈페이지 URL** — 모든 기관 `.go.kr` 링크
 - **내부 조직** — 주요 부처 실/국/본부 구조
@@ -39,7 +41,7 @@
 - **상세 패널** — 데스크탑: 우측 사이드 패널 / 모바일: 하단 바텀시트 (스와이프 확장)
 - **딥링크 & 공유** — URL 해시(`#국방부`)로 특정 기관 바로 열기, 상세 패널에서 공유 버튼으로 URL 복사
 - **다크 모드** — 탑바 토글로 라이트/다크 전환, 시스템 테마 자동 감지
-- **출처 모달** — 8개 데이터 출처 명시
+- **출처 모달** — 11개 데이터 출처 명시 (공공데이터포털 3개 포함)
 
 ### 반응형
 
@@ -60,10 +62,11 @@
 ```
 index.html      # 메인 (CSS + 데이터 + D3 차트 + 뷰 로직 전부 인라인)
 data.js         # 데이터 원본 (index.html에도 인라인 복사본 포함)
+data-sources/   # 공공데이터포털 CSV 원본 (git 미추적, 참조용)
 favicon.svg     # SVG 파비콘
 og-image.svg    # OG 이미지 소스 (SVG)
 og-image.png    # OG 이미지 (1200x630)
-CHANGELOG.md    # v0~v23 변경 이력
+CHANGELOG.md    # v0~v24 변경 이력
 CLAUDE.md       # Claude Code 작업 지침
 README.md       # 프로젝트 문서
 ```
@@ -94,6 +97,9 @@ node scripts/validate-data.mjs
 | [KRDS](https://www.krds.go.kr) | UI/UX 디자인 가이드라인 참고 |
 | [대한민국 대통령실](https://www.president.go.kr) | 컬러 시스템 (라이트/다크 모드 토큰) |
 | [machineryofgovernment.uk](https://machineryofgovernment.uk) | 인터랙션 디자인 참고 |
+| [공공데이터포털: 정부조직도 기구정보](https://www.data.go.kr/data/15147671/fileData.do) | 공식 영문명·약어, 기관코드 |
+| [공공데이터포털: 부처별 예산현황](https://www.data.go.kr/data/15095848/fileData.do) | 부처별 세출예산 (누락 보완) |
+| [공공데이터포털: 공공기관 지정현황](https://www.data.go.kr/data/15088742/fileData.do) | 공기업·준정부기관 344개 |
 
 ## 만든 사람
 

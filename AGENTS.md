@@ -9,8 +9,9 @@
 
 - `index.html` — 모든 것이 인라인 (CSS, 데이터, JS/D3 차트)
 - `data.js` — 데이터 원본 참조용 (index.html에 인라인 복사본 존재)
+- `data-sources/` — 공공데이터포털 CSV 원본 (git 미추적, 참조용)
 - `favicon.svg`, `og-image.png/.svg` — 정적 에셋
-- `CHANGELOG.md` — v0~v23 변경 이력
+- `CHANGELOG.md` — v0~v24 변경 이력
 - `AGENTS.md` — 이 파일 (Codex 작업 지침)
 - `README.md` — 프로젝트 문서
 
@@ -26,7 +27,7 @@
 ## 핵심 데이터 구조
 
 - `people{}` — 이름 → {role, date, photo?, bio?}
-- `govData{}` — 트리 구조: name, nameEn, type, head?, url?, desc?, budget?, divisions?[], children?[]
+- `govData{}` — 트리 구조: name, nameEn, nameEnAbbr?, type, head?, url?, desc?, budget?, divisions?[], publicInstitutions?[], children?[]
 - `colorMapLight{}` / `colorMapDark{}` — 테마별 SVG 노드 색상
 - `colorMap` — 현재 활성 테마의 colorMap (light 또는 dark)
 
@@ -70,3 +71,5 @@ URL: https://korea-gov-org.pages.dev
 - 예산 문자열 파싱: "110.4조" → 1,104,000억, "5,200억" → 5200 (`parseBudget()`)
 - Wikipedia 사진 URL 패턴: `W + "경로/200px-파일명"`
 - 명칭변경 부처는 새 도메인 사용 (motir, mcee, kmcc, mods)
+- 공식 영문명/약어는 공공데이터포털 정부조직도 기구정보 CSV 기준 (정부조직법 2025-10-01)
+- `publicInstitutions[]`는 공기업+준정부기관만 포함, 기타공공기관 제외
