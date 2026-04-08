@@ -50,19 +50,20 @@ if (!dataCore || !inlineCore) {
 const context = {};
 vm.createContext(context);
 vm.runInContext(
-  `${dataJs}\nthis.__exported = { people, govData };`,
+  `${dataJs}\nthis.__exported = { people, govData, sources };`,
   context,
   { filename: "data.js" },
 );
 
-const { people, govData } = context.__exported ?? {};
-if (!people || !govData) {
-  errors.push("Failed to evaluate people/govData from data.js.");
+const { people, govData, sources } = context.__exported ?? {};
+if (!people || !govData || !sources) {
+  errors.push("Failed to evaluate people/govData/sources from data.js.");
 }
 
 const seenNodeNames = new Set();
 const duplicateNodeNames = new Set();
 const counts = { ministry: 0, office: 0, agency: 0, commission: 0 };
+const sourceIds = new Set(Array.isArray(sources) ? sources.map((src) => src.id).filter(Boolean) : []);
 
 function walk(node) {
   if (!node || typeof node !== "object") return;
@@ -81,6 +82,47 @@ function walk(node) {
 
   if (Object.prototype.hasOwnProperty.call(node, "budget") && node.budget && !isBudgetStringValid(node.budget)) {
     errors.push(`Invalid budget format "${node.budget}" on node "${node.name}".`);
+  }
+
+  if (node.identifiers) {
+    if (!node.identifiers.orgCode || typeof node.identifiers.orgCode !== "string") {
+      errors.push(`Missing identifiers.orgCode on node "${node.name}".`);
+    }
+    if (node.identifiers.sourceId && !sourceIds.has(node.identifiers.sourceId)) {
+      errors.push(`Unknown identifier sourceId "${node.identifiers.sourceId}" on node "${node.name}".`);
+    }
+  }
+
+  if (node.budgetMeta) {
+    if (!node.budgetMeta.fiscalYear || typeof node.budgetMeta.fiscalYear !== "number") {
+      errors.push(`Missing numeric budgetMeta.fiscalYear on node "${node.name}".`);
+    }
+    for (const ref of node.budgetMeta.sourceRefs ?? []) {
+      if (!sourceIds.has(ref)) {
+        errors.push(`Unknown budget source ref "${ref}" on node "${node.name}".`);
+      }
+    }
+  }
+
+  if (node.effective && node.effective.from && !/^\d{4}-\d{2}-\d{2}$/.test(node.effective.from)) {
+    errors.push(`Invalid effective.from "${node.effective.from}" on node "${node.name}".`);
+  }
+
+  for (const ref of node.sourceRefs ?? []) {
+    if (!sourceIds.has(ref)) {
+      errors.push(`Unknown source ref "${ref}" on node "${node.name}".`);
+    }
+  }
+
+  for (const item of node.history ?? []) {
+    if (item.date && !/^\d{4}-\d{2}-\d{2}$/.test(item.date)) {
+      errors.push(`Invalid history date "${item.date}" on node "${node.name}".`);
+    }
+    for (const ref of item.sourceRefs ?? []) {
+      if (!sourceIds.has(ref)) {
+        errors.push(`Unknown history source ref "${ref}" on node "${node.name}".`);
+      }
+    }
   }
 
   if (!isPlannedNode(node) && counts[node.type] !== undefined) {

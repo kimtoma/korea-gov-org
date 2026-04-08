@@ -384,19 +384,134 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
 
 // ═══ 데이터 출처 ═══
 const sources = [
-  {name:"정부24 중앙행정기관 조직도 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 분류·소속 체계의 1차 기준 (검증 기준일: 2026-04-07)",
+  {id:"gov24-org",name:"정부24 중앙행정기관 조직도 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 분류·소속 체계의 1차 기준 (검증 기준일: 2026-04-07)",
       publicInstitutions:["한국보훈복지의료공단"]},
-  {name:"각 부처·기관 공식 홈페이지 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 업무·조직 설명, 공식 도메인 확인"},
-  {name:"대한민국 정책브리핑 (공식)",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
-  {name:"2026년 정부 예산안·보도자료 (공식)",url:"https://www.mpb.go.kr",desc:"부처별 예산 규모 및 정책 변화 확인"},
-  {name:"위키백과: 이재명 정부의 국무위원 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 이력 보조 확인"},
-  {name:"위키백과: 이재명 정부 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력 보조 확인"},
-  {name:"나무위키: 이재명 정부/인사 (보조)",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 교차 확인"},
-  {name:"KRDS 대한민국 정부 디자인 시스템",url:"https://www.krds.go.kr",desc:"UI/UX 디자인 가이드라인 참고"},
-  {name:"공공데이터포털: 정부조직도 기구정보 (공식)",url:"https://www.data.go.kr/data/15147671/fileData.do",desc:"공식 영문명·약어, 기관코드, 조직 계층 구조 (정부조직법 2025-10-01 기준)"},
-  {name:"공공데이터포털: 부처별 예산현황 (공식)",url:"https://www.data.go.kr/data/15095848/fileData.do",desc:"기획재정부 부처별 세출예산 (2024 정부안 기준, 누락 기관 보완용)"},
-  {name:"공공데이터포털: 공공기관 지정현황 (공식)",url:"https://www.data.go.kr/data/15088742/fileData.do",desc:"재정경제부 공공기관 지정현황 344개 (2025-05-26 기준, 공기업·준정부기관)"}
+  {id:"official-sites",name:"각 부처·기관 공식 홈페이지 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 업무·조직 설명, 공식 도메인 확인"},
+  {id:"policy-briefing",name:"대한민국 정책브리핑 (공식)",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
+  {id:"budget-2026-proposal",name:"2026년 정부 예산안·보도자료 (공식)",url:"https://www.mpb.go.kr",desc:"부처별 예산 규모 및 정책 변화 확인"},
+  {id:"wiki-cabinet",name:"위키백과: 이재명 정부의 국무위원 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",desc:"장관 프로필 사진 및 인사 이력 보조 확인"},
+  {id:"wiki-lee-gov",name:"위키백과: 이재명 정부 (보조)",url:"https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",desc:"정부 조직 개편 이력 보조 확인"},
+  {id:"namu-personnel",name:"나무위키: 이재명 정부/인사 (보조)",url:"https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",desc:"청장·처장·위원장급 인사 교차 확인"},
+  {id:"krds",name:"KRDS 대한민국 정부 디자인 시스템",url:"https://www.krds.go.kr",desc:"UI/UX 디자인 가이드라인 참고"},
+  {id:"data-go-kr-org",name:"공공데이터포털: 정부조직도 기구정보 (공식)",url:"https://www.data.go.kr/data/15147671/fileData.do",desc:"공식 영문명·약어, 기관코드, 조직 계층 구조 (정부조직법 2025-10-01 기준)"},
+  {id:"data-go-kr-budget",name:"공공데이터포털: 부처별 예산현황 (공식)",url:"https://www.data.go.kr/data/15095848/fileData.do",desc:"기획재정부 부처별 세출예산 (2024 정부안 기준, 누락 기관 보완용)"},
+  {id:"data-go-kr-public-institutions",name:"공공데이터포털: 공공기관 지정현황 (공식)",url:"https://www.data.go.kr/data/15088742/fileData.do",desc:"재정경제부 공공기관 지정현황 344개 (2025-05-26 기준, 공기업·준정부기관)"}
 ];
+
+const ORG_SOURCE_DEFAULTS={datasetId:"15147671",sourceId:"data-go-kr-org",status:"official"};
+const BUDGET_SOURCE_DEFAULTS={datasetId:"15095848",sourceId:"budget-2026-proposal",status:"derived"};
+
+const orgCodeOverrides={
+  "대한민국 정부":{orgCode:"ROOT-KR-GOV",orgCodeType:"synthetic-root",status:"synthetic",canonicalId:"kr-gov-root"},
+  "대통령":{orgCode:"0000001",canonicalId:"org-0000001"},
+  "국무총리":{orgCode:"0000002",canonicalId:"org-0000002"},
+  "대통령비서실":{orgCode:"1011000",orgCodeType:"alias",status:"mapped-alias",canonicalId:"org-1011000",officialName:"대통령실"},
+  "감사원":{orgCode:"1020000",canonicalId:"org-1020000"},
+  "국가정보원":{orgCode:"1030000",canonicalId:"org-1030000"},
+  "대통령경호처":{orgCode:"1012000",canonicalId:"org-1012000"},
+  "법제처":{orgCode:"1170000",canonicalId:"org-1170000"},
+  "인사혁신처":{orgCode:"1613000",canonicalId:"org-1613000"},
+  "식품의약품안전처":{orgCode:"1471000",canonicalId:"org-1471000"},
+  "공정거래위원회":{orgCode:"1130000",canonicalId:"org-1130000"},
+  "금융위원회":{orgCode:"1160000",canonicalId:"org-1160000"},
+  "국민권익위원회":{orgCode:"1140100",canonicalId:"org-1140100"},
+  "개인정보보호위원회":{orgCode:"PIPC-KR",orgCodeType:"style-independent",status:"independent",canonicalId:"org-pipc-kr"},
+  "원자력안전위원회":{orgCode:"1070000",canonicalId:"org-1070000"},
+  "국무조정실":{orgCode:"1092000",canonicalId:"org-1092000"},
+  "국무총리비서실":{orgCode:"1091000",canonicalId:"org-1091000"},
+  "과학기술정보통신부":{orgCode:"1721000",canonicalId:"org-1721000"},
+  "교육부":{orgCode:"1342000",canonicalId:"org-1342000"},
+  "외교부":{orgCode:"1262000",canonicalId:"org-1262000"},
+  "통일부":{orgCode:"1250000",canonicalId:"org-1250000"},
+  "법무부":{orgCode:"1270000",canonicalId:"org-1270000"},
+  "국방부":{orgCode:"1290000",canonicalId:"org-1290000"},
+  "행정안전부":{orgCode:"MOIS-2025",orgCodeType:"style-provisional",status:"provisional",canonicalId:"org-mois-2025"},
+  "문화체육관광부":{orgCode:"1371000",canonicalId:"org-1371000"},
+  "농림축산식품부":{orgCode:"1543000",canonicalId:"org-1543000"},
+  "보건복지부":{orgCode:"1352000",canonicalId:"org-1352000"},
+  "고용노동부":{orgCode:"1492000",canonicalId:"org-1492000"},
+  "국토교통부":{orgCode:"MOLIT-2025",orgCodeType:"style-provisional",status:"provisional",canonicalId:"org-molit-2025"},
+  "해양수산부":{orgCode:"1192000",canonicalId:"org-1192000"},
+  "중소벤처기업부":{orgCode:"1421000",canonicalId:"org-1421000"},
+  "국가보훈부":{orgCode:"1180000",canonicalId:"org-1180000"},
+  "국세청":{orgCode:"1210000",canonicalId:"org-1210000"},
+  "관세청":{orgCode:"1220000",canonicalId:"org-1220000"},
+  "조달청":{orgCode:"1230000",canonicalId:"org-1230000"},
+  "우주항공청":{orgCode:"1721692",canonicalId:"org-1721692"},
+  "재외동포청":{orgCode:"1263000",canonicalId:"org-1263000"},
+  "병무청":{orgCode:"1300000",canonicalId:"org-1300000"},
+  "방위사업청":{orgCode:"1690000",canonicalId:"org-1690000"},
+  "경찰청":{orgCode:"1320000",canonicalId:"org-1320000"},
+  "소방청":{orgCode:"1661000",canonicalId:"org-1661000"},
+  "국가유산청":{orgCode:"1550000",canonicalId:"org-1550000"},
+  "농촌진흥청":{orgCode:"1390000",canonicalId:"org-1390000"},
+  "산림청":{orgCode:"1400000",canonicalId:"org-1400000"},
+  "질병관리청":{orgCode:"1790387",canonicalId:"org-1790387"},
+  "기상청":{orgCode:"1360000",canonicalId:"org-1360000"},
+  "행정중심복합도시건설청":{orgCode:"NAACC-2025",orgCodeType:"style-provisional",status:"provisional",canonicalId:"org-naacc"},
+  "새만금개발청":{orgCode:"SDIA-2025",orgCodeType:"style-provisional",status:"provisional",canonicalId:"org-sdia"},
+  "해양경찰청":{orgCode:"1532000",canonicalId:"org-1532000"},
+  "고위공직자범죄수사처":{orgCode:"CIO-KR-2021",orgCodeType:"style-independent",status:"independent",canonicalId:"org-cio-kr"},
+  "국가인권위원회":{orgCode:"NHRC-KR",orgCodeType:"style-independent",status:"independent",canonicalId:"org-nhrc-kr"},
+  "기획예산처":{orgCode:"MPB-2026",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-mpb-2026",predecessorOrgCode:"1051000"},
+  "국가데이터처":{orgCode:"MODS-2025",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-mods-2025",predecessorOrgCode:"1242000"},
+  "지식재산처":{orgCode:"MOIP-2025",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-moip-2025",predecessorOrgCode:"1430000"},
+  "재정경제부":{orgCode:"MOEF-2026",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-moef-2026",predecessorOrgCode:"1051000"},
+  "산업통상부":{orgCode:"MOTIR-2025",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-motir-2025",predecessorOrgCode:"1450000"},
+  "기후에너지환경부":{orgCode:"MCEE-2025",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-mcee-2025",predecessorOrgCode:"1480000"},
+  "성평등가족부":{orgCode:"MOGEF-2025",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-mogef-2025",predecessorOrgCode:"1383000"},
+  "방송미디어통신위원회":{orgCode:"KMCC-2025",orgCodeType:"style-provisional",status:"planned-active",canonicalId:"org-kmcc-2025",predecessorOrgCode:"1570000"}
+};
+
+const nodeMetadata={
+  "대한민국 정부":{effective:{from:"1948-08-15",to:null,status:"active"},sourceRefs:["gov24-org","data-go-kr-org"]},
+  "기획예산처":{effective:{from:"2026-01-02",to:null,status:"active"},history:[{date:"2026-01-02",event:"split",summary:"기획재정부 예산 기능 분리로 신설.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "재정경제부":{effective:{from:"2026-01-02",to:null,status:"active"},history:[{date:"2026-01-02",event:"split",summary:"기획재정부에서 재정·세제·국고 기능을 중심으로 재편.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "국가데이터처":{effective:{from:"2025-10-01",to:null,status:"active"},history:[{date:"2025-10-01",event:"upgrade",summary:"통계청이 처급 기관으로 승격되어 국가데이터처로 개편.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "지식재산처":{effective:{from:"2025-10-01",to:null,status:"active"},history:[{date:"2025-10-01",event:"upgrade",summary:"특허청이 처급 기관으로 승격되어 지식재산처로 개편.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "산업통상부":{effective:{from:"2025-10-01",to:null,status:"active"},history:[{date:"2025-10-01",event:"rename",summary:"산업통상자원부에서 에너지 기능 분리 후 산업통상부로 명칭 변경.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "기후에너지환경부":{effective:{from:"2025-10-01",to:null,status:"active"},history:[{date:"2025-10-01",event:"reorg",summary:"환경부에 에너지 기능을 통합해 기후에너지환경부로 개편.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "성평등가족부":{effective:{from:"2025-10-01",to:null,status:"active"},history:[{date:"2025-10-01",event:"rename",summary:"여성가족부가 성평등가족부로 명칭 변경.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "방송미디어통신위원회":{effective:{from:"2025-10-01",to:null,status:"active"},history:[{date:"2025-10-01",event:"replace",summary:"방송통신위원회를 대체해 방송·미디어·통신 통합 규제기관으로 신설.",sourceRefs:["policy-briefing","wiki-lee-gov"]}]},
+  "우주항공청":{effective:{from:"2024-05-27",to:null,status:"active"},history:[{date:"2024-05-27",event:"new",summary:"우주항공 전담 중앙행정기관으로 신설.",sourceRefs:["data-go-kr-org","policy-briefing"]}]},
+  "재외동포청":{effective:{from:"2023-06-05",to:null,status:"active"},history:[{date:"2023-06-05",event:"new",summary:"재외동포 정책 전담기관으로 신설.",sourceRefs:["data-go-kr-org","policy-briefing"]}]},
+  "국가유산청":{effective:{from:"2024-05-17",to:null,status:"active"},history:[{date:"2024-05-17",event:"rename",summary:"문화재청이 국가유산청으로 명칭 변경.",sourceRefs:["data-go-kr-org","policy-briefing"]}]},
+  "질병관리청":{effective:{from:"2020-09-12",to:null,status:"active"},history:[{date:"2020-09-12",event:"upgrade",summary:"질병관리본부가 청으로 승격.",sourceRefs:["data-go-kr-org","official-sites"]}]},
+  "공소청":{effective:{from:"2026-10-01",to:null,status:"planned"},history:[{date:"2026-10-01",event:"planned",summary:"검찰청 폐지 후 기소 기능을 전담하도록 계획된 기관.",sourceRefs:["wiki-lee-gov"]}]},
+  "중대범죄수사청":{effective:{from:"2026-10-01",to:null,status:"planned"},history:[{date:"2026-10-01",event:"planned",summary:"수사·기소 분리 원칙에 따라 신설 예정인 중대범죄 수사기관.",sourceRefs:["wiki-lee-gov"]}]}
+};
+
+function enrichNode(node,parent=null){
+  if(!node||typeof node!=="object")return;
+  const orgInfo=orgCodeOverrides[node.name];
+  if(orgInfo){
+    node.identifiers={scheme:"data-go-kr-org-code",...ORG_SOURCE_DEFAULTS,...orgInfo,parentOrgCode:parent?.identifiers?.orgCode||null};
+  } else if(parent?.identifiers?.orgCode){
+    node.identifiers={scheme:"org-code-style-child",sourceId:"data-go-kr-org",status:"derived-child",orgCode:`${parent.identifiers.orgCode}/${node.name}`,orgCodeType:"style-derived",canonicalId:`derived-${node.name}`,parentOrgCode:parent.identifiers.orgCode};
+  }
+
+  const extra=nodeMetadata[node.name]||{};
+  if(extra.effective) node.effective={...extra.effective};
+  else if(!node.effective) node.effective={from:null,to:null,status:node.status==="planned"?"planned":"active"};
+  if(extra.history) node.history=extra.history.map(item=>({...item}));
+
+  const refs=new Set(["gov24-org","official-sites"]);
+  if(node.identifiers?.sourceId) refs.add(node.identifiers.sourceId);
+  if(extra.sourceRefs) extra.sourceRefs.forEach(ref=>refs.add(ref));
+  if(node.budget){
+    node.budgetMeta={fiscalYear:2026,phase:"government-proposal",unit:"KRW",displayAmount:node.budget,amountBasis:"display-only",...BUDGET_SOURCE_DEFAULTS,sourceRefs:["budget-2026-proposal","data-go-kr-budget"]};
+    node.budgetSourceMeta={sourceId:node.budgetMeta.sourceId,datasetId:node.budgetMeta.datasetId,phase:node.budgetMeta.phase};
+    refs.add("budget-2026-proposal");
+    refs.add("data-go-kr-budget");
+  }
+  if(node.publicInstitutions?.length) refs.add("data-go-kr-public-institutions");
+  if(node.history?.length) node.history.forEach(item=>(item.sourceRefs||[]).forEach(ref=>refs.add(ref)));
+  node.sourceRefs=Array.from(refs);
+
+  if(Array.isArray(node.children)) node.children.forEach(child=>enrichNode(child,node));
+}
+
+enrichNode(govData,null);
 
 // ═══ 국장/실장급 보직자 ═══
 const divisionHeads={
