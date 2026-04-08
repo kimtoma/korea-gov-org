@@ -1,0 +1,26 @@
+[
+  {
+    "canonicalId": "org-moef-2026",
+    "orgName": "재정경제부",
+    "indicators": [
+      {"id":"consumer-price-inflation","name":"소비자물가상승률","value":2.3,"valueDisplay":"2.3%","unit":"%","year":2025,"sourceId":"kosis-consumer-price","sourceRefs":["kosis-consumer-price"],"datasetId":"KOSIS","summary":"소비자물가 상승 폭. 거시경제 안정과 체감물가 관리의 대표 지표.","trendDirection":"down","trendLabel":"전년 3.6% → 2.3%","series":[{"year":2021,"value":2.5},{"year":2022,"value":5.1},{"year":2023,"value":3.6},{"year":2024,"value":2.7},{"year":2025,"value":2.3}],"target":{"value":2,"display":"2% 내외","label":"물가안정 목표"}},
+      {"id":"national-debt-gdp","name":"국가채무비율","value":48.4,"valueDisplay":"48.4%","unit":"% GDP","year":2025,"sourceId":"e-nara-fiscal-soundness","sourceRefs":["e-nara-fiscal-soundness"],"datasetId":"e-나라지표","summary":"재정 건전성을 보여주는 핵심 지표. 본예산·정부안 논의와 함께 자주 참조됨.","trendDirection":"up","trendLabel":"전년 47.4% → 48.4%","series":[{"year":2021,"value":43.8},{"year":2022,"value":46.9},{"year":2023,"value":46.1},{"year":2024,"value":47.4},{"year":2025,"value":48.4}]}
+    ]
+  },
+  {
+    "canonicalId": "org-motir-2025",
+    "orgName": "산업통상부",
+    "indicators": [
+      {"id":"trade-balance","name":"연간 수출액","value":714.2,"valueDisplay":"7,142억달러","unit":"억달러","year":2025,"sourceId":"kosis-trade-balance","sourceRefs":["kosis-trade-balance"],"datasetId":"KOSIS","summary":"수출 중심 산업경쟁력과 통상 성과를 함께 보여주는 대표 지표.","trendDirection":"up","trendLabel":"전년 6,836억달러 → 7,142억달러","series":[{"year":2021,"value":6444},{"year":2022,"value":6836},{"year":2023,"value":6327},{"year":2024,"value":6836},{"year":2025,"value":7142}],"target":{"value":7300,"display":"7,300억달러","label":"중기 수출 목표"}},
+      {"id":"manufacturing-output-index","name":"제조업 생산지수","value":109.4,"valueDisplay":"109.4","unit":"2020=100","year":2025,"sourceId":"motie-industrial-output","sourceRefs":["motie-industrial-output"],"datasetId":"산업통상부","summary":"주력 제조업 가동과 산업활력의 흐름을 보여주는 기본 지표.","trendDirection":"up","trendLabel":"전년 106.8 → 109.4","series":[{"year":2021,"value":101.3},{"year":2022,"value":104.2},{"year":2023,"value":103.7},{"year":2024,"value":106.8},{"year":2025,"value":109.4}]}
+    ]
+  },
+  {
+    "canonicalId": "org-1421000",
+    "orgName": "중소벤처기업부",
+    "indicators": [
+      {"id":"venture-investment","name":"벤처투자 규모","value":11.9,"valueDisplay":"11.9조원","unit":"조원","year":2025,"sourceId":"kosis-venture-investment","sourceRefs":["kosis-venture-investment"],"datasetId":"KOSIS","summary":"스타트업·벤처 생태계의 투자 활력을 보여주는 대표 지표.","trendDirection":"up","trendLabel":"전년 10.7조 → 11.9조","series":[{"year":2021,"value":15.9},{"year":2022,"value":12.5},{"year":2023,"value":10.9},{"year":2024,"value":10.7},{"year":2025,"value":11.9}]},
+      {"id":"small-business-digitalization","name":"소상공인 디지털전환 지원 누적","value":198,"valueDisplay":"198만개사","unit":"만개사","year":2025,"sourceId":"mss-digitalization","sourceRefs":["mss-digitalization"],"datasetId":"중기부","summary":"스마트상점·온라인 판로 등 디지털 전환 지원을 받은 소상공인 누적 규모.","trendDirection":"up","trendLabel":"전년 163만개사 → 198만개사","series":[{"year":2021,"value":52},{"year":2022,"value":88},{"year":2023,"value":121},{"year":2024,"value":163},{"year":2025,"value":198}]}
+    ]
+  }
+]

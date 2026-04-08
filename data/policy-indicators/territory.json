@@ -1,0 +1,52 @@
+[
+  {
+    "canonicalId": "org-1371000",
+    "orgName": "문화체육관광부",
+    "indicators": [
+      {"id":"inbound-tourists","name":"외래관광객 수","value":1860,"valueDisplay":"1,860만명","unit":"만명","year":2025,"sourceId":"kosis-inbound-tourists","sourceRefs":["kosis-inbound-tourists"],"datasetId":"KOSIS","summary":"한국 방문 외래객 규모. 관광산업 회복과 문화매력 확산을 보여준다.","trendDirection":"up","trendLabel":"전년 1,640만명 → 1,860만명","series":[{"year":2021,"value":96},{"year":2022,"value":320},{"year":2023,"value":1103},{"year":2024,"value":1640},{"year":2025,"value":1860}]},
+      {"id":"content-industry-exports","name":"콘텐츠산업 수출액","value":151,"valueDisplay":"151억달러","unit":"억달러","year":2024,"sourceId":"mcst-content-exports","sourceRefs":["mcst-content-exports"],"datasetId":"문체부","summary":"게임·방송·음악·출판 등 K-콘텐츠 수출 성과를 보여주는 지표.","trendDirection":"up","trendLabel":"전년 138억달러 → 151억달러","series":[{"year":2020,"value":119},{"year":2021,"value":124},{"year":2022,"value":132},{"year":2023,"value":138},{"year":2024,"value":151}],"target":{"value":160,"display":"160억달러","label":"산업 확장 목표"}}
+    ]
+  },
+  {
+    "canonicalId": "org-1543000",
+    "orgName": "농림축산식품부",
+    "indicators": [
+      {"id":"food-self-sufficiency","name":"식량자급률","value":49.8,"valueDisplay":"49.8%","unit":"%","year":2024,"sourceId":"e-nara-food-self-sufficiency","sourceRefs":["e-nara-food-self-sufficiency"],"datasetId":"e-나라지표","summary":"국내 식량 생산 기반의 안정성을 보여주는 농정 핵심 지표.","trendDirection":"up","trendLabel":"전년 48.3% → 49.8%","series":[{"year":2020,"value":45.8},{"year":2021,"value":46.9},{"year":2022,"value":47.8},{"year":2023,"value":48.3},{"year":2024,"value":49.8}]},
+      {"id":"smart-farm-area","name":"스마트팜 보급면적","value":9.2,"valueDisplay":"9.2천ha","unit":"천ha","year":2025,"sourceId":"mafra-smart-farm","sourceRefs":["mafra-smart-farm"],"datasetId":"농식품부","summary":"디지털 농업 전환의 확산 수준을 보여주는 대표 사업 지표.","trendDirection":"up","trendLabel":"전년 7.8천ha → 9.2천ha","series":[{"year":2021,"value":4.3},{"year":2022,"value":5.2},{"year":2023,"value":6.4},{"year":2024,"value":7.8},{"year":2025,"value":9.2}]}
+    ]
+  },
+  {
+    "canonicalId": "org-molit-2025",
+    "orgName": "국토교통부",
+    "indicators": [
+      {"id":"housing-supply-rate","name":"주택보급률","value":102.5,"valueDisplay":"102.5%","unit":"%","year":2024,"sourceId":"e-nara-housing-supply","sourceRefs":["e-nara-housing-supply"],"datasetId":"e-나라지표","summary":"가구 수 대비 주택 stock 규모. 공급 기반을 보는 기본 지표.","trendDirection":"up","trendLabel":"전년 102.1% → 102.5%","series":[{"year":2020,"value":100.8},{"year":2021,"value":101.4},{"year":2022,"value":101.7},{"year":2023,"value":102.1},{"year":2024,"value":102.5}]},
+      {"id":"public-transport-share","name":"대중교통 분담률","value":41.5,"valueDisplay":"41.5%","unit":"%","year":2023,"sourceId":"kosis-public-transport-share","sourceRefs":["kosis-public-transport-share"],"datasetId":"KOSIS","summary":"도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.","trendDirection":"flat","trendLabel":"코로나 이후 회복세","series":[{"year":2018,"value":42.1},{"year":2019,"value":42.3},{"year":2020,"value":35.2},{"year":2022,"value":40.6},{"year":2023,"value":41.5}]},
+      {"id":"jeonse-fraud-relief","name":"전세사기 피해지원 실적","value":3.4,"valueDisplay":"3.4만건","unit":"만건","year":2025,"sourceId":"molit-jeonse-risk","sourceRefs":["molit-jeonse-risk"],"datasetId":"국토교통부","summary":"주거안전 대응과 긴급지원 행정의 체감도를 보여주는 운영 지표.","trendDirection":"up","trendLabel":"전년 2.6만건 → 3.4만건","series":[{"year":2022,"value":0.8},{"year":2023,"value":1.7},{"year":2024,"value":2.6},{"year":2025,"value":3.4}]}
+    ]
+  },
+  {
+    "canonicalId": "org-1192000",
+    "orgName": "해양수산부",
+    "indicators": [
+      {"id":"port-cargo-volume","name":"전국 무역항 물동량","value":1620,"valueDisplay":"16.2억톤","unit":"백만톤","year":2025,"sourceId":"e-nara-maritime-logistics","sourceRefs":["e-nara-maritime-logistics"],"datasetId":"e-나라지표","summary":"항만 경쟁력과 해운·물류 흐름을 보여주는 대표 해양경제 지표.","trendDirection":"up","trendLabel":"전년 15.4억톤 → 16.2억톤","series":[{"year":2021,"value":1498},{"year":2022,"value":1536},{"year":2023,"value":1511},{"year":2024,"value":1540},{"year":2025,"value":1620}]},
+      {"id":"fisheries-household-income","name":"어가 평균소득","value":53.2,"valueDisplay":"5,320만원","unit":"백만원","year":2025,"sourceId":"mof-fisheries-income","sourceRefs":["mof-fisheries-income"],"datasetId":"해양수산부","summary":"수산업 종사 가구의 소득 체감도를 보여주는 기초 민생 지표.","trendDirection":"up","trendLabel":"전년 4,970만원 → 5,320만원","series":[{"year":2021,"value":44.6},{"year":2022,"value":47.8},{"year":2023,"value":48.9},{"year":2024,"value":49.7},{"year":2025,"value":53.2}]},
+      {"id":"marine-accidents","name":"해양사고 발생건수","value":2810,"valueDisplay":"2,810건","unit":"건","year":2025,"sourceId":"kosis-marine-accidents","sourceRefs":["kosis-marine-accidents"],"datasetId":"KOSIS","summary":"해양안전 체계 개선 정도를 확인하는 운영 지표.","trendDirection":"down","trendLabel":"전년 2,946건 → 2,810건","series":[{"year":2021,"value":3124},{"year":2022,"value":3058},{"year":2023,"value":2991},{"year":2024,"value":2946},{"year":2025,"value":2810}]}
+    ]
+  },
+  {
+    "canonicalId": "org-mcee-2025",
+    "orgName": "기후에너지환경부",
+    "indicators": [
+      {"id":"greenhouse-gas-emissions","name":"온실가스 총배출량","value":624.2,"valueDisplay":"624.2MtCO₂eq","unit":"MtCO₂eq","year":2023,"sourceId":"e-nara-ghg-emissions","sourceRefs":["e-nara-ghg-emissions"],"datasetId":"e-나라지표","summary":"국가 탄소배출 총량. 기후대응 정책의 최상위 성과지표 중 하나.","trendDirection":"down","trendLabel":"전년 대비 감소","series":[{"year":2019,"value":701.3},{"year":2020,"value":656.0},{"year":2021,"value":679.6},{"year":2022,"value":633.5},{"year":2023,"value":624.2}]},
+      {"id":"renewable-generation-share","name":"재생에너지 발전 비중","value":9.6,"valueDisplay":"9.6%","unit":"%","year":2024,"sourceId":"e-nara-renewable-share","sourceRefs":["e-nara-renewable-share"],"datasetId":"e-나라지표","summary":"전체 발전량 중 재생에너지가 차지하는 비중.","trendDirection":"up","trendLabel":"전년 8.9% → 9.6%","series":[{"year":2020,"value":6.5},{"year":2021,"value":7.1},{"year":2022,"value":7.8},{"year":2023,"value":8.9},{"year":2024,"value":9.6}],"target":{"value":10,"display":"10%","label":"단기 보급 목표"}}
+    ]
+  },
+  {
+    "canonicalId": "org-1290000",
+    "orgName": "국방부",
+    "indicators": [
+      {"id":"defense-budget-gdp-share","name":"국방비 GDP 대비 비중","value":2.7,"valueDisplay":"2.7%","unit":"% GDP","year":2025,"sourceId":"e-nara-defense-budget-share","sourceRefs":["e-nara-defense-budget-share"],"datasetId":"e-나라지표","summary":"안보 투자 강도와 중기 전력증강 규모를 함께 읽을 수 있는 지표.","trendDirection":"flat","trendLabel":"전년 수준 유지","series":[{"year":2021,"value":2.8},{"year":2022,"value":2.7},{"year":2023,"value":2.7},{"year":2024,"value":2.7},{"year":2025,"value":2.7}]},
+      {"id":"defense-exports","name":"방산수출 수주액","value":138,"valueDisplay":"138억달러","unit":"억달러","year":2025,"sourceId":"mnd-defense-exports","sourceRefs":["mnd-defense-exports"],"datasetId":"국방부","summary":"국방정책과 산업정책이 만나는 방산 수출 성과 지표.","trendDirection":"up","trendLabel":"전년 104억달러 → 138억달러","series":[{"year":2021,"value":72},{"year":2022,"value":173},{"year":2023,"value":95},{"year":2024,"value":104},{"year":2025,"value":138}],"target":{"value":150,"display":"150억달러","label":"수출 확대 목표"}}
+    ]
+  }
+]

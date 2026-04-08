@@ -30,7 +30,7 @@
 - **예산 시각화** — 2026년 예산안 기준, 노드 크기 비례 + 정렬 모드
 - **공식 영문명** — 정부조직법 기준 공식 English name + 약어 (MOEF, MSIT 등)
 - **소속 공공기관** — 부처별 공기업·준정부기관 91개 (공공기관 지정현황 기반)
-- **대표 정책지표** — e-나라지표/KOSIS/부처 통계 기반 핵심 지표 26개를 13개 기관 상세 패널에 연결
+- **대표 정책지표** — e-나라지표/KOSIS/부처 통계 기반 핵심 지표 41개를 19개 부처 상세 패널에 연결
 - **시계열 미니차트** — 정책지표 카드 안에서 최근 5년 내외 추이를 스파크라인으로 바로 확인
 - **업무 설명** — 각 기관 소관 업무 1~2문장
 - **공식 홈페이지 URL** — 모든 기관 `.go.kr` 링크
@@ -64,12 +64,16 @@
 ```
 index.html      # 메인 (CSS + 데이터 + D3 차트 + 뷰 로직 전부 인라인)
 data.js         # UI용 데이터 원본 (index.html에도 인라인 복사본 포함)
-data/           # Phase 2 정규화 기반 산출물
+data/           # Phase 2 정규화 기반 산출물 + 정책지표 source-of-truth
   normalization-foundation.json  # canonical/source/alias/lineage/budget/indicator fact 분리본
+  policy-indicators/
+    *.json                       # 도메인별 정책지표 source 파일
+    sources.json                 # 정책지표 출처 카탈로그
 data-sources/   # 공공데이터포털 CSV 원본 (git 미추적, 참조용)
 scripts/
   validate-data.mjs              # UI 데이터 + 정규화 기반 검증
   build-normalization-foundation.mjs
+  sync-policy-indicators.mjs     # source 파일 → data.js / index.html 동기화
 favicon.svg     # SVG 파비콘
 og-image.svg    # OG 이미지 소스 (SVG)
 og-image.png    # OG 이미지 (1200x630)
@@ -108,7 +112,7 @@ node scripts/validate-data.mjs
 - `budgetFacts` — 예산 문자열(`1.2조`)을 정규화한 KRW 숫자 fact
 - `indicatorFacts` — e-나라지표/KOSIS 기반 정책지표 fact
 
-이 구조 덕분에 정책지표·추가 공공데이터를 UI 노드 이름에 직접 매달리지 않고 `canonicalId` 중심으로 조인할 수 있다. 현재는 13개 핵심 기관에 대해 실용 지표 레이어를 붙였고, 각 지표 fact에는 간단한 `series` 배열을 함께 실어 추이 UI와 후속 시계열 확장 기반을 마련했다.
+이 구조 덕분에 정책지표·추가 공공데이터를 UI 노드 이름에 직접 매달리지 않고 `canonicalId` 중심으로 조인할 수 있다. 이번 패스에서는 정책지표 source를 `data/policy-indicators/*.json`으로 분리하고, `sync-policy-indicators.mjs`로 UI 번들에 동기화하도록 정리했다. 현재는 19개 전체 부처를 커버하는 41개 지표를 연결했고, 각 지표 fact에는 `series`와 선택적 `target` 메타를 함께 실어 추이·YoY·기간 최고/최저·목표 배지 UI의 기반을 마련했다.
 
 ## 데이터 출처
 

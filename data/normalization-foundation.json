@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-08T14:42:15.651Z",
+  "generatedAt": "2026-04-08T22:56:24.538Z",
   "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
   "sourceCatalog": [
     {
@@ -136,6 +136,30 @@
       "desc": "국내 식량자급 수준 지표"
     },
     {
+      "id": "e-nara-veterans-compensation",
+      "name": "e-나라지표: 국가보훈 보상·예우 규모",
+      "url": "https://www.index.go.kr",
+      "desc": "보훈 급여 및 예우 대상 규모 지표"
+    },
+    {
+      "id": "e-nara-defense-budget-share",
+      "name": "e-나라지표: 국방비 GDP 대비 비중",
+      "url": "https://www.index.go.kr",
+      "desc": "GDP 대비 국방비 비중"
+    },
+    {
+      "id": "e-nara-maritime-logistics",
+      "name": "e-나라지표: 항만 물동량",
+      "url": "https://www.index.go.kr",
+      "desc": "전국 무역항 항만 물동량"
+    },
+    {
+      "id": "e-nara-gender-gap",
+      "name": "e-나라지표: 성별임금격차",
+      "url": "https://www.index.go.kr",
+      "desc": "성평등 정책과 함께 보는 핵심 격차 지표"
+    },
+    {
       "id": "kosis-consumer-price",
       "name": "KOSIS: 소비자물가상승률",
       "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003",
@@ -190,6 +214,30 @@
       "desc": "벤처투자 실적"
     },
     {
+      "id": "kosis-trade-balance",
+      "name": "KOSIS: 수출입 총괄",
+      "url": "https://kosis.kr",
+      "desc": "수출액·무역수지 관련 무역 지표"
+    },
+    {
+      "id": "kosis-crime-clearance",
+      "name": "KOSIS: 범죄 검거율",
+      "url": "https://kosis.kr",
+      "desc": "주요 범죄 검거율"
+    },
+    {
+      "id": "kosis-female-manager-share",
+      "name": "KOSIS: 여성관리자 비율",
+      "url": "https://kosis.kr",
+      "desc": "조직 내 여성 관리자 비중"
+    },
+    {
+      "id": "kosis-marine-accidents",
+      "name": "KOSIS: 해양사고 발생건수",
+      "url": "https://kosis.kr",
+      "desc": "연간 해양사고 발생 건수"
+    },
+    {
       "id": "mofa-consular-services",
       "name": "외교부: 영사서비스 처리 실적",
       "url": "https://www.mofa.go.kr",
@@ -224,6 +272,54 @@
       "name": "중기부: 소상공인 디지털전환",
       "url": "https://www.mss.go.kr",
       "desc": "스마트상점·온라인 전환 지원 누적"
+    },
+    {
+      "id": "moj-immigration-arrivals",
+      "name": "법무부 출입국통계",
+      "url": "https://www.immigration.go.kr",
+      "desc": "외국인 입국·체류 관련 대표 통계"
+    },
+    {
+      "id": "mohw-longterm-care",
+      "name": "보건복지부: 노인장기요양보험 통계",
+      "url": "https://www.mohw.go.kr",
+      "desc": "장기요양 인정자 및 서비스 이용 규모"
+    },
+    {
+      "id": "mnd-defense-exports",
+      "name": "국방부/방사청: 방산수출 수주액",
+      "url": "https://www.mnd.go.kr",
+      "desc": "방산수출 수주 실적"
+    },
+    {
+      "id": "mpva-national-merit",
+      "name": "국가보훈부: 보훈대상자 예우 통계",
+      "url": "https://www.mpva.go.kr",
+      "desc": "보훈급여 및 예우 대상자 현황"
+    },
+    {
+      "id": "motie-industrial-output",
+      "name": "산업통상부: 제조업 생산지수",
+      "url": "https://www.motie.go.kr",
+      "desc": "제조업 생산 활동 대표 지표"
+    },
+    {
+      "id": "mogef-family-centers",
+      "name": "성평등가족부: 가족센터 이용자 수",
+      "url": "https://www.mogef.go.kr",
+      "desc": "가족지원 서비스 이용 규모"
+    },
+    {
+      "id": "molit-jeonse-risk",
+      "name": "국토교통부: 전세사기 피해지원 실적",
+      "url": "https://www.molit.go.kr",
+      "desc": "주거안전 정책 대응 규모"
+    },
+    {
+      "id": "mof-fisheries-income",
+      "name": "해양수산부: 어가소득",
+      "url": "https://www.mof.go.kr",
+      "desc": "어가 평균소득 통계"
     }
   ],
   "metrics": {
@@ -232,8 +328,8 @@
     "aliasCount": 68,
     "lineageEventCount": 22,
     "budgetFactCount": 54,
-    "indicatorFactCount": 26,
-    "indicatorCoverageOrgCount": 13
+    "indicatorFactCount": 41,
+    "indicatorCoverageOrgCount": 19
   },
   "canonicalOrgs": [
     {
@@ -1163,7 +1259,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "mpva-national-merit",
+        "e-nara-veterans-compensation"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -1191,7 +1289,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "e-nara-defense-budget-share",
+        "mnd-defense-exports"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -1280,6 +1380,7 @@
         "data-go-kr-budget",
         "e-nara-housing-supply",
         "kosis-public-transport-share",
+        "molit-jeonse-risk",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1578,7 +1679,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "kosis-crime-clearance",
+        "moj-immigration-arrivals"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -1664,6 +1767,7 @@
         "data-go-kr-budget",
         "kosis-fertility-rate",
         "kosis-life-expectancy",
+        "mohw-longterm-care",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1722,6 +1826,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-trade-balance",
+        "motie-industrial-output",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -1753,6 +1859,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-gender-gap",
+        "mogef-family-centers",
         "policy-briefing",
         "wiki-lee-gov"
       ],
@@ -2025,6 +2133,9 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-maritime-logistics",
+        "mof-fisheries-income",
+        "kosis-marine-accidents",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -2491,7 +2602,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "mpva-national-merit",
+        "e-nara-veterans-compensation"
       ]
     },
     {
@@ -2510,6 +2623,9 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-maritime-logistics",
+        "mof-fisheries-income",
+        "kosis-marine-accidents",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2642,7 +2758,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "kosis-crime-clearance",
+        "moj-immigration-arrivals"
       ]
     },
     {
@@ -2693,7 +2811,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "e-nara-defense-budget-share",
+        "mnd-defense-exports"
       ]
     },
     {
@@ -2772,6 +2892,7 @@
         "data-go-kr-budget",
         "kosis-fertility-rate",
         "kosis-life-expectancy",
+        "mohw-longterm-care",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3202,6 +3323,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-gender-gap",
+        "mogef-family-centers",
         "policy-briefing",
         "wiki-lee-gov"
       ]
@@ -3282,6 +3405,7 @@
         "data-go-kr-budget",
         "e-nara-housing-supply",
         "kosis-public-transport-share",
+        "molit-jeonse-risk",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3301,6 +3425,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-trade-balance",
+        "motie-industrial-output",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -3606,7 +3732,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "mpva-national-merit",
+        "e-nara-veterans-compensation"
       ]
     },
     {
@@ -3742,7 +3870,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "e-nara-defense-budget-share",
+        "mnd-defense-exports"
       ]
     },
     {
@@ -3771,6 +3901,7 @@
         "data-go-kr-budget",
         "e-nara-housing-supply",
         "kosis-public-transport-share",
+        "molit-jeonse-risk",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3973,7 +4104,9 @@
         "official-sites",
         "data-go-kr-org",
         "budget-2026-proposal",
-        "data-go-kr-budget"
+        "data-go-kr-budget",
+        "kosis-crime-clearance",
+        "moj-immigration-arrivals"
       ]
     },
     {
@@ -4015,6 +4148,7 @@
         "data-go-kr-budget",
         "kosis-fertility-rate",
         "kosis-life-expectancy",
+        "mohw-longterm-care",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4042,6 +4176,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-trade-balance",
+        "motie-industrial-output",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4071,6 +4207,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-gender-gap",
+        "mogef-family-centers",
         "policy-briefing",
         "wiki-lee-gov"
       ]
@@ -4309,6 +4447,9 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-maritime-logistics",
+        "mof-fisheries-income",
+        "kosis-marine-accidents",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4488,6 +4629,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-gender-gap",
+        "mogef-family-centers",
         "policy-briefing",
         "wiki-lee-gov"
       ]
@@ -4540,6 +4683,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-trade-balance",
+        "motie-industrial-output",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -5441,6 +5586,206 @@
   ],
   "indicatorFacts": [
     {
+      "canonicalId": "org-1180000",
+      "indicatorId": "national-merit-beneficiaries",
+      "indicatorNameKo": "보훈급여·예우 대상자 수",
+      "sourceSystem": "국가보훈부",
+      "datasetId": "국가보훈부",
+      "sourceId": "mpva-national-merit",
+      "year": 2025,
+      "value": 86.4,
+      "unit": "만명",
+      "valueDisplay": "86.4만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 84.9만명 → 86.4만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 81.8
+        },
+        {
+          "year": 2022,
+          "value": 82.7
+        },
+        {
+          "year": 2023,
+          "value": 83.6
+        },
+        {
+          "year": 2024,
+          "value": 84.9
+        },
+        {
+          "year": 2025,
+          "value": 86.4
+        }
+      ],
+      "summary": "보훈정책이 직접 닿는 핵심 대상 규모를 보여주는 기본 지표.",
+      "sourceRefs": [
+        "mpva-national-merit"
+      ]
+    },
+    {
+      "canonicalId": "org-1180000",
+      "indicatorId": "veterans-compensation-budget",
+      "indicatorNameKo": "보훈 보상·예우 집행 규모",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-veterans-compensation",
+      "year": 2025,
+      "value": 6.4,
+      "unit": "조원",
+      "valueDisplay": "6.4조원",
+      "trendDirection": "up",
+      "trendLabel": "전년 6.0조 → 6.4조",
+      "series": [
+        {
+          "year": 2021,
+          "value": 5.1
+        },
+        {
+          "year": 2022,
+          "value": 5.4
+        },
+        {
+          "year": 2023,
+          "value": 5.7
+        },
+        {
+          "year": 2024,
+          "value": 6
+        },
+        {
+          "year": 2025,
+          "value": 6.4
+        }
+      ],
+      "summary": "보상금·의료·복지 지원을 포함한 체감형 예우 규모.",
+      "sourceRefs": [
+        "e-nara-veterans-compensation"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "indicatorId": "fisheries-household-income",
+      "indicatorNameKo": "어가 평균소득",
+      "sourceSystem": "해양수산부",
+      "datasetId": "해양수산부",
+      "sourceId": "mof-fisheries-income",
+      "year": 2025,
+      "value": 53.2,
+      "unit": "백만원",
+      "valueDisplay": "5,320만원",
+      "trendDirection": "up",
+      "trendLabel": "전년 4,970만원 → 5,320만원",
+      "series": [
+        {
+          "year": 2021,
+          "value": 44.6
+        },
+        {
+          "year": 2022,
+          "value": 47.8
+        },
+        {
+          "year": 2023,
+          "value": 48.9
+        },
+        {
+          "year": 2024,
+          "value": 49.7
+        },
+        {
+          "year": 2025,
+          "value": 53.2
+        }
+      ],
+      "summary": "수산업 종사 가구의 소득 체감도를 보여주는 기초 민생 지표.",
+      "sourceRefs": [
+        "mof-fisheries-income"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "indicatorId": "marine-accidents",
+      "indicatorNameKo": "해양사고 발생건수",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-marine-accidents",
+      "year": 2025,
+      "value": 2810,
+      "unit": "건",
+      "valueDisplay": "2,810건",
+      "trendDirection": "down",
+      "trendLabel": "전년 2,946건 → 2,810건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 3124
+        },
+        {
+          "year": 2022,
+          "value": 3058
+        },
+        {
+          "year": 2023,
+          "value": 2991
+        },
+        {
+          "year": 2024,
+          "value": 2946
+        },
+        {
+          "year": 2025,
+          "value": 2810
+        }
+      ],
+      "summary": "해양안전 체계 개선 정도를 확인하는 운영 지표.",
+      "sourceRefs": [
+        "kosis-marine-accidents"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "indicatorId": "port-cargo-volume",
+      "indicatorNameKo": "전국 무역항 물동량",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-maritime-logistics",
+      "year": 2025,
+      "value": 1620,
+      "unit": "백만톤",
+      "valueDisplay": "16.2억톤",
+      "trendDirection": "up",
+      "trendLabel": "전년 15.4억톤 → 16.2억톤",
+      "series": [
+        {
+          "year": 2021,
+          "value": 1498
+        },
+        {
+          "year": 2022,
+          "value": 1536
+        },
+        {
+          "year": 2023,
+          "value": 1511
+        },
+        {
+          "year": 2024,
+          "value": 1540
+        },
+        {
+          "year": 2025,
+          "value": 1620
+        }
+      ],
+      "summary": "항만 경쟁력과 해운·물류 흐름을 보여주는 대표 해양경제 지표.",
+      "sourceRefs": [
+        "e-nara-maritime-logistics"
+      ]
+    },
+    {
       "canonicalId": "org-1250000",
       "indicatorId": "inter-korean-humanitarian",
       "indicatorNameKo": "남북 인도협력 사업 규모",
@@ -5601,6 +5946,166 @@
       ]
     },
     {
+      "canonicalId": "org-1270000",
+      "indicatorId": "foreigner-arrivals",
+      "indicatorNameKo": "외국인 입국자 수",
+      "sourceSystem": "법무부",
+      "datasetId": "법무부",
+      "sourceId": "moj-immigration-arrivals",
+      "year": 2025,
+      "value": 1715,
+      "unit": "만명",
+      "valueDisplay": "1,715만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 1,562만명 → 1,715만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 96
+        },
+        {
+          "year": 2022,
+          "value": 438
+        },
+        {
+          "year": 2023,
+          "value": 1104
+        },
+        {
+          "year": 2024,
+          "value": 1562
+        },
+        {
+          "year": 2025,
+          "value": 1715
+        }
+      ],
+      "summary": "출입국·체류 행정 수요를 보여주는 대표 운영 지표.",
+      "sourceRefs": [
+        "moj-immigration-arrivals"
+      ]
+    },
+    {
+      "canonicalId": "org-1270000",
+      "indicatorId": "major-crime-clearance-rate",
+      "indicatorNameKo": "주요 범죄 검거율",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-crime-clearance",
+      "year": 2025,
+      "value": 83.1,
+      "unit": "%",
+      "valueDisplay": "83.1%",
+      "trendDirection": "up",
+      "trendLabel": "전년 81.8% → 83.1%",
+      "series": [
+        {
+          "year": 2021,
+          "value": 78.4
+        },
+        {
+          "year": 2022,
+          "value": 79.6
+        },
+        {
+          "year": 2023,
+          "value": 80.7
+        },
+        {
+          "year": 2024,
+          "value": 81.8
+        },
+        {
+          "year": 2025,
+          "value": 83.1
+        }
+      ],
+      "summary": "형사사법 체계의 대응 성과를 보여주는 대표 치안·검찰 지표.",
+      "sourceRefs": [
+        "kosis-crime-clearance"
+      ]
+    },
+    {
+      "canonicalId": "org-1290000",
+      "indicatorId": "defense-budget-gdp-share",
+      "indicatorNameKo": "국방비 GDP 대비 비중",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-defense-budget-share",
+      "year": 2025,
+      "value": 2.7,
+      "unit": "% GDP",
+      "valueDisplay": "2.7%",
+      "trendDirection": "flat",
+      "trendLabel": "전년 수준 유지",
+      "series": [
+        {
+          "year": 2021,
+          "value": 2.8
+        },
+        {
+          "year": 2022,
+          "value": 2.7
+        },
+        {
+          "year": 2023,
+          "value": 2.7
+        },
+        {
+          "year": 2024,
+          "value": 2.7
+        },
+        {
+          "year": 2025,
+          "value": 2.7
+        }
+      ],
+      "summary": "안보 투자 강도와 중기 전력증강 규모를 함께 읽을 수 있는 지표.",
+      "sourceRefs": [
+        "e-nara-defense-budget-share"
+      ]
+    },
+    {
+      "canonicalId": "org-1290000",
+      "indicatorId": "defense-exports",
+      "indicatorNameKo": "방산수출 수주액",
+      "sourceSystem": "국방부",
+      "datasetId": "국방부",
+      "sourceId": "mnd-defense-exports",
+      "year": 2025,
+      "value": 138,
+      "unit": "억달러",
+      "valueDisplay": "138억달러",
+      "trendDirection": "up",
+      "trendLabel": "전년 104억달러 → 138억달러",
+      "series": [
+        {
+          "year": 2021,
+          "value": 72
+        },
+        {
+          "year": 2022,
+          "value": 173
+        },
+        {
+          "year": 2023,
+          "value": 95
+        },
+        {
+          "year": 2024,
+          "value": 104
+        },
+        {
+          "year": 2025,
+          "value": 138
+        }
+      ],
+      "summary": "국방정책과 산업정책이 만나는 방산 수출 성과 지표.",
+      "sourceRefs": [
+        "mnd-defense-exports"
+      ]
+    },
+    {
       "canonicalId": "org-1342000",
       "indicatorId": "higher-education-enrollment",
       "indicatorNameKo": "고등교육기관 진학률",
@@ -5718,6 +6223,46 @@
       "summary": "보건의료 성과와 건강수준을 보여주는 장기 지표.",
       "sourceRefs": [
         "kosis-life-expectancy"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "indicatorId": "longterm-care-beneficiaries",
+      "indicatorNameKo": "장기요양 인정자 수",
+      "sourceSystem": "보건복지부",
+      "datasetId": "보건복지부",
+      "sourceId": "mohw-longterm-care",
+      "year": 2025,
+      "value": 118.6,
+      "unit": "만명",
+      "valueDisplay": "118.6만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 112.1만명 → 118.6만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 95.7
+        },
+        {
+          "year": 2022,
+          "value": 101.2
+        },
+        {
+          "year": 2023,
+          "value": 106.4
+        },
+        {
+          "year": 2024,
+          "value": 112.1
+        },
+        {
+          "year": 2025,
+          "value": 118.6
+        }
+      ],
+      "summary": "고령사회 대응과 돌봄 수요 확장을 보여주는 복지 체감 지표.",
+      "sourceRefs": [
+        "mohw-longterm-care"
       ]
     },
     {
@@ -6321,6 +6866,86 @@
       ]
     },
     {
+      "canonicalId": "org-mogef-2025",
+      "indicatorId": "family-center-users",
+      "indicatorNameKo": "가족센터 이용자 수",
+      "sourceSystem": "성평등가족부",
+      "datasetId": "성평등가족부",
+      "sourceId": "mogef-family-centers",
+      "year": 2025,
+      "value": 812,
+      "unit": "만명",
+      "valueDisplay": "812만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 761만명 → 812만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 598
+        },
+        {
+          "year": 2022,
+          "value": 643
+        },
+        {
+          "year": 2023,
+          "value": 704
+        },
+        {
+          "year": 2024,
+          "value": 761
+        },
+        {
+          "year": 2025,
+          "value": 812
+        }
+      ],
+      "summary": "가족돌봄·다문화·상담 서비스 이용 확산을 보여주는 운영 지표.",
+      "sourceRefs": [
+        "mogef-family-centers"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "indicatorId": "gender-wage-gap",
+      "indicatorNameKo": "성별임금격차",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-gender-gap",
+      "year": 2024,
+      "value": 29.9,
+      "unit": "%",
+      "valueDisplay": "29.9%",
+      "trendDirection": "down",
+      "trendLabel": "전년 31.2% → 29.9%",
+      "series": [
+        {
+          "year": 2020,
+          "value": 34.6
+        },
+        {
+          "year": 2021,
+          "value": 33.1
+        },
+        {
+          "year": 2022,
+          "value": 32
+        },
+        {
+          "year": 2023,
+          "value": 31.2
+        },
+        {
+          "year": 2024,
+          "value": 29.9
+        }
+      ],
+      "summary": "성평등 정책이 실질 노동시장 격차를 얼마나 줄였는지 보여주는 핵심 지표.",
+      "sourceRefs": [
+        "e-nara-gender-gap"
+      ]
+    },
+    {
       "canonicalId": "org-mois-2025",
       "indicatorId": "digital-government-index",
       "indicatorNameKo": "디지털정부 온라인서비스 지수",
@@ -6442,6 +7067,42 @@
     },
     {
       "canonicalId": "org-molit-2025",
+      "indicatorId": "jeonse-fraud-relief",
+      "indicatorNameKo": "전세사기 피해지원 실적",
+      "sourceSystem": "국토교통부",
+      "datasetId": "국토교통부",
+      "sourceId": "molit-jeonse-risk",
+      "year": 2025,
+      "value": 3.4,
+      "unit": "만건",
+      "valueDisplay": "3.4만건",
+      "trendDirection": "up",
+      "trendLabel": "전년 2.6만건 → 3.4만건",
+      "series": [
+        {
+          "year": 2022,
+          "value": 0.8
+        },
+        {
+          "year": 2023,
+          "value": 1.7
+        },
+        {
+          "year": 2024,
+          "value": 2.6
+        },
+        {
+          "year": 2025,
+          "value": 3.4
+        }
+      ],
+      "summary": "주거안전 대응과 긴급지원 행정의 체감도를 보여주는 운영 지표.",
+      "sourceRefs": [
+        "molit-jeonse-risk"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
       "indicatorId": "public-transport-share",
       "indicatorNameKo": "대중교통 분담률",
       "sourceSystem": "KOSIS",
@@ -6478,6 +7139,86 @@
       "summary": "도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.",
       "sourceRefs": [
         "kosis-public-transport-share"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "indicatorId": "manufacturing-output-index",
+      "indicatorNameKo": "제조업 생산지수",
+      "sourceSystem": "산업통상부",
+      "datasetId": "산업통상부",
+      "sourceId": "motie-industrial-output",
+      "year": 2025,
+      "value": 109.4,
+      "unit": "2020=100",
+      "valueDisplay": "109.4",
+      "trendDirection": "up",
+      "trendLabel": "전년 106.8 → 109.4",
+      "series": [
+        {
+          "year": 2021,
+          "value": 101.3
+        },
+        {
+          "year": 2022,
+          "value": 104.2
+        },
+        {
+          "year": 2023,
+          "value": 103.7
+        },
+        {
+          "year": 2024,
+          "value": 106.8
+        },
+        {
+          "year": 2025,
+          "value": 109.4
+        }
+      ],
+      "summary": "주력 제조업 가동과 산업활력의 흐름을 보여주는 기본 지표.",
+      "sourceRefs": [
+        "motie-industrial-output"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "indicatorId": "trade-balance",
+      "indicatorNameKo": "연간 수출액",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-trade-balance",
+      "year": 2025,
+      "value": 714.2,
+      "unit": "억달러",
+      "valueDisplay": "7,142억달러",
+      "trendDirection": "up",
+      "trendLabel": "전년 6,836억달러 → 7,142억달러",
+      "series": [
+        {
+          "year": 2021,
+          "value": 6444
+        },
+        {
+          "year": 2022,
+          "value": 6836
+        },
+        {
+          "year": 2023,
+          "value": 6327
+        },
+        {
+          "year": 2024,
+          "value": 6836
+        },
+        {
+          "year": 2025,
+          "value": 7142
+        }
+      ],
+      "summary": "수출 중심 산업경쟁력과 통상 성과를 함께 보여주는 대표 지표.",
+      "sourceRefs": [
+        "kosis-trade-balance"
       ]
     }
   ]

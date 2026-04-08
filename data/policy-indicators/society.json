@@ -1,0 +1,43 @@
+[
+  {
+    "canonicalId": "org-1342000",
+    "orgName": "교육부",
+    "indicators": [
+      {"id":"private-education-monthly","name":"학생 1인당 월평균 사교육비","value":47.4,"valueDisplay":"47.4만원","unit":"만원/월","year":2024,"sourceId":"kosis-private-education","sourceRefs":["kosis-private-education"],"datasetId":"KOSIS","summary":"초중고 학생의 사교육비 부담 수준. 교육격차·공교육 체감도와 자주 같이 해석된다.","trendDirection":"up","trendLabel":"전년 43.4만원 → 47.4만원","series":[{"year":2020,"value":30.2},{"year":2021,"value":36.7},{"year":2022,"value":41.0},{"year":2023,"value":43.4},{"year":2024,"value":47.4}]},
+      {"id":"higher-education-enrollment","name":"고등교육기관 진학률","value":76.2,"valueDisplay":"76.2%","unit":"%","year":2024,"sourceId":"kosis-higher-education","sourceRefs":["kosis-higher-education"],"datasetId":"KOSIS","summary":"고등학교 졸업자의 대학 등 진학 비중.","trendDirection":"down","trendLabel":"전년 대비 소폭 하락","series":[{"year":2020,"value":72.5},{"year":2021,"value":75.2},{"year":2022,"value":76.4},{"year":2023,"value":76.9},{"year":2024,"value":76.2}]}
+    ]
+  },
+  {
+    "canonicalId": "org-1352000",
+    "orgName": "보건복지부",
+    "indicators": [
+      {"id":"total-fertility-rate","name":"합계출산율","value":0.75,"valueDisplay":"0.75명","unit":"명","year":2024,"sourceId":"kosis-fertility-rate","sourceRefs":["kosis-fertility-rate"],"datasetId":"KOSIS","summary":"가임여성 1명이 평생 낳을 것으로 기대되는 평균 출생아 수.","trendDirection":"up","trendLabel":"전년 0.72명 → 0.75명","series":[{"year":2020,"value":0.84},{"year":2021,"value":0.81},{"year":2022,"value":0.78},{"year":2023,"value":0.72},{"year":2024,"value":0.75}],"target":{"value":1,"display":"1.0명","label":"정책 반등 기준선"}},
+      {"id":"life-expectancy","name":"기대수명","value":83.5,"valueDisplay":"83.5세","unit":"세","year":2024,"sourceId":"kosis-life-expectancy","sourceRefs":["kosis-life-expectancy"],"datasetId":"KOSIS","summary":"보건의료 성과와 건강수준을 보여주는 장기 지표.","trendDirection":"up","trendLabel":"전년 대비 완만한 증가","series":[{"year":2020,"value":83.0},{"year":2021,"value":83.1},{"year":2022,"value":83.2},{"year":2023,"value":83.4},{"year":2024,"value":83.5}]},
+      {"id":"longterm-care-beneficiaries","name":"장기요양 인정자 수","value":118.6,"valueDisplay":"118.6만명","unit":"만명","year":2025,"sourceId":"mohw-longterm-care","sourceRefs":["mohw-longterm-care"],"datasetId":"보건복지부","summary":"고령사회 대응과 돌봄 수요 확장을 보여주는 복지 체감 지표.","trendDirection":"up","trendLabel":"전년 112.1만명 → 118.6만명","series":[{"year":2021,"value":95.7},{"year":2022,"value":101.2},{"year":2023,"value":106.4},{"year":2024,"value":112.1},{"year":2025,"value":118.6}]}
+    ]
+  },
+  {
+    "canonicalId": "org-1492000",
+    "orgName": "고용노동부",
+    "indicators": [
+      {"id":"employment-rate-15-64","name":"15~64세 고용률","value":70.3,"valueDisplay":"70.3%","unit":"%","year":2025,"sourceId":"e-nara-employment-rate","sourceRefs":["e-nara-employment-rate"],"datasetId":"e-나라지표","summary":"경제활동 가능 연령대의 고용 수준. 노동시장 체력과 정책 성과를 함께 보여준다.","trendDirection":"up","trendLabel":"전년 69.8% → 70.3%","series":[{"year":2021,"value":67.2},{"year":2022,"value":68.5},{"year":2023,"value":69.2},{"year":2024,"value":69.8},{"year":2025,"value":70.3}],"target":{"value":70,"display":"70%","label":"정책 기준선 달성"}},
+      {"id":"youth-employment-rate","name":"청년 고용률","value":46.8,"valueDisplay":"46.8%","unit":"%","year":2025,"sourceId":"e-nara-youth-employment","sourceRefs":["e-nara-youth-employment"],"datasetId":"e-나라지표","summary":"청년층 일자리 상황을 보여주는 대표 지표.","trendDirection":"flat","trendLabel":"전년 대비 소폭 개선","series":[{"year":2021,"value":44.2},{"year":2022,"value":45.1},{"year":2023,"value":46.1},{"year":2024,"value":46.6},{"year":2025,"value":46.8}]}
+    ]
+  },
+  {
+    "canonicalId": "org-mogef-2025",
+    "orgName": "성평등가족부",
+    "indicators": [
+      {"id":"gender-wage-gap","name":"성별임금격차","value":29.9,"valueDisplay":"29.9%","unit":"%","year":2024,"sourceId":"e-nara-gender-gap","sourceRefs":["e-nara-gender-gap"],"datasetId":"e-나라지표","summary":"성평등 정책이 실질 노동시장 격차를 얼마나 줄였는지 보여주는 핵심 지표.","trendDirection":"down","trendLabel":"전년 31.2% → 29.9%","series":[{"year":2020,"value":34.6},{"year":2021,"value":33.1},{"year":2022,"value":32.0},{"year":2023,"value":31.2},{"year":2024,"value":29.9}],"target":{"value":25,"display":"25% 이하","label":"중기 격차 축소 목표"}},
+      {"id":"family-center-users","name":"가족센터 이용자 수","value":812,"valueDisplay":"812만명","unit":"만명","year":2025,"sourceId":"mogef-family-centers","sourceRefs":["mogef-family-centers"],"datasetId":"성평등가족부","summary":"가족돌봄·다문화·상담 서비스 이용 확산을 보여주는 운영 지표.","trendDirection":"up","trendLabel":"전년 761만명 → 812만명","series":[{"year":2021,"value":598},{"year":2022,"value":643},{"year":2023,"value":704},{"year":2024,"value":761},{"year":2025,"value":812}]}
+    ]
+  },
+  {
+    "canonicalId": "org-1180000",
+    "orgName": "국가보훈부",
+    "indicators": [
+      {"id":"national-merit-beneficiaries","name":"보훈급여·예우 대상자 수","value":86.4,"valueDisplay":"86.4만명","unit":"만명","year":2025,"sourceId":"mpva-national-merit","sourceRefs":["mpva-national-merit"],"datasetId":"국가보훈부","summary":"보훈정책이 직접 닿는 핵심 대상 규모를 보여주는 기본 지표.","trendDirection":"up","trendLabel":"전년 84.9만명 → 86.4만명","series":[{"year":2021,"value":81.8},{"year":2022,"value":82.7},{"year":2023,"value":83.6},{"year":2024,"value":84.9},{"year":2025,"value":86.4}]},
+      {"id":"veterans-compensation-budget","name":"보훈 보상·예우 집행 규모","value":6.4,"valueDisplay":"6.4조원","unit":"조원","year":2025,"sourceId":"e-nara-veterans-compensation","sourceRefs":["e-nara-veterans-compensation"],"datasetId":"e-나라지표","summary":"보상금·의료·복지 지원을 포함한 체감형 예우 규모.","trendDirection":"up","trendLabel":"전년 6.0조 → 6.4조","series":[{"year":2021,"value":5.1},{"year":2022,"value":5.4},{"year":2023,"value":5.7},{"year":2024,"value":6.0},{"year":2025,"value":6.4}]}
+    ]
+  }
+]
