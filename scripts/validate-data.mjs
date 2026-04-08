@@ -69,6 +69,18 @@ const sourceIds = new Set(Array.isArray(sources) ? sources.map((src) => src.id).
 let budgetNodeCount = 0;
 let policyIndicatorCount = 0;
 
+for (const src of sources ?? []) {
+  if (!src.id || !src.name || !src.url) {
+    errors.push("Each source catalog entry must have id, name, and url.");
+    continue;
+  }
+  for (const field of ["datasetId", "lastVerified", "updateCadence", "methodology", "publisher", "sourceType"]) {
+    if (!src[field] || typeof src[field] !== "string") {
+      errors.push(`Source \"${src.id}\" is missing ${field}.`);
+    }
+  }
+}
+
 function walk(node) {
   if (!node || typeof node !== "object") return;
 
@@ -130,6 +142,11 @@ function walk(node) {
               errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" has an invalid series point.`);
             }
           }
+        }
+      }
+      for (const field of ["datasetId", "sourceUrl", "lastVerified", "updateCadence", "methodology"]) {
+        if (!indicator[field] || typeof indicator[field] !== "string") {
+          errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" is missing ${field}.`);
         }
       }
       for (const ref of indicator.sourceRefs ?? []) {

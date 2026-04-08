@@ -16,9 +16,28 @@ for (const file of sourceFiles) {
   bundle.push(...items);
 }
 const sourceCatalog = JSON.parse(fs.readFileSync(path.join(dataDir, "sources.json"), "utf8"));
+const sourceCatalogById = new Map(sourceCatalog.map((item) => [item.id, item]));
+
+function enrichIndicator(indicator) {
+  const primarySource = sourceCatalogById.get(indicator.sourceId) || sourceCatalogById.get(indicator.sourceRefs?.[0]);
+  if (!primarySource) return indicator;
+  return {
+    ...indicator,
+    datasetId: indicator.datasetId || primarySource.datasetId || primarySource.sourcePortal || primarySource.name,
+    datasetName: indicator.datasetName || primarySource.datasetName,
+    sourceUrl: indicator.sourceUrl || primarySource.url,
+    sourcePublisher: indicator.sourcePublisher || primarySource.publisher,
+    sourceType: indicator.sourceType || primarySource.sourceType,
+    lastVerified: indicator.lastVerified || primarySource.lastVerified,
+    updateCadence: indicator.updateCadence || primarySource.updateCadence,
+    methodology: indicator.methodology || primarySource.methodology,
+    coverage: indicator.coverage || primarySource.coverage,
+    qualityNote: indicator.qualityNote || primarySource.qualityNote,
+  };
+}
 
 const policyIndicatorsByCanonicalId = Object.fromEntries(
-  bundle.map((entry) => [entry.canonicalId, entry.indicators]),
+  bundle.map((entry) => [entry.canonicalId, entry.indicators.map(enrichIndicator)]),
 );
 
 const generatedBlock = `// BEGIN GENERATED POLICY INDICATORS (source: data/policy-indicators/*.json)\nconst policyIndicatorsByCanonicalId=${JSON.stringify(policyIndicatorsByCanonicalId, null, 2)};\n\nsources.push(\n${sourceCatalog.map((item) => `  ${JSON.stringify(item)}`).join(",\n")}\n);\n// END GENERATED POLICY INDICATORS`;
