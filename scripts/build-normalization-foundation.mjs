@@ -156,6 +156,12 @@ function collectTree(rootNode) {
         valueDisplay: indicator.valueDisplay ?? null,
         trendDirection: indicator.trendDirection ?? null,
         trendLabel: indicator.trendLabel ?? null,
+        series: Array.isArray(indicator.series)
+          ? indicator.series.map((point) => ({
+              year: point.year ?? null,
+              value: point.value ?? null,
+            }))
+          : [],
         summary: indicator.summary ?? null,
         sourceRefs: indicator.sourceRefs ?? [],
       });

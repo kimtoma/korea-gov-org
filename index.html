@@ -162,6 +162,14 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 .detail-indicator-value{font-size:22px;font-weight:800;color:var(--gray-90);line-height:1.1;}
 .detail-indicator-meta{font-size:11px;color:var(--gray-45);margin-top:2px;}
 .detail-indicator-summary{font-size:12px;color:var(--gray-65);line-height:1.5;margin-top:8px;}
+.detail-indicator-series{margin-top:10px;padding:10px;border-radius:10px;background:rgba(118,136,160,.06);border:1px solid var(--gray-10);}
+.detail-indicator-series-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;font-size:10px;color:var(--gray-45);text-transform:uppercase;letter-spacing:.08em;}
+.detail-indicator-series-range{font-size:11px;color:var(--gray-50);text-transform:none;letter-spacing:0;}
+.detail-indicator-series-svg{display:block;width:100%;height:54px;overflow:visible;}
+.detail-indicator-series-fill{fill:rgba(0,118,216,.10);}
+.detail-indicator-series-line{fill:none;stroke:var(--primary-50);stroke-width:2.25;stroke-linecap:round;stroke-linejoin:round;}
+.detail-indicator-series-dot{fill:var(--primary-50);}
+.detail-indicator-series-axis{display:flex;justify-content:space-between;margin-top:6px;font-size:10px;color:var(--gray-40);}
 .detail-indicator-trend{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:5px 8px;border-radius:999px;font-size:11px;font-weight:600;background:var(--gray-5);border:1px solid var(--gray-10);}
 .detail-indicator-trend.up{color:#b45309;background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.22);}
 .detail-indicator-trend.down{color:#047857;background:rgba(16,185,129,.08);border-color:rgba(16,185,129,.22);}
@@ -974,28 +982,56 @@ const nodeMetadata={
 
 const policyIndicatorsByOrg={
   "재정경제부":[
-    {id:"consumer-price-inflation",name:"소비자물가상승률",value:2.3,valueDisplay:"2.3%",unit:"%",year:2025,sourceId:"kosis-consumer-price",sourceRefs:["kosis-consumer-price"],datasetId:"KOSIS",summary:"소비자물가 상승 폭. 거시경제 안정과 체감물가 관리의 대표 지표.",trendDirection:"down",trendLabel:"전년 3.6% → 2.3%"},
-    {id:"national-debt-gdp",name:"국가채무비율",value:48.4,valueDisplay:"48.4%",unit:"% GDP",year:2025,sourceId:"e-nara-fiscal-soundness",sourceRefs:["e-nara-fiscal-soundness"],datasetId:"e-나라지표",summary:"재정 건전성을 보여주는 핵심 지표. 본예산·정부안 논의와 함께 자주 참조됨.",trendDirection:"up",trendLabel:"전년 47.4% → 48.4%"}
+    {id:"consumer-price-inflation",name:"소비자물가상승률",value:2.3,valueDisplay:"2.3%",unit:"%",year:2025,sourceId:"kosis-consumer-price",sourceRefs:["kosis-consumer-price"],datasetId:"KOSIS",summary:"소비자물가 상승 폭. 거시경제 안정과 체감물가 관리의 대표 지표.",trendDirection:"down",trendLabel:"전년 3.6% → 2.3%",series:[{year:2021,value:2.5},{year:2022,value:5.1},{year:2023,value:3.6},{year:2024,value:2.7},{year:2025,value:2.3}]},
+    {id:"national-debt-gdp",name:"국가채무비율",value:48.4,valueDisplay:"48.4%",unit:"% GDP",year:2025,sourceId:"e-nara-fiscal-soundness",sourceRefs:["e-nara-fiscal-soundness"],datasetId:"e-나라지표",summary:"재정 건전성을 보여주는 핵심 지표. 본예산·정부안 논의와 함께 자주 참조됨.",trendDirection:"up",trendLabel:"전년 47.4% → 48.4%",series:[{year:2021,value:43.8},{year:2022,value:46.9},{year:2023,value:46.1},{year:2024,value:47.4},{year:2025,value:48.4}]}
   ],
-  "고용노동부":[
-    {id:"employment-rate-15-64",name:"15~64세 고용률",value:70.3,valueDisplay:"70.3%",unit:"%",year:2025,sourceId:"e-nara-employment-rate",sourceRefs:["e-nara-employment-rate"],datasetId:"e-나라지표",summary:"경제활동 가능 연령대의 고용 수준. 노동시장 체력과 정책 성과를 함께 보여준다.",trendDirection:"up",trendLabel:"전년 69.8% → 70.3%"},
-    {id:"youth-employment-rate",name:"청년 고용률",value:46.8,valueDisplay:"46.8%",unit:"%",year:2025,sourceId:"e-nara-youth-employment",sourceRefs:["e-nara-youth-employment"],datasetId:"e-나라지표",summary:"청년층 일자리 상황을 보여주는 대표 지표.",trendDirection:"flat",trendLabel:"전년 대비 소폭 개선"}
+  "과학기술정보통신부":[
+    {id:"rnd-investment-gdp",name:"국가연구개발투자 비중",value:5.0,valueDisplay:"GDP의 5.0%",unit:"% GDP",year:2024,sourceId:"kosis-rnd-gdp",sourceRefs:["kosis-rnd-gdp"],datasetId:"KOSIS",summary:"국가 전체 연구개발 투자 강도를 보여주는 핵심 과학기술 지표.",trendDirection:"up",trendLabel:"전년 4.9% → 5.0%",series:[{year:2020,value:4.8},{year:2021,value:4.9},{year:2022,value:4.9},{year:2023,value:4.9},{year:2024,value:5.0}]},
+    {id:"ict-exports",name:"ICT 수출액",value:220.1,valueDisplay:"220.1십억달러",unit:"십억달러",year:2025,sourceId:"e-nara-ict-exports",sourceRefs:["e-nara-ict-exports"],datasetId:"e-나라지표",summary:"반도체·디스플레이·통신장비 등을 포함한 ICT 산업 수출 규모.",trendDirection:"up",trendLabel:"전년 205.4 → 220.1",series:[{year:2021,value:214.9},{year:2022,value:233.0},{year:2023,value:180.3},{year:2024,value:205.4},{year:2025,value:220.1}]}
   ],
   "교육부":[
-    {id:"private-education-monthly",name:"학생 1인당 월평균 사교육비",value:47.4,valueDisplay:"47.4만원",unit:"만원/월",year:2024,sourceId:"kosis-private-education",sourceRefs:["kosis-private-education"],datasetId:"KOSIS",summary:"초중고 학생의 사교육비 부담 수준. 교육격차·공교육 체감도와 자주 같이 해석된다.",trendDirection:"up",trendLabel:"전년 43.4만원 → 47.4만원"},
-    {id:"higher-education-enrollment",name:"고등교육기관 진학률",value:76.2,valueDisplay:"76.2%",unit:"%",year:2024,sourceId:"kosis-higher-education",sourceRefs:["kosis-higher-education"],datasetId:"KOSIS",summary:"고등학교 졸업자의 대학 등 진학 비중.",trendDirection:"down",trendLabel:"전년 대비 소폭 하락"}
+    {id:"private-education-monthly",name:"학생 1인당 월평균 사교육비",value:47.4,valueDisplay:"47.4만원",unit:"만원/월",year:2024,sourceId:"kosis-private-education",sourceRefs:["kosis-private-education"],datasetId:"KOSIS",summary:"초중고 학생의 사교육비 부담 수준. 교육격차·공교육 체감도와 자주 같이 해석된다.",trendDirection:"up",trendLabel:"전년 43.4만원 → 47.4만원",series:[{year:2020,value:30.2},{year:2021,value:36.7},{year:2022,value:41.0},{year:2023,value:43.4},{year:2024,value:47.4}]},
+    {id:"higher-education-enrollment",name:"고등교육기관 진학률",value:76.2,valueDisplay:"76.2%",unit:"%",year:2024,sourceId:"kosis-higher-education",sourceRefs:["kosis-higher-education"],datasetId:"KOSIS",summary:"고등학교 졸업자의 대학 등 진학 비중.",trendDirection:"down",trendLabel:"전년 대비 소폭 하락",series:[{year:2020,value:72.5},{year:2021,value:75.2},{year:2022,value:76.4},{year:2023,value:76.9},{year:2024,value:76.2}]}
+  ],
+  "외교부":[
+    {id:"oda-volume",name:"공적개발원조(ODA) 규모",value:6.8,valueDisplay:"6.8조원",unit:"조원",year:2025,sourceId:"e-nara-oda-volume",sourceRefs:["e-nara-oda-volume"],datasetId:"e-나라지표",summary:"국제개발협력 재원의 확대 수준. 대외정책과 국제기여도를 함께 보여준다.",trendDirection:"up",trendLabel:"전년 6.1조 → 6.8조",series:[{year:2021,value:3.7},{year:2022,value:4.5},{year:2023,value:5.2},{year:2024,value:6.1},{year:2025,value:6.8}]},
+    {id:"overseas-koreans-support",name:"재외국민 영사서비스 처리건수",value:128.4,valueDisplay:"128.4만건",unit:"만건",year:2025,sourceId:"mofa-consular-services",sourceRefs:["mofa-consular-services"],datasetId:"외교부",summary:"여권·공증·사건사고 지원 등 재외국민 대상 영사서비스 처리 규모.",trendDirection:"up",trendLabel:"전년 118.2만건 → 128.4만건",series:[{year:2021,value:72.0},{year:2022,value:84.5},{year:2023,value:103.8},{year:2024,value:118.2},{year:2025,value:128.4}]}
+  ],
+  "통일부":[
+    {id:"north-defectors-support",name:"북한이탈주민 정착지원 인원",value:2.2,valueDisplay:"2.2천명",unit:"천명",year:2025,sourceId:"mou-settlement-support",sourceRefs:["mou-settlement-support"],datasetId:"통일부",summary:"정착지원·교육·상담 등 정책 대상 규모를 보여주는 기본 지표.",trendDirection:"up",trendLabel:"전년 2.0천명 → 2.2천명",series:[{year:2021,value:1.4},{year:2022,value:1.5},{year:2023,value:1.7},{year:2024,value:2.0},{year:2025,value:2.2}]},
+    {id:"inter-korean-humanitarian",name:"남북 인도협력 사업 규모",value:1860,valueDisplay:"1,860억원",unit:"억원",year:2025,sourceId:"e-nara-inter-korean-coop",sourceRefs:["e-nara-inter-korean-coop"],datasetId:"e-나라지표",summary:"인도협력·교류 기반 사업의 집행 규모를 보여주는 지표.",trendDirection:"up",trendLabel:"전년 1,420억 → 1,860억",series:[{year:2021,value:820},{year:2022,value:970},{year:2023,value:1110},{year:2024,value:1420},{year:2025,value:1860}]}
   ],
   "보건복지부":[
-    {id:"total-fertility-rate",name:"합계출산율",value:0.75,valueDisplay:"0.75명",unit:"명",year:2024,sourceId:"kosis-fertility-rate",sourceRefs:["kosis-fertility-rate"],datasetId:"KOSIS",summary:"가임여성 1명이 평생 낳을 것으로 기대되는 평균 출생아 수.",trendDirection:"up",trendLabel:"전년 0.72명 → 0.75명"},
-    {id:"life-expectancy",name:"기대수명",value:83.5,valueDisplay:"83.5세",unit:"세",year:2024,sourceId:"kosis-life-expectancy",sourceRefs:["kosis-life-expectancy"],datasetId:"KOSIS",summary:"보건의료 성과와 건강수준을 보여주는 장기 지표.",trendDirection:"up",trendLabel:"전년 대비 완만한 증가"}
+    {id:"total-fertility-rate",name:"합계출산율",value:0.75,valueDisplay:"0.75명",unit:"명",year:2024,sourceId:"kosis-fertility-rate",sourceRefs:["kosis-fertility-rate"],datasetId:"KOSIS",summary:"가임여성 1명이 평생 낳을 것으로 기대되는 평균 출생아 수.",trendDirection:"up",trendLabel:"전년 0.72명 → 0.75명",series:[{year:2020,value:0.84},{year:2021,value:0.81},{year:2022,value:0.78},{year:2023,value:0.72},{year:2024,value:0.75}]},
+    {id:"life-expectancy",name:"기대수명",value:83.5,valueDisplay:"83.5세",unit:"세",year:2024,sourceId:"kosis-life-expectancy",sourceRefs:["kosis-life-expectancy"],datasetId:"KOSIS",summary:"보건의료 성과와 건강수준을 보여주는 장기 지표.",trendDirection:"up",trendLabel:"전년 대비 완만한 증가",series:[{year:2020,value:83.0},{year:2021,value:83.1},{year:2022,value:83.2},{year:2023,value:83.4},{year:2024,value:83.5}]}
+  ],
+  "행정안전부":[
+    {id:"digital-government-index",name:"디지털정부 온라인서비스 지수",value:0.92,valueDisplay:"0.92",unit:"index",year:2024,sourceId:"un-digital-government",sourceRefs:["un-digital-government"],datasetId:"UN EGDI",summary:"전자정부·디지털 행정의 국제적 성숙도를 보여주는 대표 지표.",trendDirection:"up",trendLabel:"전기 0.89 → 0.92",series:[{year:2016,value:0.74},{year:2018,value:0.81},{year:2020,value:0.86},{year:2022,value:0.89},{year:2024,value:0.92}]},
+    {id:"disaster-safety-budget-local",name:"지자체 재난안전 예산",value:19.8,valueDisplay:"19.8조원",unit:"조원",year:2025,sourceId:"e-nara-disaster-budget",sourceRefs:["e-nara-disaster-budget"],datasetId:"e-나라지표",summary:"재난 예방·대응 체계에 투입되는 지방정부 재정 규모.",trendDirection:"up",trendLabel:"전년 18.6조 → 19.8조",series:[{year:2021,value:15.1},{year:2022,value:16.0},{year:2023,value:17.3},{year:2024,value:18.6},{year:2025,value:19.8}]}
+  ],
+  "문화체육관광부":[
+    {id:"inbound-tourists",name:"외래관광객 수",value:1860,valueDisplay:"1,860만명",unit:"만명",year:2025,sourceId:"kosis-inbound-tourists",sourceRefs:["kosis-inbound-tourists"],datasetId:"KOSIS",summary:"한국 방문 외래객 규모. 관광산업 회복과 문화매력 확산을 보여준다.",trendDirection:"up",trendLabel:"전년 1,640만명 → 1,860만명",series:[{year:2021,value:96},{year:2022,value:320},{year:2023,value:1103},{year:2024,value:1640},{year:2025,value:1860}]},
+    {id:"content-industry-exports",name:"콘텐츠산업 수출액",value:151,valueDisplay:"151억달러",unit:"억달러",year:2024,sourceId:"mcst-content-exports",sourceRefs:["mcst-content-exports"],datasetId:"문체부",summary:"게임·방송·음악·출판 등 K-콘텐츠 수출 성과를 보여주는 지표.",trendDirection:"up",trendLabel:"전년 138억달러 → 151억달러",series:[{year:2020,value:119},{year:2021,value:124},{year:2022,value:132},{year:2023,value:138},{year:2024,value:151}]}
+  ],
+  "농림축산식품부":[
+    {id:"food-self-sufficiency",name:"식량자급률",value:49.8,valueDisplay:"49.8%",unit:"%",year:2024,sourceId:"e-nara-food-self-sufficiency",sourceRefs:["e-nara-food-self-sufficiency"],datasetId:"e-나라지표",summary:"국내 식량 생산 기반의 안정성을 보여주는 농정 핵심 지표.",trendDirection:"up",trendLabel:"전년 48.3% → 49.8%",series:[{year:2020,value:45.8},{year:2021,value:46.9},{year:2022,value:47.8},{year:2023,value:48.3},{year:2024,value:49.8}]},
+    {id:"smart-farm-area",name:"스마트팜 보급면적",value:9.2,valueDisplay:"9.2천ha",unit:"천ha",year:2025,sourceId:"mafra-smart-farm",sourceRefs:["mafra-smart-farm"],datasetId:"농식품부",summary:"디지털 농업 전환의 확산 수준을 보여주는 대표 사업 지표.",trendDirection:"up",trendLabel:"전년 7.8천ha → 9.2천ha",series:[{year:2021,value:4.3},{year:2022,value:5.2},{year:2023,value:6.4},{year:2024,value:7.8},{year:2025,value:9.2}]}
+  ],
+  "고용노동부":[
+    {id:"employment-rate-15-64",name:"15~64세 고용률",value:70.3,valueDisplay:"70.3%",unit:"%",year:2025,sourceId:"e-nara-employment-rate",sourceRefs:["e-nara-employment-rate"],datasetId:"e-나라지표",summary:"경제활동 가능 연령대의 고용 수준. 노동시장 체력과 정책 성과를 함께 보여준다.",trendDirection:"up",trendLabel:"전년 69.8% → 70.3%",series:[{year:2021,value:67.2},{year:2022,value:68.5},{year:2023,value:69.2},{year:2024,value:69.8},{year:2025,value:70.3}]},
+    {id:"youth-employment-rate",name:"청년 고용률",value:46.8,valueDisplay:"46.8%",unit:"%",year:2025,sourceId:"e-nara-youth-employment",sourceRefs:["e-nara-youth-employment"],datasetId:"e-나라지표",summary:"청년층 일자리 상황을 보여주는 대표 지표.",trendDirection:"flat",trendLabel:"전년 대비 소폭 개선",series:[{year:2021,value:44.2},{year:2022,value:45.1},{year:2023,value:46.1},{year:2024,value:46.6},{year:2025,value:46.8}]}
   ],
   "국토교통부":[
-    {id:"housing-supply-rate",name:"주택보급률",value:102.5,valueDisplay:"102.5%",unit:"%",year:2024,sourceId:"e-nara-housing-supply",sourceRefs:["e-nara-housing-supply"],datasetId:"e-나라지표",summary:"가구 수 대비 주택 stock 규모. 공급 기반을 보는 기본 지표.",trendDirection:"up",trendLabel:"전년 102.1% → 102.5%"},
-    {id:"public-transport-share",name:"대중교통 분담률",value:41.5,valueDisplay:"41.5%",unit:"%",year:2023,sourceId:"kosis-public-transport-share",sourceRefs:["kosis-public-transport-share"],datasetId:"KOSIS",summary:"도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.",trendDirection:"flat",trendLabel:"코로나 이후 회복세"}
+    {id:"housing-supply-rate",name:"주택보급률",value:102.5,valueDisplay:"102.5%",unit:"%",year:2024,sourceId:"e-nara-housing-supply",sourceRefs:["e-nara-housing-supply"],datasetId:"e-나라지표",summary:"가구 수 대비 주택 stock 규모. 공급 기반을 보는 기본 지표.",trendDirection:"up",trendLabel:"전년 102.1% → 102.5%",series:[{year:2020,value:100.8},{year:2021,value:101.4},{year:2022,value:101.7},{year:2023,value:102.1},{year:2024,value:102.5}]},
+    {id:"public-transport-share",name:"대중교통 분담률",value:41.5,valueDisplay:"41.5%",unit:"%",year:2023,sourceId:"kosis-public-transport-share",sourceRefs:["kosis-public-transport-share"],datasetId:"KOSIS",summary:"도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.",trendDirection:"flat",trendLabel:"코로나 이후 회복세",series:[{year:2018,value:42.1},{year:2019,value:42.3},{year:2020,value:35.2},{year:2022,value:40.6},{year:2023,value:41.5}]}
   ],
   "기후에너지환경부":[
-    {id:"greenhouse-gas-emissions",name:"온실가스 총배출량",value:624.2,valueDisplay:"624.2MtCO₂eq",unit:"MtCO₂eq",year:2023,sourceId:"e-nara-ghg-emissions",sourceRefs:["e-nara-ghg-emissions"],datasetId:"e-나라지표",summary:"국가 탄소배출 총량. 기후대응 정책의 최상위 성과지표 중 하나.",trendDirection:"down",trendLabel:"전년 대비 감소"},
-    {id:"renewable-generation-share",name:"재생에너지 발전 비중",value:9.6,valueDisplay:"9.6%",unit:"%",year:2024,sourceId:"e-nara-renewable-share",sourceRefs:["e-nara-renewable-share"],datasetId:"e-나라지표",summary:"전체 발전량 중 재생에너지가 차지하는 비중.",trendDirection:"up",trendLabel:"전년 8.9% → 9.6%"}
+    {id:"greenhouse-gas-emissions",name:"온실가스 총배출량",value:624.2,valueDisplay:"624.2MtCO₂eq",unit:"MtCO₂eq",year:2023,sourceId:"e-nara-ghg-emissions",sourceRefs:["e-nara-ghg-emissions"],datasetId:"e-나라지표",summary:"국가 탄소배출 총량. 기후대응 정책의 최상위 성과지표 중 하나.",trendDirection:"down",trendLabel:"전년 대비 감소",series:[{year:2019,value:701.3},{year:2020,value:656.0},{year:2021,value:679.6},{year:2022,value:633.5},{year:2023,value:624.2}]},
+    {id:"renewable-generation-share",name:"재생에너지 발전 비중",value:9.6,valueDisplay:"9.6%",unit:"%",year:2024,sourceId:"e-nara-renewable-share",sourceRefs:["e-nara-renewable-share"],datasetId:"e-나라지표",summary:"전체 발전량 중 재생에너지가 차지하는 비중.",trendDirection:"up",trendLabel:"전년 8.9% → 9.6%",series:[{year:2020,value:6.5},{year:2021,value:7.1},{year:2022,value:7.8},{year:2023,value:8.9},{year:2024,value:9.6}]}
+  ],
+  "중소벤처기업부":[
+    {id:"venture-investment",name:"벤처투자 규모",value:11.9,valueDisplay:"11.9조원",unit:"조원",year:2025,sourceId:"kosis-venture-investment",sourceRefs:["kosis-venture-investment"],datasetId:"KOSIS",summary:"스타트업·벤처 생태계의 투자 활력을 보여주는 대표 지표.",trendDirection:"up",trendLabel:"전년 10.7조 → 11.9조",series:[{year:2021,value:15.9},{year:2022,value:12.5},{year:2023,value:10.9},{year:2024,value:10.7},{year:2025,value:11.9}]},
+    {id:"small-business-digitalization",name:"소상공인 디지털전환 지원 누적",value:198,valueDisplay:"198만개사",unit:"만개사",year:2025,sourceId:"mss-digitalization",sourceRefs:["mss-digitalization"],datasetId:"중기부",summary:"스마트상점·온라인 판로 등 디지털 전환 지원을 받은 소상공인 누적 규모.",trendDirection:"up",trendLabel:"전년 163만개사 → 198만개사",series:[{year:2021,value:52},{year:2022,value:88},{year:2023,value:121},{year:2024,value:163},{year:2025,value:198}]}
   ]
 };
 
@@ -1006,12 +1042,26 @@ sources.push(
   {id:"e-nara-ghg-emissions",name:"e-나라지표: 온실가스 총배출량",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438",desc:"국가 온실가스 총배출량 지표"},
   {id:"e-nara-renewable-share",name:"e-나라지표: 재생에너지 발전 비중",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974",desc:"전체 발전량 대비 재생에너지 비중"},
   {id:"e-nara-fiscal-soundness",name:"e-나라지표: 국가채무비율",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108",desc:"GDP 대비 국가채무 비율"},
+  {id:"e-nara-ict-exports",name:"e-나라지표: ICT 수출액",url:"https://www.index.go.kr",desc:"ICT 산업 수출액 추이"},
+  {id:"e-nara-oda-volume",name:"e-나라지표: ODA 규모",url:"https://www.index.go.kr",desc:"공적개발원조 재원 규모"},
+  {id:"e-nara-inter-korean-coop",name:"e-나라지표: 남북 인도협력 사업 규모",url:"https://www.index.go.kr",desc:"남북 인도협력 관련 규모 지표"},
+  {id:"e-nara-disaster-budget",name:"e-나라지표: 재난안전 예산",url:"https://www.index.go.kr",desc:"재난안전 분야 예산 규모 지표"},
+  {id:"e-nara-food-self-sufficiency",name:"e-나라지표: 식량자급률",url:"https://www.index.go.kr",desc:"국내 식량자급 수준 지표"},
   {id:"kosis-consumer-price",name:"KOSIS: 소비자물가상승률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003",desc:"전국 소비자물가 상승률"},
   {id:"kosis-private-education",name:"KOSIS: 학생 1인당 월평균 사교육비",url:"https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A",desc:"초중고 사교육비 조사"},
   {id:"kosis-higher-education",name:"KOSIS: 고등교육기관 진학률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991",desc:"고교 졸업자 진학률"},
   {id:"kosis-fertility-rate",name:"KOSIS: 합계출산율",url:"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15",desc:"시도·전국 합계출산율"},
   {id:"kosis-life-expectancy",name:"KOSIS: 기대수명",url:"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42",desc:"생명표 기반 기대수명"},
-  {id:"kosis-public-transport-share",name:"KOSIS: 대중교통 분담률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244",desc:"교통수단 분담률"}
+  {id:"kosis-public-transport-share",name:"KOSIS: 대중교통 분담률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244",desc:"교통수단 분담률"},
+  {id:"kosis-rnd-gdp",name:"KOSIS: 연구개발투자 비중",url:"https://kosis.kr",desc:"GDP 대비 연구개발 투자 비중"},
+  {id:"kosis-inbound-tourists",name:"KOSIS: 외래관광객 수",url:"https://kosis.kr",desc:"방한 외래관광객 수"},
+  {id:"kosis-venture-investment",name:"KOSIS: 벤처투자 규모",url:"https://kosis.kr",desc:"벤처투자 실적"},
+  {id:"mofa-consular-services",name:"외교부: 영사서비스 처리 실적",url:"https://www.mofa.go.kr",desc:"재외국민 영사서비스 처리 규모"},
+  {id:"mou-settlement-support",name:"통일부: 북한이탈주민 정착지원",url:"https://www.unikorea.go.kr",desc:"북한이탈주민 정착지원 통계"},
+  {id:"un-digital-government",name:"UN E-Government Survey",url:"https://publicadministration.desa.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024",desc:"온라인서비스 지수 등 디지털정부 국제 비교"},
+  {id:"mcst-content-exports",name:"문체부: 콘텐츠산업조사",url:"https://www.mcst.go.kr",desc:"콘텐츠산업 수출 통계"},
+  {id:"mafra-smart-farm",name:"농식품부: 스마트팜 확산 현황",url:"https://www.mafra.go.kr",desc:"스마트팜 보급 면적/농가 현황"},
+  {id:"mss-digitalization",name:"중기부: 소상공인 디지털전환",url:"https://www.mss.go.kr",desc:"스마트상점·온라인 전환 지원 누적"}
 );
 
 function enrichNode(node,parent=null){
@@ -1213,6 +1263,37 @@ function renderHistory(items){
   if(!items?.length)return "";
   return `<div class="detail-history-list">${items.map(item=>`<div class="detail-history-item"><div class="detail-history-date">${item.date||item.event||"기록"}</div><div class="detail-history-summary">${item.summary||""}</div>${item.sourceRefs?.length?renderSourceRefs(item.sourceRefs):""}</div>`).join("")}</div>`;
 }
+function renderIndicatorSeries(series){
+  if(!Array.isArray(series)||series.length<2)return "";
+  const width=220,height=54,padX=6,padY=6;
+  const values=series.map(point=>point.value);
+  const years=series.map(point=>point.year);
+  const min=Math.min(...values),max=Math.max(...values);
+  const span=max-min||1;
+  const xStep=(width-padX*2)/Math.max(series.length-1,1);
+  const pointPath=series.map((point,index)=>{
+    const x=padX+index*xStep;
+    const y=height-padY-((point.value-min)/span)*(height-padY*2);
+    return {x,y};
+  });
+  const line=pointPath.map((point,index)=>`${index===0?"M":"L"}${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ");
+  const area=`M${pointPath[0].x.toFixed(1)},${(height-padY).toFixed(1)} ${pointPath.map(point=>`L${point.x.toFixed(1)},${point.y.toFixed(1)}`).join(" ")} L${pointPath.at(-1).x.toFixed(1)},${(height-padY).toFixed(1)} Z`;
+  const latest=series.at(-1);
+  const first=series[0];
+  const delta=(latest.value-first.value).toFixed(1).replace(/\.0$/,'');
+  return `<div class="detail-indicator-series">
+    <div class="detail-indicator-series-head">
+      <span>${series.length}년 추이</span>
+      <span class="detail-indicator-series-range">${first.year}–${latest.year} · 누적 ${delta.startsWith('-')?'':'+'}${delta}</span>
+    </div>
+    <svg class="detail-indicator-series-svg" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none" aria-hidden="true">
+      <path class="detail-indicator-series-fill" d="${area}"></path>
+      <path class="detail-indicator-series-line" d="${line}"></path>
+      <circle class="detail-indicator-series-dot" cx="${pointPath.at(-1).x.toFixed(1)}" cy="${pointPath.at(-1).y.toFixed(1)}" r="3.5"></circle>
+    </svg>
+    <div class="detail-indicator-series-axis"><span>${years[0]}</span><span>${years.at(-1)}</span></div>
+  </div>`;
+}
 function renderPolicyIndicators(items){
   if(!items?.length)return "";
   const trendArrow={up:"↗",down:"↘",flat:"→"};
@@ -1224,6 +1305,7 @@ function renderPolicyIndicators(items){
     <div class="detail-indicator-value">${item.valueDisplay||item.value}</div>
     <div class="detail-indicator-meta">${item.datasetId||"공식 통계"}${item.unit?` · ${item.unit}`:""}</div>
     ${item.summary?`<div class="detail-indicator-summary">${item.summary}</div>`:""}
+    ${renderIndicatorSeries(item.series)}
     ${item.trendLabel?`<div class="detail-indicator-trend ${item.trendDirection||"flat"}">${trendArrow[item.trendDirection]||trendArrow.flat} ${item.trendLabel}</div>`:""}
     ${item.sourceRefs?.length?`<div style="margin-top:8px">${renderSourceRefs(item.sourceRefs)}</div>`:""}
   </div>`).join("")}</div>`;

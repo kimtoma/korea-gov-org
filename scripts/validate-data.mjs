@@ -121,6 +121,17 @@ function walk(node) {
       if (typeof indicator.value !== "number") {
         errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" is missing numeric value.`);
       }
+      if (indicator.series !== undefined) {
+        if (!Array.isArray(indicator.series) || indicator.series.length < 2) {
+          errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" must have a series array with at least 2 points.`);
+        } else {
+          for (const point of indicator.series) {
+            if (typeof point.year !== "number" || typeof point.value !== "number") {
+              errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" has an invalid series point.`);
+            }
+          }
+        }
+      }
       for (const ref of indicator.sourceRefs ?? []) {
         if (!sourceIds.has(ref)) {
           errors.push(`Unknown policy indicator source ref "${ref}" on node "${node.name}".`);
