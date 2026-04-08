@@ -61,12 +61,17 @@
 
 ```
 index.html      # 메인 (CSS + 데이터 + D3 차트 + 뷰 로직 전부 인라인)
-data.js         # 데이터 원본 (index.html에도 인라인 복사본 포함)
+data.js         # UI용 데이터 원본 (index.html에도 인라인 복사본 포함)
+data/           # Phase 2 정규화 기반 산출물
+  normalization-foundation.json  # canonical/source/alias/lineage/budget fact 분리본
 data-sources/   # 공공데이터포털 CSV 원본 (git 미추적, 참조용)
+scripts/
+  validate-data.mjs              # UI 데이터 + 정규화 기반 검증
+  build-normalization-foundation.mjs
 favicon.svg     # SVG 파비콘
 og-image.svg    # OG 이미지 소스 (SVG)
 og-image.png    # OG 이미지 (1200x630)
-CHANGELOG.md    # v0~v24 변경 이력
+CHANGELOG.md    # v0~v25 변경 이력
 CLAUDE.md       # Claude Code 작업 지침
 README.md       # 프로젝트 문서
 ```
@@ -81,8 +86,26 @@ wrangler pages deploy . --project-name korea-gov-org
 ## 데이터 검증
 
 ```bash
+# UI 데이터 → 정규화 기반 JSON 재생성
+node scripts/build-normalization-foundation.mjs
+
+# 인라인 동기화 + 무결성 + 정규화 산출물 검증
 node scripts/validate-data.mjs
 ```
+
+## Phase 2 정규화 기반
+
+현재 UI는 그대로 `data.js` / `index.html` 인라인 데이터를 사용한다. 대신 Phase 2부터는 그 위에 **정규화 레이어**를 별도로 생성한다.
+
+`data/normalization-foundation.json`에는 아래 5개 축이 분리돼 있다.
+
+- `canonicalOrgs` — 화면 표시용 이름과 별개인 기준 기관 레코드
+- `sourceNodes` — 현재 UI 노드가 어떤 source/orgCode에서 왔는지 추적 가능한 매핑
+- `aliases` — 표기명/공식명 alias 준비값
+- `lineage` — 개편 이력 및 predecessor orgCode 단서
+- `budgetFacts` — 예산 문자열(`1.2조`)을 정규화한 KRW 숫자 fact
+
+이 구조 덕분에 다음 단계에서 KOSIS, e-나라지표, 추가 공공데이터 CSV를 붙일 때도 UI 노드 이름에 직접 매달리지 않고 `canonicalId` 중심으로 조인할 수 있다.
 
 ## 데이터 출처
 

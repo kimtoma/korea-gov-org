@@ -1,0 +1,5202 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-08T14:08:19.945Z",
+  "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
+  "sourceCatalog": [
+    {
+      "id": "gov24-org",
+      "name": "정부24 중앙행정기관 조직도 (공식)",
+      "url": "https://www.gov.kr/portal/orgInfo",
+      "desc": "기관 분류·소속 체계의 1차 기준 (검증 기준일: 2026-04-07)"
+    },
+    {
+      "id": "official-sites",
+      "name": "각 부처·기관 공식 홈페이지 (공식)",
+      "url": "https://www.gov.kr/portal/orgInfo",
+      "desc": "기관 업무·조직 설명, 공식 도메인 확인"
+    },
+    {
+      "id": "policy-briefing",
+      "name": "대한민국 정책브리핑 (공식)",
+      "url": "https://www.korea.kr",
+      "desc": "장관 후보자 지명, 차관급 인사 발표"
+    },
+    {
+      "id": "budget-2026-proposal",
+      "name": "2026년 정부 예산안·보도자료 (공식)",
+      "url": "https://www.mpb.go.kr",
+      "desc": "부처별 예산 규모 및 정책 변화 확인"
+    },
+    {
+      "id": "wiki-cabinet",
+      "name": "위키백과: 이재명 정부의 국무위원 (보조)",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80%EC%9D%98_%EA%B5%AD%EB%AC%B4%EC%9C%84%EC%9B%90",
+      "desc": "장관 프로필 사진 및 인사 이력 보조 확인"
+    },
+    {
+      "id": "wiki-lee-gov",
+      "name": "위키백과: 이재명 정부 (보조)",
+      "url": "https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%9E%AC%EB%AA%85_%EC%A0%95%EB%B6%80",
+      "desc": "정부 조직 개편 이력 보조 확인"
+    },
+    {
+      "id": "namu-personnel",
+      "name": "나무위키: 이재명 정부/인사 (보조)",
+      "url": "https://namu.wiki/w/%EC%9D%B4%EC%9E%AC%EB%AA%85%20%EC%A0%95%EB%B6%80/%EC%9D%B8%EC%82%AC",
+      "desc": "청장·처장·위원장급 인사 교차 확인"
+    },
+    {
+      "id": "krds",
+      "name": "KRDS 대한민국 정부 디자인 시스템",
+      "url": "https://www.krds.go.kr",
+      "desc": "UI/UX 디자인 가이드라인 참고"
+    },
+    {
+      "id": "data-go-kr-org",
+      "name": "공공데이터포털: 정부조직도 기구정보 (공식)",
+      "url": "https://www.data.go.kr/data/15147671/fileData.do",
+      "desc": "공식 영문명·약어, 기관코드, 조직 계층 구조 (정부조직법 2025-10-01 기준)"
+    },
+    {
+      "id": "data-go-kr-budget",
+      "name": "공공데이터포털: 부처별 예산현황 (공식)",
+      "url": "https://www.data.go.kr/data/15095848/fileData.do",
+      "desc": "기획재정부 부처별 세출예산 (2024 정부안 기준, 누락 기관 보완용)"
+    },
+    {
+      "id": "data-go-kr-public-institutions",
+      "name": "공공데이터포털: 공공기관 지정현황 (공식)",
+      "url": "https://www.data.go.kr/data/15088742/fileData.do",
+      "desc": "재정경제부 공공기관 지정현황 344개 (2025-05-26 기준, 공기업·준정부기관)"
+    }
+  ],
+  "metrics": {
+    "canonicalOrgCount": 67,
+    "sourceNodeCount": 67,
+    "aliasCount": 68,
+    "lineageEventCount": 22,
+    "budgetFactCount": 54
+  },
+  "canonicalOrgs": [
+    {
+      "canonicalId": "kr-gov-root",
+      "currentNameKo": "대한민국 정부",
+      "currentNameEn": "Government of the Republic of Korea",
+      "currentNameEnAbbr": null,
+      "type": "root",
+      "currentStatus": "active",
+      "effective": {
+        "from": "1948-08-15",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": null,
+      "parentOrgCode": null,
+      "officialUrl": "https://www.gov.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부"
+      ]
+    },
+    {
+      "canonicalId": "org-0000002",
+      "currentNameKo": "국무총리",
+      "currentNameEn": "Prime Minister",
+      "currentNameEnAbbr": null,
+      "type": "pm",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "kr-gov-root",
+      "parentOrgCode": "ROOT-KR-GOV",
+      "officialUrl": "https://www.opm.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리"
+      ]
+    },
+    {
+      "canonicalId": "derived-국무총리 소속 위원회",
+      "currentNameKo": "국무총리 소속 위원회",
+      "currentNameEn": "PM Commissions",
+      "currentNameEnAbbr": null,
+      "type": "pm-group",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000002",
+      "parentOrgCode": "0000002",
+      "officialUrl": null,
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 위원회"
+      ]
+    },
+    {
+      "canonicalId": "org-pipc-kr",
+      "currentNameKo": "개인정보보호위원회",
+      "currentNameEn": "Personal Information Protection Commission",
+      "currentNameEnAbbr": "PIPC",
+      "type": "commission",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 위원회",
+      "parentOrgCode": "0000002/국무총리 소속 위원회",
+      "officialUrl": "https://www.pipc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 위원회",
+        "개인정보보호위원회"
+      ]
+    },
+    {
+      "canonicalId": "org-1130000",
+      "currentNameKo": "공정거래위원회",
+      "currentNameEn": "Korea Fair Trade Commission",
+      "currentNameEnAbbr": "KFTC",
+      "type": "commission",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 위원회",
+      "parentOrgCode": "0000002/국무총리 소속 위원회",
+      "officialUrl": "https://www.ftc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 위원회",
+        "공정거래위원회"
+      ]
+    },
+    {
+      "canonicalId": "org-1140100",
+      "currentNameKo": "국민권익위원회",
+      "currentNameEn": "Anti-corruption & Civil Rights Commission",
+      "currentNameEnAbbr": "ACRC",
+      "type": "commission",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 위원회",
+      "parentOrgCode": "0000002/국무총리 소속 위원회",
+      "officialUrl": "https://www.acrc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 위원회",
+        "국민권익위원회"
+      ]
+    },
+    {
+      "canonicalId": "org-1160000",
+      "currentNameKo": "금융위원회",
+      "currentNameEn": "Financial Services Commission",
+      "currentNameEnAbbr": "FSC",
+      "type": "commission",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 위원회",
+      "parentOrgCode": "0000002/국무총리 소속 위원회",
+      "officialUrl": "https://www.fsc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 위원회",
+        "금융위원회"
+      ]
+    },
+    {
+      "canonicalId": "org-1070000",
+      "currentNameKo": "원자력안전위원회",
+      "currentNameEn": "Nuclear Safety and Security Commission",
+      "currentNameEnAbbr": "NSSC",
+      "type": "commission",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 위원회",
+      "parentOrgCode": "0000002/국무총리 소속 위원회",
+      "officialUrl": "https://www.nssc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 위원회",
+        "원자력안전위원회"
+      ]
+    },
+    {
+      "canonicalId": "derived-국무총리 소속 처",
+      "currentNameKo": "국무총리 소속 처",
+      "currentNameEn": "PM Offices",
+      "currentNameEnAbbr": null,
+      "type": "pm-group",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000002",
+      "parentOrgCode": "0000002",
+      "officialUrl": null,
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처"
+      ]
+    },
+    {
+      "canonicalId": "org-mods-2025",
+      "currentNameKo": "국가데이터처",
+      "currentNameEn": "Ministry of Data and Statistics",
+      "currentNameEnAbbr": "MODS",
+      "type": "office",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2025-10-01",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 처",
+      "parentOrgCode": "0000002/국무총리 소속 처",
+      "officialUrl": "https://mods.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처",
+        "국가데이터처"
+      ]
+    },
+    {
+      "canonicalId": "org-mpb-2026",
+      "currentNameKo": "기획예산처",
+      "currentNameEn": "Ministry of Planning and Budget",
+      "currentNameEnAbbr": "MPB",
+      "type": "office",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2026-01-02",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 처",
+      "parentOrgCode": "0000002/국무총리 소속 처",
+      "officialUrl": "https://www.mpb.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처",
+        "기획예산처"
+      ]
+    },
+    {
+      "canonicalId": "org-1170000",
+      "currentNameKo": "법제처",
+      "currentNameEn": "Ministry of Government Legislation",
+      "currentNameEnAbbr": "MOLEG",
+      "type": "office",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 처",
+      "parentOrgCode": "0000002/국무총리 소속 처",
+      "officialUrl": "https://www.moleg.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처",
+        "법제처"
+      ]
+    },
+    {
+      "canonicalId": "org-1471000",
+      "currentNameKo": "식품의약품안전처",
+      "currentNameEn": "Ministry of Food and Drug Safety",
+      "currentNameEnAbbr": "MFDS",
+      "type": "office",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 처",
+      "parentOrgCode": "0000002/국무총리 소속 처",
+      "officialUrl": "https://www.mfds.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처",
+        "식품의약품안전처"
+      ]
+    },
+    {
+      "canonicalId": "org-1613000",
+      "currentNameKo": "인사혁신처",
+      "currentNameEn": "Ministry of Personnel Management",
+      "currentNameEnAbbr": "MPM",
+      "type": "office",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 처",
+      "parentOrgCode": "0000002/국무총리 소속 처",
+      "officialUrl": "https://www.mpm.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처",
+        "인사혁신처"
+      ]
+    },
+    {
+      "canonicalId": "org-moip-2025",
+      "currentNameKo": "지식재산처",
+      "currentNameEn": "Ministry of Intellectual Property",
+      "currentNameEnAbbr": "MOIP",
+      "type": "office",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2025-10-01",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-국무총리 소속 처",
+      "parentOrgCode": "0000002/국무총리 소속 처",
+      "officialUrl": "https://www.kipo.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "국무총리 소속 처",
+        "지식재산처"
+      ]
+    },
+    {
+      "canonicalId": "derived-총리 직속",
+      "currentNameKo": "총리 직속",
+      "currentNameEn": "PM Direct",
+      "currentNameEnAbbr": null,
+      "type": "pm-group",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000002",
+      "parentOrgCode": "0000002",
+      "officialUrl": null,
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "총리 직속"
+      ]
+    },
+    {
+      "canonicalId": "org-1092000",
+      "currentNameKo": "국무조정실",
+      "currentNameEn": "Office for Government Policy Coordination",
+      "currentNameEnAbbr": "OPC",
+      "type": "pm-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-총리 직속",
+      "parentOrgCode": "0000002/총리 직속",
+      "officialUrl": "https://www.opc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "총리 직속",
+        "국무조정실"
+      ]
+    },
+    {
+      "canonicalId": "org-1091000",
+      "currentNameKo": "국무총리비서실",
+      "currentNameEn": "Prime Minister's Secretariat",
+      "currentNameEnAbbr": "PMS",
+      "type": "pm-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-총리 직속",
+      "parentOrgCode": "0000002/총리 직속",
+      "officialUrl": "https://www.opm.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "국무총리",
+        "총리 직속",
+        "국무총리비서실"
+      ]
+    },
+    {
+      "canonicalId": "org-0000001",
+      "currentNameKo": "대통령",
+      "currentNameEn": "President",
+      "currentNameEnAbbr": null,
+      "type": "president",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "kr-gov-root",
+      "parentOrgCode": "ROOT-KR-GOV",
+      "officialUrl": "https://www.president.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령"
+      ]
+    },
+    {
+      "canonicalId": "org-1020000",
+      "currentNameKo": "감사원",
+      "currentNameEn": "Board of Audit and Inspection",
+      "currentNameEnAbbr": "BAI",
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.bai.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "감사원"
+      ]
+    },
+    {
+      "canonicalId": "org-cio-kr",
+      "currentNameKo": "고위공직자범죄수사처",
+      "currentNameEn": "Corruption Investigation Office for High-ranking Officials",
+      "currentNameEnAbbr": "CIO",
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.cio.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "고위공직자범죄수사처"
+      ]
+    },
+    {
+      "canonicalId": "derived-국가안보실",
+      "currentNameKo": "국가안보실",
+      "currentNameEn": "Office of National Security",
+      "currentNameEnAbbr": "ONS",
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.president.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "국가안보실"
+      ]
+    },
+    {
+      "canonicalId": "org-nhrc-kr",
+      "currentNameKo": "국가인권위원회",
+      "currentNameEn": "National Human Rights Commission",
+      "currentNameEnAbbr": "NHRC",
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.humanrights.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "국가인권위원회"
+      ]
+    },
+    {
+      "canonicalId": "org-1030000",
+      "currentNameKo": "국가정보원",
+      "currentNameEn": "National Intelligence Service",
+      "currentNameEnAbbr": "NIS",
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.nis.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "국가정보원"
+      ]
+    },
+    {
+      "canonicalId": "org-1012000",
+      "currentNameKo": "대통령경호처",
+      "currentNameEn": "Presidential Security Service",
+      "currentNameEnAbbr": null,
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.pss.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "대통령경호처"
+      ]
+    },
+    {
+      "canonicalId": "org-1011000",
+      "currentNameKo": "대통령비서실",
+      "currentNameEn": "Office of the President",
+      "currentNameEnAbbr": "OTP",
+      "type": "president-sub",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.president.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "대통령비서실"
+      ]
+    },
+    {
+      "canonicalId": "org-kmcc-2025",
+      "currentNameKo": "방송미디어통신위원회",
+      "currentNameEn": "Korea Media and Communications Commission",
+      "currentNameEnAbbr": "KMCC",
+      "type": "commission",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2025-10-01",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-0000001",
+      "parentOrgCode": "0000001",
+      "officialUrl": "https://www.kmcc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "대통령",
+        "방송미디어통신위원회"
+      ]
+    },
+    {
+      "canonicalId": "derived-행정각부",
+      "currentNameKo": "행정각부",
+      "currentNameEn": "Ministries",
+      "currentNameEnAbbr": null,
+      "type": "ministries-group",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "kr-gov-root",
+      "parentOrgCode": "ROOT-KR-GOV",
+      "officialUrl": null,
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
+      "currentNameKo": "고용노동부",
+      "currentNameEn": "Ministry of Employment and Labor",
+      "currentNameEnAbbr": "MOEL",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.moel.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "고용노동부"
+      ]
+    },
+    {
+      "canonicalId": "org-1721000",
+      "currentNameKo": "과학기술정보통신부",
+      "currentNameEn": "Ministry of Science and ICT",
+      "currentNameEnAbbr": "MSIT",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.msit.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "과학기술정보통신부"
+      ]
+    },
+    {
+      "canonicalId": "org-1721692",
+      "currentNameKo": "우주항공청",
+      "currentNameEn": "Korea AeroSpace Administration",
+      "currentNameEnAbbr": "KASA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2024-05-27",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1721000",
+      "parentOrgCode": "1721000",
+      "officialUrl": "https://www.kasa.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "과학기술정보통신부",
+        "우주항공청"
+      ]
+    },
+    {
+      "canonicalId": "org-1342000",
+      "currentNameKo": "교육부",
+      "currentNameEn": "Ministry of Education",
+      "currentNameEnAbbr": "MOE",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.moe.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "교육부"
+      ]
+    },
+    {
+      "canonicalId": "org-1180000",
+      "currentNameKo": "국가보훈부",
+      "currentNameEn": "Ministry of Patriots and Veterans Affairs",
+      "currentNameEnAbbr": "MPVA",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mpva.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국가보훈부"
+      ]
+    },
+    {
+      "canonicalId": "org-1290000",
+      "currentNameKo": "국방부",
+      "currentNameEn": "Ministry of National Defense",
+      "currentNameEnAbbr": "MND",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mnd.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국방부"
+      ]
+    },
+    {
+      "canonicalId": "org-1690000",
+      "currentNameKo": "방위사업청",
+      "currentNameEn": "Defense Acquisition Program Administration",
+      "currentNameEnAbbr": "DAPA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1290000",
+      "parentOrgCode": "1290000",
+      "officialUrl": "https://www.dapa.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국방부",
+        "방위사업청"
+      ]
+    },
+    {
+      "canonicalId": "org-1300000",
+      "currentNameKo": "병무청",
+      "currentNameEn": "Military Manpower Administration",
+      "currentNameEnAbbr": "MMA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1290000",
+      "parentOrgCode": "1290000",
+      "officialUrl": "https://www.mma.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국방부",
+        "병무청"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "currentNameKo": "국토교통부",
+      "currentNameEn": "Ministry of Land, Infrastructure and Transport",
+      "currentNameEnAbbr": "MOLIT",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.molit.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국토교통부"
+      ]
+    },
+    {
+      "canonicalId": "org-sdia",
+      "currentNameKo": "새만금개발청",
+      "currentNameEn": "Saemangeum Development and Investment Agency",
+      "currentNameEnAbbr": "SDIA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-molit-2025",
+      "parentOrgCode": "MOLIT-2025",
+      "officialUrl": "https://www.saemangeum.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국토교통부",
+        "새만금개발청"
+      ]
+    },
+    {
+      "canonicalId": "org-naacc",
+      "currentNameKo": "행정중심복합도시건설청",
+      "currentNameEn": "National Agency for Administrative City Construction",
+      "currentNameEnAbbr": "NAACC",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-molit-2025",
+      "parentOrgCode": "MOLIT-2025",
+      "officialUrl": "https://www.naacc.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "국토교통부",
+        "행정중심복합도시건설청"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "currentNameKo": "기후에너지환경부",
+      "currentNameEn": "Ministry of Climate, Energy and Environment",
+      "currentNameEnAbbr": "MCEE",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2025-10-01",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mcee.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "기후에너지환경부"
+      ]
+    },
+    {
+      "canonicalId": "org-1360000",
+      "currentNameKo": "기상청",
+      "currentNameEn": "Korea Meteorological Administration",
+      "currentNameEnAbbr": "KMA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-mcee-2025",
+      "parentOrgCode": "MCEE-2025",
+      "officialUrl": "https://www.kma.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "기후에너지환경부",
+        "기상청"
+      ]
+    },
+    {
+      "canonicalId": "org-1543000",
+      "currentNameKo": "농림축산식품부",
+      "currentNameEn": "Ministry of Agriculture, Food and Rural Affairs",
+      "currentNameEnAbbr": "MAFRA",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mafra.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "농림축산식품부"
+      ]
+    },
+    {
+      "canonicalId": "org-1390000",
+      "currentNameKo": "농촌진흥청",
+      "currentNameEn": "Rural Development Administration",
+      "currentNameEnAbbr": "RDA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1543000",
+      "parentOrgCode": "1543000",
+      "officialUrl": "https://www.rda.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "농림축산식품부",
+        "농촌진흥청"
+      ]
+    },
+    {
+      "canonicalId": "org-1400000",
+      "currentNameKo": "산림청",
+      "currentNameEn": "Korea Forest Service",
+      "currentNameEnAbbr": "KFS",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1543000",
+      "parentOrgCode": "1543000",
+      "officialUrl": "https://www.forest.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "농림축산식품부",
+        "산림청"
+      ]
+    },
+    {
+      "canonicalId": "org-1371000",
+      "currentNameKo": "문화체육관광부",
+      "currentNameEn": "Ministry of Culture, Sports and Tourism",
+      "currentNameEnAbbr": "MCST",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mcst.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "문화체육관광부"
+      ]
+    },
+    {
+      "canonicalId": "org-1550000",
+      "currentNameKo": "국가유산청",
+      "currentNameEn": "Korea Heritage Service",
+      "currentNameEnAbbr": "KHS",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2024-05-17",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1371000",
+      "parentOrgCode": "1371000",
+      "officialUrl": "https://www.khs.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "문화체육관광부",
+        "국가유산청"
+      ]
+    },
+    {
+      "canonicalId": "org-1270000",
+      "currentNameKo": "법무부",
+      "currentNameEn": "Ministry of Justice",
+      "currentNameEnAbbr": "MOJ",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.moj.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "법무부"
+      ]
+    },
+    {
+      "canonicalId": "derived-검찰청",
+      "currentNameKo": "검찰청",
+      "currentNameEn": "Supreme Prosecutors' Office",
+      "currentNameEnAbbr": "SPO",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1270000",
+      "parentOrgCode": "1270000",
+      "officialUrl": "https://www.spo.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "법무부",
+        "검찰청"
+      ]
+    },
+    {
+      "canonicalId": "derived-공소청",
+      "currentNameKo": "공소청",
+      "currentNameEn": "Public Prosecution Office",
+      "currentNameEnAbbr": null,
+      "type": "agency",
+      "currentStatus": "planned",
+      "effective": {
+        "from": "2026-10-01",
+        "to": null,
+        "status": "planned"
+      },
+      "parentCanonicalId": "org-1270000",
+      "parentOrgCode": "1270000",
+      "officialUrl": null,
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "법무부",
+        "공소청"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "currentNameKo": "보건복지부",
+      "currentNameEn": "Ministry of Health and Welfare",
+      "currentNameEnAbbr": "MOHW",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mohw.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "보건복지부"
+      ]
+    },
+    {
+      "canonicalId": "org-1790387",
+      "currentNameKo": "질병관리청",
+      "currentNameEn": "Korea Disease Control and Prevention Agency",
+      "currentNameEnAbbr": "KDCA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2020-09-12",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1352000",
+      "parentOrgCode": "1352000",
+      "officialUrl": "https://www.kdca.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "보건복지부",
+        "질병관리청"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "currentNameKo": "산업통상부",
+      "currentNameEn": "Ministry of Trade, Industry and Resources",
+      "currentNameEnAbbr": "MOTIR",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2025-10-01",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.motir.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "산업통상부"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "currentNameKo": "성평등가족부",
+      "currentNameEn": "Ministry of Gender Equality and Family",
+      "currentNameEnAbbr": "MOGEF",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2025-10-01",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mogef.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "성평등가족부"
+      ]
+    },
+    {
+      "canonicalId": "org-1262000",
+      "currentNameKo": "외교부",
+      "currentNameEn": "Ministry of Foreign Affairs",
+      "currentNameEnAbbr": "MOFA",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mofa.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "외교부"
+      ]
+    },
+    {
+      "canonicalId": "org-1263000",
+      "currentNameKo": "재외동포청",
+      "currentNameEn": "Overseas Koreans Agency",
+      "currentNameEnAbbr": "OKA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2023-06-05",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1262000",
+      "parentOrgCode": "1262000",
+      "officialUrl": "https://www.oka.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "외교부",
+        "재외동포청"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "currentNameKo": "재정경제부",
+      "currentNameEn": "Ministry of Economy and Finance",
+      "currentNameEnAbbr": "MOEF",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": "2026-01-02",
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mofe.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "재정경제부"
+      ]
+    },
+    {
+      "canonicalId": "org-1220000",
+      "currentNameKo": "관세청",
+      "currentNameEn": "Korea Customs Service",
+      "currentNameEnAbbr": "KCS",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-moef-2026",
+      "parentOrgCode": "MOEF-2026",
+      "officialUrl": "https://www.customs.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "재정경제부",
+        "관세청"
+      ]
+    },
+    {
+      "canonicalId": "org-1210000",
+      "currentNameKo": "국세청",
+      "currentNameEn": "National Tax Service",
+      "currentNameEnAbbr": "NTS",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-moef-2026",
+      "parentOrgCode": "MOEF-2026",
+      "officialUrl": "https://www.nts.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "재정경제부",
+        "국세청"
+      ]
+    },
+    {
+      "canonicalId": "org-1230000",
+      "currentNameKo": "조달청",
+      "currentNameEn": "Public Procurement Service",
+      "currentNameEnAbbr": "PPS",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-moef-2026",
+      "parentOrgCode": "MOEF-2026",
+      "officialUrl": "https://www.pps.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "재정경제부",
+        "조달청"
+      ]
+    },
+    {
+      "canonicalId": "org-1421000",
+      "currentNameKo": "중소벤처기업부",
+      "currentNameEn": "Ministry of SMEs and Startups",
+      "currentNameEnAbbr": "MSS",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mss.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "중소벤처기업부"
+      ]
+    },
+    {
+      "canonicalId": "org-1250000",
+      "currentNameKo": "통일부",
+      "currentNameEn": "Ministry of Unification",
+      "currentNameEnAbbr": "MOU",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.unikorea.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "통일부"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "currentNameKo": "해양수산부",
+      "currentNameEn": "Ministry of Oceans and Fisheries",
+      "currentNameEnAbbr": "MOF",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mof.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "해양수산부"
+      ]
+    },
+    {
+      "canonicalId": "org-1532000",
+      "currentNameKo": "해양경찰청",
+      "currentNameEn": "Korea Coast Guard",
+      "currentNameEnAbbr": "KCG",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-1192000",
+      "parentOrgCode": "1192000",
+      "officialUrl": "https://www.kcg.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "해양수산부",
+        "해양경찰청"
+      ]
+    },
+    {
+      "canonicalId": "org-mois-2025",
+      "currentNameKo": "행정안전부",
+      "currentNameEn": "Ministry of the Interior and Safety",
+      "currentNameEnAbbr": "MOIS",
+      "type": "ministry",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "derived-행정각부",
+      "parentOrgCode": "ROOT-KR-GOV/행정각부",
+      "officialUrl": "https://www.mois.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "행정안전부"
+      ]
+    },
+    {
+      "canonicalId": "org-1320000",
+      "currentNameKo": "경찰청",
+      "currentNameEn": "National Police Agency",
+      "currentNameEnAbbr": "NPA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-mois-2025",
+      "parentOrgCode": "MOIS-2025",
+      "officialUrl": "https://www.police.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "행정안전부",
+        "경찰청"
+      ]
+    },
+    {
+      "canonicalId": "org-1661000",
+      "currentNameKo": "소방청",
+      "currentNameEn": "National Fire Agency",
+      "currentNameEnAbbr": "NFA",
+      "type": "agency",
+      "currentStatus": "active",
+      "effective": {
+        "from": null,
+        "to": null,
+        "status": "active"
+      },
+      "parentCanonicalId": "org-mois-2025",
+      "parentOrgCode": "MOIS-2025",
+      "officialUrl": "https://www.nfa.go.kr",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "행정안전부",
+        "소방청"
+      ]
+    },
+    {
+      "canonicalId": "derived-중대범죄수사청",
+      "currentNameKo": "중대범죄수사청",
+      "currentNameEn": "Serious Crimes Investigation",
+      "currentNameEnAbbr": null,
+      "type": "agency",
+      "currentStatus": "planned",
+      "effective": {
+        "from": "2026-10-01",
+        "to": null,
+        "status": "planned"
+      },
+      "parentCanonicalId": "org-mois-2025",
+      "parentOrgCode": "MOIS-2025",
+      "officialUrl": null,
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "wiki-lee-gov"
+      ],
+      "currentPath": [
+        "대한민국 정부",
+        "행정각부",
+        "행정안전부",
+        "중대범죄수사청"
+      ]
+    }
+  ],
+  "sourceNodes": [
+    {
+      "canonicalId": "org-0000001",
+      "nameKo": "대통령",
+      "sourceOrgCode": "0000001",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "대통령",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-국가안보실",
+      "nameKo": "국가안보실",
+      "sourceOrgCode": "0000001/국가안보실",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "국가안보실",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-0000002",
+      "nameKo": "국무총리",
+      "sourceOrgCode": "0000002",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국무총리",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-국무총리 소속 위원회",
+      "nameKo": "국무총리 소속 위원회",
+      "sourceOrgCode": "0000002/국무총리 소속 위원회",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "0000002",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "국무총리 소속 위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-국무총리 소속 처",
+      "nameKo": "국무총리 소속 처",
+      "sourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "0000002",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "국무총리 소속 처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-총리 직속",
+      "nameKo": "총리 직속",
+      "sourceOrgCode": "0000002/총리 직속",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "0000002",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "총리 직속",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1011000",
+      "nameKo": "대통령비서실",
+      "sourceOrgCode": "1011000",
+      "sourceOrgCodeType": "alias",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "mapped-alias",
+      "officialNameKo": "대통령실",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1012000",
+      "nameKo": "대통령경호처",
+      "sourceOrgCode": "1012000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "대통령경호처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1020000",
+      "nameKo": "감사원",
+      "sourceOrgCode": "1020000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "감사원",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1030000",
+      "nameKo": "국가정보원",
+      "sourceOrgCode": "1030000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국가정보원",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1070000",
+      "nameKo": "원자력안전위원회",
+      "sourceOrgCode": "1070000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 위원회",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "원자력안전위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1091000",
+      "nameKo": "국무총리비서실",
+      "sourceOrgCode": "1091000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/총리 직속",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국무총리비서실",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1092000",
+      "nameKo": "국무조정실",
+      "sourceOrgCode": "1092000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/총리 직속",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국무조정실",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1130000",
+      "nameKo": "공정거래위원회",
+      "sourceOrgCode": "1130000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 위원회",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "공정거래위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1140100",
+      "nameKo": "국민권익위원회",
+      "sourceOrgCode": "1140100",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 위원회",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국민권익위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1160000",
+      "nameKo": "금융위원회",
+      "sourceOrgCode": "1160000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 위원회",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "금융위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1170000",
+      "nameKo": "법제처",
+      "sourceOrgCode": "1170000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "법제처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1180000",
+      "nameKo": "국가보훈부",
+      "sourceOrgCode": "1180000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국가보훈부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "nameKo": "해양수산부",
+      "sourceOrgCode": "1192000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "해양수산부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1210000",
+      "nameKo": "국세청",
+      "sourceOrgCode": "1210000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOEF-2026",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국세청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1220000",
+      "nameKo": "관세청",
+      "sourceOrgCode": "1220000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOEF-2026",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "관세청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1230000",
+      "nameKo": "조달청",
+      "sourceOrgCode": "1230000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOEF-2026",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "조달청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1250000",
+      "nameKo": "통일부",
+      "sourceOrgCode": "1250000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "통일부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1262000",
+      "nameKo": "외교부",
+      "sourceOrgCode": "1262000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "외교부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1263000",
+      "nameKo": "재외동포청",
+      "sourceOrgCode": "1263000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1262000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "재외동포청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-1270000",
+      "nameKo": "법무부",
+      "sourceOrgCode": "1270000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "법무부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "derived-검찰청",
+      "nameKo": "검찰청",
+      "sourceOrgCode": "1270000/검찰청",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "1270000",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "검찰청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-공소청",
+      "nameKo": "공소청",
+      "sourceOrgCode": "1270000/공소청",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "1270000",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "공소청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1290000",
+      "nameKo": "국방부",
+      "sourceOrgCode": "1290000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국방부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1300000",
+      "nameKo": "병무청",
+      "sourceOrgCode": "1300000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1290000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "병무청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1320000",
+      "nameKo": "경찰청",
+      "sourceOrgCode": "1320000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOIS-2025",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "경찰청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1342000",
+      "nameKo": "교육부",
+      "sourceOrgCode": "1342000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "교육부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "nameKo": "보건복지부",
+      "sourceOrgCode": "1352000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "보건복지부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1360000",
+      "nameKo": "기상청",
+      "sourceOrgCode": "1360000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MCEE-2025",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "기상청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1371000",
+      "nameKo": "문화체육관광부",
+      "sourceOrgCode": "1371000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "문화체육관광부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1390000",
+      "nameKo": "농촌진흥청",
+      "sourceOrgCode": "1390000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1543000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "농촌진흥청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1400000",
+      "nameKo": "산림청",
+      "sourceOrgCode": "1400000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1543000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "산림청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1421000",
+      "nameKo": "중소벤처기업부",
+      "sourceOrgCode": "1421000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "중소벤처기업부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1471000",
+      "nameKo": "식품의약품안전처",
+      "sourceOrgCode": "1471000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "식품의약품안전처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
+      "nameKo": "고용노동부",
+      "sourceOrgCode": "1492000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "고용노동부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1532000",
+      "nameKo": "해양경찰청",
+      "sourceOrgCode": "1532000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1192000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "해양경찰청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1543000",
+      "nameKo": "농림축산식품부",
+      "sourceOrgCode": "1543000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "농림축산식품부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1550000",
+      "nameKo": "국가유산청",
+      "sourceOrgCode": "1550000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1371000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "국가유산청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-1613000",
+      "nameKo": "인사혁신처",
+      "sourceOrgCode": "1613000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "인사혁신처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1661000",
+      "nameKo": "소방청",
+      "sourceOrgCode": "1661000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOIS-2025",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "소방청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1690000",
+      "nameKo": "방위사업청",
+      "sourceOrgCode": "1690000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1290000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "방위사업청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1721000",
+      "nameKo": "과학기술정보통신부",
+      "sourceOrgCode": "1721000",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "과학기술정보통신부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1721692",
+      "nameKo": "우주항공청",
+      "sourceOrgCode": "1721692",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1721000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "우주항공청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-1790387",
+      "nameKo": "질병관리청",
+      "sourceOrgCode": "1790387",
+      "sourceOrgCodeType": null,
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "1352000",
+      "sourceId": "data-go-kr-org",
+      "status": "official",
+      "officialNameKo": "질병관리청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-cio-kr",
+      "nameKo": "고위공직자범죄수사처",
+      "sourceOrgCode": "CIO-KR-2021",
+      "sourceOrgCodeType": "style-independent",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "independent",
+      "officialNameKo": "고위공직자범죄수사처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-kmcc-2025",
+      "nameKo": "방송미디어통신위원회",
+      "sourceOrgCode": "KMCC-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "방송미디어통신위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "nameKo": "기후에너지환경부",
+      "sourceOrgCode": "MCEE-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "기후에너지환경부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mods-2025",
+      "nameKo": "국가데이터처",
+      "sourceOrgCode": "MODS-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "국가데이터처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "nameKo": "재정경제부",
+      "sourceOrgCode": "MOEF-2026",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "재정경제부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "nameKo": "성평등가족부",
+      "sourceOrgCode": "MOGEF-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "성평등가족부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-moip-2025",
+      "nameKo": "지식재산처",
+      "sourceOrgCode": "MOIP-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "지식재산처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mois-2025",
+      "nameKo": "행정안전부",
+      "sourceOrgCode": "MOIS-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "provisional",
+      "officialNameKo": "행정안전부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "derived-중대범죄수사청",
+      "nameKo": "중대범죄수사청",
+      "sourceOrgCode": "MOIS-2025/중대범죄수사청",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "MOIS-2025",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "중대범죄수사청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "nameKo": "국토교통부",
+      "sourceOrgCode": "MOLIT-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "provisional",
+      "officialNameKo": "국토교통부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "nameKo": "산업통상부",
+      "sourceOrgCode": "MOTIR-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "산업통상부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mpb-2026",
+      "nameKo": "기획예산처",
+      "sourceOrgCode": "MPB-2026",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 처",
+      "sourceId": "data-go-kr-org",
+      "status": "planned-active",
+      "officialNameKo": "기획예산처",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-naacc",
+      "nameKo": "행정중심복합도시건설청",
+      "sourceOrgCode": "NAACC-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOLIT-2025",
+      "sourceId": "data-go-kr-org",
+      "status": "provisional",
+      "officialNameKo": "행정중심복합도시건설청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-nhrc-kr",
+      "nameKo": "국가인권위원회",
+      "sourceOrgCode": "NHRC-KR",
+      "sourceOrgCodeType": "style-independent",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000001",
+      "sourceId": "data-go-kr-org",
+      "status": "independent",
+      "officialNameKo": "국가인권위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-pipc-kr",
+      "nameKo": "개인정보보호위원회",
+      "sourceOrgCode": "PIPC-KR",
+      "sourceOrgCodeType": "style-independent",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "0000002/국무총리 소속 위원회",
+      "sourceId": "data-go-kr-org",
+      "status": "independent",
+      "officialNameKo": "개인정보보호위원회",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "kr-gov-root",
+      "nameKo": "대한민국 정부",
+      "sourceOrgCode": "ROOT-KR-GOV",
+      "sourceOrgCodeType": "synthetic-root",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": null,
+      "sourceId": "data-go-kr-org",
+      "status": "synthetic",
+      "officialNameKo": "대한민국 정부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-행정각부",
+      "nameKo": "행정각부",
+      "sourceOrgCode": "ROOT-KR-GOV/행정각부",
+      "sourceOrgCodeType": "style-derived",
+      "sourceScheme": "org-code-style-child",
+      "parentSourceOrgCode": "ROOT-KR-GOV",
+      "sourceId": "data-go-kr-org",
+      "status": "derived-child",
+      "officialNameKo": "행정각부",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-sdia",
+      "nameKo": "새만금개발청",
+      "sourceOrgCode": "SDIA-2025",
+      "sourceOrgCodeType": "style-provisional",
+      "sourceScheme": "data-go-kr-org-code",
+      "parentSourceOrgCode": "MOLIT-2025",
+      "sourceId": "data-go-kr-org",
+      "status": "provisional",
+      "officialNameKo": "새만금개발청",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "canonicalId": "org-1020000",
+      "alias": "감사원",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-pipc-kr",
+      "alias": "개인정보보호위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "derived-검찰청",
+      "alias": "검찰청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1320000",
+      "alias": "경찰청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
+      "alias": "고용노동부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-cio-kr",
+      "alias": "고위공직자범죄수사처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "derived-공소청",
+      "alias": "공소청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1130000",
+      "alias": "공정거래위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1721000",
+      "alias": "과학기술정보통신부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1220000",
+      "alias": "관세청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1342000",
+      "alias": "교육부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-mods-2025",
+      "alias": "국가데이터처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1180000",
+      "alias": "국가보훈부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "derived-국가안보실",
+      "alias": "국가안보실",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1550000",
+      "alias": "국가유산청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-nhrc-kr",
+      "alias": "국가인권위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1030000",
+      "alias": "국가정보원",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1092000",
+      "alias": "국무조정실",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-0000002",
+      "alias": "국무총리",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-국무총리 소속 위원회",
+      "alias": "국무총리 소속 위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "derived-국무총리 소속 처",
+      "alias": "국무총리 소속 처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1091000",
+      "alias": "국무총리비서실",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1140100",
+      "alias": "국민권익위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1290000",
+      "alias": "국방부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1210000",
+      "alias": "국세청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "alias": "국토교통부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1160000",
+      "alias": "금융위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1360000",
+      "alias": "기상청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mpb-2026",
+      "alias": "기획예산처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "alias": "기후에너지환경부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1543000",
+      "alias": "농림축산식품부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1390000",
+      "alias": "농촌진흥청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-0000001",
+      "alias": "대통령",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1012000",
+      "alias": "대통령경호처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1011000",
+      "alias": "대통령비서실",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1011000",
+      "alias": "대통령실",
+      "lang": "ko",
+      "aliasType": "official",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "kr-gov-root",
+      "alias": "대한민국 정부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1371000",
+      "alias": "문화체육관광부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-kmcc-2025",
+      "alias": "방송미디어통신위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1690000",
+      "alias": "방위사업청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1270000",
+      "alias": "법무부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1170000",
+      "alias": "법제처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1300000",
+      "alias": "병무청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "alias": "보건복지부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1400000",
+      "alias": "산림청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "alias": "산업통상부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-sdia",
+      "alias": "새만금개발청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "alias": "성평등가족부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1661000",
+      "alias": "소방청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1471000",
+      "alias": "식품의약품안전처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1262000",
+      "alias": "외교부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1721692",
+      "alias": "우주항공청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-1070000",
+      "alias": "원자력안전위원회",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1613000",
+      "alias": "인사혁신처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-1263000",
+      "alias": "재외동포청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "alias": "재정경제부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1230000",
+      "alias": "조달청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "derived-중대범죄수사청",
+      "alias": "중대범죄수사청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1421000",
+      "alias": "중소벤처기업부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-moip-2025",
+      "alias": "지식재산처",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-1790387",
+      "alias": "질병관리청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "derived-총리 직속",
+      "alias": "총리 직속",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-1250000",
+      "alias": "통일부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1532000",
+      "alias": "해양경찰청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "alias": "해양수산부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "derived-행정각부",
+      "alias": "행정각부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org"
+      ]
+    },
+    {
+      "canonicalId": "org-mois-2025",
+      "alias": "행정안전부",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions"
+      ]
+    },
+    {
+      "canonicalId": "org-naacc",
+      "alias": "행정중심복합도시건설청",
+      "lang": "ko",
+      "aliasType": "display",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    }
+  ],
+  "lineage": [
+    {
+      "canonicalId": "org-1790387",
+      "date": "2020-09-12",
+      "event": "upgrade",
+      "summary": "질병관리본부가 청으로 승격.",
+      "sourceRefs": [
+        "data-go-kr-org",
+        "official-sites"
+      ]
+    },
+    {
+      "canonicalId": "org-1263000",
+      "date": "2023-06-05",
+      "event": "new",
+      "summary": "재외동포 정책 전담기관으로 신설.",
+      "sourceRefs": [
+        "data-go-kr-org",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-1550000",
+      "date": "2024-05-17",
+      "event": "rename",
+      "summary": "문화재청이 국가유산청으로 명칭 변경.",
+      "sourceRefs": [
+        "data-go-kr-org",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-1721692",
+      "date": "2024-05-27",
+      "event": "new",
+      "summary": "우주항공 전담 중앙행정기관으로 신설.",
+      "sourceRefs": [
+        "data-go-kr-org",
+        "policy-briefing"
+      ]
+    },
+    {
+      "canonicalId": "org-kmcc-2025",
+      "date": "2025-10-01",
+      "event": "predecessor-org-code",
+      "summary": "1570000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1570000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-kmcc-2025",
+      "date": "2025-10-01",
+      "event": "replace",
+      "summary": "방송통신위원회를 대체해 방송·미디어·통신 통합 규제기관으로 신설.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "date": "2025-10-01",
+      "event": "predecessor-org-code",
+      "summary": "1480000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1480000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "date": "2025-10-01",
+      "event": "reorg",
+      "summary": "환경부에 에너지 기능을 통합해 기후에너지환경부로 개편.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mods-2025",
+      "date": "2025-10-01",
+      "event": "predecessor-org-code",
+      "summary": "1242000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1242000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mods-2025",
+      "date": "2025-10-01",
+      "event": "upgrade",
+      "summary": "통계청이 처급 기관으로 승격되어 국가데이터처로 개편.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "date": "2025-10-01",
+      "event": "predecessor-org-code",
+      "summary": "1383000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1383000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "date": "2025-10-01",
+      "event": "rename",
+      "summary": "여성가족부가 성평등가족부로 명칭 변경.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-moip-2025",
+      "date": "2025-10-01",
+      "event": "predecessor-org-code",
+      "summary": "1430000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1430000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-moip-2025",
+      "date": "2025-10-01",
+      "event": "upgrade",
+      "summary": "특허청이 처급 기관으로 승격되어 지식재산처로 개편.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "date": "2025-10-01",
+      "event": "predecessor-org-code",
+      "summary": "1450000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1450000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "date": "2025-10-01",
+      "event": "rename",
+      "summary": "산업통상자원부에서 에너지 기능 분리 후 산업통상부로 명칭 변경.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "date": "2026-01-02",
+      "event": "predecessor-org-code",
+      "summary": "1051000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1051000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "budget-2026-proposal",
+        "data-go-kr-budget",
+        "data-go-kr-public-institutions",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "date": "2026-01-02",
+      "event": "split",
+      "summary": "기획재정부에서 재정·세제·국고 기능을 중심으로 재편.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mpb-2026",
+      "date": "2026-01-02",
+      "event": "predecessor-org-code",
+      "summary": "1051000에서 이어지는 기관 코드 계보 준비값",
+      "predecessorOrgCode": "1051000",
+      "sourceRefs": [
+        "gov24-org",
+        "official-sites",
+        "data-go-kr-org",
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "org-mpb-2026",
+      "date": "2026-01-02",
+      "event": "split",
+      "summary": "기획재정부 예산 기능 분리로 신설.",
+      "sourceRefs": [
+        "policy-briefing",
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "derived-공소청",
+      "date": "2026-10-01",
+      "event": "planned",
+      "summary": "검찰청 폐지 후 기소 기능을 전담하도록 계획된 기관.",
+      "sourceRefs": [
+        "wiki-lee-gov"
+      ]
+    },
+    {
+      "canonicalId": "derived-중대범죄수사청",
+      "date": "2026-10-01",
+      "event": "planned",
+      "summary": "수사·기소 분리 원칙에 따라 신설 예정인 중대범죄 수사기관.",
+      "sourceRefs": [
+        "wiki-lee-gov"
+      ]
+    }
+  ],
+  "budgetFacts": [
+    {
+      "canonicalId": "org-1012000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1,341억",
+      "normalizedAmountKrw": 134100000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1020000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "3,800억",
+      "normalizedAmountKrw": 380000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1030000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "8,946억",
+      "normalizedAmountKrw": 894600000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1070000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "2,800억",
+      "normalizedAmountKrw": 280000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1091000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "989억",
+      "normalizedAmountKrw": 98900000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1092000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "5,600억",
+      "normalizedAmountKrw": 560000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1130000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1,900억",
+      "normalizedAmountKrw": 190000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1140100",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1,500억",
+      "normalizedAmountKrw": 150000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1160000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "5.5조",
+      "normalizedAmountKrw": 5500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1170000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "920억",
+      "normalizedAmountKrw": 92000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1180000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "6.8조",
+      "normalizedAmountKrw": 6800000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "7.8조",
+      "normalizedAmountKrw": 7800000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1210000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "2.2조",
+      "normalizedAmountKrw": 2200000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1220000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "8,900억",
+      "normalizedAmountKrw": 890000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1230000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "4,200억",
+      "normalizedAmountKrw": 420000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1250000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "2.1조",
+      "normalizedAmountKrw": 2100000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1262000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "3.2조",
+      "normalizedAmountKrw": 3200000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1263000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1,127억",
+      "normalizedAmountKrw": 112700000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1270000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "4.7조",
+      "normalizedAmountKrw": 4700000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1290000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "65.9조",
+      "normalizedAmountKrw": 65900000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1300000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "9,800억",
+      "normalizedAmountKrw": 980000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1320000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "14.3조",
+      "normalizedAmountKrw": 14300000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1342000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "106.4조",
+      "normalizedAmountKrw": 106400000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "137.5조",
+      "normalizedAmountKrw": 137500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1360000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "5,200억",
+      "normalizedAmountKrw": 520000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1371000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "7.5조",
+      "normalizedAmountKrw": 7500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1390000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.6조",
+      "normalizedAmountKrw": 1600000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1400000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "3.1조",
+      "normalizedAmountKrw": 3100000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1421000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "18.4조",
+      "normalizedAmountKrw": 18400000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1471000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.1조",
+      "normalizedAmountKrw": 1100000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "35.2조",
+      "normalizedAmountKrw": 35200000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1532000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "2.1조",
+      "normalizedAmountKrw": 2100000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1543000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "18.2조",
+      "normalizedAmountKrw": 18200000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1550000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.3조",
+      "normalizedAmountKrw": 1300000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1613000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "7,600억",
+      "normalizedAmountKrw": 760000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1661000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.5조",
+      "normalizedAmountKrw": 1500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1690000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "18.7조",
+      "normalizedAmountKrw": 18700000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1721000",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "20.5조",
+      "normalizedAmountKrw": 20500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1721692",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "8,000억",
+      "normalizedAmountKrw": 800000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-1790387",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.8조",
+      "normalizedAmountKrw": 1800000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-cio-kr",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "296억",
+      "normalizedAmountKrw": 29600000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-kmcc-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "434억",
+      "normalizedAmountKrw": 43400000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "14.3조",
+      "normalizedAmountKrw": 14300000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mods-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "4,567억",
+      "normalizedAmountKrw": 456700000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "29.2조",
+      "normalizedAmountKrw": 29200000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mogef-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.5조",
+      "normalizedAmountKrw": 1500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-moip-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "6,308억",
+      "normalizedAmountKrw": 630800000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mois-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "73.5조",
+      "normalizedAmountKrw": 73500000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "28.9조",
+      "normalizedAmountKrw": 28900000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "12.8조",
+      "normalizedAmountKrw": 12800000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-naacc",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "2,904억",
+      "normalizedAmountKrw": 290400000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-nhrc-kr",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "490억",
+      "normalizedAmountKrw": 49000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-pipc-kr",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1,200억",
+      "normalizedAmountKrw": 120000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-sdia",
+      "fiscalYear": 2026,
+      "phase": "government-proposal",
+      "unit": "KRW",
+      "rawDisplayAmount": "1.2조",
+      "normalizedAmountKrw": 1200000000000,
+      "amountBasis": "display-only",
+      "sourceId": "budget-2026-proposal",
+      "datasetId": "15095848",
+      "sourceRefs": [
+        "budget-2026-proposal",
+        "data-go-kr-budget"
+      ]
+    }
+  ]
+}

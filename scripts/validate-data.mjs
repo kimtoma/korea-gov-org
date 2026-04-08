@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import vm from "node:vm";
 
+const NORMALIZATION_FOUNDATION_PATH = "data/normalization-foundation.json";
+
 const EXPECTED_COUNTS = {
   ministry: 19,
   office: 6,
@@ -64,6 +66,7 @@ const seenNodeNames = new Set();
 const duplicateNodeNames = new Set();
 const counts = { ministry: 0, office: 0, agency: 0, commission: 0 };
 const sourceIds = new Set(Array.isArray(sources) ? sources.map((src) => src.id).filter(Boolean) : []);
+let budgetNodeCount = 0;
 
 function walk(node) {
   if (!node || typeof node !== "object") return;
@@ -94,6 +97,7 @@ function walk(node) {
   }
 
   if (node.budgetMeta) {
+    budgetNodeCount += 1;
     if (!node.budgetMeta.fiscalYear || typeof node.budgetMeta.fiscalYear !== "number") {
       errors.push(`Missing numeric budgetMeta.fiscalYear on node "${node.name}".`);
     }
@@ -143,6 +147,51 @@ if (duplicateNodeNames.size > 0) {
 for (const key of Object.keys(EXPECTED_COUNTS)) {
   if (counts[key] !== EXPECTED_COUNTS[key]) {
     errors.push(`Count mismatch for ${key}: expected ${EXPECTED_COUNTS[key]}, got ${counts[key]}.`);
+  }
+}
+
+if (!fs.existsSync(NORMALIZATION_FOUNDATION_PATH)) {
+  errors.push(`Missing ${NORMALIZATION_FOUNDATION_PATH}. Run node scripts/build-normalization-foundation.mjs first.`);
+} else {
+  const normalization = JSON.parse(fs.readFileSync(NORMALIZATION_FOUNDATION_PATH, "utf8"));
+  const canonicalIds = new Set();
+  for (const node of normalization.canonicalOrgs ?? []) {
+    if (!node.canonicalId) {
+      errors.push("Normalization foundation has a canonical org without canonicalId.");
+      continue;
+    }
+    if (canonicalIds.has(node.canonicalId)) {
+      errors.push(`Duplicate canonicalId in normalization foundation: ${node.canonicalId}`);
+    }
+    canonicalIds.add(node.canonicalId);
+  }
+
+  for (const alias of normalization.aliases ?? []) {
+    if (!canonicalIds.has(alias.canonicalId)) {
+      errors.push(`Normalization alias references unknown canonicalId: ${alias.canonicalId}`);
+    }
+  }
+
+  for (const item of normalization.lineage ?? []) {
+    if (!canonicalIds.has(item.canonicalId)) {
+      errors.push(`Normalization lineage references unknown canonicalId: ${item.canonicalId}`);
+    }
+  }
+
+  for (const fact of normalization.budgetFacts ?? []) {
+    if (!canonicalIds.has(fact.canonicalId)) {
+      errors.push(`Normalization budget fact references unknown canonicalId: ${fact.canonicalId}`);
+    }
+    if (typeof fact.normalizedAmountKrw !== "number" || !Number.isFinite(fact.normalizedAmountKrw) || fact.normalizedAmountKrw <= 0) {
+      errors.push(`Normalization budget fact has invalid normalizedAmountKrw for canonicalId ${fact.canonicalId}.`);
+    }
+  }
+
+  if ((normalization.metrics?.budgetFactCount ?? 0) !== budgetNodeCount) {
+    errors.push(`Normalization budgetFactCount mismatch: expected ${budgetNodeCount}, got ${normalization.metrics?.budgetFactCount ?? 0}.`);
+  }
+  if ((normalization.metrics?.canonicalOrgCount ?? 0) !== canonicalIds.size) {
+    errors.push(`Normalization canonicalOrgCount mismatch: expected ${canonicalIds.size}, got ${normalization.metrics?.canonicalOrgCount ?? 0}.`);
   }
 }
 

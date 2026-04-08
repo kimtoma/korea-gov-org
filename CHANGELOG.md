@@ -1,6 +1,21 @@
 # CHANGELOG — 대한민국 정부조직도 (비공식)
 
-> v0 ~ v24 · 2026-04-08
+> v0 ~ v25 · 2026-04-08
+
+## v25 — Phase 2 정규화 기반 추가 (2026-04-08)
+- **정규화 기반 산출물 추가** — `data/normalization-foundation.json`
+  - `canonicalOrgs`: 기준 기관 레코드 분리
+  - `sourceNodes`: source/orgCode 기준 연결 레이어 분리
+  - `aliases`: 표시명/공식명 alias 준비
+  - `lineage`: 개편 이력 + predecessor orgCode 단서 축적
+  - `budgetFacts`: 예산 문자열을 KRW 숫자 fact로 정규화
+- **빌드 스크립트 추가** — `scripts/build-normalization-foundation.mjs`
+  - 현재 UI 데이터를 읽어 정규화 기반 JSON을 재생성
+  - UI 변경 없이 이후 공공데이터 import 파이프라인의 기준점 제공
+- **검증 확장** — `scripts/validate-data.mjs`
+  - 기존 인라인 동기화/무결성 검사 유지
+  - 정규화 산출물 존재 여부, canonicalId 참조, budget fact 수량/숫자 검증 추가
+- **문서 보강** — README에 Phase 2 정규화 레이어 설명 추가
 
 ## v24 — 공공데이터포털 데이터 연동 (2026-04-08)
 - **공식 영문명 교체** — 공공데이터포털 정부조직도 기구정보 CSV(정부조직법 2025-10-01) 기반
