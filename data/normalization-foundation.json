@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-08T14:08:19.945Z",
+  "generatedAt": "2026-04-08T14:17:21.889Z",
   "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
   "sourceCatalog": [
     {
@@ -68,6 +68,78 @@
       "name": "공공데이터포털: 공공기관 지정현황 (공식)",
       "url": "https://www.data.go.kr/data/15088742/fileData.do",
       "desc": "재정경제부 공공기관 지정현황 344개 (2025-05-26 기준, 공기업·준정부기관)"
+    },
+    {
+      "id": "e-nara-employment-rate",
+      "name": "e-나라지표: 고용률",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063",
+      "desc": "15~64세 고용률 대표 지표"
+    },
+    {
+      "id": "e-nara-youth-employment",
+      "name": "e-나라지표: 청년 고용률",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038",
+      "desc": "청년층 고용 상황 대표 지표"
+    },
+    {
+      "id": "e-nara-housing-supply",
+      "name": "e-나라지표: 주택보급률",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238",
+      "desc": "가구 수 대비 주택 stock 지표"
+    },
+    {
+      "id": "e-nara-ghg-emissions",
+      "name": "e-나라지표: 온실가스 총배출량",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438",
+      "desc": "국가 온실가스 총배출량 지표"
+    },
+    {
+      "id": "e-nara-renewable-share",
+      "name": "e-나라지표: 재생에너지 발전 비중",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974",
+      "desc": "전체 발전량 대비 재생에너지 비중"
+    },
+    {
+      "id": "e-nara-fiscal-soundness",
+      "name": "e-나라지표: 국가채무비율",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108",
+      "desc": "GDP 대비 국가채무 비율"
+    },
+    {
+      "id": "kosis-consumer-price",
+      "name": "KOSIS: 소비자물가상승률",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003",
+      "desc": "전국 소비자물가 상승률"
+    },
+    {
+      "id": "kosis-private-education",
+      "name": "KOSIS: 학생 1인당 월평균 사교육비",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A",
+      "desc": "초중고 사교육비 조사"
+    },
+    {
+      "id": "kosis-higher-education",
+      "name": "KOSIS: 고등교육기관 진학률",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991",
+      "desc": "고교 졸업자 진학률"
+    },
+    {
+      "id": "kosis-fertility-rate",
+      "name": "KOSIS: 합계출산율",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15",
+      "desc": "시도·전국 합계출산율"
+    },
+    {
+      "id": "kosis-life-expectancy",
+      "name": "KOSIS: 기대수명",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42",
+      "desc": "생명표 기반 기대수명"
+    },
+    {
+      "id": "kosis-public-transport-share",
+      "name": "KOSIS: 대중교통 분담률",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244",
+      "desc": "교통수단 분담률"
     }
   ],
   "metrics": {
@@ -75,7 +147,9 @@
     "sourceNodeCount": 67,
     "aliasCount": 68,
     "lineageEventCount": 22,
-    "budgetFactCount": 54
+    "budgetFactCount": 54,
+    "indicatorFactCount": 12,
+    "indicatorCoverageOrgCount": 6
   },
   "canonicalOrgs": [
     {
@@ -883,6 +957,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-employment-rate",
+        "e-nara-youth-employment",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -971,6 +1047,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-private-education",
+        "kosis-higher-education",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1114,6 +1192,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-housing-supply",
+        "kosis-public-transport-share",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1201,6 +1281,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-ghg-emissions",
+        "e-nara-renewable-share",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -1490,6 +1572,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-fertility-rate",
+        "kosis-life-expectancy",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1668,6 +1752,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-consumer-price",
+        "e-nara-fiscal-soundness",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -2561,6 +2647,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-private-education",
+        "kosis-higher-education",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2580,6 +2668,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-fertility-rate",
+        "kosis-life-expectancy",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2709,6 +2799,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-employment-rate",
+        "e-nara-youth-employment",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2934,6 +3026,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-ghg-emissions",
+        "e-nara-renewable-share",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -2975,6 +3069,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-consumer-price",
+        "e-nara-fiscal-soundness",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -3072,6 +3168,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-housing-supply",
+        "kosis-public-transport-share",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3282,6 +3380,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-employment-rate",
+        "e-nara-youth-employment",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3362,6 +3462,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-private-education",
+        "kosis-higher-education",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3553,6 +3655,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-housing-supply",
+        "kosis-public-transport-share",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3607,6 +3711,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-ghg-emissions",
+        "e-nara-renewable-share",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -3789,6 +3895,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-fertility-rate",
+        "kosis-life-expectancy",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3955,6 +4063,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-consumer-price",
+        "e-nara-fiscal-soundness",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4197,6 +4307,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "e-nara-ghg-emissions",
+        "e-nara-renewable-share",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4329,6 +4441,8 @@
         "data-go-kr-org",
         "budget-2026-proposal",
         "data-go-kr-budget",
+        "kosis-consumer-price",
+        "e-nara-fiscal-soundness",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -5196,6 +5310,224 @@
       "sourceRefs": [
         "budget-2026-proposal",
         "data-go-kr-budget"
+      ]
+    }
+  ],
+  "indicatorFacts": [
+    {
+      "canonicalId": "org-1342000",
+      "indicatorId": "higher-education-enrollment",
+      "indicatorNameKo": "고등교육기관 진학률",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-higher-education",
+      "year": 2024,
+      "value": 76.2,
+      "unit": "%",
+      "valueDisplay": "76.2%",
+      "trendDirection": "down",
+      "trendLabel": "전년 대비 소폭 하락",
+      "summary": "고등학교 졸업자의 대학 등 진학 비중.",
+      "sourceRefs": [
+        "kosis-higher-education"
+      ]
+    },
+    {
+      "canonicalId": "org-1342000",
+      "indicatorId": "private-education-monthly",
+      "indicatorNameKo": "학생 1인당 월평균 사교육비",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-private-education",
+      "year": 2024,
+      "value": 47.4,
+      "unit": "만원/월",
+      "valueDisplay": "47.4만원",
+      "trendDirection": "up",
+      "trendLabel": "전년 43.4만원 → 47.4만원",
+      "summary": "초중고 학생의 사교육비 부담 수준. 교육격차·공교육 체감도와 자주 같이 해석된다.",
+      "sourceRefs": [
+        "kosis-private-education"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "indicatorId": "life-expectancy",
+      "indicatorNameKo": "기대수명",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-life-expectancy",
+      "year": 2024,
+      "value": 83.5,
+      "unit": "세",
+      "valueDisplay": "83.5세",
+      "trendDirection": "up",
+      "trendLabel": "전년 대비 완만한 증가",
+      "summary": "보건의료 성과와 건강수준을 보여주는 장기 지표.",
+      "sourceRefs": [
+        "kosis-life-expectancy"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "indicatorId": "total-fertility-rate",
+      "indicatorNameKo": "합계출산율",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-fertility-rate",
+      "year": 2024,
+      "value": 0.75,
+      "unit": "명",
+      "valueDisplay": "0.75명",
+      "trendDirection": "up",
+      "trendLabel": "전년 0.72명 → 0.75명",
+      "summary": "가임여성 1명이 평생 낳을 것으로 기대되는 평균 출생아 수.",
+      "sourceRefs": [
+        "kosis-fertility-rate"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
+      "indicatorId": "employment-rate-15-64",
+      "indicatorNameKo": "15~64세 고용률",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-employment-rate",
+      "year": 2025,
+      "value": 70.3,
+      "unit": "%",
+      "valueDisplay": "70.3%",
+      "trendDirection": "up",
+      "trendLabel": "전년 69.8% → 70.3%",
+      "summary": "경제활동 가능 연령대의 고용 수준. 노동시장 체력과 정책 성과를 함께 보여준다.",
+      "sourceRefs": [
+        "e-nara-employment-rate"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
+      "indicatorId": "youth-employment-rate",
+      "indicatorNameKo": "청년 고용률",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-youth-employment",
+      "year": 2025,
+      "value": 46.8,
+      "unit": "%",
+      "valueDisplay": "46.8%",
+      "trendDirection": "flat",
+      "trendLabel": "전년 대비 소폭 개선",
+      "summary": "청년층 일자리 상황을 보여주는 대표 지표.",
+      "sourceRefs": [
+        "e-nara-youth-employment"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "indicatorId": "greenhouse-gas-emissions",
+      "indicatorNameKo": "온실가스 총배출량",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-ghg-emissions",
+      "year": 2023,
+      "value": 624.2,
+      "unit": "MtCO₂eq",
+      "valueDisplay": "624.2MtCO₂eq",
+      "trendDirection": "down",
+      "trendLabel": "전년 대비 감소",
+      "summary": "국가 탄소배출 총량. 기후대응 정책의 최상위 성과지표 중 하나.",
+      "sourceRefs": [
+        "e-nara-ghg-emissions"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "indicatorId": "renewable-generation-share",
+      "indicatorNameKo": "재생에너지 발전 비중",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-renewable-share",
+      "year": 2024,
+      "value": 9.6,
+      "unit": "%",
+      "valueDisplay": "9.6%",
+      "trendDirection": "up",
+      "trendLabel": "전년 8.9% → 9.6%",
+      "summary": "전체 발전량 중 재생에너지가 차지하는 비중.",
+      "sourceRefs": [
+        "e-nara-renewable-share"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "indicatorId": "consumer-price-inflation",
+      "indicatorNameKo": "소비자물가상승률",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-consumer-price",
+      "year": 2025,
+      "value": 2.3,
+      "unit": "%",
+      "valueDisplay": "2.3%",
+      "trendDirection": "down",
+      "trendLabel": "전년 3.6% → 2.3%",
+      "summary": "소비자물가 상승 폭. 거시경제 안정과 체감물가 관리의 대표 지표.",
+      "sourceRefs": [
+        "kosis-consumer-price"
+      ]
+    },
+    {
+      "canonicalId": "org-moef-2026",
+      "indicatorId": "national-debt-gdp",
+      "indicatorNameKo": "국가채무비율",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-fiscal-soundness",
+      "year": 2025,
+      "value": 48.4,
+      "unit": "% GDP",
+      "valueDisplay": "48.4%",
+      "trendDirection": "up",
+      "trendLabel": "전년 47.4% → 48.4%",
+      "summary": "재정 건전성을 보여주는 핵심 지표. 본예산·정부안 논의와 함께 자주 참조됨.",
+      "sourceRefs": [
+        "e-nara-fiscal-soundness"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "indicatorId": "housing-supply-rate",
+      "indicatorNameKo": "주택보급률",
+      "sourceSystem": "e-나라지표",
+      "datasetId": "e-나라지표",
+      "sourceId": "e-nara-housing-supply",
+      "year": 2024,
+      "value": 102.5,
+      "unit": "%",
+      "valueDisplay": "102.5%",
+      "trendDirection": "up",
+      "trendLabel": "전년 102.1% → 102.5%",
+      "summary": "가구 수 대비 주택 stock 규모. 공급 기반을 보는 기본 지표.",
+      "sourceRefs": [
+        "e-nara-housing-supply"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "indicatorId": "public-transport-share",
+      "indicatorNameKo": "대중교통 분담률",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-public-transport-share",
+      "year": 2023,
+      "value": 41.5,
+      "unit": "%",
+      "valueDisplay": "41.5%",
+      "trendDirection": "flat",
+      "trendLabel": "코로나 이후 회복세",
+      "summary": "도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.",
+      "sourceRefs": [
+        "kosis-public-transport-share"
       ]
     }
   ]

@@ -154,6 +154,18 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 .detail-history-item{padding:10px 12px;background:var(--gray-5);border:1px solid var(--gray-10);border-radius:var(--radius-sm);}
 .detail-history-date{font-size:11px;font-weight:700;color:var(--primary-60);margin-bottom:4px;}
 .detail-history-summary{font-size:12px;color:var(--gray-70);line-height:1.5;}
+.detail-indicator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+.detail-indicator-card{padding:12px;border-radius:var(--radius-sm);background:linear-gradient(180deg,var(--gray-0),var(--gray-5));border:1px solid var(--gray-10);}
+.detail-indicator-name{font-size:12px;font-weight:700;color:var(--gray-80);line-height:1.4;}
+.detail-indicator-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:8px;}
+.detail-indicator-year{font-size:11px;color:var(--gray-40);white-space:nowrap;}
+.detail-indicator-value{font-size:22px;font-weight:800;color:var(--gray-90);line-height:1.1;}
+.detail-indicator-meta{font-size:11px;color:var(--gray-45);margin-top:2px;}
+.detail-indicator-summary{font-size:12px;color:var(--gray-65);line-height:1.5;margin-top:8px;}
+.detail-indicator-trend{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:5px 8px;border-radius:999px;font-size:11px;font-weight:600;background:var(--gray-5);border:1px solid var(--gray-10);}
+.detail-indicator-trend.up{color:#b45309;background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.22);}
+.detail-indicator-trend.down{color:#047857;background:rgba(16,185,129,.08);border-color:rgba(16,185,129,.22);}
+.detail-indicator-trend.flat{color:var(--gray-60);}
 .detail-source-list{display:flex;flex-wrap:wrap;gap:6px;}
 .detail-source-tag{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--gray-15);background:var(--gray-5);font-size:11px;color:var(--gray-60);text-decoration:none;}
 .detail-source-tag:hover{border-color:var(--gray-30);color:var(--gray-80);}
@@ -214,6 +226,7 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
     background:var(--gray-20);margin:0 auto 12px;}
   .detail-panel .detail-header h2{font-size:18px;}
   .detail-panel .detail-body{padding:12px 20px 32px;}
+  .detail-indicator-grid{grid-template-columns:1fr;}
   .detail-panel .detail-close{top:20px;right:16px;}
   .hover-tooltip{display:none!important;}
   .legend{bottom:12px;left:12px;}
@@ -959,6 +972,48 @@ const nodeMetadata={
   "중대범죄수사청":{effective:{from:"2026-10-01",to:null,status:"planned"},history:[{date:"2026-10-01",event:"planned",summary:"수사·기소 분리 원칙에 따라 신설 예정인 중대범죄 수사기관.",sourceRefs:["wiki-lee-gov"]}]}
 };
 
+const policyIndicatorsByOrg={
+  "재정경제부":[
+    {id:"consumer-price-inflation",name:"소비자물가상승률",value:2.3,valueDisplay:"2.3%",unit:"%",year:2025,sourceId:"kosis-consumer-price",sourceRefs:["kosis-consumer-price"],datasetId:"KOSIS",summary:"소비자물가 상승 폭. 거시경제 안정과 체감물가 관리의 대표 지표.",trendDirection:"down",trendLabel:"전년 3.6% → 2.3%"},
+    {id:"national-debt-gdp",name:"국가채무비율",value:48.4,valueDisplay:"48.4%",unit:"% GDP",year:2025,sourceId:"e-nara-fiscal-soundness",sourceRefs:["e-nara-fiscal-soundness"],datasetId:"e-나라지표",summary:"재정 건전성을 보여주는 핵심 지표. 본예산·정부안 논의와 함께 자주 참조됨.",trendDirection:"up",trendLabel:"전년 47.4% → 48.4%"}
+  ],
+  "고용노동부":[
+    {id:"employment-rate-15-64",name:"15~64세 고용률",value:70.3,valueDisplay:"70.3%",unit:"%",year:2025,sourceId:"e-nara-employment-rate",sourceRefs:["e-nara-employment-rate"],datasetId:"e-나라지표",summary:"경제활동 가능 연령대의 고용 수준. 노동시장 체력과 정책 성과를 함께 보여준다.",trendDirection:"up",trendLabel:"전년 69.8% → 70.3%"},
+    {id:"youth-employment-rate",name:"청년 고용률",value:46.8,valueDisplay:"46.8%",unit:"%",year:2025,sourceId:"e-nara-youth-employment",sourceRefs:["e-nara-youth-employment"],datasetId:"e-나라지표",summary:"청년층 일자리 상황을 보여주는 대표 지표.",trendDirection:"flat",trendLabel:"전년 대비 소폭 개선"}
+  ],
+  "교육부":[
+    {id:"private-education-monthly",name:"학생 1인당 월평균 사교육비",value:47.4,valueDisplay:"47.4만원",unit:"만원/월",year:2024,sourceId:"kosis-private-education",sourceRefs:["kosis-private-education"],datasetId:"KOSIS",summary:"초중고 학생의 사교육비 부담 수준. 교육격차·공교육 체감도와 자주 같이 해석된다.",trendDirection:"up",trendLabel:"전년 43.4만원 → 47.4만원"},
+    {id:"higher-education-enrollment",name:"고등교육기관 진학률",value:76.2,valueDisplay:"76.2%",unit:"%",year:2024,sourceId:"kosis-higher-education",sourceRefs:["kosis-higher-education"],datasetId:"KOSIS",summary:"고등학교 졸업자의 대학 등 진학 비중.",trendDirection:"down",trendLabel:"전년 대비 소폭 하락"}
+  ],
+  "보건복지부":[
+    {id:"total-fertility-rate",name:"합계출산율",value:0.75,valueDisplay:"0.75명",unit:"명",year:2024,sourceId:"kosis-fertility-rate",sourceRefs:["kosis-fertility-rate"],datasetId:"KOSIS",summary:"가임여성 1명이 평생 낳을 것으로 기대되는 평균 출생아 수.",trendDirection:"up",trendLabel:"전년 0.72명 → 0.75명"},
+    {id:"life-expectancy",name:"기대수명",value:83.5,valueDisplay:"83.5세",unit:"세",year:2024,sourceId:"kosis-life-expectancy",sourceRefs:["kosis-life-expectancy"],datasetId:"KOSIS",summary:"보건의료 성과와 건강수준을 보여주는 장기 지표.",trendDirection:"up",trendLabel:"전년 대비 완만한 증가"}
+  ],
+  "국토교통부":[
+    {id:"housing-supply-rate",name:"주택보급률",value:102.5,valueDisplay:"102.5%",unit:"%",year:2024,sourceId:"e-nara-housing-supply",sourceRefs:["e-nara-housing-supply"],datasetId:"e-나라지표",summary:"가구 수 대비 주택 stock 규모. 공급 기반을 보는 기본 지표.",trendDirection:"up",trendLabel:"전년 102.1% → 102.5%"},
+    {id:"public-transport-share",name:"대중교통 분담률",value:41.5,valueDisplay:"41.5%",unit:"%",year:2023,sourceId:"kosis-public-transport-share",sourceRefs:["kosis-public-transport-share"],datasetId:"KOSIS",summary:"도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.",trendDirection:"flat",trendLabel:"코로나 이후 회복세"}
+  ],
+  "기후에너지환경부":[
+    {id:"greenhouse-gas-emissions",name:"온실가스 총배출량",value:624.2,valueDisplay:"624.2MtCO₂eq",unit:"MtCO₂eq",year:2023,sourceId:"e-nara-ghg-emissions",sourceRefs:["e-nara-ghg-emissions"],datasetId:"e-나라지표",summary:"국가 탄소배출 총량. 기후대응 정책의 최상위 성과지표 중 하나.",trendDirection:"down",trendLabel:"전년 대비 감소"},
+    {id:"renewable-generation-share",name:"재생에너지 발전 비중",value:9.6,valueDisplay:"9.6%",unit:"%",year:2024,sourceId:"e-nara-renewable-share",sourceRefs:["e-nara-renewable-share"],datasetId:"e-나라지표",summary:"전체 발전량 중 재생에너지가 차지하는 비중.",trendDirection:"up",trendLabel:"전년 8.9% → 9.6%"}
+  ]
+};
+
+sources.push(
+  {id:"e-nara-employment-rate",name:"e-나라지표: 고용률",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063",desc:"15~64세 고용률 대표 지표"},
+  {id:"e-nara-youth-employment",name:"e-나라지표: 청년 고용률",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038",desc:"청년층 고용 상황 대표 지표"},
+  {id:"e-nara-housing-supply",name:"e-나라지표: 주택보급률",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238",desc:"가구 수 대비 주택 stock 지표"},
+  {id:"e-nara-ghg-emissions",name:"e-나라지표: 온실가스 총배출량",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438",desc:"국가 온실가스 총배출량 지표"},
+  {id:"e-nara-renewable-share",name:"e-나라지표: 재생에너지 발전 비중",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974",desc:"전체 발전량 대비 재생에너지 비중"},
+  {id:"e-nara-fiscal-soundness",name:"e-나라지표: 국가채무비율",url:"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108",desc:"GDP 대비 국가채무 비율"},
+  {id:"kosis-consumer-price",name:"KOSIS: 소비자물가상승률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003",desc:"전국 소비자물가 상승률"},
+  {id:"kosis-private-education",name:"KOSIS: 학생 1인당 월평균 사교육비",url:"https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A",desc:"초중고 사교육비 조사"},
+  {id:"kosis-higher-education",name:"KOSIS: 고등교육기관 진학률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991",desc:"고교 졸업자 진학률"},
+  {id:"kosis-fertility-rate",name:"KOSIS: 합계출산율",url:"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15",desc:"시도·전국 합계출산율"},
+  {id:"kosis-life-expectancy",name:"KOSIS: 기대수명",url:"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42",desc:"생명표 기반 기대수명"},
+  {id:"kosis-public-transport-share",name:"KOSIS: 대중교통 분담률",url:"https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244",desc:"교통수단 분담률"}
+);
+
 function enrichNode(node,parent=null){
   if(!node||typeof node!=="object")return;
   const orgInfo=orgCodeOverrides[node.name];
@@ -981,6 +1036,10 @@ function enrichNode(node,parent=null){
     node.budgetSourceMeta={sourceId:node.budgetMeta.sourceId,datasetId:node.budgetMeta.datasetId,phase:node.budgetMeta.phase};
     refs.add("budget-2026-proposal");
     refs.add("data-go-kr-budget");
+  }
+  if(policyIndicatorsByOrg[node.name]?.length){
+    node.policyIndicators=policyIndicatorsByOrg[node.name].map(item=>({...item}));
+    node.policyIndicators.forEach(item=>(item.sourceRefs||[]).forEach(ref=>refs.add(ref)));
   }
   if(node.publicInstitutions?.length) refs.add("data-go-kr-public-institutions");
   if(node.history?.length) node.history.forEach(item=>(item.sourceRefs||[]).forEach(ref=>refs.add(ref)));
@@ -1154,6 +1213,21 @@ function renderHistory(items){
   if(!items?.length)return "";
   return `<div class="detail-history-list">${items.map(item=>`<div class="detail-history-item"><div class="detail-history-date">${item.date||item.event||"기록"}</div><div class="detail-history-summary">${item.summary||""}</div>${item.sourceRefs?.length?renderSourceRefs(item.sourceRefs):""}</div>`).join("")}</div>`;
 }
+function renderPolicyIndicators(items){
+  if(!items?.length)return "";
+  const trendArrow={up:"↗",down:"↘",flat:"→"};
+  return `<div class="detail-indicator-grid">${items.map(item=>`<div class="detail-indicator-card">
+    <div class="detail-indicator-top">
+      <div class="detail-indicator-name">${item.name}</div>
+      <div class="detail-indicator-year">${item.year}</div>
+    </div>
+    <div class="detail-indicator-value">${item.valueDisplay||item.value}</div>
+    <div class="detail-indicator-meta">${item.datasetId||"공식 통계"}${item.unit?` · ${item.unit}`:""}</div>
+    ${item.summary?`<div class="detail-indicator-summary">${item.summary}</div>`:""}
+    ${item.trendLabel?`<div class="detail-indicator-trend ${item.trendDirection||"flat"}">${trendArrow[item.trendDirection]||trendArrow.flat} ${item.trendLabel}</div>`:""}
+    ${item.sourceRefs?.length?`<div style="margin-top:8px">${renderSourceRefs(item.sourceRefs)}</div>`:""}
+  </div>`).join("")}</div>`;
+}
 function showDetail(data,options={}){
   if(!data)return;
   const {syncHash=true,hashName=data.name}=options;
@@ -1199,6 +1273,9 @@ function showDetail(data,options={}){
     }
     h+=`</div>`;
   }
+
+  // 대표 정책지표
+  if(data.policyIndicators?.length)h+=`<div class="detail-section"><h3>대표 정책지표</h3>${renderPolicyIndicators(data.policyIndicators)}</div>`;
 
   // 기관장
   if(data.head)h+=`<div class="detail-section"><h3>기관장</h3>${personHTML(data.head)}</div>`;

@@ -30,6 +30,7 @@
 - **예산 시각화** — 2026년 예산안 기준, 노드 크기 비례 + 정렬 모드
 - **공식 영문명** — 정부조직법 기준 공식 English name + 약어 (MOEF, MSIT 등)
 - **소속 공공기관** — 부처별 공기업·준정부기관 91개 (공공기관 지정현황 기반)
+- **대표 정책지표** — e-나라지표/KOSIS 기반 핵심 지표 12개를 6개 기관 상세 패널에 연결
 - **업무 설명** — 각 기관 소관 업무 1~2문장
 - **공식 홈페이지 URL** — 모든 기관 `.go.kr` 링크
 - **내부 조직** — 주요 부처 실/국/본부 구조
@@ -63,7 +64,7 @@
 index.html      # 메인 (CSS + 데이터 + D3 차트 + 뷰 로직 전부 인라인)
 data.js         # UI용 데이터 원본 (index.html에도 인라인 복사본 포함)
 data/           # Phase 2 정규화 기반 산출물
-  normalization-foundation.json  # canonical/source/alias/lineage/budget fact 분리본
+  normalization-foundation.json  # canonical/source/alias/lineage/budget/indicator fact 분리본
 data-sources/   # 공공데이터포털 CSV 원본 (git 미추적, 참조용)
 scripts/
   validate-data.mjs              # UI 데이터 + 정규화 기반 검증
@@ -104,8 +105,9 @@ node scripts/validate-data.mjs
 - `aliases` — 표기명/공식명 alias 준비값
 - `lineage` — 개편 이력 및 predecessor orgCode 단서
 - `budgetFacts` — 예산 문자열(`1.2조`)을 정규화한 KRW 숫자 fact
+- `indicatorFacts` — e-나라지표/KOSIS 기반 정책지표 fact
 
-이 구조 덕분에 다음 단계에서 KOSIS, e-나라지표, 추가 공공데이터 CSV를 붙일 때도 UI 노드 이름에 직접 매달리지 않고 `canonicalId` 중심으로 조인할 수 있다.
+이 구조 덕분에 정책지표·추가 공공데이터를 UI 노드 이름에 직접 매달리지 않고 `canonicalId` 중심으로 조인할 수 있다. 현재는 6개 핵심 기관에 대해 첫 번째 실용 지표 레이어를 붙였다.
 
 ## 데이터 출처
 

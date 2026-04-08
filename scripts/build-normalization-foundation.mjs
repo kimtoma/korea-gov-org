@@ -36,6 +36,7 @@ function collectTree(rootNode) {
   const aliases = [];
   const lineage = [];
   const budgetFacts = [];
+  const indicatorFacts = [];
   const seenCanonical = new Set();
   const seenAlias = new Set();
   const seenLineage = new Set();
@@ -141,6 +142,25 @@ function collectTree(rootNode) {
       });
     }
 
+    for (const indicator of node.policyIndicators ?? []) {
+      indicatorFacts.push({
+        canonicalId,
+        indicatorId: indicator.id ?? null,
+        indicatorNameKo: indicator.name ?? null,
+        sourceSystem: indicator.datasetId ?? null,
+        datasetId: indicator.datasetId ?? null,
+        sourceId: indicator.sourceId ?? null,
+        year: indicator.year ?? null,
+        value: indicator.value ?? null,
+        unit: indicator.unit ?? null,
+        valueDisplay: indicator.valueDisplay ?? null,
+        trendDirection: indicator.trendDirection ?? null,
+        trendLabel: indicator.trendLabel ?? null,
+        summary: indicator.summary ?? null,
+        sourceRefs: indicator.sourceRefs ?? [],
+      });
+    }
+
     for (const child of node.children ?? []) {
       visit(child, node, currentPath);
     }
@@ -152,8 +172,9 @@ function collectTree(rootNode) {
   aliases.sort((a, b) => a.alias.localeCompare(b.alias, "ko"));
   lineage.sort((a, b) => `${a.date || "9999"}-${a.canonicalId}-${a.event || ""}`.localeCompare(`${b.date || "9999"}-${b.canonicalId}-${b.event || ""}`, "ko"));
   budgetFacts.sort((a, b) => (a.canonicalId + a.fiscalYear).localeCompare(b.canonicalId + b.fiscalYear, "ko"));
+  indicatorFacts.sort((a, b) => `${a.canonicalId}-${a.indicatorId}-${a.year}`.localeCompare(`${b.canonicalId}-${b.indicatorId}-${b.year}`, "ko"));
 
-  return { canonicalOrgs, sourceNodes, aliases, lineage, budgetFacts };
+  return { canonicalOrgs, sourceNodes, aliases, lineage, budgetFacts, indicatorFacts };
 }
 
 const { govData, sources } = loadData();
@@ -175,12 +196,15 @@ const output = {
     aliasCount: foundation.aliases.length,
     lineageEventCount: foundation.lineage.length,
     budgetFactCount: foundation.budgetFacts.length,
+    indicatorFactCount: foundation.indicatorFacts.length,
+    indicatorCoverageOrgCount: new Set(foundation.indicatorFacts.map((fact) => fact.canonicalId)).size,
   },
   canonicalOrgs: foundation.canonicalOrgs,
   sourceNodes: foundation.sourceNodes,
   aliases: foundation.aliases,
   lineage: foundation.lineage,
   budgetFacts: foundation.budgetFacts,
+  indicatorFacts: foundation.indicatorFacts,
 };
 
 fs.mkdirSync(OUTPUT_DIR, { recursive: true });

@@ -67,6 +67,7 @@ const duplicateNodeNames = new Set();
 const counts = { ministry: 0, office: 0, agency: 0, commission: 0 };
 const sourceIds = new Set(Array.isArray(sources) ? sources.map((src) => src.id).filter(Boolean) : []);
 let budgetNodeCount = 0;
+let policyIndicatorCount = 0;
 
 function walk(node) {
   if (!node || typeof node !== "object") return;
@@ -104,6 +105,26 @@ function walk(node) {
     for (const ref of node.budgetMeta.sourceRefs ?? []) {
       if (!sourceIds.has(ref)) {
         errors.push(`Unknown budget source ref "${ref}" on node "${node.name}".`);
+      }
+    }
+  }
+
+  if (Array.isArray(node.policyIndicators)) {
+    policyIndicatorCount += node.policyIndicators.length;
+    for (const indicator of node.policyIndicators) {
+      if (!indicator.id || !indicator.name) {
+        errors.push(`Policy indicator on node "${node.name}" is missing id or name.`);
+      }
+      if (typeof indicator.year !== "number") {
+        errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" is missing numeric year.`);
+      }
+      if (typeof indicator.value !== "number") {
+        errors.push(`Policy indicator "${indicator.id}" on node "${node.name}" is missing numeric value.`);
+      }
+      for (const ref of indicator.sourceRefs ?? []) {
+        if (!sourceIds.has(ref)) {
+          errors.push(`Unknown policy indicator source ref "${ref}" on node "${node.name}".`);
+        }
       }
     }
   }
@@ -187,8 +208,20 @@ if (!fs.existsSync(NORMALIZATION_FOUNDATION_PATH)) {
     }
   }
 
+  for (const fact of normalization.indicatorFacts ?? []) {
+    if (!canonicalIds.has(fact.canonicalId)) {
+      errors.push(`Normalization indicator fact references unknown canonicalId: ${fact.canonicalId}`);
+    }
+    if (typeof fact.value !== "number" || !Number.isFinite(fact.value)) {
+      errors.push(`Normalization indicator fact has invalid numeric value for canonicalId ${fact.canonicalId}.`);
+    }
+  }
+
   if ((normalization.metrics?.budgetFactCount ?? 0) !== budgetNodeCount) {
     errors.push(`Normalization budgetFactCount mismatch: expected ${budgetNodeCount}, got ${normalization.metrics?.budgetFactCount ?? 0}.`);
+  }
+  if ((normalization.metrics?.indicatorFactCount ?? 0) !== policyIndicatorCount) {
+    errors.push(`Normalization indicatorFactCount mismatch: expected ${policyIndicatorCount}, got ${normalization.metrics?.indicatorFactCount ?? 0}.`);
   }
   if ((normalization.metrics?.canonicalOrgCount ?? 0) !== canonicalIds.size) {
     errors.push(`Normalization canonicalOrgCount mismatch: expected ${canonicalIds.size}, got ${normalization.metrics?.canonicalOrgCount ?? 0}.`);
