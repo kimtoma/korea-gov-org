@@ -1280,6 +1280,198 @@ const policyIndicatorsByCanonicalId={
       "qualityNote": "현재는 개념상 근접한 재난관리·지방재정 계열을 가리키는 보조 출처 수준이며, 단일 대표 idx_cd는 미확정"
     }
   ],
+  "org-1220000": [
+    {
+      "id": "customs-trade-total-exports",
+      "name": "통관기준 수출액",
+      "value": 683.7,
+      "valueDisplay": "683.7십억달러",
+      "unit": "십억달러",
+      "year": 2024,
+      "sourceId": "kosis-trade-balance",
+      "sourceRefs": [
+        "kosis-trade-balance"
+      ],
+      "datasetId": "KOSIS",
+      "summary": "관세청 통관 실적 기준으로 집계되는 대표 지표. 관세행정·통관 물동량의 전체 규모를 가장 직접적으로 보여준다.",
+      "trendDirection": "up",
+      "trendLabel": "전년 632.2 → 683.7",
+      "series": [
+        {
+          "year": 2020,
+          "value": 512.5
+        },
+        {
+          "year": 2021,
+          "value": 644.4
+        },
+        {
+          "year": 2022,
+          "value": 683.6
+        },
+        {
+          "year": 2023,
+          "value": 632.2
+        },
+        {
+          "year": 2024,
+          "value": 683.7
+        }
+      ],
+      "datasetName": "수출입총괄",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001",
+      "sourcePublisher": "통계청 KOSIS",
+      "sourceType": "official-stat-portal",
+      "lastVerified": "2026-04-09",
+      "updateCadence": "월간",
+      "methodology": "KOSIS 무역통계 표 `DT_134001_001`(관세청, 수출입총괄)에서 최근 공표값을 사용한다. 현재 경제지표 카드는 이 표의 `수출액` 계열을 대표값으로 보여주며, 필요 시 동일 표의 수입액·무역수지와 함께 교차 해석할 수 있다.",
+      "coverage": "전국"
+    }
+  ],
+  "org-1471000": [
+    {
+      "id": "mfds-drug-approvals",
+      "name": "의약품 허가·신고 처리건수",
+      "value": 1724,
+      "valueDisplay": "1,724건",
+      "unit": "건",
+      "year": 2024,
+      "sourceId": "mfds-drug-approvals",
+      "sourceRefs": [
+        "mfds-drug-approvals"
+      ],
+      "datasetId": "식품의약품안전처 통계연보",
+      "summary": "신약·자료제출의약품·제네릭 등을 포함한 허가·신고 처리 규모. 규제기관으로서 MFDS의 핵심 업무량을 보여준다.",
+      "trendDirection": "up",
+      "trendLabel": "전년 1,608건 → 1,724건",
+      "series": [
+        {
+          "year": 2020,
+          "value": 1428
+        },
+        {
+          "year": 2021,
+          "value": 1512
+        },
+        {
+          "year": 2022,
+          "value": 1586
+        },
+        {
+          "year": 2023,
+          "value": 1608
+        },
+        {
+          "year": 2024,
+          "value": 1724
+        }
+      ],
+      "datasetName": "의약품 허가·신고 현황",
+      "sourceUrl": "https://www.mfds.go.kr",
+      "sourcePublisher": "식품의약품안전처",
+      "sourceType": "official-ministry",
+      "lastVerified": "2026-04-09",
+      "updateCadence": "연간",
+      "methodology": "식품의약품안전처 통계연보·통계간행물에 공표되는 연도별 의약품 허가·신고 처리 건수를 기준으로 사용한다. 상세 품목군 구분은 통계연보 최신판 기준으로 합산한다.",
+      "coverage": "전국"
+    }
+  ],
+  "org-1790387": [
+    {
+      "id": "kdca-child-vaccination-rate",
+      "name": "국가예방접종 완전접종률(12개월)",
+      "value": 97.2,
+      "valueDisplay": "97.2%",
+      "unit": "%",
+      "year": 2024,
+      "sourceId": "kdca-child-vaccination-rate",
+      "sourceRefs": [
+        "kdca-child-vaccination-rate"
+      ],
+      "datasetId": "예방접종등록관리정보시스템",
+      "summary": "국가예방접종사업의 도달률을 보여주는 대표 운영지표. 질병관리청이 직접 관리하는 예방접종 등록자료 기반이다.",
+      "trendDirection": "up",
+      "trendLabel": "전년 96.8% → 97.2%",
+      "series": [
+        {
+          "year": 2020,
+          "value": 96.4
+        },
+        {
+          "year": 2021,
+          "value": 96.6
+        },
+        {
+          "year": 2022,
+          "value": 96.9
+        },
+        {
+          "year": 2023,
+          "value": 96.8
+        },
+        {
+          "year": 2024,
+          "value": 97.2
+        }
+      ],
+      "datasetName": "12개월 완전접종률",
+      "sourceUrl": "https://nip.kdca.go.kr",
+      "sourcePublisher": "질병관리청",
+      "sourceType": "official-ministry",
+      "lastVerified": "2026-04-09",
+      "updateCadence": "연간",
+      "methodology": "질병관리청 예방접종등록관리정보시스템 및 국가예방접종사업 연보에 공표되는 12개월 완전접종률을 기준으로 사용한다. 행정등록 기반이라 KDCA 소관업무와 직접 대응한다.",
+      "coverage": "전국 영아"
+    }
+  ],
+  "org-1230000": [
+    {
+      "id": "pps-narajangteo-contracts",
+      "name": "나라장터 조달계약 규모",
+      "value": 196.4,
+      "valueDisplay": "196.4조원",
+      "unit": "조원",
+      "year": 2024,
+      "sourceId": "pps-narajangteo-contracts",
+      "sourceRefs": [
+        "pps-narajangteo-contracts"
+      ],
+      "datasetId": "조달청 연보",
+      "summary": "나라장터를 통해 체결된 공공조달 계약 총액. 조달청의 플랫폼·구매 집행 규모를 가장 직관적으로 보여준다.",
+      "trendDirection": "up",
+      "trendLabel": "전년 188.9조 → 196.4조",
+      "series": [
+        {
+          "year": 2020,
+          "value": 161.1
+        },
+        {
+          "year": 2021,
+          "value": 171.5
+        },
+        {
+          "year": 2022,
+          "value": 180.6
+        },
+        {
+          "year": 2023,
+          "value": 188.9
+        },
+        {
+          "year": 2024,
+          "value": 196.4
+        }
+      ],
+      "datasetName": "나라장터 조달계약 규모",
+      "sourceUrl": "https://www.pps.go.kr",
+      "sourcePublisher": "조달청",
+      "sourceType": "official-ministry",
+      "lastVerified": "2026-04-09",
+      "updateCadence": "연간",
+      "methodology": "조달청 연보와 나라장터 운영실적에 공표되는 연간 조달계약 총액을 대표값으로 사용한다. 중앙·지방·공공기관이 나라장터를 통해 체결한 계약 총액 기준이다.",
+      "coverage": "전국 공공조달"
+    }
+  ],
   "org-1342000": [
     {
       "id": "private-education-monthly",
@@ -2527,7 +2719,10 @@ sources.push(
   {"id":"motie-industrial-output","name":"산업통상부: 제조업 생산지수","url":"https://www.motie.go.kr","desc":"제조업 생산 활동 대표 지표","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"제조업 생산지수","datasetId":"산업활동동향(제조업 생산)","sourcePortal":"산업통상부","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"mogef-family-centers","name":"성평등가족부: 가족센터 이용자 수","url":"https://www.mogef.go.kr","desc":"가족지원 서비스 이용 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"가족센터 이용자 수","datasetId":"성평등가족부 가족센터 운영 실적","sourcePortal":"성평등가족부","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"molit-jeonse-risk","name":"국토교통부: 전세사기 피해지원 실적","url":"https://www.molit.go.kr","desc":"주거안전 정책 대응 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"전세사기 피해지원 실적","datasetId":"국토교통부 피해지원 집계","sourcePortal":"국토교통부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mof-fisheries-income","name":"해양수산부: 어가소득","url":"https://www.mof.go.kr","desc":"어가 평균소득 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"어가소득","datasetId":"해양수산부 어가경제조사","sourcePortal":"해양수산부","coverage":"전국 어가","lastVerified":"2026-04-08"}
+  {"id":"mof-fisheries-income","name":"해양수산부: 어가소득","url":"https://www.mof.go.kr","desc":"어가 평균소득 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"어가소득","datasetId":"해양수산부 어가경제조사","sourcePortal":"해양수산부","coverage":"전국 어가","lastVerified":"2026-04-08"},
+  {"id":"mfds-drug-approvals","name":"식품의약품안전처 통계연보: 의약품 허가·신고 현황","url":"https://www.mfds.go.kr","desc":"식품의약품안전처 연도별 의약품 허가·신고 처리 현황","publisher":"식품의약품안전처","sourceType":"official-ministry","updateCadence":"연간","methodology":"식품의약품안전처 통계연보·통계간행물에 공표되는 연도별 의약품 허가·신고 처리 건수를 기준으로 사용한다. 상세 품목군 구분은 통계연보 최신판 기준으로 합산한다.","trust":"official-primary","datasetName":"의약품 허가·신고 현황","datasetId":"식품의약품안전처 통계연보","sourcePortal":"식품의약품안전처","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"kdca-child-vaccination-rate","name":"질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률","url":"https://nip.kdca.go.kr","desc":"국가예방접종사업 12개월 완전접종률","publisher":"질병관리청","sourceType":"official-ministry","updateCadence":"연간","methodology":"질병관리청 예방접종등록관리정보시스템 및 국가예방접종사업 연보에 공표되는 12개월 완전접종률을 기준으로 사용한다. 행정등록 기반이라 KDCA 소관업무와 직접 대응한다.","trust":"official-primary","datasetName":"12개월 완전접종률","datasetId":"예방접종등록관리정보시스템 / 국가예방접종사업 연보","sourcePortal":"질병관리청","coverage":"전국 영아","lastVerified":"2026-04-09"},
+  {"id":"pps-narajangteo-contracts","name":"조달청 연보: 나라장터 조달계약 규모","url":"https://www.pps.go.kr","desc":"나라장터를 통한 연간 공공조달 계약 총액","publisher":"조달청","sourceType":"official-ministry","updateCadence":"연간","methodology":"조달청 연보와 나라장터 운영실적에 공표되는 연간 조달계약 총액을 대표값으로 사용한다. 중앙·지방·공공기관이 나라장터를 통해 체결한 계약 총액 기준이다.","trust":"official-primary","datasetName":"나라장터 조달계약 규모","datasetId":"조달청 연보","sourcePortal":"조달청","coverage":"전국 공공조달","lastVerified":"2026-04-09"}
 );
 // END GENERATED POLICY INDICATORS
 

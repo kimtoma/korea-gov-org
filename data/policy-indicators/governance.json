@@ -3,40 +3,591 @@
     "canonicalId": "org-1721000",
     "orgName": "과학기술정보통신부",
     "indicators": [
-      {"id":"rnd-investment-gdp","name":"국가연구개발투자 비중","value":5.0,"valueDisplay":"GDP의 5.0%","unit":"% GDP","year":2024,"sourceId":"kosis-rnd-gdp","sourceRefs":["kosis-rnd-gdp"],"datasetId":"KOSIS","summary":"국가 전체 연구개발 투자 강도를 보여주는 핵심 과학기술 지표.","trendDirection":"up","trendLabel":"전년 4.9% → 5.0%","series":[{"year":2020,"value":4.8},{"year":2021,"value":4.9},{"year":2022,"value":4.9},{"year":2023,"value":4.9},{"year":2024,"value":5.0}]},
-      {"id":"ict-exports","name":"ICT 수출액","value":220.1,"valueDisplay":"220.1십억달러","unit":"십억달러","year":2025,"sourceId":"e-nara-ict-exports","sourceRefs":["e-nara-ict-exports"],"datasetId":"e-나라지표","summary":"반도체·디스플레이·통신장비 등을 포함한 ICT 산업 수출 규모.","trendDirection":"up","trendLabel":"전년 205.4 → 220.1","series":[{"year":2021,"value":214.9},{"year":2022,"value":233.0},{"year":2023,"value":180.3},{"year":2024,"value":205.4},{"year":2025,"value":220.1}]}
+      {
+        "id": "rnd-investment-gdp",
+        "name": "국가연구개발투자 비중",
+        "value": 5.0,
+        "valueDisplay": "GDP의 5.0%",
+        "unit": "% GDP",
+        "year": 2024,
+        "sourceId": "kosis-rnd-gdp",
+        "sourceRefs": [
+          "kosis-rnd-gdp"
+        ],
+        "datasetId": "KOSIS",
+        "summary": "국가 전체 연구개발 투자 강도를 보여주는 핵심 과학기술 지표.",
+        "trendDirection": "up",
+        "trendLabel": "전년 4.9% → 5.0%",
+        "series": [
+          {
+            "year": 2020,
+            "value": 4.8
+          },
+          {
+            "year": 2021,
+            "value": 4.9
+          },
+          {
+            "year": 2022,
+            "value": 4.9
+          },
+          {
+            "year": 2023,
+            "value": 4.9
+          },
+          {
+            "year": 2024,
+            "value": 5.0
+          }
+        ]
+      },
+      {
+        "id": "ict-exports",
+        "name": "ICT 수출액",
+        "value": 220.1,
+        "valueDisplay": "220.1십억달러",
+        "unit": "십억달러",
+        "year": 2025,
+        "sourceId": "e-nara-ict-exports",
+        "sourceRefs": [
+          "e-nara-ict-exports"
+        ],
+        "datasetId": "e-나라지표",
+        "summary": "반도체·디스플레이·통신장비 등을 포함한 ICT 산업 수출 규모.",
+        "trendDirection": "up",
+        "trendLabel": "전년 205.4 → 220.1",
+        "series": [
+          {
+            "year": 2021,
+            "value": 214.9
+          },
+          {
+            "year": 2022,
+            "value": 233.0
+          },
+          {
+            "year": 2023,
+            "value": 180.3
+          },
+          {
+            "year": 2024,
+            "value": 205.4
+          },
+          {
+            "year": 2025,
+            "value": 220.1
+          }
+        ]
+      }
     ]
   },
   {
     "canonicalId": "org-1262000",
     "orgName": "외교부",
     "indicators": [
-      {"id":"oda-volume","name":"공적개발원조(ODA) 규모","value":6.8,"valueDisplay":"6.8조원","unit":"조원","year":2025,"sourceId":"e-nara-oda-volume","sourceRefs":["e-nara-oda-volume"],"datasetId":"e-나라지표","summary":"국제개발협력 재원의 확대 수준. 대외정책과 국제기여도를 함께 보여준다.","trendDirection":"up","trendLabel":"전년 6.1조 → 6.8조","series":[{"year":2021,"value":3.7},{"year":2022,"value":4.5},{"year":2023,"value":5.2},{"year":2024,"value":6.1},{"year":2025,"value":6.8}]},
-      {"id":"overseas-koreans-support","name":"재외국민 영사서비스 처리건수","value":128.4,"valueDisplay":"128.4만건","unit":"만건","year":2025,"sourceId":"mofa-consular-services","sourceRefs":["mofa-consular-services"],"datasetId":"외교부","summary":"여권·공증·사건사고 지원 등 재외국민 대상 영사서비스 처리 규모.","trendDirection":"up","trendLabel":"전년 118.2만건 → 128.4만건","series":[{"year":2021,"value":72.0},{"year":2022,"value":84.5},{"year":2023,"value":103.8},{"year":2024,"value":118.2},{"year":2025,"value":128.4}]}
+      {
+        "id": "oda-volume",
+        "name": "공적개발원조(ODA) 규모",
+        "value": 6.8,
+        "valueDisplay": "6.8조원",
+        "unit": "조원",
+        "year": 2025,
+        "sourceId": "e-nara-oda-volume",
+        "sourceRefs": [
+          "e-nara-oda-volume"
+        ],
+        "datasetId": "e-나라지표",
+        "summary": "국제개발협력 재원의 확대 수준. 대외정책과 국제기여도를 함께 보여준다.",
+        "trendDirection": "up",
+        "trendLabel": "전년 6.1조 → 6.8조",
+        "series": [
+          {
+            "year": 2021,
+            "value": 3.7
+          },
+          {
+            "year": 2022,
+            "value": 4.5
+          },
+          {
+            "year": 2023,
+            "value": 5.2
+          },
+          {
+            "year": 2024,
+            "value": 6.1
+          },
+          {
+            "year": 2025,
+            "value": 6.8
+          }
+        ]
+      },
+      {
+        "id": "overseas-koreans-support",
+        "name": "재외국민 영사서비스 처리건수",
+        "value": 128.4,
+        "valueDisplay": "128.4만건",
+        "unit": "만건",
+        "year": 2025,
+        "sourceId": "mofa-consular-services",
+        "sourceRefs": [
+          "mofa-consular-services"
+        ],
+        "datasetId": "외교부",
+        "summary": "여권·공증·사건사고 지원 등 재외국민 대상 영사서비스 처리 규모.",
+        "trendDirection": "up",
+        "trendLabel": "전년 118.2만건 → 128.4만건",
+        "series": [
+          {
+            "year": 2021,
+            "value": 72.0
+          },
+          {
+            "year": 2022,
+            "value": 84.5
+          },
+          {
+            "year": 2023,
+            "value": 103.8
+          },
+          {
+            "year": 2024,
+            "value": 118.2
+          },
+          {
+            "year": 2025,
+            "value": 128.4
+          }
+        ]
+      }
     ]
   },
   {
     "canonicalId": "org-1250000",
     "orgName": "통일부",
     "indicators": [
-      {"id":"north-defectors-support","name":"북한이탈주민 정착지원 인원","value":2.2,"valueDisplay":"2.2천명","unit":"천명","year":2025,"sourceId":"mou-settlement-support","sourceRefs":["mou-settlement-support"],"datasetId":"통일부","summary":"정착지원·교육·상담 등 정책 대상 규모를 보여주는 기본 지표.","trendDirection":"up","trendLabel":"전년 2.0천명 → 2.2천명","series":[{"year":2021,"value":1.4},{"year":2022,"value":1.5},{"year":2023,"value":1.7},{"year":2024,"value":2.0},{"year":2025,"value":2.2}]},
-      {"id":"inter-korean-humanitarian","name":"남북 인도협력 사업 규모","value":1860,"valueDisplay":"1,860억원","unit":"억원","year":2025,"sourceId":"e-nara-inter-korean-coop","sourceRefs":["e-nara-inter-korean-coop"],"datasetId":"e-나라지표","summary":"인도협력·교류 기반 사업의 집행 규모를 보여주는 지표.","trendDirection":"up","trendLabel":"전년 1,420억 → 1,860억","series":[{"year":2021,"value":820},{"year":2022,"value":970},{"year":2023,"value":1110},{"year":2024,"value":1420},{"year":2025,"value":1860}]}
+      {
+        "id": "north-defectors-support",
+        "name": "북한이탈주민 정착지원 인원",
+        "value": 2.2,
+        "valueDisplay": "2.2천명",
+        "unit": "천명",
+        "year": 2025,
+        "sourceId": "mou-settlement-support",
+        "sourceRefs": [
+          "mou-settlement-support"
+        ],
+        "datasetId": "통일부",
+        "summary": "정착지원·교육·상담 등 정책 대상 규모를 보여주는 기본 지표.",
+        "trendDirection": "up",
+        "trendLabel": "전년 2.0천명 → 2.2천명",
+        "series": [
+          {
+            "year": 2021,
+            "value": 1.4
+          },
+          {
+            "year": 2022,
+            "value": 1.5
+          },
+          {
+            "year": 2023,
+            "value": 1.7
+          },
+          {
+            "year": 2024,
+            "value": 2.0
+          },
+          {
+            "year": 2025,
+            "value": 2.2
+          }
+        ]
+      },
+      {
+        "id": "inter-korean-humanitarian",
+        "name": "남북 인도협력 사업 규모",
+        "value": 1860,
+        "valueDisplay": "1,860억원",
+        "unit": "억원",
+        "year": 2025,
+        "sourceId": "e-nara-inter-korean-coop",
+        "sourceRefs": [
+          "e-nara-inter-korean-coop"
+        ],
+        "datasetId": "e-나라지표",
+        "summary": "인도협력·교류 기반 사업의 집행 규모를 보여주는 지표.",
+        "trendDirection": "up",
+        "trendLabel": "전년 1,420억 → 1,860억",
+        "series": [
+          {
+            "year": 2021,
+            "value": 820
+          },
+          {
+            "year": 2022,
+            "value": 970
+          },
+          {
+            "year": 2023,
+            "value": 1110
+          },
+          {
+            "year": 2024,
+            "value": 1420
+          },
+          {
+            "year": 2025,
+            "value": 1860
+          }
+        ]
+      }
     ]
   },
   {
     "canonicalId": "org-1270000",
     "orgName": "법무부",
     "indicators": [
-      {"id":"major-crime-clearance-rate","name":"주요 범죄 검거율","value":83.1,"valueDisplay":"83.1%","unit":"%","year":2025,"sourceId":"kosis-crime-clearance","sourceRefs":["kosis-crime-clearance"],"datasetId":"KOSIS","summary":"형사사법 체계의 대응 성과를 보여주는 대표 치안·검찰 지표.","trendDirection":"up","trendLabel":"전년 81.8% → 83.1%","series":[{"year":2021,"value":78.4},{"year":2022,"value":79.6},{"year":2023,"value":80.7},{"year":2024,"value":81.8},{"year":2025,"value":83.1}]},
-      {"id":"foreigner-arrivals","name":"외국인 입국자 수","value":1715,"valueDisplay":"1,715만명","unit":"만명","year":2025,"sourceId":"moj-immigration-arrivals","sourceRefs":["moj-immigration-arrivals"],"datasetId":"법무부","summary":"출입국·체류 행정 수요를 보여주는 대표 운영 지표.","trendDirection":"up","trendLabel":"전년 1,562만명 → 1,715만명","series":[{"year":2021,"value":96},{"year":2022,"value":438},{"year":2023,"value":1104},{"year":2024,"value":1562},{"year":2025,"value":1715}]}
+      {
+        "id": "major-crime-clearance-rate",
+        "name": "주요 범죄 검거율",
+        "value": 83.1,
+        "valueDisplay": "83.1%",
+        "unit": "%",
+        "year": 2025,
+        "sourceId": "kosis-crime-clearance",
+        "sourceRefs": [
+          "kosis-crime-clearance"
+        ],
+        "datasetId": "KOSIS",
+        "summary": "형사사법 체계의 대응 성과를 보여주는 대표 치안·검찰 지표.",
+        "trendDirection": "up",
+        "trendLabel": "전년 81.8% → 83.1%",
+        "series": [
+          {
+            "year": 2021,
+            "value": 78.4
+          },
+          {
+            "year": 2022,
+            "value": 79.6
+          },
+          {
+            "year": 2023,
+            "value": 80.7
+          },
+          {
+            "year": 2024,
+            "value": 81.8
+          },
+          {
+            "year": 2025,
+            "value": 83.1
+          }
+        ]
+      },
+      {
+        "id": "foreigner-arrivals",
+        "name": "외국인 입국자 수",
+        "value": 1715,
+        "valueDisplay": "1,715만명",
+        "unit": "만명",
+        "year": 2025,
+        "sourceId": "moj-immigration-arrivals",
+        "sourceRefs": [
+          "moj-immigration-arrivals"
+        ],
+        "datasetId": "법무부",
+        "summary": "출입국·체류 행정 수요를 보여주는 대표 운영 지표.",
+        "trendDirection": "up",
+        "trendLabel": "전년 1,562만명 → 1,715만명",
+        "series": [
+          {
+            "year": 2021,
+            "value": 96
+          },
+          {
+            "year": 2022,
+            "value": 438
+          },
+          {
+            "year": 2023,
+            "value": 1104
+          },
+          {
+            "year": 2024,
+            "value": 1562
+          },
+          {
+            "year": 2025,
+            "value": 1715
+          }
+        ]
+      }
     ]
   },
   {
     "canonicalId": "org-mois-2025",
     "orgName": "행정안전부",
     "indicators": [
-      {"id":"digital-government-index","name":"디지털정부 온라인서비스 지수","value":0.92,"valueDisplay":"0.92","unit":"index","year":2024,"sourceId":"un-digital-government","sourceRefs":["un-digital-government"],"datasetId":"UN EGDI","summary":"전자정부·디지털 행정의 국제적 성숙도를 보여주는 대표 지표.","trendDirection":"up","trendLabel":"전기 0.89 → 0.92","series":[{"year":2016,"value":0.74},{"year":2018,"value":0.81},{"year":2020,"value":0.86},{"year":2022,"value":0.89},{"year":2024,"value":0.92}],"target":{"value":0.95,"display":"0.95","label":"상위권 유지 목표"}},
-      {"id":"disaster-safety-budget-local","name":"지자체 재난안전 예산","value":19.8,"valueDisplay":"19.8조원","unit":"조원","year":2025,"sourceId":"e-nara-disaster-budget","sourceRefs":["e-nara-disaster-budget"],"datasetId":"e-나라지표","summary":"재난 예방·대응 체계에 투입되는 지방정부 재정 규모.","trendDirection":"up","trendLabel":"전년 18.6조 → 19.8조","series":[{"year":2021,"value":15.1},{"year":2022,"value":16.0},{"year":2023,"value":17.3},{"year":2024,"value":18.6},{"year":2025,"value":19.8}]}
+      {
+        "id": "digital-government-index",
+        "name": "디지털정부 온라인서비스 지수",
+        "value": 0.92,
+        "valueDisplay": "0.92",
+        "unit": "index",
+        "year": 2024,
+        "sourceId": "un-digital-government",
+        "sourceRefs": [
+          "un-digital-government"
+        ],
+        "datasetId": "UN EGDI",
+        "summary": "전자정부·디지털 행정의 국제적 성숙도를 보여주는 대표 지표.",
+        "trendDirection": "up",
+        "trendLabel": "전기 0.89 → 0.92",
+        "series": [
+          {
+            "year": 2016,
+            "value": 0.74
+          },
+          {
+            "year": 2018,
+            "value": 0.81
+          },
+          {
+            "year": 2020,
+            "value": 0.86
+          },
+          {
+            "year": 2022,
+            "value": 0.89
+          },
+          {
+            "year": 2024,
+            "value": 0.92
+          }
+        ],
+        "target": {
+          "value": 0.95,
+          "display": "0.95",
+          "label": "상위권 유지 목표"
+        }
+      },
+      {
+        "id": "disaster-safety-budget-local",
+        "name": "지자체 재난안전 예산",
+        "value": 19.8,
+        "valueDisplay": "19.8조원",
+        "unit": "조원",
+        "year": 2025,
+        "sourceId": "e-nara-disaster-budget",
+        "sourceRefs": [
+          "e-nara-disaster-budget"
+        ],
+        "datasetId": "e-나라지표",
+        "summary": "재난 예방·대응 체계에 투입되는 지방정부 재정 규모.",
+        "trendDirection": "up",
+        "trendLabel": "전년 18.6조 → 19.8조",
+        "series": [
+          {
+            "year": 2021,
+            "value": 15.1
+          },
+          {
+            "year": 2022,
+            "value": 16.0
+          },
+          {
+            "year": 2023,
+            "value": 17.3
+          },
+          {
+            "year": 2024,
+            "value": 18.6
+          },
+          {
+            "year": 2025,
+            "value": 19.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "canonicalId": "org-1220000",
+    "orgName": "관세청",
+    "indicators": [
+      {
+        "id": "customs-trade-total-exports",
+        "name": "통관기준 수출액",
+        "value": 683.7,
+        "valueDisplay": "683.7십억달러",
+        "unit": "십억달러",
+        "year": 2024,
+        "sourceId": "kosis-trade-balance",
+        "sourceRefs": [
+          "kosis-trade-balance"
+        ],
+        "datasetId": "KOSIS",
+        "summary": "관세청 통관 실적 기준으로 집계되는 대표 지표. 관세행정·통관 물동량의 전체 규모를 가장 직접적으로 보여준다.",
+        "trendDirection": "up",
+        "trendLabel": "전년 632.2 → 683.7",
+        "series": [
+          {
+            "year": 2020,
+            "value": 512.5
+          },
+          {
+            "year": 2021,
+            "value": 644.4
+          },
+          {
+            "year": 2022,
+            "value": 683.6
+          },
+          {
+            "year": 2023,
+            "value": 632.2
+          },
+          {
+            "year": 2024,
+            "value": 683.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "canonicalId": "org-1471000",
+    "orgName": "식품의약품안전처",
+    "indicators": [
+      {
+        "id": "mfds-drug-approvals",
+        "name": "의약품 허가·신고 처리건수",
+        "value": 1724,
+        "valueDisplay": "1,724건",
+        "unit": "건",
+        "year": 2024,
+        "sourceId": "mfds-drug-approvals",
+        "sourceRefs": [
+          "mfds-drug-approvals"
+        ],
+        "datasetId": "식품의약품안전처 통계연보",
+        "summary": "신약·자료제출의약품·제네릭 등을 포함한 허가·신고 처리 규모. 규제기관으로서 MFDS의 핵심 업무량을 보여준다.",
+        "trendDirection": "up",
+        "trendLabel": "전년 1,608건 → 1,724건",
+        "series": [
+          {
+            "year": 2020,
+            "value": 1428
+          },
+          {
+            "year": 2021,
+            "value": 1512
+          },
+          {
+            "year": 2022,
+            "value": 1586
+          },
+          {
+            "year": 2023,
+            "value": 1608
+          },
+          {
+            "year": 2024,
+            "value": 1724
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "canonicalId": "org-1790387",
+    "orgName": "질병관리청",
+    "indicators": [
+      {
+        "id": "kdca-child-vaccination-rate",
+        "name": "국가예방접종 완전접종률(12개월)",
+        "value": 97.2,
+        "valueDisplay": "97.2%",
+        "unit": "%",
+        "year": 2024,
+        "sourceId": "kdca-child-vaccination-rate",
+        "sourceRefs": [
+          "kdca-child-vaccination-rate"
+        ],
+        "datasetId": "예방접종등록관리정보시스템",
+        "summary": "국가예방접종사업의 도달률을 보여주는 대표 운영지표. 질병관리청이 직접 관리하는 예방접종 등록자료 기반이다.",
+        "trendDirection": "up",
+        "trendLabel": "전년 96.8% → 97.2%",
+        "series": [
+          {
+            "year": 2020,
+            "value": 96.4
+          },
+          {
+            "year": 2021,
+            "value": 96.6
+          },
+          {
+            "year": 2022,
+            "value": 96.9
+          },
+          {
+            "year": 2023,
+            "value": 96.8
+          },
+          {
+            "year": 2024,
+            "value": 97.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "canonicalId": "org-1230000",
+    "orgName": "조달청",
+    "indicators": [
+      {
+        "id": "pps-narajangteo-contracts",
+        "name": "나라장터 조달계약 규모",
+        "value": 196.4,
+        "valueDisplay": "196.4조원",
+        "unit": "조원",
+        "year": 2024,
+        "sourceId": "pps-narajangteo-contracts",
+        "sourceRefs": [
+          "pps-narajangteo-contracts"
+        ],
+        "datasetId": "조달청 연보",
+        "summary": "나라장터를 통해 체결된 공공조달 계약 총액. 조달청의 플랫폼·구매 집행 규모를 가장 직관적으로 보여준다.",
+        "trendDirection": "up",
+        "trendLabel": "전년 188.9조 → 196.4조",
+        "series": [
+          {
+            "year": 2020,
+            "value": 161.1
+          },
+          {
+            "year": 2021,
+            "value": 171.5
+          },
+          {
+            "year": 2022,
+            "value": 180.6
+          },
+          {
+            "year": 2023,
+            "value": 188.9
+          },
+          {
+            "year": 2024,
+            "value": 196.4
+          }
+        ]
+      }
     ]
   }
 ]

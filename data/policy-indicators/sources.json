@@ -680,5 +680,53 @@
     "sourcePortal": "해양수산부",
     "coverage": "전국 어가",
     "lastVerified": "2026-04-08"
+  },
+  {
+    "id": "mfds-drug-approvals",
+    "name": "식품의약품안전처 통계연보: 의약품 허가·신고 현황",
+    "url": "https://www.mfds.go.kr",
+    "desc": "식품의약품안전처 연도별 의약품 허가·신고 처리 현황",
+    "publisher": "식품의약품안전처",
+    "sourceType": "official-ministry",
+    "updateCadence": "연간",
+    "methodology": "식품의약품안전처 통계연보·통계간행물에 공표되는 연도별 의약품 허가·신고 처리 건수를 기준으로 사용한다. 상세 품목군 구분은 통계연보 최신판 기준으로 합산한다.",
+    "trust": "official-primary",
+    "datasetName": "의약품 허가·신고 현황",
+    "datasetId": "식품의약품안전처 통계연보",
+    "sourcePortal": "식품의약품안전처",
+    "coverage": "전국",
+    "lastVerified": "2026-04-09"
+  },
+  {
+    "id": "kdca-child-vaccination-rate",
+    "name": "질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률",
+    "url": "https://nip.kdca.go.kr",
+    "desc": "국가예방접종사업 12개월 완전접종률",
+    "publisher": "질병관리청",
+    "sourceType": "official-ministry",
+    "updateCadence": "연간",
+    "methodology": "질병관리청 예방접종등록관리정보시스템 및 국가예방접종사업 연보에 공표되는 12개월 완전접종률을 기준으로 사용한다. 행정등록 기반이라 KDCA 소관업무와 직접 대응한다.",
+    "trust": "official-primary",
+    "datasetName": "12개월 완전접종률",
+    "datasetId": "예방접종등록관리정보시스템 / 국가예방접종사업 연보",
+    "sourcePortal": "질병관리청",
+    "coverage": "전국 영아",
+    "lastVerified": "2026-04-09"
+  },
+  {
+    "id": "pps-narajangteo-contracts",
+    "name": "조달청 연보: 나라장터 조달계약 규모",
+    "url": "https://www.pps.go.kr",
+    "desc": "나라장터를 통한 연간 공공조달 계약 총액",
+    "publisher": "조달청",
+    "sourceType": "official-ministry",
+    "updateCadence": "연간",
+    "methodology": "조달청 연보와 나라장터 운영실적에 공표되는 연간 조달계약 총액을 대표값으로 사용한다. 중앙·지방·공공기관이 나라장터를 통해 체결한 계약 총액 기준이다.",
+    "trust": "official-primary",
+    "datasetName": "나라장터 조달계약 규모",
+    "datasetId": "조달청 연보",
+    "sourcePortal": "조달청",
+    "coverage": "전국 공공조달",
+    "lastVerified": "2026-04-09"
   }
 ]
