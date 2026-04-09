@@ -108,7 +108,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       url:"https://www.kmcc.go.kr",
       desc:"방송·미디어·통신 분야의 규제·감독, 미디어 다양성 보장, 이용자 보호 등을 담당한다. 방송통신위원회를 폐지하고 신설.",budget:"434억",
         divisions:["방송정책국","방송통신이용자정책국","방송미디어진흥국","방송기반국"],
-      publicInstitutions:["한국방송광고진흥공사"]}
+      publicInstitutions:["시청자미디어재단","한국방송광고진흥공사"]}
   ]},
   // ═══ 국무총리 ═══
   {name:"국무총리",nameEn:"Prime Minister",type:"pm",head:"김민석",
@@ -128,7 +128,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       {name:"식품의약품안전처",nameEn:"Ministry of Food and Drug Safety",nameEnAbbr:"MFDS",type:"office",head:"오유경",
         url:"https://www.mfds.go.kr",
         desc:"식품·의약품·의료기기·화장품의 안전관리, 인허가, 검사를 담당한다.",budget:"1.1조",
-        divisions:["식품안전정책국","의약품안전국","바이오생약국","의료기기안전국"]},
+        divisions:["식품안전정책국","의약품안전국","바이오생약국","의료기기안전국"],
+      publicInstitutions:["식품안전정보원","한국마약퇴치운동본부","한국식품안전관리인증원","한국의료기기안전정보원","한국의약품안전관리원"]},
       {name:"기획예산처",nameEn:"Ministry of Planning and Budget",nameEnAbbr:"MPB",type:"office",head:"박홍근",isNew:"2026.01 신설",
         url:"https://www.mpb.go.kr",
         desc:"국가 재정 운용 계획, 예산 편성·배분·집행 관리, 공공기관 관리를 담당한다. 기획재정부에서 예산 기능이 분리되어 신설.",
@@ -164,7 +165,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       {name:"원자력안전위원회",nameEn:"Nuclear Safety and Security Commission",nameEnAbbr:"NSSC",type:"commission",head:"최원호",
         url:"https://www.nssc.go.kr",
         desc:"원자력 시설의 안전규제, 방사선 방호, 원자력 안전 연구·기술 개발을 담당한다.",budget:"2,800억",
-        divisions:["안전정책국","방사선방재국"]}
+        divisions:["안전정책국","방사선방재국"],
+      publicInstitutions:["한국원자력안전기술원","한국원자력안전재단","한국원자력통제기술원"]}
     ]},
     {name:"총리 직속",nameEn:"PM Direct",type:"pm-group",children:[
       {name:"국무조정실",nameEn:"Office for Government Policy Coordination",nameEnAbbr:"OPC",type:"pm-sub",head:"윤창렬",
@@ -190,7 +192,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         divisions:["징세법무국","개인납세국","법인납세국","자산과세국","조사국","국제조세관리관"]},
         {name:"관세청",nameEn:"Korea Customs Service",nameEnAbbr:"KCS",type:"agency",head:"이명구",
           url:"https://www.customs.go.kr",desc:"수출입 통관, 관세 부과·징수, 밀수 단속, FTA 원산지 관리를 담당한다.",budget:"8,900억",
-        divisions:["통관국","심사국","조사국","국제관세협력국","관세국경위험관리센터"]},
+        divisions:["통관국","심사국","조사국","국제관세협력국","관세국경위험관리센터"],
+      publicInstitutions:["한국원산지정보원"]},
         {name:"조달청",nameEn:"Public Procurement Service",nameEnAbbr:"PPS",type:"agency",head:"백승보",
           url:"https://www.pps.go.kr",desc:"정부 물자 조달, 공공 계약, 나라장터 운영, 비축 물자 관리를 담당한다.",budget:"4,200억",
         divisions:["디지털공정조달국","구매사업국","기술서비스국","시설사업국","공공물자국"]}
@@ -223,7 +226,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       children:[
         {name:"재외동포청",nameEn:"Overseas Koreans Agency",nameEnAbbr:"OKA",type:"agency",head:"김경협",
           url:"https://www.oka.go.kr",desc:"재외동포의 권익 보호, 교육·문화 지원, 네트워크 구축을 담당한다. 2023년 신설.",budget:"1,127억",
-        divisions:["재외동포정책국","교류협력국"]}
+        divisions:["재외동포정책국","교류협력국"],
+      publicInstitutions:["재외동포협력센터"]}
     ]},
     {name:"통일부",nameEn:"Ministry of Unification",nameEnAbbr:"MOU",type:"ministry",head:"정동영",
       url:"https://www.unikorea.go.kr",
@@ -253,7 +257,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         divisions:["병역자원국","입영동원국","사회복무국"]},
         {name:"방위사업청",nameEn:"Defense Acquisition Program Administration",nameEnAbbr:"DAPA",type:"agency",head:"이용철",
           url:"https://www.dapa.go.kr",desc:"무기 체계 획득, 방위산업 육성, 군수품 조달, 국방과학기술 연구를 담당한다.",budget:"18.7조",
-        divisions:["방위사업정책국","방위산업진흥국","국방기술개발보호국","기반전력사업본부","미래전력사업본부"]}
+        divisions:["방위사업정책국","방위산업진흥국","국방기술개발보호국","기반전력사업본부","미래전력사업본부"],
+      publicInstitutions:["국방과학연구소","국방기술품질원","국방기술진흥연구소"]}
     ]},
     {name:"행정안전부",nameEn:"Ministry of the Interior and Safety",nameEnAbbr:"MOIS",type:"ministry",head:"윤호중",
       url:"https://www.mois.go.kr",
@@ -268,7 +273,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       publicInstitutions:["한국도로교통공단"]},
         {name:"소방청",nameEn:"National Fire Agency",nameEnAbbr:"NFA",type:"agency",head:"김승룡",
           url:"https://www.nfa.go.kr",desc:"화재 예방·진압, 구조·구급, 소방산업 육성을 담당한다.",budget:"1.5조",
-        divisions:["119대응국","화재예방국","장비기술국","119종합상황실"]},
+        divisions:["119대응국","화재예방국","장비기술국","119종합상황실"],
+      publicInstitutions:["한국소방산업기술원"]},
         {name:"중대범죄수사청",nameEn:"Serious Crimes Investigation",type:"agency",status:"planned",isNew:"2026.10 신설예정",
           desc:"검찰청 폐지 후 중대범죄 수사를 전담하는 신설 기관. 수사·기소 분리 원칙에 따라 설립 예정."}
     ]},
@@ -282,7 +288,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       children:[
         {name:"국가유산청",nameEn:"Korea Heritage Service",nameEnAbbr:"KHS",type:"agency",head:"허민",
           url:"https://www.khs.go.kr",desc:"국가유산(문화재)의 보존·관리·활용, 매장문화재 조사, 세계유산 등재를 담당한다.",budget:"1.3조",
-        divisions:["유산정책국","문화유산국","자연유산국","무형유산국"]}
+        divisions:["유산정책국","문화유산국","자연유산국","무형유산국"],
+      publicInstitutions:["국가유산진흥원"]}
     ]},
     {name:"농림축산식품부",nameEn:"Ministry of Agriculture, Food and Rural Affairs",nameEnAbbr:"MAFRA",type:"ministry",head:"송미령",
       url:"https://www.mafra.go.kr",
@@ -294,10 +301,12 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       children:[
         {name:"농촌진흥청",nameEn:"Rural Development Administration",nameEnAbbr:"RDA",type:"agency",head:"이승돈",
           url:"https://www.rda.go.kr",desc:"농업 기술 연구·개발, 농촌지도, 농업인 교육 훈련을 담당한다.",budget:"1.6조",
-        divisions:["연구정책국","농촌지원국","기술협력국"]},
+        divisions:["연구정책국","농촌지원국","기술협력국"],
+      publicInstitutions:["한국농업기술진흥원"]},
         {name:"산림청",nameEn:"Korea Forest Service",nameEnAbbr:"KFS",type:"agency",head:"박은식",
           url:"https://www.forest.go.kr",desc:"산림 보전·조성, 산불 예방, 산림 자원 활용, 임업 육성을 담당한다.",budget:"3.1조",
-        divisions:["산림산업정책국","산림복지국","산림보호국","산림재난통제관"]}
+        divisions:["산림산업정책국","산림복지국","산림보호국","산림재난통제관"],
+      publicInstitutions:["한국등산·트레킹지원센터","한국산림복지진흥원","한국수목원정원관리원","한국임업진흥원","한국치산기술협회"]}
     ],
       publicInstitutions:["한국산림복지진흥원","한국수목원정원관리원"]},
     {name:"산업통상부",nameEn:"Ministry of Trade, Industry and Resources",nameEnAbbr:"MOTIR",type:"ministry",head:"김정관",isNew:"명칭변경",
@@ -328,7 +337,8 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       children:[
         {name:"기상청",nameEn:"Korea Meteorological Administration",nameEnAbbr:"KMA",type:"agency",head:"이미선",
           url:"https://www.kma.go.kr",desc:"기상관측·예보, 기후변화 감시, 지진·화산 관측, 기상산업 육성을 담당한다.",budget:"5,200억",
-        divisions:["예보국","관측기반국","기후과학국","기상서비스진흥국","지진화산국"]}
+        divisions:["예보국","관측기반국","기후과학국","기상서비스진흥국","지진화산국"],
+      publicInstitutions:["아시아·태평양경제협력체 기후센터","차세대수치예보모델개발사업단","한국기상산업기술원"]}
     ]},
     {name:"고용노동부",nameEn:"Ministry of Employment and Labor",nameEnAbbr:"MOEL",type:"ministry",head:"김영훈",
       url:"https://www.moel.go.kr",
