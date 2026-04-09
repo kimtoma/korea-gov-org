@@ -641,15 +641,14 @@ const policyIndicatorsByCanonicalId={
         "display": "7,300억달러",
         "label": "중기 수출 목표"
       },
-      "datasetName": "수출입 총괄",
-      "sourceUrl": "https://kosis.kr",
+      "datasetName": "수출입총괄",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001",
       "sourcePublisher": "통계청 KOSIS",
       "sourceType": "official-stat-portal",
       "lastVerified": "2026-04-09",
-      "updateCadence": "월간 또는 연간",
-      "methodology": "무역통계진흥원/관세청 기반 수출입 총괄 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 statHtml 표 ID를 확정하지 못함.",
-      "coverage": "전국",
-      "qualityNote": "무역대표표는 특정했지만 statHtml tblId는 미확정"
+      "updateCadence": "월간",
+      "methodology": "KOSIS 무역통계 표 `DT_134001_001`(관세청, 수출입총괄)에서 최근 공표값을 사용한다. 현재 경제지표 카드는 이 표의 `수출액` 계열을 대표값으로 보여주며, 필요 시 동일 표의 수입액·무역수지와 함께 교차 해석할 수 있다.",
+      "coverage": "전국"
     },
     {
       "id": "manufacturing-output-index",
@@ -736,15 +735,15 @@ const policyIndicatorsByCanonicalId={
           "value": 11.9
         }
       ],
-      "datasetName": "벤처투자 규모",
-      "sourceUrl": "https://kosis.kr",
+      "datasetName": "연도별 벤처투자조합 결성실적",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112",
       "sourcePublisher": "통계청 KOSIS",
       "sourceType": "official-stat-portal",
       "lastVerified": "2026-04-09",
-      "updateCadence": "월간 또는 연간",
-      "methodology": "벤처투자조합/신규 벤처투자 실적 계열 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 표 ID를 확정하지 못함.",
+      "updateCadence": "연간",
+      "methodology": "KOSIS에서 직접 확인 가능한 인접 대표표는 중소벤처기업부 `TX_14203_A112`(연도별 벤처투자조합 결성실적)까지 확인했다. 다만 현재 카드 값은 `벤처투자 규모`(투자 집행액)를 나타내므로, 결성실적 표를 그대로 동일 지표로 치환하지 않고 보조 근거로만 연결한다. 실제 투자액과 1:1 대응하는 KOSIS 표 ID는 추가 확인이 필요하다.",
       "coverage": "전국",
-      "qualityNote": "중기부·벤처투자 실적과 연결되는 주제 대표표는 특정했지만 statHtml tblId는 미확정"
+      "qualityNote": "벤처투자 '집행액'과 정확히 일치하는 KOSIS 표 ID는 아직 미확정 — 현재는 인접 공식 통계표를 연결"
     },
     {
       "id": "small-business-digitalization",
@@ -831,15 +830,14 @@ const policyIndicatorsByCanonicalId={
           "value": 5
         }
       ],
-      "datasetName": "연구개발투자 비중",
-      "sourceUrl": "https://kosis.kr",
+      "datasetName": "연구개발비 및 GDP 대비 연구개발비 비율",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001",
       "sourcePublisher": "통계청 KOSIS",
       "sourceType": "official-stat-portal",
       "lastVerified": "2026-04-09",
       "updateCadence": "연간",
-      "methodology": "국가연구개발활동조사/과학기술연구개발활동조사 계열의 GDP 대비 연구개발비 비중 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 공개 링크만으로 표 ID를 확정하지 못함.",
-      "coverage": "전국",
-      "qualityNote": "주제 대표 표는 특정했지만 statHtml tblId는 미확정"
+      "methodology": "KOSIS 연구개발활동조사 표 `DT_KBA0001`(과학기술정보통신부, 연구개발비 및 GDP 대비 연구개발비 비율)에서 최근 공표 연도값을 사용한다. 지표 카드의 퍼센트 값은 동일 표의 `GDP 대비 연구개발비 비율` 계열을 기준으로 해석한다.",
+      "coverage": "전국"
     },
     {
       "id": "ict-exports",
@@ -1843,15 +1841,14 @@ const policyIndicatorsByCanonicalId={
           "value": 1860
         }
       ],
-      "datasetName": "외래관광객 수",
-      "sourceUrl": "https://kosis.kr",
+      "datasetName": "외래객 입국-목적별/국적별",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH",
       "sourcePublisher": "통계청 KOSIS",
       "sourceType": "official-stat-portal",
       "lastVerified": "2026-04-09",
-      "updateCadence": "월간 또는 연간",
-      "methodology": "출입국관광통계 계열의 외래관광객 입국자 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 표 ID를 확정하지 못함.",
-      "coverage": "전국",
-      "qualityNote": "출입국관광통계 대표표를 지목했지만 statHtml tblId는 미확정"
+      "updateCadence": "월간",
+      "methodology": "KOSIS 출입국관광통계 표 `DT_TGT_ENT_AGG_MONTH`(한국관광공사, 외래객 입국-목적별/국적별)에서 최근 공표값을 사용한다. 연간 카드 값은 월별 누적 또는 연간 합산 공표치를 기준으로 읽는다.",
+      "coverage": "전국"
     },
     {
       "id": "content-industry-exports",
@@ -2267,15 +2264,14 @@ const policyIndicatorsByCanonicalId={
           "value": 2810
         }
       ],
-      "datasetName": "해양사고 발생건수",
-      "sourceUrl": "https://kosis.kr",
+      "datasetName": "해양사고 총괄",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=146&tblId=DT_MLTM_5003054",
       "sourcePublisher": "통계청 KOSIS",
       "sourceType": "official-stat-portal",
       "lastVerified": "2026-04-09",
       "updateCadence": "연간",
-      "methodology": "해양사고통계/해양안전심판 계열의 연간 발생건수 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 표 ID를 확정하지 못함.",
-      "coverage": "전국",
-      "qualityNote": "주제 대표표는 특정했지만 statHtml tblId는 미확정"
+      "methodology": "KOSIS 해양사고현황 표 `DT_MLTM_5003054`(해양수산부, 해양사고 총괄)에서 최근 공표값을 사용한다. 카드 값은 연간 총 발생건수 기준으로 읽는다.",
+      "coverage": "전국"
     }
   ],
   "org-mcee-2025": [
@@ -2501,13 +2497,13 @@ sources.push(
   {"id":"kosis-fertility-rate","name":"KOSIS: 합계출산율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15","desc":"시도·전국 합계출산율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"합계출산율","datasetId":"DT_1B81A15","sourcePortal":"KOSIS","coverage":"전국/시도","lastVerified":"2026-04-08"},
   {"id":"kosis-life-expectancy","name":"KOSIS: 기대수명","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42","desc":"생명표 기반 기대수명","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"기대수명","datasetId":"DT_1B42","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"kosis-public-transport-share","name":"KOSIS: 대중교통 분담률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244","desc":"교통수단 분담률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"대중교통 분담률","datasetId":"DT_MLTM_1244","sourcePortal":"KOSIS","coverage":"전국/도시권","lastVerified":"2026-04-08"},
-  {"id":"kosis-rnd-gdp","name":"KOSIS: 연구개발투자 비중","url":"https://kosis.kr","desc":"GDP 대비 연구개발 투자 비중","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"국가연구개발활동조사/과학기술연구개발활동조사 계열의 GDP 대비 연구개발비 비중 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 공개 링크만으로 표 ID를 확정하지 못함.","trust":"official-primary","datasetName":"연구개발투자 비중","datasetId":"미확정 (KOSIS 표 ID 추가 확인 필요)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"주제 대표 표는 특정했지만 statHtml tblId는 미확정"},
-  {"id":"kosis-inbound-tourists","name":"KOSIS: 외래관광객 수","url":"https://kosis.kr","desc":"방한 외래관광객 수","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간 또는 연간","methodology":"출입국관광통계 계열의 외래관광객 입국자 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 표 ID를 확정하지 못함.","trust":"official-primary","datasetName":"외래관광객 수","datasetId":"미확정 (출입국관광통계 KOSIS 표 ID 추가 확인 필요)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"출입국관광통계 대표표를 지목했지만 statHtml tblId는 미확정"},
-  {"id":"kosis-venture-investment","name":"KOSIS: 벤처투자 규모","url":"https://kosis.kr","desc":"벤처투자 실적","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간 또는 연간","methodology":"벤처투자조합/신규 벤처투자 실적 계열 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 표 ID를 확정하지 못함.","trust":"official-primary","datasetName":"벤처투자 규모","datasetId":"미확정 (벤처투자 실적 KOSIS 표 ID 추가 확인 필요)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"중기부·벤처투자 실적과 연결되는 주제 대표표는 특정했지만 statHtml tblId는 미확정"},
-  {"id":"kosis-trade-balance","name":"KOSIS: 수출입 총괄","url":"https://kosis.kr","desc":"수출액·무역수지 관련 무역 지표","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간 또는 연간","methodology":"무역통계진흥원/관세청 기반 수출입 총괄 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 statHtml 표 ID를 확정하지 못함.","trust":"official-primary","datasetName":"수출입 총괄","datasetId":"미확정 (수출입총괄 KOSIS 표 ID 추가 확인 필요)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"무역대표표는 특정했지만 statHtml tblId는 미확정"},
+  {"id":"kosis-rnd-gdp","name":"KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001","desc":"국가 총연구개발비와 GDP 대비 연구개발비 비율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS 연구개발활동조사 표 `DT_KBA0001`(과학기술정보통신부, 연구개발비 및 GDP 대비 연구개발비 비율)에서 최근 공표 연도값을 사용한다. 지표 카드의 퍼센트 값은 동일 표의 `GDP 대비 연구개발비 비율` 계열을 기준으로 해석한다.","trust":"official-primary","datasetName":"연구개발비 및 GDP 대비 연구개발비 비율","datasetId":"DT_KBA0001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"kosis-inbound-tourists","name":"KOSIS: 외래객 입국-목적별/국적별","url":"https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH","desc":"방한 외래객 입국자 수","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 출입국관광통계 표 `DT_TGT_ENT_AGG_MONTH`(한국관광공사, 외래객 입국-목적별/국적별)에서 최근 공표값을 사용한다. 연간 카드 값은 월별 누적 또는 연간 합산 공표치를 기준으로 읽는다.","trust":"official-primary","datasetName":"외래객 입국-목적별/국적별","datasetId":"DT_TGT_ENT_AGG_MONTH","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"kosis-venture-investment","name":"KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112","desc":"벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS에서 직접 확인 가능한 인접 대표표는 중소벤처기업부 `TX_14203_A112`(연도별 벤처투자조합 결성실적)까지 확인했다. 다만 현재 카드 값은 `벤처투자 규모`(투자 집행액)를 나타내므로, 결성실적 표를 그대로 동일 지표로 치환하지 않고 보조 근거로만 연결한다. 실제 투자액과 1:1 대응하는 KOSIS 표 ID는 추가 확인이 필요하다.","trust":"official-primary","datasetName":"연도별 벤처투자조합 결성실적","datasetId":"TX_14203_A112 (보조 근거)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"벤처투자 '집행액'과 정확히 일치하는 KOSIS 표 ID는 아직 미확정 — 현재는 인접 공식 통계표를 연결"},
+  {"id":"kosis-trade-balance","name":"KOSIS: 수출입총괄","url":"https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001","desc":"전국 수출액·수입액·무역수지 총괄","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 무역통계 표 `DT_134001_001`(관세청, 수출입총괄)에서 최근 공표값을 사용한다. 현재 경제지표 카드는 이 표의 `수출액` 계열을 대표값으로 보여주며, 필요 시 동일 표의 수입액·무역수지와 함께 교차 해석할 수 있다.","trust":"official-primary","datasetName":"수출입총괄","datasetId":"DT_134001_001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
   {"id":"kosis-crime-clearance","name":"KOSIS: 범죄 검거율","url":"https://kosis.kr","desc":"주요 범죄 검거율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"범죄 검거율","datasetId":"KOSIS 통계표 상세 확인 필요","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"표 ID 미확정 — 루트 링크 유지"},
   {"id":"kosis-female-manager-share","name":"KOSIS: 여성관리자 비율","url":"https://kosis.kr","desc":"조직 내 여성 관리자 비중","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"여성관리자 비율","datasetId":"KOSIS 통계표 상세 확인 필요","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"표 ID 미확정 — 루트 링크 유지"},
-  {"id":"kosis-marine-accidents","name":"KOSIS: 해양사고 발생건수","url":"https://kosis.kr","desc":"연간 해양사고 발생 건수","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"해양사고통계/해양안전심판 계열의 연간 발생건수 대표표를 KOSIS에서 우선 사용하도록 설계했으나, 본 패스에서는 표 ID를 확정하지 못함.","trust":"official-primary","datasetName":"해양사고 발생건수","datasetId":"미확정 (해양사고통계 KOSIS 표 ID 추가 확인 필요)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"주제 대표표는 특정했지만 statHtml tblId는 미확정"},
+  {"id":"kosis-marine-accidents","name":"KOSIS: 해양사고 총괄","url":"https://kosis.kr/statHtml/statHtml.do?orgId=146&tblId=DT_MLTM_5003054","desc":"연간 해양사고 총괄 현황","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS 해양사고현황 표 `DT_MLTM_5003054`(해양수산부, 해양사고 총괄)에서 최근 공표값을 사용한다. 카드 값은 연간 총 발생건수 기준으로 읽는다.","trust":"official-primary","datasetName":"해양사고 총괄","datasetId":"DT_MLTM_5003054","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
   {"id":"mofa-consular-services","name":"외교부: 영사서비스 처리 실적","url":"https://www.mofa.go.kr","desc":"재외국민 영사서비스 처리 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"영사서비스 처리 실적","datasetId":"외교부 재외국민영사국 집계","sourcePortal":"외교부","coverage":"재외국민","lastVerified":"2026-04-08"},
   {"id":"mou-settlement-support","name":"통일부: 북한이탈주민 정착지원","url":"https://www.unikorea.go.kr","desc":"북한이탈주민 정착지원 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"북한이탈주민 정착지원","datasetId":"통일부 정착지원 통계","sourcePortal":"통일부","coverage":"북한이탈주민","lastVerified":"2026-04-08"},
   {"id":"un-digital-government","name":"UN E-Government Survey","url":"https://publicadministration.desa.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024","desc":"온라인서비스 지수 등 디지털정부 국제 비교","publisher":"United Nations DESA","sourceType":"international-org","updateCadence":"격년","methodology":"UN E-Government Survey 원문 지표 인용","trust":"official-international","datasetName":"UN E-Government Survey Online Service Index","datasetId":"UN EGDI 2024","sourcePortal":"UN","coverage":"국가 간 비교","lastVerified":"2026-04-08"},

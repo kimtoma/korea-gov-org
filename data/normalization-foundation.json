@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-08T22:56:24.538Z",
+  "generatedAt": "2026-04-09T01:30:34.061Z",
   "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
   "sourceCatalog": [
     {
@@ -107,15 +107,15 @@
     },
     {
       "id": "e-nara-ict-exports",
-      "name": "e-나라지표: ICT 수출액",
-      "url": "https://www.index.go.kr",
-      "desc": "ICT 산업 수출액 추이"
+      "name": "e-나라지표: ICT 산업 수출입 동향",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2782",
+      "desc": "관세청 통관 기준을 ICT산업분류로 재가공한 ICT 수출입 통계"
     },
     {
       "id": "e-nara-oda-volume",
-      "name": "e-나라지표: ODA 규모",
-      "url": "https://www.index.go.kr",
-      "desc": "공적개발원조 재원 규모"
+      "name": "e-나라지표: ODA 원조규모",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1687",
+      "desc": "공적개발원조 총규모(순지출 기준) 지표"
     },
     {
       "id": "e-nara-inter-korean-coop",
@@ -197,27 +197,27 @@
     },
     {
       "id": "kosis-rnd-gdp",
-      "name": "KOSIS: 연구개발투자 비중",
-      "url": "https://kosis.kr",
-      "desc": "GDP 대비 연구개발 투자 비중"
+      "name": "KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001",
+      "desc": "국가 총연구개발비와 GDP 대비 연구개발비 비율"
     },
     {
       "id": "kosis-inbound-tourists",
-      "name": "KOSIS: 외래관광객 수",
-      "url": "https://kosis.kr",
-      "desc": "방한 외래관광객 수"
+      "name": "KOSIS: 외래객 입국-목적별/국적별",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH",
+      "desc": "방한 외래객 입국자 수"
     },
     {
       "id": "kosis-venture-investment",
-      "name": "KOSIS: 벤처투자 규모",
-      "url": "https://kosis.kr",
-      "desc": "벤처투자 실적"
+      "name": "KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112",
+      "desc": "벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적"
     },
     {
       "id": "kosis-trade-balance",
-      "name": "KOSIS: 수출입 총괄",
-      "url": "https://kosis.kr",
-      "desc": "수출액·무역수지 관련 무역 지표"
+      "name": "KOSIS: 수출입총괄",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001",
+      "desc": "전국 수출액·수입액·무역수지 총괄"
     },
     {
       "id": "kosis-crime-clearance",
@@ -233,9 +233,9 @@
     },
     {
       "id": "kosis-marine-accidents",
-      "name": "KOSIS: 해양사고 발생건수",
-      "url": "https://kosis.kr",
-      "desc": "연간 해양사고 발생 건수"
+      "name": "KOSIS: 해양사고 총괄",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=146&tblId=DT_MLTM_5003054",
+      "desc": "연간 해양사고 총괄 현황"
     },
     {
       "id": "mofa-consular-services",
