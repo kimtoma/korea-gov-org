@@ -93,12 +93,18 @@ wrangler pages deploy . --project-name korea-gov-org
 ## 데이터 검증
 
 ```bash
+# 저장소 루트에서 실행
+cd korea-gov-org
+
 # UI 데이터 → 정규화 기반 JSON 재생성
 node scripts/build-normalization-foundation.mjs
 
 # 인라인 동기화 + 무결성 + 정규화 산출물 검증
 node scripts/validate-data.mjs
 ```
+
+> 두 스크립트는 현재 작업 디렉터리를 기준으로 `data.js`, `index.html`, `data/`를 읽습니다.
+> 반드시 저장소 루트(`korea-gov-org/`)에서 실행하세요.
 
 ## Phase 2 정규화 기반
 

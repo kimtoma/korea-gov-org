@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-09T03:09:01.738Z",
+  "generatedAt": "2026-04-10T09:16:27.837Z",
   "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
   "sourceCatalog": [
     {
