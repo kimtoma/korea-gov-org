@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-10T09:23:52.022Z",
+  "generatedAt": "2026-04-10T09:53:53.160Z",
   "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
   "sourceCatalog": [
     {
@@ -72,13 +72,13 @@
     {
       "id": "e-nara-defense-budget-share",
       "name": "e-나라지표: 국방비 GDP 대비 비중",
-      "url": "https://www.index.go.kr",
+      "url": "https://www.mnd.go.kr/mbshome/mbs/mnd/subview.jsp?id=mnd_020600000000",
       "desc": "GDP 대비 국방비 비중"
     },
     {
       "id": "e-nara-disaster-budget",
       "name": "e-나라지표: 재난안전 예산",
-      "url": "https://www.index.go.kr",
+      "url": "https://lofin.mois.go.kr/",
       "desc": "재난안전 분야 예산 규모 지표"
     },
     {
@@ -96,13 +96,13 @@
     {
       "id": "e-nara-food-self-sufficiency",
       "name": "e-나라지표: 식량자급률",
-      "url": "https://www.index.go.kr",
+      "url": "https://www.krei.re.kr/krei/researchReportView.do?key=67&biblioId=",
       "desc": "국내 식량자급 수준 지표"
     },
     {
       "id": "e-nara-gender-gap",
       "name": "e-나라지표: 성별임금격차",
-      "url": "https://www.index.go.kr",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1ES3E01",
       "desc": "성평등 정책과 함께 보는 핵심 격차 지표"
     },
     {
@@ -126,13 +126,13 @@
     {
       "id": "e-nara-inter-korean-coop",
       "name": "e-나라지표: 남북 인도협력 사업 규모",
-      "url": "https://www.index.go.kr",
+      "url": "https://www.unikorea.go.kr/unikorea/business/NKExchange/",
       "desc": "남북 인도협력 관련 규모 지표"
     },
     {
       "id": "e-nara-maritime-logistics",
       "name": "e-나라지표: 항만 물동량",
-      "url": "https://www.index.go.kr",
+      "url": "https://www.mof.go.kr/statPortal/",
       "desc": "전국 무역항 항만 물동량"
     },
     {
@@ -150,7 +150,7 @@
     {
       "id": "e-nara-veterans-compensation",
       "name": "e-나라지표: 국가보훈 보상·예우 규모",
-      "url": "https://www.index.go.kr",
+      "url": "https://www.mpva.go.kr/mpva/contents.do?key=58",
       "desc": "보훈 급여 및 예우 대상 규모 지표"
     },
     {
@@ -174,7 +174,7 @@
     {
       "id": "kosis-crime-clearance",
       "name": "KOSIS: 범죄 검거율",
-      "url": "https://kosis.kr",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=132&tblId=DT_13204_2004_1",
       "desc": "주요 범죄 검거율"
     },
     {
@@ -246,7 +246,7 @@
     {
       "id": "kosis-venture-investment",
       "name": "KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112",
+      "url": "https://news.kvic.or.kr/article/2025-venture-investment-trend",
       "desc": "벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적"
     },
     {

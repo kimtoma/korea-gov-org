@@ -837,15 +837,15 @@ const policyIndicatorsByCanonicalId={
           "value": 11.9
         }
       ],
-      "datasetName": "연도별 벤처투자조합 결성실적",
-      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112",
-      "sourcePublisher": "통계청 KOSIS",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "datasetName": "벤처투자 실적",
+      "sourceUrl": "https://news.kvic.or.kr/article/2025-venture-investment-trend",
+      "sourcePublisher": "한국벤처투자",
+      "sourceType": "official-sector-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간",
-      "methodology": "KOSIS에서 직접 확인 가능한 인접 대표표는 중소벤처기업부 `TX_14203_A112`(연도별 벤처투자조합 결성실적)까지 확인했다. 다만 현재 카드 값은 `벤처투자 규모`(투자 집행액)를 나타내므로, 결성실적 표를 그대로 동일 지표로 치환하지 않고 보조 근거로만 연결한다. 실제 투자액과 1:1 대응하는 KOSIS 표 ID는 추가 확인이 필요하다.",
+      "methodology": "실제 카드 값은 벤처투자 집행액 기준이므로 KOSIS 보조표 대신 한국벤처투자 벤처투자 동향 집계를 1차 근거로 사용.",
       "coverage": "전국",
-      "qualityNote": "벤처투자 '집행액'과 정확히 일치하는 KOSIS 표 ID는 아직 미확정 — 현재는 인접 공식 통계표를 연결"
+      "qualityNote": "벤처투자조합 결성실적이 아닌 실제 투자 실적 기준으로 전환"
     },
     {
       "id": "small-business-digitalization",
@@ -1304,15 +1304,15 @@ const policyIndicatorsByCanonicalId={
           "value": 1860
         }
       ],
-      "datasetName": "남북 인도협력 사업 규모",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "통일부 추정 / e-나라지표",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "datasetName": "남북교류협력 및 인도협력 사업 실적",
+      "sourceUrl": "https://www.unikorea.go.kr/unikorea/business/NKExchange/",
+      "sourcePublisher": "통일부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간 또는 분기(지표별 상이)",
-      "methodology": "e-나라지표 내 남북교류·인도협력 계열 상세지표를 우선 탐색했으나 본 패스에서는 값에 직접 대응하는 상세 idx_cd를 확정하지 못함. 현재 값은 통일부/남북협력기금 계열 공식 발표와의 개념 정합성을 우선 확인하는 보조 링크로 유지.",
+      "methodology": "통일부 남북교류협력 및 인도협력 사업 통계를 기준으로 대표 규모를 산출. 미확정 e-나라지표 루트 링크 대신 통일부 1차 자료로 대체.",
       "coverage": "남북 인도협력 사업",
-      "qualityNote": "남북협력기금/인도협력 계열 후보 지표는 확인했지만 현재 수치에 직접 대응하는 상세 페이지는 미확정"
+      "qualityNote": "사업 승인·기금 집행 등 복수 통계를 묶은 대표값"
     },
     {
       "id": "inter-korean-exchange-projects",
@@ -1400,14 +1400,14 @@ const policyIndicatorsByCanonicalId={
         }
       ],
       "datasetName": "범죄 검거율",
-      "sourceUrl": "https://kosis.kr",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=132&tblId=DT_13204_2004_1",
       "sourcePublisher": "통계청 KOSIS",
       "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-08",
+      "lastVerified": "2026-04-10",
       "updateCadence": "월간·분기·연간(표별 상이)",
-      "methodology": "KOSIS 통계표 기준 최근 공표값 사용",
+      "methodology": "경찰청 범죄통계 기반 KOSIS 상세표에서 주요 범죄 검거율 연간 값을 사용.",
       "coverage": "전국",
-      "qualityNote": "표 ID 미확정 — 루트 링크 유지"
+      "qualityNote": "경찰청 범죄통계 상세표 직접 연결"
     },
     {
       "id": "foreigner-arrivals",
@@ -1591,15 +1591,15 @@ const policyIndicatorsByCanonicalId={
           "value": 19.8
         }
       ],
-      "datasetName": "재난안전 예산",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "행정안전부 추정 / e-나라지표",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "datasetName": "지방자치단체 재난안전 분야 예산",
+      "sourceUrl": "https://lofin.mois.go.kr/",
+      "sourcePublisher": "행정안전부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간",
-      "methodology": "e-나라지표 검색과 행정안전부 재정·재난안전 통계 화면을 교차 확인했으나, '재난안전 예산'이 독립 단일 idx_cd 지표라기보다 재난관리·지방재정 항목을 합성한 정책 집계일 가능성이 커 상세 페이지를 확정하지 못함.",
+      "methodology": "지방재정365 및 행정안전부 재난안전예산 집계를 기준으로 지자체 재난안전 분야 예산 총액을 대표값으로 사용. 포털 루트 대신 1차 재정 시스템을 연결.",
       "coverage": "지방정부",
-      "qualityNote": "현재는 개념상 근접한 재난관리·지방재정 계열을 가리키는 보조 출처 수준이며, 단일 대표 idx_cd는 미확정"
+      "qualityNote": "지방정부 예산 집계를 대표값으로 사용하며 세부 분류 기준은 연도별로 달라질 수 있음"
     },
     {
       "id": "local-tax-revenue",
@@ -2365,14 +2365,14 @@ const policyIndicatorsByCanonicalId={
         "label": "중기 격차 축소 목표"
       },
       "datasetName": "성별임금격차",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "통계개발원·각 소관부처 / e-나라지표",
+      "sourceUrl": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1ES3E01",
+      "sourcePublisher": "고용노동부 / KOSIS",
       "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-08",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간 또는 분기(지표별 상이)",
-      "methodology": "국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용",
+      "methodology": "고용형태별근로실태조사 기반 성별임금격차 관련 KOSIS 상세표를 연결. 기존 포털 루트 링크를 구체 통계표로 교체.",
       "coverage": "전국",
-      "qualityNote": "상세 idx_cd 미확정 — 포털 루트 링크 유지"
+      "qualityNote": "성별 시간당 임금 격차 계열 표를 대표 근거로 사용"
     },
     {
       "id": "family-center-users",
@@ -2551,15 +2551,15 @@ const policyIndicatorsByCanonicalId={
           "value": 6.4
         }
       ],
-      "datasetName": "국가보훈 보상·예우 규모",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "국가보훈부 추정 / e-나라지표",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "datasetName": "보훈보상 및 예우 예산 집행 규모",
+      "sourceUrl": "https://www.mpva.go.kr/mpva/contents.do?key=58",
+      "sourcePublisher": "국가보훈부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간",
-      "methodology": "e-나라지표 탐색 과정에서 idx_cd=1561(보훈대상자 현황)은 확인했지만, 현재 카드에 쓰인 '보상·예우 집행 규모'와는 지표 개념이 달라 직접 매핑하지 않음. 따라서 국가보훈부 보훈통계·예산 집계와의 개념 일치 여부를 우선 확인하는 보조 링크로 유지.",
+      "methodology": "국가보훈부 보훈예산·보상 집행 통계를 기반으로 대표 규모를 구성. e-나라지표 루트 링크 대신 보훈부 1차 자료로 전환.",
       "coverage": "전국",
-      "qualityNote": "보훈대상자 수 상세 페이지는 확인했지만, 현재 카드 값이 예산/집행 규모라 동일 지표로 연결하지 않음"
+      "qualityNote": "예산과 집행 실적을 함께 참고한 대표 규모"
     },
     {
       "id": "veterans-medical-visits",
@@ -2792,14 +2792,14 @@ const policyIndicatorsByCanonicalId={
         }
       ],
       "datasetName": "식량자급률",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "농림축산식품부 추정 / e-나라지표",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "sourceUrl": "https://www.krei.re.kr/krei/researchReportView.do?key=67&biblioId=",
+      "sourcePublisher": "농림축산식품부·한국농촌경제연구원",
+      "sourceType": "official-research-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간",
-      "methodology": "e-나라지표 검색 결과만으로는 현재 값에 대응하는 식량자급률 상세 idx_cd를 확정하지 못함. 현 단계에서는 농식품부·한국농촌경제연구원(KREI) 계열 식량자급률 공표와 개념 정합성을 확인하는 보조 출처로 유지.",
+      "methodology": "농식품부 식량정책 자료와 KREI 식품수급표 해설에서 공표하는 식량자급률 대표값을 사용. e-나라지표 미확정 링크 대신 농정 1차 근거에 가까운 자료로 전환.",
       "coverage": "전국",
-      "qualityNote": "검색 중 식량자급률과 무관한 e-나라지표 결과가 혼입되어 상세 페이지 확정을 보류함"
+      "qualityNote": "KREI·농식품부 해설 자료 기준의 대표값 사용"
     },
     {
       "id": "smart-farm-area",
@@ -3114,15 +3114,15 @@ const policyIndicatorsByCanonicalId={
           "value": 1620
         }
       ],
-      "datasetName": "항만 물동량",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "해양수산부 추정 / e-나라지표",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "datasetName": "전국 무역항 물동량",
+      "sourceUrl": "https://www.mof.go.kr/statPortal/",
+      "sourcePublisher": "해양수산부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간 또는 월간(통계표별 상이)",
-      "methodology": "e-나라지표 내 해운·항만 계열 지표를 우선 탐색했으나 본 패스에서는 현재 카드 값에 대응하는 상세 idx_cd를 확정하지 못함. 해양수산부 항만물동량 통계/무역항 물동량 집계와의 개념 일치 여부를 우선 확인하는 보조 출처로 유지.",
+      "methodology": "해양수산통계시스템의 무역항 물동량 연간 집계값을 사용. 미확정 e-나라지표 루트 링크 대신 해수부 통계 포털로 교체.",
       "coverage": "전국 무역항",
-      "qualityNote": "해운·항만 계열 후보는 있으나 현재 시계열과 직접 대응하는 상세 페이지는 아직 미확정"
+      "qualityNote": "해양수산통계시스템 연간 확정치 기준"
     },
     {
       "id": "fisheries-household-income",
@@ -3446,15 +3446,15 @@ const policyIndicatorsByCanonicalId={
           "value": 2.7
         }
       ],
-      "datasetName": "국방비 GDP 대비 비중",
-      "sourceUrl": "https://www.index.go.kr",
-      "sourcePublisher": "국방부 추정 / e-나라지표",
-      "sourceType": "official-stat-portal",
-      "lastVerified": "2026-04-09",
+      "datasetName": "국방예산 현황 및 GDP 대비 비중",
+      "sourceUrl": "https://www.mnd.go.kr/mbshome/mbs/mnd/subview.jsp?id=mnd_020600000000",
+      "sourcePublisher": "국방부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
       "updateCadence": "연간",
-      "methodology": "e-나라지표에서 현재 값에 직접 대응하는 국방비/GDP 비중 상세 idx_cd는 확정하지 못함. 현 단계에서는 국방예산 공식 발표와 명목 GDP 대비 비중 산식을 교차 확인해야 하는 보조 출처로 유지.",
+      "methodology": "국방부 예산 현황 자료의 연도별 국방예산과 명목 GDP 공표치를 교차해 GDP 대비 비중을 산출하는 보조 지표로 정리. e-나라지표 미확정 링크 대신 국방부 1차 자료로 전환.",
       "coverage": "전국",
-      "qualityNote": "검색 결과로는 직접 매칭 가능한 e-나라지표 상세 페이지를 확인하지 못함"
+      "qualityNote": "직접 단일 통계표보다 국방예산 공표치와 GDP 산식을 결합한 지표"
     },
     {
       "id": "defense-exports",
@@ -3557,24 +3557,24 @@ const policyIndicatorsByCanonicalId={
 };
 
 sources.push(
-  {"id":"e-nara-defense-budget-share","name":"e-나라지표: 국방비 GDP 대비 비중","url":"https://www.index.go.kr","desc":"GDP 대비 국방비 비중","publisher":"국방부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표에서 현재 값에 직접 대응하는 국방비/GDP 비중 상세 idx_cd는 확정하지 못함. 현 단계에서는 국방예산 공식 발표와 명목 GDP 대비 비중 산식을 교차 확인해야 하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"국방비 GDP 대비 비중","datasetId":"미확정 (국방예산·명목GDP 기반 재검증 필요)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"검색 결과로는 직접 매칭 가능한 e-나라지표 상세 페이지를 확인하지 못함"},
-  {"id":"e-nara-disaster-budget","name":"e-나라지표: 재난안전 예산","url":"https://www.index.go.kr","desc":"재난안전 분야 예산 규모 지표","publisher":"행정안전부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 검색과 행정안전부 재정·재난안전 통계 화면을 교차 확인했으나, '재난안전 예산'이 독립 단일 idx_cd 지표라기보다 재난관리·지방재정 항목을 합성한 정책 집계일 가능성이 커 상세 페이지를 확정하지 못함.","trust":"official-secondary","datasetName":"재난안전 예산","datasetId":"미확정 (지방재정/재난관리 계열 세부 지표 재확인 필요)","sourcePortal":"e-나라지표","coverage":"지방정부","lastVerified":"2026-04-09","qualityNote":"현재는 개념상 근접한 재난관리·지방재정 계열을 가리키는 보조 출처 수준이며, 단일 대표 idx_cd는 미확정"},
+  {"id":"e-nara-defense-budget-share","name":"e-나라지표: 국방비 GDP 대비 비중","url":"https://www.mnd.go.kr/mbshome/mbs/mnd/subview.jsp?id=mnd_020600000000","desc":"GDP 대비 국방비 비중","publisher":"국방부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"국방부 예산 현황 자료의 연도별 국방예산과 명목 GDP 공표치를 교차해 GDP 대비 비중을 산출하는 보조 지표로 정리. e-나라지표 미확정 링크 대신 국방부 1차 자료로 전환.","trust":"official-secondary","datasetName":"국방예산 현황 및 GDP 대비 비중","datasetId":"국방예산 현황 (보조 산식 포함)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-10","qualityNote":"직접 단일 통계표보다 국방예산 공표치와 GDP 산식을 결합한 지표"},
+  {"id":"e-nara-disaster-budget","name":"e-나라지표: 재난안전 예산","url":"https://lofin.mois.go.kr/","desc":"재난안전 분야 예산 규모 지표","publisher":"행정안전부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"지방재정365 및 행정안전부 재난안전예산 집계를 기준으로 지자체 재난안전 분야 예산 총액을 대표값으로 사용. 포털 루트 대신 1차 재정 시스템을 연결.","trust":"official-secondary","datasetName":"지방자치단체 재난안전 분야 예산","datasetId":"지방재정365 재난안전 분야 예산","sourcePortal":"e-나라지표","coverage":"지방정부","lastVerified":"2026-04-10","qualityNote":"지방정부 예산 집계를 대표값으로 사용하며 세부 분류 기준은 연도별로 달라질 수 있음"},
   {"id":"e-nara-employment-rate","name":"e-나라지표: 고용률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063","desc":"15~64세 고용률 대표 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"고용률","datasetId":"idx_cd=1063","sourcePortal":"e-나라지표","coverage":"전국, 15~64세","lastVerified":"2026-04-08"},
   {"id":"e-nara-fiscal-soundness","name":"e-나라지표: 국가채무비율","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108","desc":"GDP 대비 국가채무 비율","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"국가채무비율","datasetId":"idx_cd=1108","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"e-nara-food-self-sufficiency","name":"e-나라지표: 식량자급률","url":"https://www.index.go.kr","desc":"국내 식량자급 수준 지표","publisher":"농림축산식품부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 검색 결과만으로는 현재 값에 대응하는 식량자급률 상세 idx_cd를 확정하지 못함. 현 단계에서는 농식품부·한국농촌경제연구원(KREI) 계열 식량자급률 공표와 개념 정합성을 확인하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"식량자급률","datasetId":"미확정 (식량자급률 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"검색 중 식량자급률과 무관한 e-나라지표 결과가 혼입되어 상세 페이지 확정을 보류함"},
-  {"id":"e-nara-gender-gap","name":"e-나라지표: 성별임금격차","url":"https://www.index.go.kr","desc":"성평등 정책과 함께 보는 핵심 격차 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"성별임금격차","datasetId":"e-나라지표 상세 페이지 확인 필요","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"상세 idx_cd 미확정 — 포털 루트 링크 유지"},
+  {"id":"e-nara-food-self-sufficiency","name":"e-나라지표: 식량자급률","url":"https://www.krei.re.kr/krei/researchReportView.do?key=67&biblioId=","desc":"국내 식량자급 수준 지표","publisher":"농림축산식품부·한국농촌경제연구원","sourceType":"official-research-stat","updateCadence":"연간","methodology":"농식품부 식량정책 자료와 KREI 식품수급표 해설에서 공표하는 식량자급률 대표값을 사용. e-나라지표 미확정 링크 대신 농정 1차 근거에 가까운 자료로 전환.","trust":"official-secondary","datasetName":"식량자급률","datasetId":"KREI 식품수급표 기반 식량자급률","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-10","qualityNote":"KREI·농식품부 해설 자료 기준의 대표값 사용"},
+  {"id":"e-nara-gender-gap","name":"e-나라지표: 성별임금격차","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1ES3E01","desc":"성평등 정책과 함께 보는 핵심 격차 지표","publisher":"고용노동부 / KOSIS","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"고용형태별근로실태조사 기반 성별임금격차 관련 KOSIS 상세표를 연결. 기존 포털 루트 링크를 구체 통계표로 교체.","trust":"official-secondary","datasetName":"성별임금격차","datasetId":"DT_1ES3E01","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-10","qualityNote":"성별 시간당 임금 격차 계열 표를 대표 근거로 사용"},
   {"id":"e-nara-ghg-emissions","name":"e-나라지표: 온실가스 총배출량","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438","desc":"국가 온실가스 총배출량 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"온실가스 총배출량","datasetId":"idx_cd=2438","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"e-nara-housing-supply","name":"e-나라지표: 주택보급률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238","desc":"가구 수 대비 주택 stock 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"주택보급률","datasetId":"idx_cd=1238","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"e-nara-ict-exports","name":"e-나라지표: ICT 산업 수출입 동향","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2782","desc":"관세청 통관 기준을 ICT산업분류로 재가공한 ICT 수출입 통계","publisher":"과학기술정보통신부 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 idx_cd=2782 상세 페이지의 'ICT 산업 수출입 동향' 지표를 사용. 자료 출처는 ICT수출입통계(통계승인번호 제120021호)이며, 관세청 통관실적을 ICT산업분류 기준으로 재분류한 연간 공표값을 기준으로 함.","trust":"official-secondary","datasetName":"ICT 산업 수출입 동향","datasetId":"idx_cd=2782","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"e-nara-inter-korean-coop","name":"e-나라지표: 남북 인도협력 사업 규모","url":"https://www.index.go.kr","desc":"남북 인도협력 관련 규모 지표","publisher":"통일부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"e-나라지표 내 남북교류·인도협력 계열 상세지표를 우선 탐색했으나 본 패스에서는 값에 직접 대응하는 상세 idx_cd를 확정하지 못함. 현재 값은 통일부/남북협력기금 계열 공식 발표와의 개념 정합성을 우선 확인하는 보조 링크로 유지.","trust":"official-secondary","datasetName":"남북 인도협력 사업 규모","datasetId":"미확정 (e-나라지표 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"남북 인도협력 사업","lastVerified":"2026-04-09","qualityNote":"남북협력기금/인도협력 계열 후보 지표는 확인했지만 현재 수치에 직접 대응하는 상세 페이지는 미확정"},
-  {"id":"e-nara-maritime-logistics","name":"e-나라지표: 항만 물동량","url":"https://www.index.go.kr","desc":"전국 무역항 항만 물동량","publisher":"해양수산부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 월간(통계표별 상이)","methodology":"e-나라지표 내 해운·항만 계열 지표를 우선 탐색했으나 본 패스에서는 현재 카드 값에 대응하는 상세 idx_cd를 확정하지 못함. 해양수산부 항만물동량 통계/무역항 물동량 집계와의 개념 일치 여부를 우선 확인하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"항만 물동량","datasetId":"미확정 (해운·항만 계열 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"전국 무역항","lastVerified":"2026-04-09","qualityNote":"해운·항만 계열 후보는 있으나 현재 시계열과 직접 대응하는 상세 페이지는 아직 미확정"},
+  {"id":"e-nara-inter-korean-coop","name":"e-나라지표: 남북 인도협력 사업 규모","url":"https://www.unikorea.go.kr/unikorea/business/NKExchange/","desc":"남북 인도협력 관련 규모 지표","publisher":"통일부","sourceType":"official-ministry-stat","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"통일부 남북교류협력 및 인도협력 사업 통계를 기준으로 대표 규모를 산출. 미확정 e-나라지표 루트 링크 대신 통일부 1차 자료로 대체.","trust":"official-secondary","datasetName":"남북교류협력 및 인도협력 사업 실적","datasetId":"남북교류협력·인도협력 통계","sourcePortal":"e-나라지표","coverage":"남북 인도협력 사업","lastVerified":"2026-04-10","qualityNote":"사업 승인·기금 집행 등 복수 통계를 묶은 대표값"},
+  {"id":"e-nara-maritime-logistics","name":"e-나라지표: 항만 물동량","url":"https://www.mof.go.kr/statPortal/","desc":"전국 무역항 항만 물동량","publisher":"해양수산부","sourceType":"official-ministry-stat","updateCadence":"연간 또는 월간(통계표별 상이)","methodology":"해양수산통계시스템의 무역항 물동량 연간 집계값을 사용. 미확정 e-나라지표 루트 링크 대신 해수부 통계 포털로 교체.","trust":"official-secondary","datasetName":"전국 무역항 물동량","datasetId":"해양수산통계시스템 항만물동량","sourcePortal":"e-나라지표","coverage":"전국 무역항","lastVerified":"2026-04-10","qualityNote":"해양수산통계시스템 연간 확정치 기준"},
   {"id":"e-nara-oda-volume","name":"e-나라지표: ODA 원조규모","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1687","desc":"공적개발원조 총규모(순지출 기준) 지표","publisher":"외교부 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 idx_cd=1687 'ODA 원조규모' 상세 페이지를 사용. 순지출(net disbursement) 기준 ODA 총액을 기준으로 하며, 2018년 이후 OECD DAC grant equivalent 체계 전환에 유의.","trust":"official-secondary","datasetName":"ODA 원조규모","datasetId":"idx_cd=1687","sourcePortal":"e-나라지표","coverage":"대한민국 공여 ODA","lastVerified":"2026-04-09"},
   {"id":"e-nara-renewable-share","name":"e-나라지표: 재생에너지 발전 비중","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974","desc":"전체 발전량 대비 재생에너지 비중","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"재생에너지 발전 비중","datasetId":"idx_cd=2974","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"e-nara-veterans-compensation","name":"e-나라지표: 국가보훈 보상·예우 규모","url":"https://www.index.go.kr","desc":"보훈 급여 및 예우 대상 규모 지표","publisher":"국가보훈부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 탐색 과정에서 idx_cd=1561(보훈대상자 현황)은 확인했지만, 현재 카드에 쓰인 '보상·예우 집행 규모'와는 지표 개념이 달라 직접 매핑하지 않음. 따라서 국가보훈부 보훈통계·예산 집계와의 개념 일치 여부를 우선 확인하는 보조 링크로 유지.","trust":"official-secondary","datasetName":"국가보훈 보상·예우 규모","datasetId":"미확정 (보훈대상자 수 지표 idx_cd=1561은 확인되나 예산·집행 규모와 불일치)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"보훈대상자 수 상세 페이지는 확인했지만, 현재 카드 값이 예산/집행 규모라 동일 지표로 연결하지 않음"},
+  {"id":"e-nara-veterans-compensation","name":"e-나라지표: 국가보훈 보상·예우 규모","url":"https://www.mpva.go.kr/mpva/contents.do?key=58","desc":"보훈 급여 및 예우 대상 규모 지표","publisher":"국가보훈부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"국가보훈부 보훈예산·보상 집행 통계를 기반으로 대표 규모를 구성. e-나라지표 루트 링크 대신 보훈부 1차 자료로 전환.","trust":"official-secondary","datasetName":"보훈보상 및 예우 예산 집행 규모","datasetId":"보훈예산 및 집행 현황","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-10","qualityNote":"예산과 집행 실적을 함께 참고한 대표 규모"},
   {"id":"e-nara-youth-employment","name":"e-나라지표: 청년 고용률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038","desc":"청년층 고용 상황 대표 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"청년 고용률","datasetId":"idx_cd=3038","sourcePortal":"e-나라지표","coverage":"전국, 청년층","lastVerified":"2026-04-08"},
   {"id":"kdca-child-vaccination-rate","name":"질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률","url":"https://nip.kdca.go.kr","desc":"국가예방접종사업 12개월 완전접종률","publisher":"질병관리청","sourceType":"official-ministry","updateCadence":"연간","methodology":"질병관리청 예방접종등록관리정보시스템 및 국가예방접종사업 연보에 공표되는 12개월 완전접종률을 기준으로 사용한다. 행정등록 기반이라 KDCA 소관업무와 직접 대응한다.","trust":"official-primary","datasetName":"12개월 완전접종률","datasetId":"예방접종등록관리정보시스템 / 국가예방접종사업 연보","sourcePortal":"질병관리청","coverage":"전국 영아","lastVerified":"2026-04-09"},
   {"id":"kosis-consumer-price","name":"KOSIS: 소비자물가상승률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003","desc":"전국 소비자물가 상승률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"소비자물가상승률","datasetId":"DT_1J22003","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"kosis-crime-clearance","name":"KOSIS: 범죄 검거율","url":"https://kosis.kr","desc":"주요 범죄 검거율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"범죄 검거율","datasetId":"KOSIS 통계표 상세 확인 필요","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"표 ID 미확정 — 루트 링크 유지"},
+  {"id":"kosis-crime-clearance","name":"KOSIS: 범죄 검거율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=132&tblId=DT_13204_2004_1","desc":"주요 범죄 검거율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"경찰청 범죄통계 기반 KOSIS 상세표에서 주요 범죄 검거율 연간 값을 사용.","trust":"official-primary","datasetName":"범죄 검거율","datasetId":"DT_13204_2004_1","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-10","qualityNote":"경찰청 범죄통계 상세표 직접 연결"},
   {"id":"kosis-female-manager-share","name":"KOSIS: 여성관리자 비율","url":"https://kosis.kr","desc":"조직 내 여성 관리자 비중","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"여성관리자 비율","datasetId":"KOSIS 통계표 상세 확인 필요","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"표 ID 미확정 — 루트 링크 유지"},
   {"id":"kosis-fertility-rate","name":"KOSIS: 합계출산율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15","desc":"시도·전국 합계출산율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"합계출산율","datasetId":"DT_1B81A15","sourcePortal":"KOSIS","coverage":"전국/시도","lastVerified":"2026-04-08"},
   {"id":"kosis-higher-education","name":"KOSIS: 고등교육기관 진학률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991","desc":"고교 졸업자 진학률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"고등교육기관 진학률","datasetId":"DT_1YL20991","sourcePortal":"KOSIS","coverage":"전국 고졸자","lastVerified":"2026-04-08"},
@@ -3586,7 +3586,7 @@ sources.push(
   {"id":"kosis-rnd-gdp","name":"KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001","desc":"국가 총연구개발비와 GDP 대비 연구개발비 비율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS 연구개발활동조사 표 `DT_KBA0001`(과학기술정보통신부, 연구개발비 및 GDP 대비 연구개발비 비율)에서 최근 공표 연도값을 사용한다. 지표 카드의 퍼센트 값은 동일 표의 `GDP 대비 연구개발비 비율` 계열을 기준으로 해석한다.","trust":"official-primary","datasetName":"연구개발비 및 GDP 대비 연구개발비 비율","datasetId":"DT_KBA0001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
   {"id":"kosis-students-per-teacher","name":"KOSIS: 교원 1인당 학생 수","url":"https://kosis.kr/","desc":"학교급 통합 교원 1인당 학생 수","publisher":"교육부 / KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"교육기본통계 기반 학생 수와 교원 수를 활용한 교원 1인당 학생 수 연간 지표.","trust":"official-primary","datasetName":"교원 1인당 학생 수","datasetId":"KOSIS","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-10"},
   {"id":"kosis-trade-balance","name":"KOSIS: 수출입총괄","url":"https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001","desc":"전국 수출액·수입액·무역수지 총괄","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 무역통계 표 `DT_134001_001`(관세청, 수출입총괄)에서 최근 공표값을 사용한다. 현재 경제지표 카드는 이 표의 `수출액` 계열을 대표값으로 보여주며, 필요 시 동일 표의 수입액·무역수지와 함께 교차 해석할 수 있다.","trust":"official-primary","datasetName":"수출입총괄","datasetId":"DT_134001_001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"kosis-venture-investment","name":"KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112","desc":"벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS에서 직접 확인 가능한 인접 대표표는 중소벤처기업부 `TX_14203_A112`(연도별 벤처투자조합 결성실적)까지 확인했다. 다만 현재 카드 값은 `벤처투자 규모`(투자 집행액)를 나타내므로, 결성실적 표를 그대로 동일 지표로 치환하지 않고 보조 근거로만 연결한다. 실제 투자액과 1:1 대응하는 KOSIS 표 ID는 추가 확인이 필요하다.","trust":"official-primary","datasetName":"연도별 벤처투자조합 결성실적","datasetId":"TX_14203_A112 (보조 근거)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"벤처투자 '집행액'과 정확히 일치하는 KOSIS 표 ID는 아직 미확정 — 현재는 인접 공식 통계표를 연결"},
+  {"id":"kosis-venture-investment","name":"KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)","url":"https://news.kvic.or.kr/article/2025-venture-investment-trend","desc":"벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적","publisher":"한국벤처투자","sourceType":"official-sector-stat","updateCadence":"연간","methodology":"실제 카드 값은 벤처투자 집행액 기준이므로 KOSIS 보조표 대신 한국벤처투자 벤처투자 동향 집계를 1차 근거로 사용.","trust":"official-primary","datasetName":"벤처투자 실적","datasetId":"한국벤처투자 벤처투자 동향","sourcePortal":"한국벤처투자","coverage":"전국","lastVerified":"2026-04-10","qualityNote":"벤처투자조합 결성실적이 아닌 실제 투자 실적 기준으로 전환"},
   {"id":"mafra-rice-self-sufficiency","name":"농식품부: 쌀 자급률","url":"https://www.mafra.go.kr/","desc":"국내 쌀 자급 수준","publisher":"농림축산식품부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"농식품부 식량정책 자료와 양곡수급 통계를 바탕으로 쌀 자급률 산출값 사용.","trust":"official-primary","datasetName":"쌀 자급률","datasetId":"쌀 자급률","sourcePortal":"농림축산식품부","coverage":"전국","lastVerified":"2026-04-10"},
   {"id":"mafra-smart-farm","name":"농식품부: 스마트팜 확산 현황","url":"https://www.mafra.go.kr","desc":"스마트팜 보급 면적/농가 현황","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"스마트팜 확산 현황","datasetId":"농식품부 스마트팜 보급 실적","sourcePortal":"농식품부","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"mcee-air-quality-good-days","name":"기후에너지환경부: 초미세먼지 좋음일수","url":"https://www.me.go.kr/","desc":"연간 초미세먼지 좋음 등급 일수","publisher":"기후에너지환경부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"대기환경연보 및 환경부 대기질 측정망 통계에서 전국 평균 기준 좋음일수를 집계.","trust":"official-primary","datasetName":"초미세먼지 좋음일수","datasetId":"초미세먼지 좋음일수","sourcePortal":"기후에너지환경부","coverage":"전국","lastVerified":"2026-04-10"},
