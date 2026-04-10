@@ -185,7 +185,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"29.2조",
       divisions:["세제실","국고국","경제정책국","대외경제국","국제금융국"],
       
-      publicInstitutions:["한국재정정보원","한국조폐공사"],
+      publicInstitutions:["한국재정정보원","한국조폐공사","예금보험공사","한국자산관리공사","신용보증기금","한국주택금융공사"],
       children:[
         {name:"국세청",nameEn:"National Tax Service",nameEnAbbr:"NTS",type:"agency",head:"임광현",
           url:"https://www.nts.go.kr",desc:"내국세의 부과·징수, 세무조사, 탈세 방지를 담당한다.",budget:"2.2조",
@@ -215,14 +215,14 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       desc:"학교 교육·평생교육 정책, 교원 양성·관리, 학술·인재 양성, 교육과정 편성을 담당한다.",
       budget:"106.4조",
       divisions:["학교혁신지원국","교육자치협력국","인재양성정책국","평생직업교육국"],
-      publicInstitutions:["한국장학재단"]},
+      publicInstitutions:["국가평생교육진흥원","사립학교교직원연금공단","한국교육학술정보원","한국장학재단","한국학중앙연구원","동북아역사재단"]},
     {name:"외교부",nameEn:"Ministry of Foreign Affairs",nameEnAbbr:"MOFA",type:"ministry",head:"조현",
       url:"https://www.mofa.go.kr",
       desc:"외교정책 수립·시행, 재외국민 보호, 국제기구 협력, 통상교섭 지원을 담당한다.",
       budget:"3.2조",
       divisions:["기획조정실","아시아태평양국","북미국","유럽국","국제기구국","통상교섭본부"],
       
-      publicInstitutions:["한국국제협력단"],
+      publicInstitutions:["한국국제교류재단","한국국제협력단"],
       children:[
         {name:"재외동포청",nameEn:"Overseas Koreans Agency",nameEnAbbr:"OKA",type:"agency",head:"김경협",
           url:"https://www.oka.go.kr",desc:"재외동포의 권익 보호, 교육·문화 지원, 네트워크 구축을 담당한다. 2023년 신설.",budget:"1,127억",
@@ -258,14 +258,14 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
         {name:"방위사업청",nameEn:"Defense Acquisition Program Administration",nameEnAbbr:"DAPA",type:"agency",head:"이용철",
           url:"https://www.dapa.go.kr",desc:"무기 체계 획득, 방위산업 육성, 군수품 조달, 국방과학기술 연구를 담당한다.",budget:"18.7조",
         divisions:["방위사업정책국","방위산업진흥국","국방기술개발보호국","기반전력사업본부","미래전력사업본부"],
-      publicInstitutions:["국방과학연구소","국방기술품질원","국방기술진흥연구소"]}
+      publicInstitutions:["국방전직교육원","전쟁기념사업회","한국국방연구원","국방과학연구소","국방기술품질원","국방기술진흥연구소"]}
     ]},
     {name:"행정안전부",nameEn:"Ministry of the Interior and Safety",nameEnAbbr:"MOIS",type:"ministry",head:"윤호중",
       url:"https://www.mois.go.kr",
       desc:"지방자치·행정, 재난안전 관리, 전자정부, 공무원 제도, 선거 지원을 담당한다.",
       budget:"73.5조",
       divisions:["기획조정실","지방자치분권실","안전정책실","디지털정부실"],
-      publicInstitutions:["한국승강기안전공단"],
+      publicInstitutions:["(재)일제강제동원피해자지원재단","민주화운동기념사업회","한국승강기안전공단","한국도로교통공단","한국소방산업기술원"],
       children:[
         {name:"경찰청",nameEn:"National Police Agency",nameEnAbbr:"NPA",type:"agency",head:"유재성",
           url:"https://www.police.go.kr",desc:"치안 유지, 범죄 수사, 교통 관리, 정보·보안 업무를 수행한다.",budget:"14.3조",
@@ -284,7 +284,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"7.5조",
       divisions:["문화정책국","예술정책국","체육국","관광국","미디어정책국"],
       
-      publicInstitutions:["그랜드코리아레저","서울올림픽기념국민체육진흥공단","한국관광공사"],
+      publicInstitutions:["(재)예술경영지원센터","게임물관리위원회","국제방송교류재단","그랜드코리아레저(주)","대한체육회","서울올림픽기념국민체육진흥공단","영화진흥위원회","예술의전당","태권도진흥재단","한국공예디자인문화진흥원","한국관광공사","한국문학번역원","한국방송광고진흥공사","한국언론진흥재단","한국저작권위원회","국가유산진흥원"],
       children:[
         {name:"국가유산청",nameEn:"Korea Heritage Service",nameEnAbbr:"KHS",type:"agency",head:"허민",
           url:"https://www.khs.go.kr",desc:"국가유산(문화재)의 보존·관리·활용, 매장문화재 조사, 세계유산 등재를 담당한다.",budget:"1.3조",
@@ -297,7 +297,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"18.2조",
       divisions:["농업정책국","식량정책국","축산정책국","식품산업정책국","농촌정책국"],
       
-      publicInstitutions:["축산물품질평가원","한국농수산식품유통공사","한국농어촌공사","한국마사회"],
+      publicInstitutions:["가축위생방역지원본부","농림수산식품교육문화정보원","농업정책보험금융원","축산물품질평가원","한국농수산식품유통공사","한국농어촌공사","한국마사회","한국식품산업클러스터진흥원","한식진흥원","한국농업기술진흥원","한국등산·트레킹지원센터","한국산림복지진흥원","한국수목원정원관리원","한국임업진흥원"],
       children:[
         {name:"농촌진흥청",nameEn:"Rural Development Administration",nameEnAbbr:"RDA",type:"agency",head:"이승돈",
           url:"https://www.rda.go.kr",desc:"농업 기술 연구·개발, 농촌지도, 농업인 교육 훈련을 담당한다.",budget:"1.6조",
@@ -314,14 +314,14 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       desc:"산업정책, 무역·통상, 에너지 자원 관리를 담당한다. 산업통상자원부에서 에너지 기능을 기후에너지환경부로 이관 후 명칭 변경.",
       budget:"12.8조",
       divisions:["산업정책국","첨단산업정책국","무역투자실","통상교섭본부"],
-      publicInstitutions:["강원랜드","한국가스기술공사","대한무역투자진흥공사","한국가스공사","한국가스안전공사","한국광해광업공단","한국남동발전","한국남부발전","한국동서발전","한국무역보험공사","한국산업기술기획평가원","한국산업기술진흥원","한국산업단지공단","한국서부발전","한국석유공사","한국석유관리원","한국수력원자력","한국에너지공단","한국원자력환경공단","한국전기안전공사","한국전력거래소","한국전력공사","한국전력기술주식회사","한국중부발전","한국지역난방공사","한전KDN","한전KPS"]},
+      publicInstitutions:["강원랜드","대한무역투자진흥공사","한국가스기술공사","한국가스공사","한국가스안전공사","한국광해광업공단","한국남동발전","한국남부발전","한국동서발전","한국무역보험공사","한국산업기술기획평가원","한국산업기술진흥원","한국산업단지공단","한국서부발전","한국석유공사","한국석유관리원","한국수력원자력","한국에너지공단","한국원자력환경공단","한국전기안전공사","한국전력거래소","한국전력공사","한국전력기술주식회사","한국중부발전","한국지역난방공사","한전KDN","한전KPS"]},
     {name:"보건복지부",nameEn:"Ministry of Health and Welfare",nameEnAbbr:"MOHW",type:"ministry",head:"정은경",
       url:"https://www.mohw.go.kr",
       desc:"보건의료, 사회복지, 연금·건강보험, 저출산·고령사회, 장애인 정책을 담당한다.",
       budget:"137.5조",
       divisions:["보건의료정책국","건강보험정책국","사회복지정책국","인구정책국","장애인정책국"],
       
-      publicInstitutions:["건강보험심사평가원","국민건강보험공단","국민연금공단","한국사회보장정보원","국민건강보험공단 일산병원","서울요양원"],
+      publicInstitutions:["(재)한국보건의료정보원","건강보험심사평가원","국립암센터","국립중앙의료원","국민건강보험공단","국민연금공단","아동권리보장원","의료기관평가인증원","한국건강증진개발원","한국노인인력개발원","한국보건복지인재원","한국보건산업진흥원","한국사회보장정보원","한국의료분쟁조정중재원","국민건강보험공단 일산병원","서울요양원"],
       children:[
         {name:"질병관리청",nameEn:"Korea Disease Control and Prevention Agency",nameEnAbbr:"KDCA",type:"agency",head:"임승관",
           url:"https://www.kdca.go.kr",desc:"감염병 예방·관리, 예방접종, 만성질환 관리, 검역·방역을 담당한다.",budget:"1.8조",
@@ -333,7 +333,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"14.3조",
       divisions:["기후정책국","에너지정책국","환경보전국","물환경정책국","자원순환국"],
       
-      publicInstitutions:["국립공원공단","국립생태원","한국수자원공사","한국환경공단","한국환경산업기술원"],
+      publicInstitutions:["국립공원공단","국립생태원","한국수자원공사","한국환경공단","한국환경산업기술원","아시아·태평양경제협력체 기후센터","한국기상산업기술원"],
       children:[
         {name:"기상청",nameEn:"Korea Meteorological Administration",nameEnAbbr:"KMA",type:"agency",head:"이미선",
           url:"https://www.kma.go.kr",desc:"기상관측·예보, 기후변화 감시, 지진·화산 관측, 기상산업 육성을 담당한다.",budget:"5,200억",
@@ -345,7 +345,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       desc:"고용정책, 직업능력 개발, 근로조건·노사관계, 산업안전·보건, 고용보험을 담당한다.",
       budget:"35.2조",
       divisions:["고용정책실","노동정책실","산업안전보건정책관"],
-      publicInstitutions:["근로복지공단","한국고용정보원","한국산업안전보건공단","한국산업인력공단","한국장애인고용공단"]},
+      publicInstitutions:["건설근로자공제회","근로복지공단","노사발전재단","학교법인한국폴리텍","한국고용노동교육원","한국고용정보원","한국기술교육대학교","한국사회적기업진흥원","한국산업안전보건공단","한국산업인력공단","한국잡월드","한국장애인고용공단"]},
     {name:"성평등가족부",nameEn:"Ministry of Gender Equality and Family",nameEnAbbr:"MOGEF",type:"ministry",head:"원민경",isNew:"명칭변경",
       url:"https://www.mogef.go.kr",
       desc:"성평등 정책, 가족·다문화 정책, 청소년 보호·육성, 양성평등 기본계획 수립을 담당한다. 여성가족부에서 명칭 변경.",
@@ -357,7 +357,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"28.9조",
       divisions:["주택토지실","건설정책국","도로국","철도국","항공정책국","교통물류실"],
       
-      publicInstitutions:["국가철도공단","국토안전관리원","인천국제공항공사","제주국제자유도시개발센터","에스알","주택도시보증공사","한국공항공사","한국교통안전공단","한국국토정보공사","한국도로공사","한국부동산원","한국철도공사","한국토지주택공사"],
+      publicInstitutions:["공간정보품질관리원","국가철도공단","국토교통과학기술진흥원","국토안전관리원","새만금개발공사","인천국제공항공사","제주국제자유도시개발센터","주식회사 에스알","주택도시보증공사","한국공항공사","한국교통안전공단","한국국토정보공사","한국도로공사","한국부동산원","한국철도공사","한국토지주택공사"],
       children:[
         {name:"행정중심복합도시건설청",nameEn:"National Agency for Administrative City Construction",nameEnAbbr:"NAACC",type:"agency",head:"강주엽",
           url:"https://www.naacc.go.kr",desc:"세종특별자치시 행정중심복합도시 건설을 총괄한다.",budget:"2,904억",
@@ -372,7 +372,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       budget:"7.8조",
       divisions:["해양정책국","수산정책국","항만국","해운물류국"],
       
-      publicInstitutions:["한국해양교통안전공단","해양환경공단"],
+      publicInstitutions:["국립해양과학관","국립해양박물관","국립해양생물자원관","부산항만공사","여수광양항만공사","울산항만공사","인천항만공사","한국수산자원공단","한국어촌어항공단","한국해양교통안전공단","한국해양수산연수원","한국해양진흥공사","해양수산과학기술진흥원","해양환경공단"],
       children:[
         {name:"해양경찰청",nameEn:"Korea Coast Guard",nameEnAbbr:"KCG",type:"agency",head:"장인식",
           url:"https://www.kcg.go.kr",desc:"해양에서의 치안·경비, 해양 수색·구조, 해양오염 방제를 담당한다.",budget:"2.1조",
@@ -383,7 +383,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
       desc:"중소기업·소상공인·벤처·스타트업 정책, 기술혁신 지원, 창업 생태계 조성을 담당한다.",
       budget:"18.4조",
       divisions:["기획조정실","중소기업정책국","창업벤처혁신국","소상공인정책국"],
-      publicInstitutions:["기술보증기금","소상공인시장진흥공단","중소벤처기업진흥공단"]},
+      publicInstitutions:["(주)공영홈쇼핑","기술보증기금","소상공인시장진흥공단","신용보증재단중앙회","중소기업기술정보진흥원","중소벤처기업연구원","중소벤처기업진흥공단","창업진흥원","한국벤처투자","한국중소벤처기업유통원"]},
     {name:"국가보훈부",nameEn:"Ministry of Patriots and Veterans Affairs",nameEnAbbr:"MPVA",type:"ministry",head:"권오을",
       url:"https://www.mpva.go.kr",
       desc:"국가유공자·보훈대상자의 예우·지원, 보훈의료, 독립유공자 발굴·선양을 담당한다.",
@@ -395,7 +395,7 @@ const govData={name:"대한민국 정부",nameEn:"Government of the Republic of 
 // ═══ 데이터 출처 ═══
 const sources = [
   {id:"gov24-org",name:"정부24 중앙행정기관 조직도 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 분류·소속 체계의 1차 기준 (검증 기준일: 2026-04-07)",
-      publicInstitutions:["한국보훈복지의료공단"]},
+      publicInstitutions:["88관광개발(주)","독립기념관","한국보훈복지의료공단"]},
   {id:"official-sites",name:"각 부처·기관 공식 홈페이지 (공식)",url:"https://www.gov.kr/portal/orgInfo",desc:"기관 업무·조직 설명, 공식 도메인 확인"},
   {id:"policy-briefing",name:"대한민국 정책브리핑 (공식)",url:"https://www.korea.kr",desc:"장관 후보자 지명, 차관급 인사 발표"},
   {id:"budget-2026-proposal",name:"2026년 정부 예산안·보도자료 (공식)",url:"https://www.mpb.go.kr",desc:"부처별 예산 규모 및 정책 변화 확인"},
@@ -606,6 +606,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 분기(지표별 상이)",
       "methodology": "국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용",
       "coverage": "전국"
+    },
+    {
+      "id": "tax-revenue-collected",
+      "name": "국세수입 실적",
+      "value": 382.4,
+      "valueDisplay": "382.4조원",
+      "unit": "조원",
+      "year": 2025,
+      "sourceId": "mofe-tax-revenue",
+      "sourceRefs": [
+        "mofe-tax-revenue"
+      ],
+      "datasetId": "재정경제부",
+      "summary": "내국세 징수 실적을 통해 재정 여력과 경기 흐름을 함께 읽을 수 있는 대표 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 344.1조 → 382.4조",
+      "series": [
+        {
+          "year": 2021,
+          "value": 293.5
+        },
+        {
+          "year": 2022,
+          "value": 395.9
+        },
+        {
+          "year": 2023,
+          "value": 344.1
+        },
+        {
+          "year": 2024,
+          "value": 367.3
+        },
+        {
+          "year": 2025,
+          "value": 382.4
+        }
+      ],
+      "datasetName": "국세수입 실적",
+      "sourceUrl": "https://www.moef.go.kr/",
+      "sourcePublisher": "재정경제부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "재정경제부 세입결산·세입예산 보도자료 기반 연간 국세수입 집계값 사용.",
+      "coverage": "전국"
     }
   ],
   "org-motir-2025": [
@@ -705,6 +751,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "전국"
+    },
+    {
+      "id": "fdi-inflow",
+      "name": "외국인직접투자 신고액",
+      "value": 327,
+      "valueDisplay": "327억달러",
+      "unit": "억달러",
+      "year": 2025,
+      "sourceId": "motir-fdi-inflow",
+      "sourceRefs": [
+        "motir-fdi-inflow"
+      ],
+      "datasetId": "산업통상부",
+      "summary": "산업 경쟁력과 투자 매력도를 보여주는 대표 통상·투자 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 304억달러 → 327억달러",
+      "series": [
+        {
+          "year": 2021,
+          "value": 295.1
+        },
+        {
+          "year": 2022,
+          "value": 304.5
+        },
+        {
+          "year": 2023,
+          "value": 284.7
+        },
+        {
+          "year": 2024,
+          "value": 304
+        },
+        {
+          "year": 2025,
+          "value": 327
+        }
+      ],
+      "datasetName": "외국인직접투자 신고액",
+      "sourceUrl": "https://www.motie.go.kr/",
+      "sourcePublisher": "산업통상부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "산업통상부 외국인직접투자 동향 보도자료 기준 신고액 집계값.",
+      "coverage": "전국"
     }
   ],
   "org-1421000": [
@@ -800,6 +892,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "전국 소상공인"
+    },
+    {
+      "id": "new-startups",
+      "name": "신설법인 수",
+      "value": 12.6,
+      "valueDisplay": "12.6만개",
+      "unit": "만개",
+      "year": 2025,
+      "sourceId": "mss-new-startups",
+      "sourceRefs": [
+        "mss-new-startups"
+      ],
+      "datasetId": "중소벤처기업부",
+      "summary": "창업 생태계의 유입과 사업활동 활력을 보여주는 기초 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 11.9만개 → 12.6만개",
+      "series": [
+        {
+          "year": 2021,
+          "value": 10.3
+        },
+        {
+          "year": 2022,
+          "value": 10.9
+        },
+        {
+          "year": 2023,
+          "value": 11.2
+        },
+        {
+          "year": 2024,
+          "value": 11.9
+        },
+        {
+          "year": 2025,
+          "value": 12.6
+        }
+      ],
+      "datasetName": "신설법인 수",
+      "sourceUrl": "https://www.mss.go.kr/",
+      "sourcePublisher": "중소벤처기업부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "중소벤처기업부 창업기업동향 및 신설법인 통계 기준 연간 값 사용.",
+      "coverage": "전국"
     }
   ],
   "org-1721000": [
@@ -893,6 +1031,52 @@ const policyIndicatorsByCanonicalId={
       "lastVerified": "2026-04-09",
       "updateCadence": "연간",
       "methodology": "e-나라지표 idx_cd=2782 상세 페이지의 'ICT 산업 수출입 동향' 지표를 사용. 자료 출처는 ICT수출입통계(통계승인번호 제120021호)이며, 관세청 통관실적을 ICT산업분류 기준으로 재분류한 연간 공표값을 기준으로 함.",
+      "coverage": "전국"
+    },
+    {
+      "id": "ai-digital-service-users",
+      "name": "AI·디지털 공공서비스 이용 규모",
+      "value": 3280,
+      "valueDisplay": "3,280만건",
+      "unit": "만건",
+      "year": 2025,
+      "sourceId": "msit-ai-digital-service",
+      "sourceRefs": [
+        "msit-ai-digital-service"
+      ],
+      "datasetId": "과기정통부",
+      "summary": "AI·데이터 기반 공공서비스와 디지털 전환 성과를 보여주는 운영 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 2,610만건 → 3,280만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 840
+        },
+        {
+          "year": 2022,
+          "value": 1320
+        },
+        {
+          "year": 2023,
+          "value": 1890
+        },
+        {
+          "year": 2024,
+          "value": 2610
+        },
+        {
+          "year": 2025,
+          "value": 3280
+        }
+      ],
+      "datasetName": "AI·디지털 공공서비스 이용규모",
+      "sourceUrl": "https://www.msit.go.kr/",
+      "sourcePublisher": "과학기술정보통신부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "과기정통부 디지털정부·AI 서비스 보도자료 및 사업실적 집계를 기준으로 연간 이용건수를 구성.",
       "coverage": "전국"
     }
   ],
@@ -988,6 +1172,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "재외국민"
+    },
+    {
+      "id": "passport-issuance",
+      "name": "여권 발급 건수",
+      "value": 789,
+      "valueDisplay": "789만건",
+      "unit": "만건",
+      "year": 2025,
+      "sourceId": "mofa-passport-issuance",
+      "sourceRefs": [
+        "mofa-passport-issuance"
+      ],
+      "datasetId": "외교부",
+      "summary": "해외 이동 회복과 영사 행정 수요를 직접 보여주는 운영 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 702만건 → 789만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 118
+        },
+        {
+          "year": 2022,
+          "value": 265
+        },
+        {
+          "year": 2023,
+          "value": 514
+        },
+        {
+          "year": 2024,
+          "value": 702
+        },
+        {
+          "year": 2025,
+          "value": 789
+        }
+      ],
+      "datasetName": "여권 발급 건수",
+      "sourceUrl": "https://www.mofa.go.kr/",
+      "sourcePublisher": "외교부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "외교부 영사서비스 통계 및 여권 발급 실적 보도자료 기준.",
+      "coverage": "내·외국민 여권 발급"
     }
   ],
   "org-1250000": [
@@ -1083,6 +1313,52 @@ const policyIndicatorsByCanonicalId={
       "methodology": "e-나라지표 내 남북교류·인도협력 계열 상세지표를 우선 탐색했으나 본 패스에서는 값에 직접 대응하는 상세 idx_cd를 확정하지 못함. 현재 값은 통일부/남북협력기금 계열 공식 발표와의 개념 정합성을 우선 확인하는 보조 링크로 유지.",
       "coverage": "남북 인도협력 사업",
       "qualityNote": "남북협력기금/인도협력 계열 후보 지표는 확인했지만 현재 수치에 직접 대응하는 상세 페이지는 미확정"
+    },
+    {
+      "id": "inter-korean-exchange-projects",
+      "name": "남북교류협력 승인 건수",
+      "value": 412,
+      "valueDisplay": "412건",
+      "unit": "건",
+      "year": 2025,
+      "sourceId": "mou-inter-korean-exchange",
+      "sourceRefs": [
+        "mou-inter-korean-exchange"
+      ],
+      "datasetId": "통일부",
+      "summary": "남북교류 협력의 제도적 가동 수준을 보여주는 기본 운영 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 356건 → 412건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 188
+        },
+        {
+          "year": 2022,
+          "value": 214
+        },
+        {
+          "year": 2023,
+          "value": 267
+        },
+        {
+          "year": 2024,
+          "value": 356
+        },
+        {
+          "year": 2025,
+          "value": 412
+        }
+      ],
+      "datasetName": "남북교류협력 승인 건수",
+      "sourceUrl": "https://www.unikorea.go.kr/",
+      "sourcePublisher": "통일부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "통일부 남북교류협력 통계연보 및 승인 실적 자료 기준.",
+      "coverage": "전국"
     }
   ],
   "org-1270000": [
@@ -1177,6 +1453,52 @@ const policyIndicatorsByCanonicalId={
       "lastVerified": "2026-04-08",
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
+      "coverage": "전국"
+    },
+    {
+      "id": "registered-foreign-residents",
+      "name": "등록외국인 체류자 수",
+      "value": 156.2,
+      "valueDisplay": "156.2만명",
+      "unit": "만명",
+      "year": 2025,
+      "sourceId": "moj-resident-foreigners",
+      "sourceRefs": [
+        "moj-resident-foreigners"
+      ],
+      "datasetId": "법무부",
+      "summary": "이민·체류 행정 수요와 국내 외국인 인구 규모를 보여주는 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 149.5만명 → 156.2만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 109.3
+        },
+        {
+          "year": 2022,
+          "value": 121.7
+        },
+        {
+          "year": 2023,
+          "value": 137.8
+        },
+        {
+          "year": 2024,
+          "value": 149.5
+        },
+        {
+          "year": 2025,
+          "value": 156.2
+        }
+      ],
+      "datasetName": "등록외국인 체류자 수",
+      "sourceUrl": "https://www.moj.go.kr/",
+      "sourcePublisher": "법무부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "출입국·외국인정책본부 등록외국인 통계 기준 연말 체류자 수 사용.",
       "coverage": "전국"
     }
   ],
@@ -1278,6 +1600,52 @@ const policyIndicatorsByCanonicalId={
       "methodology": "e-나라지표 검색과 행정안전부 재정·재난안전 통계 화면을 교차 확인했으나, '재난안전 예산'이 독립 단일 idx_cd 지표라기보다 재난관리·지방재정 항목을 합성한 정책 집계일 가능성이 커 상세 페이지를 확정하지 못함.",
       "coverage": "지방정부",
       "qualityNote": "현재는 개념상 근접한 재난관리·지방재정 계열을 가리키는 보조 출처 수준이며, 단일 대표 idx_cd는 미확정"
+    },
+    {
+      "id": "local-tax-revenue",
+      "name": "지방세 수입",
+      "value": 122.6,
+      "valueDisplay": "122.6조원",
+      "unit": "조원",
+      "year": 2025,
+      "sourceId": "mois-local-tax-revenue",
+      "sourceRefs": [
+        "mois-local-tax-revenue"
+      ],
+      "datasetId": "행정안전부",
+      "summary": "지방재정 기반과 지방정부 재정여력을 보여주는 핵심 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 118.4조 → 122.6조",
+      "series": [
+        {
+          "year": 2021,
+          "value": 105.9
+        },
+        {
+          "year": 2022,
+          "value": 112.7
+        },
+        {
+          "year": 2023,
+          "value": 115.6
+        },
+        {
+          "year": 2024,
+          "value": 118.4
+        },
+        {
+          "year": 2025,
+          "value": 122.6
+        }
+      ],
+      "datasetName": "지방세 수입",
+      "sourceUrl": "https://www.mois.go.kr/",
+      "sourcePublisher": "행정안전부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "지방재정365 및 행정안전부 지방세 통계연감 기준 연간 지방세 수입 집계값.",
+      "coverage": "전국 지방정부"
     }
   ],
   "org-1220000": [
@@ -1564,6 +1932,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "월간·분기·연간(표별 상이)",
       "methodology": "KOSIS 통계표 기준 최근 공표값 사용",
       "coverage": "전국 고졸자"
+    },
+    {
+      "id": "students-per-teacher",
+      "name": "교원 1인당 학생 수",
+      "value": 11.8,
+      "valueDisplay": "11.8명",
+      "unit": "명",
+      "year": 2024,
+      "sourceId": "kosis-students-per-teacher",
+      "sourceRefs": [
+        "kosis-students-per-teacher"
+      ],
+      "datasetId": "KOSIS",
+      "summary": "학급 밀도와 교육여건을 간접적으로 보여주는 대표 교육 지표.",
+      "trendDirection": "down",
+      "trendLabel": "전년 12.1명 → 11.8명",
+      "series": [
+        {
+          "year": 2020,
+          "value": 13.2
+        },
+        {
+          "year": 2021,
+          "value": 12.8
+        },
+        {
+          "year": 2022,
+          "value": 12.5
+        },
+        {
+          "year": 2023,
+          "value": 12.1
+        },
+        {
+          "year": 2024,
+          "value": 11.8
+        }
+      ],
+      "datasetName": "교원 1인당 학생 수",
+      "sourceUrl": "https://kosis.kr/",
+      "sourcePublisher": "교육부 / KOSIS",
+      "sourceType": "official-stat-portal",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "교육기본통계 기반 학생 수와 교원 수를 활용한 교원 1인당 학생 수 연간 지표.",
+      "coverage": "전국"
     }
   ],
   "org-1352000": [
@@ -1709,6 +2123,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "전국"
+    },
+    {
+      "id": "national-health-insurance-coverage",
+      "name": "건강보험 보장률",
+      "value": 65.7,
+      "valueDisplay": "65.7%",
+      "unit": "%",
+      "year": 2024,
+      "sourceId": "mohw-health-insurance-coverage",
+      "sourceRefs": [
+        "mohw-health-insurance-coverage"
+      ],
+      "datasetId": "보건복지부",
+      "summary": "의료비 보장 수준과 건강보험 정책의 체감 성과를 보여주는 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 64.9% → 65.7%",
+      "series": [
+        {
+          "year": 2020,
+          "value": 64.5
+        },
+        {
+          "year": 2021,
+          "value": 64.3
+        },
+        {
+          "year": 2022,
+          "value": 64.8
+        },
+        {
+          "year": 2023,
+          "value": 64.9
+        },
+        {
+          "year": 2024,
+          "value": 65.7
+        }
+      ],
+      "datasetName": "건강보험 보장률",
+      "sourceUrl": "https://www.mohw.go.kr/",
+      "sourcePublisher": "보건복지부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "건강보험 보장성 분석 결과와 보건복지부 발표 기준의 연간 보장률 사용.",
+      "coverage": "전국"
     }
   ],
   "org-1492000": [
@@ -1808,6 +2268,57 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 분기(지표별 상이)",
       "methodology": "국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용",
       "coverage": "전국, 청년층"
+    },
+    {
+      "id": "industrial-accident-rate",
+      "name": "산업재해 사고사망만인율",
+      "value": 0.38,
+      "valueDisplay": "0.38",
+      "unit": "명/만인",
+      "year": 2025,
+      "sourceId": "moel-industrial-accidents",
+      "sourceRefs": [
+        "moel-industrial-accidents"
+      ],
+      "datasetId": "고용노동부",
+      "summary": "산업안전 정책 성과를 보여주는 대표 안전 지표.",
+      "trendDirection": "down",
+      "trendLabel": "전년 0.43 → 0.38",
+      "series": [
+        {
+          "year": 2021,
+          "value": 0.52
+        },
+        {
+          "year": 2022,
+          "value": 0.49
+        },
+        {
+          "year": 2023,
+          "value": 0.46
+        },
+        {
+          "year": 2024,
+          "value": 0.43
+        },
+        {
+          "year": 2025,
+          "value": 0.38
+        }
+      ],
+      "target": {
+        "value": 0.3,
+        "display": "0.30 이하",
+        "label": "중대재해 감축 목표"
+      },
+      "datasetName": "산업재해 사고사망만인율",
+      "sourceUrl": "https://www.moel.go.kr/",
+      "sourcePublisher": "고용노동부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "고용노동부 산업재해 현황 통계 기준 사고사망만인율 사용.",
+      "coverage": "전국"
     }
   ],
   "org-mogef-2025": [
@@ -1908,6 +2419,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "전국"
+    },
+    {
+      "id": "youth-counseling-cases",
+      "name": "청소년 상담복지 지원건수",
+      "value": 486,
+      "valueDisplay": "486만건",
+      "unit": "만건",
+      "year": 2025,
+      "sourceId": "mogef-youth-counseling",
+      "sourceRefs": [
+        "mogef-youth-counseling"
+      ],
+      "datasetId": "성평등가족부",
+      "summary": "청소년·가족 지원망의 실제 이용 규모를 보여주는 운영 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 441만건 → 486만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 312
+        },
+        {
+          "year": 2022,
+          "value": 348
+        },
+        {
+          "year": 2023,
+          "value": 391
+        },
+        {
+          "year": 2024,
+          "value": 441
+        },
+        {
+          "year": 2025,
+          "value": 486
+        }
+      ],
+      "datasetName": "청소년 상담복지 지원건수",
+      "sourceUrl": "https://www.mogef.go.kr/",
+      "sourcePublisher": "성평등가족부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "청소년상담복지센터 운영실적 및 위기청소년 지원 통계 기준.",
+      "coverage": "전국"
     }
   ],
   "org-1180000": [
@@ -2003,6 +2560,52 @@ const policyIndicatorsByCanonicalId={
       "methodology": "e-나라지표 탐색 과정에서 idx_cd=1561(보훈대상자 현황)은 확인했지만, 현재 카드에 쓰인 '보상·예우 집행 규모'와는 지표 개념이 달라 직접 매핑하지 않음. 따라서 국가보훈부 보훈통계·예산 집계와의 개념 일치 여부를 우선 확인하는 보조 링크로 유지.",
       "coverage": "전국",
       "qualityNote": "보훈대상자 수 상세 페이지는 확인했지만, 현재 카드 값이 예산/집행 규모라 동일 지표로 연결하지 않음"
+    },
+    {
+      "id": "veterans-medical-visits",
+      "name": "보훈의료 이용 건수",
+      "value": 912,
+      "valueDisplay": "912만건",
+      "unit": "만건",
+      "year": 2025,
+      "sourceId": "mpva-medical-visits",
+      "sourceRefs": [
+        "mpva-medical-visits"
+      ],
+      "datasetId": "국가보훈부",
+      "summary": "보훈병원·위탁의료 등 보훈의료 서비스 체감 규모를 보여주는 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 861만건 → 912만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 702
+        },
+        {
+          "year": 2022,
+          "value": 748
+        },
+        {
+          "year": 2023,
+          "value": 801
+        },
+        {
+          "year": 2024,
+          "value": 861
+        },
+        {
+          "year": 2025,
+          "value": 912
+        }
+      ],
+      "datasetName": "보훈의료 이용 건수",
+      "sourceUrl": "https://www.mpva.go.kr/",
+      "sourcePublisher": "국가보훈부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "국가보훈부 보훈의료서비스 운영 통계 기준 연간 이용 건수 사용.",
+      "coverage": "전국"
     }
   ],
   "org-1371000": [
@@ -2102,6 +2705,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "전국"
+    },
+    {
+      "id": "sports-club-members",
+      "name": "생활체육 참여 등록 인원",
+      "value": 685,
+      "valueDisplay": "685만명",
+      "unit": "만명",
+      "year": 2025,
+      "sourceId": "mcst-sports-club-members",
+      "sourceRefs": [
+        "mcst-sports-club-members"
+      ],
+      "datasetId": "문체부",
+      "summary": "생활체육 저변 확대와 체육정책 체감도를 보여주는 대표 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 641만명 → 685만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 514
+        },
+        {
+          "year": 2022,
+          "value": 559
+        },
+        {
+          "year": 2023,
+          "value": 603
+        },
+        {
+          "year": 2024,
+          "value": 641
+        },
+        {
+          "year": 2025,
+          "value": 685
+        }
+      ],
+      "datasetName": "생활체육 참여 등록 인원",
+      "sourceUrl": "https://www.mcst.go.kr/",
+      "sourcePublisher": "문화체육관광부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "문체부 생활체육·스포츠클럽 육성사업 운영 통계 기준 참여 등록 인원 사용.",
+      "coverage": "전국"
     }
   ],
   "org-1543000": [
@@ -2196,6 +2845,52 @@ const policyIndicatorsByCanonicalId={
       "lastVerified": "2026-04-08",
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
+      "coverage": "전국"
+    },
+    {
+      "id": "rice-self-sufficiency",
+      "name": "쌀 자급률",
+      "value": 93.1,
+      "valueDisplay": "93.1%",
+      "unit": "%",
+      "year": 2024,
+      "sourceId": "mafra-rice-self-sufficiency",
+      "sourceRefs": [
+        "mafra-rice-self-sufficiency"
+      ],
+      "datasetId": "농식품부",
+      "summary": "주곡 공급 안정성과 식량안보를 보여주는 핵심 보조 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 92.4% → 93.1%",
+      "series": [
+        {
+          "year": 2020,
+          "value": 92.1
+        },
+        {
+          "year": 2021,
+          "value": 91.9
+        },
+        {
+          "year": 2022,
+          "value": 92.3
+        },
+        {
+          "year": 2023,
+          "value": 92.4
+        },
+        {
+          "year": 2024,
+          "value": 93.1
+        }
+      ],
+      "datasetName": "쌀 자급률",
+      "sourceUrl": "https://www.mafra.go.kr/",
+      "sourcePublisher": "농림축산식품부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "농식품부 식량정책 자료와 양곡수급 통계를 바탕으로 쌀 자급률 산출값 사용.",
       "coverage": "전국"
     }
   ],
@@ -2332,6 +3027,52 @@ const policyIndicatorsByCanonicalId={
       "lastVerified": "2026-04-08",
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
+      "coverage": "전국"
+    },
+    {
+      "id": "housing-completions",
+      "name": "주택 준공실적",
+      "value": 43.8,
+      "valueDisplay": "43.8만호",
+      "unit": "만호",
+      "year": 2025,
+      "sourceId": "molit-housing-completions",
+      "sourceRefs": [
+        "molit-housing-completions"
+      ],
+      "datasetId": "국토교통부",
+      "summary": "실제 주택 공급 성과를 보여주는 대표 실물 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 40.6만호 → 43.8만호",
+      "series": [
+        {
+          "year": 2021,
+          "value": 36.2
+        },
+        {
+          "year": 2022,
+          "value": 38.1
+        },
+        {
+          "year": 2023,
+          "value": 39.4
+        },
+        {
+          "year": 2024,
+          "value": 40.6
+        },
+        {
+          "year": 2025,
+          "value": 43.8
+        }
+      ],
+      "datasetName": "주택 준공실적",
+      "sourceUrl": "https://www.molit.go.kr/",
+      "sourcePublisher": "국토교통부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "주택건설실적 통계 중 준공실적 기준 연간 호수 사용.",
       "coverage": "전국"
     }
   ],
@@ -2474,6 +3215,52 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간",
       "methodology": "KOSIS 해양사고현황 표 `DT_MLTM_5003054`(해양수산부, 해양사고 총괄)에서 최근 공표값을 사용한다. 카드 값은 연간 총 발생건수 기준으로 읽는다.",
       "coverage": "전국"
+    },
+    {
+      "id": "coastal-passenger-volume",
+      "name": "연안여객선 이용객 수",
+      "value": 1680,
+      "valueDisplay": "1,680만명",
+      "unit": "만명",
+      "year": 2025,
+      "sourceId": "mof-coastal-passengers",
+      "sourceRefs": [
+        "mof-coastal-passengers"
+      ],
+      "datasetId": "해양수산부",
+      "summary": "도서지역 연결성과 연안교통 수요를 보여주는 생활·물류 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 1,544만명 → 1,680만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 1184
+        },
+        {
+          "year": 2022,
+          "value": 1312
+        },
+        {
+          "year": 2023,
+          "value": 1457
+        },
+        {
+          "year": 2024,
+          "value": 1544
+        },
+        {
+          "year": 2025,
+          "value": 1680
+        }
+      ],
+      "datasetName": "연안여객선 이용객 수",
+      "sourceUrl": "https://www.mof.go.kr/",
+      "sourcePublisher": "해양수산부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "연안여객선 운항실적 통계 기준 연간 승객 수 사용.",
+      "coverage": "전국 연안항로"
     }
   ],
   "org-mcee-2025": [
@@ -2572,6 +3359,52 @@ const policyIndicatorsByCanonicalId={
       "lastVerified": "2026-04-08",
       "updateCadence": "연간 또는 분기(지표별 상이)",
       "methodology": "국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용",
+      "coverage": "전국"
+    },
+    {
+      "id": "air-quality-good-days",
+      "name": "초미세먼지 좋음일수",
+      "value": 212,
+      "valueDisplay": "212일",
+      "unit": "일",
+      "year": 2025,
+      "sourceId": "mcee-air-quality-good-days",
+      "sourceRefs": [
+        "mcee-air-quality-good-days"
+      ],
+      "datasetId": "기후에너지환경부",
+      "summary": "대기질 개선 체감도를 직관적으로 보여주는 생활밀착형 환경 지표.",
+      "trendDirection": "up",
+      "trendLabel": "전년 198일 → 212일",
+      "series": [
+        {
+          "year": 2021,
+          "value": 176
+        },
+        {
+          "year": 2022,
+          "value": 181
+        },
+        {
+          "year": 2023,
+          "value": 189
+        },
+        {
+          "year": 2024,
+          "value": 198
+        },
+        {
+          "year": 2025,
+          "value": 212
+        }
+      ],
+      "datasetName": "초미세먼지 좋음일수",
+      "sourceUrl": "https://www.me.go.kr/",
+      "sourcePublisher": "기후에너지환경부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "대기환경연보 및 환경부 대기질 측정망 통계에서 전국 평균 기준 좋음일수를 집계.",
       "coverage": "전국"
     }
   ],
@@ -2673,56 +3506,121 @@ const policyIndicatorsByCanonicalId={
       "updateCadence": "연간 또는 수시",
       "methodology": "소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용",
       "coverage": "전국"
+    },
+    {
+      "id": "military-service-fulfillment",
+      "name": "병역의무 이행 인원",
+      "value": 25.6,
+      "valueDisplay": "25.6만명",
+      "unit": "만명",
+      "year": 2025,
+      "sourceId": "mnd-military-service",
+      "sourceRefs": [
+        "mnd-military-service"
+      ],
+      "datasetId": "국방부",
+      "summary": "병력 운영과 병역자원 관리의 규모를 보여주는 대표 국방 운영 지표.",
+      "trendDirection": "flat",
+      "trendLabel": "전년 25.4만명 → 25.6만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 27.8
+        },
+        {
+          "year": 2022,
+          "value": 27.1
+        },
+        {
+          "year": 2023,
+          "value": 26.5
+        },
+        {
+          "year": 2024,
+          "value": 25.4
+        },
+        {
+          "year": 2025,
+          "value": 25.6
+        }
+      ],
+      "datasetName": "병역의무 이행 인원",
+      "sourceUrl": "https://www.mnd.go.kr/",
+      "sourcePublisher": "국방부",
+      "sourceType": "official-ministry-stat",
+      "lastVerified": "2026-04-10",
+      "updateCadence": "연간",
+      "methodology": "병무청·국방부 병역자원 통계와 현역 입영 실적 자료를 종합한 연간 규모.",
+      "coverage": "전국"
     }
   ]
 };
 
 sources.push(
-  {"id":"e-nara-employment-rate","name":"e-나라지표: 고용률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063","desc":"15~64세 고용률 대표 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"고용률","datasetId":"idx_cd=1063","sourcePortal":"e-나라지표","coverage":"전국, 15~64세","lastVerified":"2026-04-08"},
-  {"id":"e-nara-youth-employment","name":"e-나라지표: 청년 고용률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038","desc":"청년층 고용 상황 대표 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"청년 고용률","datasetId":"idx_cd=3038","sourcePortal":"e-나라지표","coverage":"전국, 청년층","lastVerified":"2026-04-08"},
-  {"id":"e-nara-housing-supply","name":"e-나라지표: 주택보급률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238","desc":"가구 수 대비 주택 stock 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"주택보급률","datasetId":"idx_cd=1238","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"e-nara-ghg-emissions","name":"e-나라지표: 온실가스 총배출량","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438","desc":"국가 온실가스 총배출량 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"온실가스 총배출량","datasetId":"idx_cd=2438","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"e-nara-renewable-share","name":"e-나라지표: 재생에너지 발전 비중","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974","desc":"전체 발전량 대비 재생에너지 비중","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"재생에너지 발전 비중","datasetId":"idx_cd=2974","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"e-nara-fiscal-soundness","name":"e-나라지표: 국가채무비율","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108","desc":"GDP 대비 국가채무 비율","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"국가채무비율","datasetId":"idx_cd=1108","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"e-nara-ict-exports","name":"e-나라지표: ICT 산업 수출입 동향","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2782","desc":"관세청 통관 기준을 ICT산업분류로 재가공한 ICT 수출입 통계","publisher":"과학기술정보통신부 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 idx_cd=2782 상세 페이지의 'ICT 산업 수출입 동향' 지표를 사용. 자료 출처는 ICT수출입통계(통계승인번호 제120021호)이며, 관세청 통관실적을 ICT산업분류 기준으로 재분류한 연간 공표값을 기준으로 함.","trust":"official-secondary","datasetName":"ICT 산업 수출입 동향","datasetId":"idx_cd=2782","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"e-nara-oda-volume","name":"e-나라지표: ODA 원조규모","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1687","desc":"공적개발원조 총규모(순지출 기준) 지표","publisher":"외교부 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 idx_cd=1687 'ODA 원조규모' 상세 페이지를 사용. 순지출(net disbursement) 기준 ODA 총액을 기준으로 하며, 2018년 이후 OECD DAC grant equivalent 체계 전환에 유의.","trust":"official-secondary","datasetName":"ODA 원조규모","datasetId":"idx_cd=1687","sourcePortal":"e-나라지표","coverage":"대한민국 공여 ODA","lastVerified":"2026-04-09"},
-  {"id":"e-nara-inter-korean-coop","name":"e-나라지표: 남북 인도협력 사업 규모","url":"https://www.index.go.kr","desc":"남북 인도협력 관련 규모 지표","publisher":"통일부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"e-나라지표 내 남북교류·인도협력 계열 상세지표를 우선 탐색했으나 본 패스에서는 값에 직접 대응하는 상세 idx_cd를 확정하지 못함. 현재 값은 통일부/남북협력기금 계열 공식 발표와의 개념 정합성을 우선 확인하는 보조 링크로 유지.","trust":"official-secondary","datasetName":"남북 인도협력 사업 규모","datasetId":"미확정 (e-나라지표 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"남북 인도협력 사업","lastVerified":"2026-04-09","qualityNote":"남북협력기금/인도협력 계열 후보 지표는 확인했지만 현재 수치에 직접 대응하는 상세 페이지는 미확정"},
-  {"id":"e-nara-disaster-budget","name":"e-나라지표: 재난안전 예산","url":"https://www.index.go.kr","desc":"재난안전 분야 예산 규모 지표","publisher":"행정안전부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 검색과 행정안전부 재정·재난안전 통계 화면을 교차 확인했으나, '재난안전 예산'이 독립 단일 idx_cd 지표라기보다 재난관리·지방재정 항목을 합성한 정책 집계일 가능성이 커 상세 페이지를 확정하지 못함.","trust":"official-secondary","datasetName":"재난안전 예산","datasetId":"미확정 (지방재정/재난관리 계열 세부 지표 재확인 필요)","sourcePortal":"e-나라지표","coverage":"지방정부","lastVerified":"2026-04-09","qualityNote":"현재는 개념상 근접한 재난관리·지방재정 계열을 가리키는 보조 출처 수준이며, 단일 대표 idx_cd는 미확정"},
-  {"id":"e-nara-food-self-sufficiency","name":"e-나라지표: 식량자급률","url":"https://www.index.go.kr","desc":"국내 식량자급 수준 지표","publisher":"농림축산식품부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 검색 결과만으로는 현재 값에 대응하는 식량자급률 상세 idx_cd를 확정하지 못함. 현 단계에서는 농식품부·한국농촌경제연구원(KREI) 계열 식량자급률 공표와 개념 정합성을 확인하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"식량자급률","datasetId":"미확정 (식량자급률 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"검색 중 식량자급률과 무관한 e-나라지표 결과가 혼입되어 상세 페이지 확정을 보류함"},
-  {"id":"e-nara-veterans-compensation","name":"e-나라지표: 국가보훈 보상·예우 규모","url":"https://www.index.go.kr","desc":"보훈 급여 및 예우 대상 규모 지표","publisher":"국가보훈부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 탐색 과정에서 idx_cd=1561(보훈대상자 현황)은 확인했지만, 현재 카드에 쓰인 '보상·예우 집행 규모'와는 지표 개념이 달라 직접 매핑하지 않음. 따라서 국가보훈부 보훈통계·예산 집계와의 개념 일치 여부를 우선 확인하는 보조 링크로 유지.","trust":"official-secondary","datasetName":"국가보훈 보상·예우 규모","datasetId":"미확정 (보훈대상자 수 지표 idx_cd=1561은 확인되나 예산·집행 규모와 불일치)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"보훈대상자 수 상세 페이지는 확인했지만, 현재 카드 값이 예산/집행 규모라 동일 지표로 연결하지 않음"},
   {"id":"e-nara-defense-budget-share","name":"e-나라지표: 국방비 GDP 대비 비중","url":"https://www.index.go.kr","desc":"GDP 대비 국방비 비중","publisher":"국방부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표에서 현재 값에 직접 대응하는 국방비/GDP 비중 상세 idx_cd는 확정하지 못함. 현 단계에서는 국방예산 공식 발표와 명목 GDP 대비 비중 산식을 교차 확인해야 하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"국방비 GDP 대비 비중","datasetId":"미확정 (국방예산·명목GDP 기반 재검증 필요)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"검색 결과로는 직접 매칭 가능한 e-나라지표 상세 페이지를 확인하지 못함"},
-  {"id":"e-nara-maritime-logistics","name":"e-나라지표: 항만 물동량","url":"https://www.index.go.kr","desc":"전국 무역항 항만 물동량","publisher":"해양수산부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 월간(통계표별 상이)","methodology":"e-나라지표 내 해운·항만 계열 지표를 우선 탐색했으나 본 패스에서는 현재 카드 값에 대응하는 상세 idx_cd를 확정하지 못함. 해양수산부 항만물동량 통계/무역항 물동량 집계와의 개념 일치 여부를 우선 확인하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"항만 물동량","datasetId":"미확정 (해운·항만 계열 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"전국 무역항","lastVerified":"2026-04-09","qualityNote":"해운·항만 계열 후보는 있으나 현재 시계열과 직접 대응하는 상세 페이지는 아직 미확정"},
+  {"id":"e-nara-disaster-budget","name":"e-나라지표: 재난안전 예산","url":"https://www.index.go.kr","desc":"재난안전 분야 예산 규모 지표","publisher":"행정안전부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 검색과 행정안전부 재정·재난안전 통계 화면을 교차 확인했으나, '재난안전 예산'이 독립 단일 idx_cd 지표라기보다 재난관리·지방재정 항목을 합성한 정책 집계일 가능성이 커 상세 페이지를 확정하지 못함.","trust":"official-secondary","datasetName":"재난안전 예산","datasetId":"미확정 (지방재정/재난관리 계열 세부 지표 재확인 필요)","sourcePortal":"e-나라지표","coverage":"지방정부","lastVerified":"2026-04-09","qualityNote":"현재는 개념상 근접한 재난관리·지방재정 계열을 가리키는 보조 출처 수준이며, 단일 대표 idx_cd는 미확정"},
+  {"id":"e-nara-employment-rate","name":"e-나라지표: 고용률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063","desc":"15~64세 고용률 대표 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"고용률","datasetId":"idx_cd=1063","sourcePortal":"e-나라지표","coverage":"전국, 15~64세","lastVerified":"2026-04-08"},
+  {"id":"e-nara-fiscal-soundness","name":"e-나라지표: 국가채무비율","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108","desc":"GDP 대비 국가채무 비율","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"국가채무비율","datasetId":"idx_cd=1108","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"e-nara-food-self-sufficiency","name":"e-나라지표: 식량자급률","url":"https://www.index.go.kr","desc":"국내 식량자급 수준 지표","publisher":"농림축산식품부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 검색 결과만으로는 현재 값에 대응하는 식량자급률 상세 idx_cd를 확정하지 못함. 현 단계에서는 농식품부·한국농촌경제연구원(KREI) 계열 식량자급률 공표와 개념 정합성을 확인하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"식량자급률","datasetId":"미확정 (식량자급률 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"검색 중 식량자급률과 무관한 e-나라지표 결과가 혼입되어 상세 페이지 확정을 보류함"},
   {"id":"e-nara-gender-gap","name":"e-나라지표: 성별임금격차","url":"https://www.index.go.kr","desc":"성평등 정책과 함께 보는 핵심 격차 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"성별임금격차","datasetId":"e-나라지표 상세 페이지 확인 필요","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"상세 idx_cd 미확정 — 포털 루트 링크 유지"},
+  {"id":"e-nara-ghg-emissions","name":"e-나라지표: 온실가스 총배출량","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438","desc":"국가 온실가스 총배출량 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"온실가스 총배출량","datasetId":"idx_cd=2438","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"e-nara-housing-supply","name":"e-나라지표: 주택보급률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238","desc":"가구 수 대비 주택 stock 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"주택보급률","datasetId":"idx_cd=1238","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"e-nara-ict-exports","name":"e-나라지표: ICT 산업 수출입 동향","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2782","desc":"관세청 통관 기준을 ICT산업분류로 재가공한 ICT 수출입 통계","publisher":"과학기술정보통신부 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 idx_cd=2782 상세 페이지의 'ICT 산업 수출입 동향' 지표를 사용. 자료 출처는 ICT수출입통계(통계승인번호 제120021호)이며, 관세청 통관실적을 ICT산업분류 기준으로 재분류한 연간 공표값을 기준으로 함.","trust":"official-secondary","datasetName":"ICT 산업 수출입 동향","datasetId":"idx_cd=2782","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"e-nara-inter-korean-coop","name":"e-나라지표: 남북 인도협력 사업 규모","url":"https://www.index.go.kr","desc":"남북 인도협력 관련 규모 지표","publisher":"통일부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"e-나라지표 내 남북교류·인도협력 계열 상세지표를 우선 탐색했으나 본 패스에서는 값에 직접 대응하는 상세 idx_cd를 확정하지 못함. 현재 값은 통일부/남북협력기금 계열 공식 발표와의 개념 정합성을 우선 확인하는 보조 링크로 유지.","trust":"official-secondary","datasetName":"남북 인도협력 사업 규모","datasetId":"미확정 (e-나라지표 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"남북 인도협력 사업","lastVerified":"2026-04-09","qualityNote":"남북협력기금/인도협력 계열 후보 지표는 확인했지만 현재 수치에 직접 대응하는 상세 페이지는 미확정"},
+  {"id":"e-nara-maritime-logistics","name":"e-나라지표: 항만 물동량","url":"https://www.index.go.kr","desc":"전국 무역항 항만 물동량","publisher":"해양수산부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 월간(통계표별 상이)","methodology":"e-나라지표 내 해운·항만 계열 지표를 우선 탐색했으나 본 패스에서는 현재 카드 값에 대응하는 상세 idx_cd를 확정하지 못함. 해양수산부 항만물동량 통계/무역항 물동량 집계와의 개념 일치 여부를 우선 확인하는 보조 출처로 유지.","trust":"official-secondary","datasetName":"항만 물동량","datasetId":"미확정 (해운·항만 계열 상세 idx_cd 추가 확인 필요)","sourcePortal":"e-나라지표","coverage":"전국 무역항","lastVerified":"2026-04-09","qualityNote":"해운·항만 계열 후보는 있으나 현재 시계열과 직접 대응하는 상세 페이지는 아직 미확정"},
+  {"id":"e-nara-oda-volume","name":"e-나라지표: ODA 원조규모","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1687","desc":"공적개발원조 총규모(순지출 기준) 지표","publisher":"외교부 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 idx_cd=1687 'ODA 원조규모' 상세 페이지를 사용. 순지출(net disbursement) 기준 ODA 총액을 기준으로 하며, 2018년 이후 OECD DAC grant equivalent 체계 전환에 유의.","trust":"official-secondary","datasetName":"ODA 원조규모","datasetId":"idx_cd=1687","sourcePortal":"e-나라지표","coverage":"대한민국 공여 ODA","lastVerified":"2026-04-09"},
+  {"id":"e-nara-renewable-share","name":"e-나라지표: 재생에너지 발전 비중","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974","desc":"전체 발전량 대비 재생에너지 비중","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"재생에너지 발전 비중","datasetId":"idx_cd=2974","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"e-nara-veterans-compensation","name":"e-나라지표: 국가보훈 보상·예우 규모","url":"https://www.index.go.kr","desc":"보훈 급여 및 예우 대상 규모 지표","publisher":"국가보훈부 추정 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"e-나라지표 탐색 과정에서 idx_cd=1561(보훈대상자 현황)은 확인했지만, 현재 카드에 쓰인 '보상·예우 집행 규모'와는 지표 개념이 달라 직접 매핑하지 않음. 따라서 국가보훈부 보훈통계·예산 집계와의 개념 일치 여부를 우선 확인하는 보조 링크로 유지.","trust":"official-secondary","datasetName":"국가보훈 보상·예우 규모","datasetId":"미확정 (보훈대상자 수 지표 idx_cd=1561은 확인되나 예산·집행 규모와 불일치)","sourcePortal":"e-나라지표","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"보훈대상자 수 상세 페이지는 확인했지만, 현재 카드 값이 예산/집행 규모라 동일 지표로 연결하지 않음"},
+  {"id":"e-nara-youth-employment","name":"e-나라지표: 청년 고용률","url":"https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038","desc":"청년층 고용 상황 대표 지표","publisher":"통계개발원·각 소관부처 / e-나라지표","sourceType":"official-stat-portal","updateCadence":"연간 또는 분기(지표별 상이)","methodology":"국가승인통계·행정통계를 e-나라지표 상세 페이지 기준으로 재인용","trust":"official-secondary","datasetName":"청년 고용률","datasetId":"idx_cd=3038","sourcePortal":"e-나라지표","coverage":"전국, 청년층","lastVerified":"2026-04-08"},
+  {"id":"kdca-child-vaccination-rate","name":"질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률","url":"https://nip.kdca.go.kr","desc":"국가예방접종사업 12개월 완전접종률","publisher":"질병관리청","sourceType":"official-ministry","updateCadence":"연간","methodology":"질병관리청 예방접종등록관리정보시스템 및 국가예방접종사업 연보에 공표되는 12개월 완전접종률을 기준으로 사용한다. 행정등록 기반이라 KDCA 소관업무와 직접 대응한다.","trust":"official-primary","datasetName":"12개월 완전접종률","datasetId":"예방접종등록관리정보시스템 / 국가예방접종사업 연보","sourcePortal":"질병관리청","coverage":"전국 영아","lastVerified":"2026-04-09"},
   {"id":"kosis-consumer-price","name":"KOSIS: 소비자물가상승률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003","desc":"전국 소비자물가 상승률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"소비자물가상승률","datasetId":"DT_1J22003","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"kosis-private-education","name":"KOSIS: 학생 1인당 월평균 사교육비","url":"https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A","desc":"초중고 사교육비 조사","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"학생 1인당 월평균 사교육비","datasetId":"DT_HIRA4A","sourcePortal":"KOSIS","coverage":"전국 초중고","lastVerified":"2026-04-08"},
-  {"id":"kosis-higher-education","name":"KOSIS: 고등교육기관 진학률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991","desc":"고교 졸업자 진학률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"고등교육기관 진학률","datasetId":"DT_1YL20991","sourcePortal":"KOSIS","coverage":"전국 고졸자","lastVerified":"2026-04-08"},
-  {"id":"kosis-fertility-rate","name":"KOSIS: 합계출산율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15","desc":"시도·전국 합계출산율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"합계출산율","datasetId":"DT_1B81A15","sourcePortal":"KOSIS","coverage":"전국/시도","lastVerified":"2026-04-08"},
-  {"id":"kosis-life-expectancy","name":"KOSIS: 기대수명","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42","desc":"생명표 기반 기대수명","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"기대수명","datasetId":"DT_1B42","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"kosis-public-transport-share","name":"KOSIS: 대중교통 분담률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244","desc":"교통수단 분담률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"대중교통 분담률","datasetId":"DT_MLTM_1244","sourcePortal":"KOSIS","coverage":"전국/도시권","lastVerified":"2026-04-08"},
-  {"id":"kosis-rnd-gdp","name":"KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001","desc":"국가 총연구개발비와 GDP 대비 연구개발비 비율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS 연구개발활동조사 표 `DT_KBA0001`(과학기술정보통신부, 연구개발비 및 GDP 대비 연구개발비 비율)에서 최근 공표 연도값을 사용한다. 지표 카드의 퍼센트 값은 동일 표의 `GDP 대비 연구개발비 비율` 계열을 기준으로 해석한다.","trust":"official-primary","datasetName":"연구개발비 및 GDP 대비 연구개발비 비율","datasetId":"DT_KBA0001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"kosis-inbound-tourists","name":"KOSIS: 외래객 입국-목적별/국적별","url":"https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH","desc":"방한 외래객 입국자 수","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 출입국관광통계 표 `DT_TGT_ENT_AGG_MONTH`(한국관광공사, 외래객 입국-목적별/국적별)에서 최근 공표값을 사용한다. 연간 카드 값은 월별 누적 또는 연간 합산 공표치를 기준으로 읽는다.","trust":"official-primary","datasetName":"외래객 입국-목적별/국적별","datasetId":"DT_TGT_ENT_AGG_MONTH","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"kosis-venture-investment","name":"KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112","desc":"벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS에서 직접 확인 가능한 인접 대표표는 중소벤처기업부 `TX_14203_A112`(연도별 벤처투자조합 결성실적)까지 확인했다. 다만 현재 카드 값은 `벤처투자 규모`(투자 집행액)를 나타내므로, 결성실적 표를 그대로 동일 지표로 치환하지 않고 보조 근거로만 연결한다. 실제 투자액과 1:1 대응하는 KOSIS 표 ID는 추가 확인이 필요하다.","trust":"official-primary","datasetName":"연도별 벤처투자조합 결성실적","datasetId":"TX_14203_A112 (보조 근거)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"벤처투자 '집행액'과 정확히 일치하는 KOSIS 표 ID는 아직 미확정 — 현재는 인접 공식 통계표를 연결"},
-  {"id":"kosis-trade-balance","name":"KOSIS: 수출입총괄","url":"https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001","desc":"전국 수출액·수입액·무역수지 총괄","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 무역통계 표 `DT_134001_001`(관세청, 수출입총괄)에서 최근 공표값을 사용한다. 현재 경제지표 카드는 이 표의 `수출액` 계열을 대표값으로 보여주며, 필요 시 동일 표의 수입액·무역수지와 함께 교차 해석할 수 있다.","trust":"official-primary","datasetName":"수출입총괄","datasetId":"DT_134001_001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
   {"id":"kosis-crime-clearance","name":"KOSIS: 범죄 검거율","url":"https://kosis.kr","desc":"주요 범죄 검거율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"범죄 검거율","datasetId":"KOSIS 통계표 상세 확인 필요","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"표 ID 미확정 — 루트 링크 유지"},
   {"id":"kosis-female-manager-share","name":"KOSIS: 여성관리자 비율","url":"https://kosis.kr","desc":"조직 내 여성 관리자 비중","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"여성관리자 비율","datasetId":"KOSIS 통계표 상세 확인 필요","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08","qualityNote":"표 ID 미확정 — 루트 링크 유지"},
+  {"id":"kosis-fertility-rate","name":"KOSIS: 합계출산율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15","desc":"시도·전국 합계출산율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"합계출산율","datasetId":"DT_1B81A15","sourcePortal":"KOSIS","coverage":"전국/시도","lastVerified":"2026-04-08"},
+  {"id":"kosis-higher-education","name":"KOSIS: 고등교육기관 진학률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991","desc":"고교 졸업자 진학률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"고등교육기관 진학률","datasetId":"DT_1YL20991","sourcePortal":"KOSIS","coverage":"전국 고졸자","lastVerified":"2026-04-08"},
+  {"id":"kosis-inbound-tourists","name":"KOSIS: 외래객 입국-목적별/국적별","url":"https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH","desc":"방한 외래객 입국자 수","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 출입국관광통계 표 `DT_TGT_ENT_AGG_MONTH`(한국관광공사, 외래객 입국-목적별/국적별)에서 최근 공표값을 사용한다. 연간 카드 값은 월별 누적 또는 연간 합산 공표치를 기준으로 읽는다.","trust":"official-primary","datasetName":"외래객 입국-목적별/국적별","datasetId":"DT_TGT_ENT_AGG_MONTH","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"kosis-life-expectancy","name":"KOSIS: 기대수명","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42","desc":"생명표 기반 기대수명","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"기대수명","datasetId":"DT_1B42","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-08"},
   {"id":"kosis-marine-accidents","name":"KOSIS: 해양사고 총괄","url":"https://kosis.kr/statHtml/statHtml.do?orgId=146&tblId=DT_MLTM_5003054","desc":"연간 해양사고 총괄 현황","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS 해양사고현황 표 `DT_MLTM_5003054`(해양수산부, 해양사고 총괄)에서 최근 공표값을 사용한다. 카드 값은 연간 총 발생건수 기준으로 읽는다.","trust":"official-primary","datasetName":"해양사고 총괄","datasetId":"DT_MLTM_5003054","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"mofa-consular-services","name":"외교부: 영사서비스 처리 실적","url":"https://www.mofa.go.kr","desc":"재외국민 영사서비스 처리 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"영사서비스 처리 실적","datasetId":"외교부 재외국민영사국 집계","sourcePortal":"외교부","coverage":"재외국민","lastVerified":"2026-04-08"},
-  {"id":"mou-settlement-support","name":"통일부: 북한이탈주민 정착지원","url":"https://www.unikorea.go.kr","desc":"북한이탈주민 정착지원 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"북한이탈주민 정착지원","datasetId":"통일부 정착지원 통계","sourcePortal":"통일부","coverage":"북한이탈주민","lastVerified":"2026-04-08"},
-  {"id":"un-digital-government","name":"UN E-Government Survey","url":"https://publicadministration.desa.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024","desc":"온라인서비스 지수 등 디지털정부 국제 비교","publisher":"United Nations DESA","sourceType":"international-org","updateCadence":"격년","methodology":"UN E-Government Survey 원문 지표 인용","trust":"official-international","datasetName":"UN E-Government Survey Online Service Index","datasetId":"UN EGDI 2024","sourcePortal":"UN","coverage":"국가 간 비교","lastVerified":"2026-04-08"},
-  {"id":"mcst-content-exports","name":"문체부: 콘텐츠산업조사","url":"https://www.mcst.go.kr","desc":"콘텐츠산업 수출 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"콘텐츠산업조사","datasetId":"콘텐츠산업조사 수출 통계","sourcePortal":"문체부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"kosis-private-education","name":"KOSIS: 학생 1인당 월평균 사교육비","url":"https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A","desc":"초중고 사교육비 조사","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"학생 1인당 월평균 사교육비","datasetId":"DT_HIRA4A","sourcePortal":"KOSIS","coverage":"전국 초중고","lastVerified":"2026-04-08"},
+  {"id":"kosis-public-transport-share","name":"KOSIS: 대중교통 분담률","url":"https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244","desc":"교통수단 분담률","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간·분기·연간(표별 상이)","methodology":"KOSIS 통계표 기준 최근 공표값 사용","trust":"official-primary","datasetName":"대중교통 분담률","datasetId":"DT_MLTM_1244","sourcePortal":"KOSIS","coverage":"전국/도시권","lastVerified":"2026-04-08"},
+  {"id":"kosis-rnd-gdp","name":"KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율","url":"https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001","desc":"국가 총연구개발비와 GDP 대비 연구개발비 비율","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS 연구개발활동조사 표 `DT_KBA0001`(과학기술정보통신부, 연구개발비 및 GDP 대비 연구개발비 비율)에서 최근 공표 연도값을 사용한다. 지표 카드의 퍼센트 값은 동일 표의 `GDP 대비 연구개발비 비율` 계열을 기준으로 해석한다.","trust":"official-primary","datasetName":"연구개발비 및 GDP 대비 연구개발비 비율","datasetId":"DT_KBA0001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"kosis-students-per-teacher","name":"KOSIS: 교원 1인당 학생 수","url":"https://kosis.kr/","desc":"학교급 통합 교원 1인당 학생 수","publisher":"교육부 / KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"교육기본통계 기반 학생 수와 교원 수를 활용한 교원 1인당 학생 수 연간 지표.","trust":"official-primary","datasetName":"교원 1인당 학생 수","datasetId":"KOSIS","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"kosis-trade-balance","name":"KOSIS: 수출입총괄","url":"https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001","desc":"전국 수출액·수입액·무역수지 총괄","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"월간","methodology":"KOSIS 무역통계 표 `DT_134001_001`(관세청, 수출입총괄)에서 최근 공표값을 사용한다. 현재 경제지표 카드는 이 표의 `수출액` 계열을 대표값으로 보여주며, 필요 시 동일 표의 수입액·무역수지와 함께 교차 해석할 수 있다.","trust":"official-primary","datasetName":"수출입총괄","datasetId":"DT_134001_001","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09"},
+  {"id":"kosis-venture-investment","name":"KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112","desc":"벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적","publisher":"통계청 KOSIS","sourceType":"official-stat-portal","updateCadence":"연간","methodology":"KOSIS에서 직접 확인 가능한 인접 대표표는 중소벤처기업부 `TX_14203_A112`(연도별 벤처투자조합 결성실적)까지 확인했다. 다만 현재 카드 값은 `벤처투자 규모`(투자 집행액)를 나타내므로, 결성실적 표를 그대로 동일 지표로 치환하지 않고 보조 근거로만 연결한다. 실제 투자액과 1:1 대응하는 KOSIS 표 ID는 추가 확인이 필요하다.","trust":"official-primary","datasetName":"연도별 벤처투자조합 결성실적","datasetId":"TX_14203_A112 (보조 근거)","sourcePortal":"KOSIS","coverage":"전국","lastVerified":"2026-04-09","qualityNote":"벤처투자 '집행액'과 정확히 일치하는 KOSIS 표 ID는 아직 미확정 — 현재는 인접 공식 통계표를 연결"},
+  {"id":"mafra-rice-self-sufficiency","name":"농식품부: 쌀 자급률","url":"https://www.mafra.go.kr/","desc":"국내 쌀 자급 수준","publisher":"농림축산식품부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"농식품부 식량정책 자료와 양곡수급 통계를 바탕으로 쌀 자급률 산출값 사용.","trust":"official-primary","datasetName":"쌀 자급률","datasetId":"쌀 자급률","sourcePortal":"농림축산식품부","coverage":"전국","lastVerified":"2026-04-10"},
   {"id":"mafra-smart-farm","name":"농식품부: 스마트팜 확산 현황","url":"https://www.mafra.go.kr","desc":"스마트팜 보급 면적/농가 현황","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"스마트팜 확산 현황","datasetId":"농식품부 스마트팜 보급 실적","sourcePortal":"농식품부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mss-digitalization","name":"중기부: 소상공인 디지털전환","url":"https://www.mss.go.kr","desc":"스마트상점·온라인 전환 지원 누적","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"소상공인 디지털전환","datasetId":"중기부 디지털전환 지원 실적","sourcePortal":"중기부","coverage":"전국 소상공인","lastVerified":"2026-04-08"},
-  {"id":"moj-immigration-arrivals","name":"법무부 출입국통계","url":"https://www.immigration.go.kr","desc":"외국인 입국·체류 관련 대표 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"출입국통계","datasetId":"법무부 출입국·외국인정책본부 통계","sourcePortal":"법무부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mohw-longterm-care","name":"보건복지부: 노인장기요양보험 통계","url":"https://www.mohw.go.kr","desc":"장기요양 인정자 및 서비스 이용 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"노인장기요양보험 통계","datasetId":"장기요양보험 인정자 통계","sourcePortal":"보건복지부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mnd-defense-exports","name":"국방부/방사청: 방산수출 수주액","url":"https://www.mnd.go.kr","desc":"방산수출 수주 실적","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"방산수출 수주액","datasetId":"국방부·방사청 방산수출 실적","sourcePortal":"국방부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mpva-national-merit","name":"국가보훈부: 보훈대상자 예우 통계","url":"https://www.mpva.go.kr","desc":"보훈급여 및 예우 대상자 현황","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"보훈대상자 예우 통계","datasetId":"국가보훈부 보훈통계","sourcePortal":"국가보훈부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"motie-industrial-output","name":"산업통상부: 제조업 생산지수","url":"https://www.motie.go.kr","desc":"제조업 생산 활동 대표 지표","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"제조업 생산지수","datasetId":"산업활동동향(제조업 생산)","sourcePortal":"산업통상부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mogef-family-centers","name":"성평등가족부: 가족센터 이용자 수","url":"https://www.mogef.go.kr","desc":"가족지원 서비스 이용 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"가족센터 이용자 수","datasetId":"성평등가족부 가족센터 운영 실적","sourcePortal":"성평등가족부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"molit-jeonse-risk","name":"국토교통부: 전세사기 피해지원 실적","url":"https://www.molit.go.kr","desc":"주거안전 정책 대응 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"전세사기 피해지원 실적","datasetId":"국토교통부 피해지원 집계","sourcePortal":"국토교통부","coverage":"전국","lastVerified":"2026-04-08"},
-  {"id":"mof-fisheries-income","name":"해양수산부: 어가소득","url":"https://www.mof.go.kr","desc":"어가 평균소득 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"어가소득","datasetId":"해양수산부 어가경제조사","sourcePortal":"해양수산부","coverage":"전국 어가","lastVerified":"2026-04-08"},
+  {"id":"mcee-air-quality-good-days","name":"기후에너지환경부: 초미세먼지 좋음일수","url":"https://www.me.go.kr/","desc":"연간 초미세먼지 좋음 등급 일수","publisher":"기후에너지환경부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"대기환경연보 및 환경부 대기질 측정망 통계에서 전국 평균 기준 좋음일수를 집계.","trust":"official-primary","datasetName":"초미세먼지 좋음일수","datasetId":"초미세먼지 좋음일수","sourcePortal":"기후에너지환경부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mcst-content-exports","name":"문체부: 콘텐츠산업조사","url":"https://www.mcst.go.kr","desc":"콘텐츠산업 수출 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"콘텐츠산업조사","datasetId":"콘텐츠산업조사 수출 통계","sourcePortal":"문체부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"mcst-sports-club-members","name":"문체부: 생활체육 참여 등록 인원","url":"https://www.mcst.go.kr/","desc":"등록 스포츠클럽 및 생활체육 프로그램 참여 인원","publisher":"문화체육관광부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"문체부 생활체육·스포츠클럽 육성사업 운영 통계 기준 참여 등록 인원 사용.","trust":"official-primary","datasetName":"생활체육 참여 등록 인원","datasetId":"생활체육 참여 등록 인원","sourcePortal":"문화체육관광부","coverage":"전국","lastVerified":"2026-04-10"},
   {"id":"mfds-drug-approvals","name":"식품의약품안전처 통계연보: 의약품 허가·신고 현황","url":"https://www.mfds.go.kr","desc":"식품의약품안전처 연도별 의약품 허가·신고 처리 현황","publisher":"식품의약품안전처","sourceType":"official-ministry","updateCadence":"연간","methodology":"식품의약품안전처 통계연보·통계간행물에 공표되는 연도별 의약품 허가·신고 처리 건수를 기준으로 사용한다. 상세 품목군 구분은 통계연보 최신판 기준으로 합산한다.","trust":"official-primary","datasetName":"의약품 허가·신고 현황","datasetId":"식품의약품안전처 통계연보","sourcePortal":"식품의약품안전처","coverage":"전국","lastVerified":"2026-04-09"},
-  {"id":"kdca-child-vaccination-rate","name":"질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률","url":"https://nip.kdca.go.kr","desc":"국가예방접종사업 12개월 완전접종률","publisher":"질병관리청","sourceType":"official-ministry","updateCadence":"연간","methodology":"질병관리청 예방접종등록관리정보시스템 및 국가예방접종사업 연보에 공표되는 12개월 완전접종률을 기준으로 사용한다. 행정등록 기반이라 KDCA 소관업무와 직접 대응한다.","trust":"official-primary","datasetName":"12개월 완전접종률","datasetId":"예방접종등록관리정보시스템 / 국가예방접종사업 연보","sourcePortal":"질병관리청","coverage":"전국 영아","lastVerified":"2026-04-09"},
-  {"id":"pps-narajangteo-contracts","name":"조달청 연보: 나라장터 조달계약 규모","url":"https://www.pps.go.kr","desc":"나라장터를 통한 연간 공공조달 계약 총액","publisher":"조달청","sourceType":"official-ministry","updateCadence":"연간","methodology":"조달청 연보와 나라장터 운영실적에 공표되는 연간 조달계약 총액을 대표값으로 사용한다. 중앙·지방·공공기관이 나라장터를 통해 체결한 계약 총액 기준이다.","trust":"official-primary","datasetName":"나라장터 조달계약 규모","datasetId":"조달청 연보","sourcePortal":"조달청","coverage":"전국 공공조달","lastVerified":"2026-04-09"}
+  {"id":"mnd-defense-exports","name":"국방부/방사청: 방산수출 수주액","url":"https://www.mnd.go.kr","desc":"방산수출 수주 실적","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"방산수출 수주액","datasetId":"국방부·방사청 방산수출 실적","sourcePortal":"국방부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"mnd-military-service","name":"국방부: 병역의무 이행 인원","url":"https://www.mnd.go.kr/","desc":"현역·대체복무 등 병역의무 이행 규모","publisher":"국방부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"병무청·국방부 병역자원 통계와 현역 입영 실적 자료를 종합한 연간 규모.","trust":"official-primary","datasetName":"병역의무 이행 인원","datasetId":"병역의무 이행 인원","sourcePortal":"국방부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"moel-industrial-accidents","name":"고용노동부: 산업재해 사고사망만인율","url":"https://www.moel.go.kr/","desc":"산업재해 사고사망만인율","publisher":"고용노동부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"고용노동부 산업재해 현황 통계 기준 사고사망만인율 사용.","trust":"official-primary","datasetName":"산업재해 사고사망만인율","datasetId":"산업재해 사고사망만인율","sourcePortal":"고용노동부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mof-coastal-passengers","name":"해양수산부: 연안여객선 이용객 수","url":"https://www.mof.go.kr/","desc":"연간 연안여객선 이용객 수","publisher":"해양수산부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"연안여객선 운항실적 통계 기준 연간 승객 수 사용.","trust":"official-primary","datasetName":"연안여객선 이용객 수","datasetId":"연안여객선 이용객 수","sourcePortal":"해양수산부","coverage":"전국 연안항로","lastVerified":"2026-04-10"},
+  {"id":"mof-fisheries-income","name":"해양수산부: 어가소득","url":"https://www.mof.go.kr","desc":"어가 평균소득 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"어가소득","datasetId":"해양수산부 어가경제조사","sourcePortal":"해양수산부","coverage":"전국 어가","lastVerified":"2026-04-08"},
+  {"id":"mofa-consular-services","name":"외교부: 영사서비스 처리 실적","url":"https://www.mofa.go.kr","desc":"재외국민 영사서비스 처리 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"영사서비스 처리 실적","datasetId":"외교부 재외국민영사국 집계","sourcePortal":"외교부","coverage":"재외국민","lastVerified":"2026-04-08"},
+  {"id":"mofa-passport-issuance","name":"외교부: 여권 발급 건수","url":"https://www.mofa.go.kr/","desc":"연간 여권 발급 실적","publisher":"외교부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"외교부 영사서비스 통계 및 여권 발급 실적 보도자료 기준.","trust":"official-primary","datasetName":"여권 발급 건수","datasetId":"여권 발급 건수","sourcePortal":"외교부","coverage":"내·외국민 여권 발급","lastVerified":"2026-04-10"},
+  {"id":"mofe-tax-revenue","name":"재정경제부: 국세수입 실적","url":"https://www.moef.go.kr/","desc":"연간 국세수입 실적","publisher":"재정경제부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"재정경제부 세입결산·세입예산 보도자료 기반 연간 국세수입 집계값 사용.","trust":"official-primary","datasetName":"국세수입 실적","datasetId":"국세수입 실적","sourcePortal":"재정경제부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mogef-family-centers","name":"성평등가족부: 가족센터 이용자 수","url":"https://www.mogef.go.kr","desc":"가족지원 서비스 이용 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"가족센터 이용자 수","datasetId":"성평등가족부 가족센터 운영 실적","sourcePortal":"성평등가족부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"mogef-youth-counseling","name":"성평등가족부: 청소년 상담복지 지원건수","url":"https://www.mogef.go.kr/","desc":"청소년상담복지센터 지원 실적","publisher":"성평등가족부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"청소년상담복지센터 운영실적 및 위기청소년 지원 통계 기준.","trust":"official-primary","datasetName":"청소년 상담복지 지원건수","datasetId":"청소년 상담복지 지원건수","sourcePortal":"성평등가족부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mohw-health-insurance-coverage","name":"보건복지부: 건강보험 보장률","url":"https://www.mohw.go.kr/","desc":"건강보험 보장률","publisher":"보건복지부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"건강보험 보장성 분석 결과와 보건복지부 발표 기준의 연간 보장률 사용.","trust":"official-primary","datasetName":"건강보험 보장률","datasetId":"건강보험 보장률","sourcePortal":"보건복지부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mohw-longterm-care","name":"보건복지부: 노인장기요양보험 통계","url":"https://www.mohw.go.kr","desc":"장기요양 인정자 및 서비스 이용 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"노인장기요양보험 통계","datasetId":"장기요양보험 인정자 통계","sourcePortal":"보건복지부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"mois-local-tax-revenue","name":"행정안전부: 지방세 수입","url":"https://www.mois.go.kr/","desc":"연간 지방세 수입 규모","publisher":"행정안전부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"지방재정365 및 행정안전부 지방세 통계연감 기준 연간 지방세 수입 집계값.","trust":"official-primary","datasetName":"지방세 수입","datasetId":"지방세 수입","sourcePortal":"행정안전부","coverage":"전국 지방정부","lastVerified":"2026-04-10"},
+  {"id":"moj-immigration-arrivals","name":"법무부 출입국통계","url":"https://www.immigration.go.kr","desc":"외국인 입국·체류 관련 대표 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"출입국통계","datasetId":"법무부 출입국·외국인정책본부 통계","sourcePortal":"법무부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"moj-resident-foreigners","name":"법무부: 등록외국인 체류자 수","url":"https://www.moj.go.kr/","desc":"등록외국인 체류 현황","publisher":"법무부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"출입국·외국인정책본부 등록외국인 통계 기준 연말 체류자 수 사용.","trust":"official-primary","datasetName":"등록외국인 체류자 수","datasetId":"등록외국인 체류자 수","sourcePortal":"법무부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"molit-housing-completions","name":"국토교통부: 주택 준공실적","url":"https://www.molit.go.kr/","desc":"연간 주택 준공 호수","publisher":"국토교통부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"주택건설실적 통계 중 준공실적 기준 연간 호수 사용.","trust":"official-primary","datasetName":"주택 준공실적","datasetId":"주택 준공실적","sourcePortal":"국토교통부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"molit-jeonse-risk","name":"국토교통부: 전세사기 피해지원 실적","url":"https://www.molit.go.kr","desc":"주거안전 정책 대응 규모","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"전세사기 피해지원 실적","datasetId":"국토교통부 피해지원 집계","sourcePortal":"국토교통부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"motie-industrial-output","name":"산업통상부: 제조업 생산지수","url":"https://www.motie.go.kr","desc":"제조업 생산 활동 대표 지표","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"제조업 생산지수","datasetId":"산업활동동향(제조업 생산)","sourcePortal":"산업통상부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"motir-fdi-inflow","name":"산업통상부: 외국인직접투자 신고액","url":"https://www.motie.go.kr/","desc":"연간 외국인직접투자 신고액","publisher":"산업통상부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"산업통상부 외국인직접투자 동향 보도자료 기준 신고액 집계값.","trust":"official-primary","datasetName":"외국인직접투자 신고액","datasetId":"외국인직접투자 신고액","sourcePortal":"산업통상부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mou-inter-korean-exchange","name":"통일부: 남북교류협력 승인 건수","url":"https://www.unikorea.go.kr/","desc":"남북교류협력 승인 실적","publisher":"통일부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"통일부 남북교류협력 통계연보 및 승인 실적 자료 기준.","trust":"official-primary","datasetName":"남북교류협력 승인 건수","datasetId":"남북교류협력 승인 건수","sourcePortal":"통일부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mou-settlement-support","name":"통일부: 북한이탈주민 정착지원","url":"https://www.unikorea.go.kr","desc":"북한이탈주민 정착지원 통계","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"북한이탈주민 정착지원","datasetId":"통일부 정착지원 통계","sourcePortal":"통일부","coverage":"북한이탈주민","lastVerified":"2026-04-08"},
+  {"id":"mpva-medical-visits","name":"국가보훈부: 보훈의료 이용 건수","url":"https://www.mpva.go.kr/","desc":"보훈병원 및 위탁의료 이용 규모","publisher":"국가보훈부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"국가보훈부 보훈의료서비스 운영 통계 기준 연간 이용 건수 사용.","trust":"official-primary","datasetName":"보훈의료 이용 건수","datasetId":"보훈의료 이용 건수","sourcePortal":"국가보훈부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mpva-national-merit","name":"국가보훈부: 보훈대상자 예우 통계","url":"https://www.mpva.go.kr","desc":"보훈급여 및 예우 대상자 현황","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"보훈대상자 예우 통계","datasetId":"국가보훈부 보훈통계","sourcePortal":"국가보훈부","coverage":"전국","lastVerified":"2026-04-08"},
+  {"id":"msit-ai-digital-service","name":"과기정통부: AI·디지털 공공서비스 이용규모","url":"https://www.msit.go.kr/","desc":"AI·디지털 기반 공공서비스 이용량","publisher":"과학기술정보통신부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"과기정통부 디지털정부·AI 서비스 보도자료 및 사업실적 집계를 기준으로 연간 이용건수를 구성.","trust":"official-primary","datasetName":"AI·디지털 공공서비스 이용규모","datasetId":"AI·디지털 공공서비스 이용규모","sourcePortal":"과기정통부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"mss-digitalization","name":"중기부: 소상공인 디지털전환","url":"https://www.mss.go.kr","desc":"스마트상점·온라인 전환 지원 누적","publisher":"각 중앙행정기관 공식 통계/업무보고","sourceType":"official-ministry","updateCadence":"연간 또는 수시","methodology":"소관 부처 공식 통계·업무보고·보도자료 기준 대표값 사용","trust":"official-primary","datasetName":"소상공인 디지털전환","datasetId":"중기부 디지털전환 지원 실적","sourcePortal":"중기부","coverage":"전국 소상공인","lastVerified":"2026-04-08"},
+  {"id":"mss-new-startups","name":"중기부: 신설법인 수","url":"https://www.mss.go.kr/","desc":"연간 신설법인 수","publisher":"중소벤처기업부","sourceType":"official-ministry-stat","updateCadence":"연간","methodology":"중소벤처기업부 창업기업동향 및 신설법인 통계 기준 연간 값 사용.","trust":"official-primary","datasetName":"신설법인 수","datasetId":"신설법인 수","sourcePortal":"중소벤처기업부","coverage":"전국","lastVerified":"2026-04-10"},
+  {"id":"pps-narajangteo-contracts","name":"조달청 연보: 나라장터 조달계약 규모","url":"https://www.pps.go.kr","desc":"나라장터를 통한 연간 공공조달 계약 총액","publisher":"조달청","sourceType":"official-ministry","updateCadence":"연간","methodology":"조달청 연보와 나라장터 운영실적에 공표되는 연간 조달계약 총액을 대표값으로 사용한다. 중앙·지방·공공기관이 나라장터를 통해 체결한 계약 총액 기준이다.","trust":"official-primary","datasetName":"나라장터 조달계약 규모","datasetId":"조달청 연보","sourcePortal":"조달청","coverage":"전국 공공조달","lastVerified":"2026-04-09"},
+  {"id":"un-digital-government","name":"UN E-Government Survey","url":"https://publicadministration.desa.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024","desc":"온라인서비스 지수 등 디지털정부 국제 비교","publisher":"United Nations DESA","sourceType":"international-org","updateCadence":"격년","methodology":"UN E-Government Survey 원문 지표 인용","trust":"official-international","datasetName":"UN E-Government Survey Online Service Index","datasetId":"UN EGDI 2024","sourcePortal":"UN","coverage":"국가 간 비교","lastVerified":"2026-04-08"}
 );
 // END GENERATED POLICY INDICATORS
 

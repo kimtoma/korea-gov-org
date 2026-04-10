@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-04-10T09:16:27.837Z",
+  "generatedAt": "2026-04-10T09:23:52.022Z",
   "description": "Phase 2 normalization foundation extracted from the UI data model. Keeps current UI stable while separating source mappings, canonical entities, aliases/lineage, and normalized budget facts for later public-dataset ingestion.",
   "sourceCatalog": [
     {
@@ -70,58 +70,10 @@
       "desc": "재정경제부 공공기관 지정현황 344개 (2025-05-26 기준, 공기업·준정부기관)"
     },
     {
-      "id": "e-nara-employment-rate",
-      "name": "e-나라지표: 고용률",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063",
-      "desc": "15~64세 고용률 대표 지표"
-    },
-    {
-      "id": "e-nara-youth-employment",
-      "name": "e-나라지표: 청년 고용률",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038",
-      "desc": "청년층 고용 상황 대표 지표"
-    },
-    {
-      "id": "e-nara-housing-supply",
-      "name": "e-나라지표: 주택보급률",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238",
-      "desc": "가구 수 대비 주택 stock 지표"
-    },
-    {
-      "id": "e-nara-ghg-emissions",
-      "name": "e-나라지표: 온실가스 총배출량",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438",
-      "desc": "국가 온실가스 총배출량 지표"
-    },
-    {
-      "id": "e-nara-renewable-share",
-      "name": "e-나라지표: 재생에너지 발전 비중",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974",
-      "desc": "전체 발전량 대비 재생에너지 비중"
-    },
-    {
-      "id": "e-nara-fiscal-soundness",
-      "name": "e-나라지표: 국가채무비율",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108",
-      "desc": "GDP 대비 국가채무 비율"
-    },
-    {
-      "id": "e-nara-ict-exports",
-      "name": "e-나라지표: ICT 산업 수출입 동향",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2782",
-      "desc": "관세청 통관 기준을 ICT산업분류로 재가공한 ICT 수출입 통계"
-    },
-    {
-      "id": "e-nara-oda-volume",
-      "name": "e-나라지표: ODA 원조규모",
-      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1687",
-      "desc": "공적개발원조 총규모(순지출 기준) 지표"
-    },
-    {
-      "id": "e-nara-inter-korean-coop",
-      "name": "e-나라지표: 남북 인도협력 사업 규모",
+      "id": "e-nara-defense-budget-share",
+      "name": "e-나라지표: 국방비 GDP 대비 비중",
       "url": "https://www.index.go.kr",
-      "desc": "남북 인도협력 관련 규모 지표"
+      "desc": "GDP 대비 국방비 비중"
     },
     {
       "id": "e-nara-disaster-budget",
@@ -130,28 +82,22 @@
       "desc": "재난안전 분야 예산 규모 지표"
     },
     {
+      "id": "e-nara-employment-rate",
+      "name": "e-나라지표: 고용률",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1063",
+      "desc": "15~64세 고용률 대표 지표"
+    },
+    {
+      "id": "e-nara-fiscal-soundness",
+      "name": "e-나라지표: 국가채무비율",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1108",
+      "desc": "GDP 대비 국가채무 비율"
+    },
+    {
       "id": "e-nara-food-self-sufficiency",
       "name": "e-나라지표: 식량자급률",
       "url": "https://www.index.go.kr",
       "desc": "국내 식량자급 수준 지표"
-    },
-    {
-      "id": "e-nara-veterans-compensation",
-      "name": "e-나라지표: 국가보훈 보상·예우 규모",
-      "url": "https://www.index.go.kr",
-      "desc": "보훈 급여 및 예우 대상 규모 지표"
-    },
-    {
-      "id": "e-nara-defense-budget-share",
-      "name": "e-나라지표: 국방비 GDP 대비 비중",
-      "url": "https://www.index.go.kr",
-      "desc": "GDP 대비 국방비 비중"
-    },
-    {
-      "id": "e-nara-maritime-logistics",
-      "name": "e-나라지표: 항만 물동량",
-      "url": "https://www.index.go.kr",
-      "desc": "전국 무역항 항만 물동량"
     },
     {
       "id": "e-nara-gender-gap",
@@ -160,64 +106,70 @@
       "desc": "성평등 정책과 함께 보는 핵심 격차 지표"
     },
     {
+      "id": "e-nara-ghg-emissions",
+      "name": "e-나라지표: 온실가스 총배출량",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2438",
+      "desc": "국가 온실가스 총배출량 지표"
+    },
+    {
+      "id": "e-nara-housing-supply",
+      "name": "e-나라지표: 주택보급률",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1238",
+      "desc": "가구 수 대비 주택 stock 지표"
+    },
+    {
+      "id": "e-nara-ict-exports",
+      "name": "e-나라지표: ICT 산업 수출입 동향",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2782",
+      "desc": "관세청 통관 기준을 ICT산업분류로 재가공한 ICT 수출입 통계"
+    },
+    {
+      "id": "e-nara-inter-korean-coop",
+      "name": "e-나라지표: 남북 인도협력 사업 규모",
+      "url": "https://www.index.go.kr",
+      "desc": "남북 인도협력 관련 규모 지표"
+    },
+    {
+      "id": "e-nara-maritime-logistics",
+      "name": "e-나라지표: 항만 물동량",
+      "url": "https://www.index.go.kr",
+      "desc": "전국 무역항 항만 물동량"
+    },
+    {
+      "id": "e-nara-oda-volume",
+      "name": "e-나라지표: ODA 원조규모",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=1687",
+      "desc": "공적개발원조 총규모(순지출 기준) 지표"
+    },
+    {
+      "id": "e-nara-renewable-share",
+      "name": "e-나라지표: 재생에너지 발전 비중",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=2974",
+      "desc": "전체 발전량 대비 재생에너지 비중"
+    },
+    {
+      "id": "e-nara-veterans-compensation",
+      "name": "e-나라지표: 국가보훈 보상·예우 규모",
+      "url": "https://www.index.go.kr",
+      "desc": "보훈 급여 및 예우 대상 규모 지표"
+    },
+    {
+      "id": "e-nara-youth-employment",
+      "name": "e-나라지표: 청년 고용률",
+      "url": "https://www.index.go.kr/unity/potal/main/EachDtlPageDetail.do?idx_cd=3038",
+      "desc": "청년층 고용 상황 대표 지표"
+    },
+    {
+      "id": "kdca-child-vaccination-rate",
+      "name": "질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률",
+      "url": "https://nip.kdca.go.kr",
+      "desc": "국가예방접종사업 12개월 완전접종률"
+    },
+    {
       "id": "kosis-consumer-price",
       "name": "KOSIS: 소비자물가상승률",
       "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22003",
       "desc": "전국 소비자물가 상승률"
-    },
-    {
-      "id": "kosis-private-education",
-      "name": "KOSIS: 학생 1인당 월평균 사교육비",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A",
-      "desc": "초중고 사교육비 조사"
-    },
-    {
-      "id": "kosis-higher-education",
-      "name": "KOSIS: 고등교육기관 진학률",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991",
-      "desc": "고교 졸업자 진학률"
-    },
-    {
-      "id": "kosis-fertility-rate",
-      "name": "KOSIS: 합계출산율",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15",
-      "desc": "시도·전국 합계출산율"
-    },
-    {
-      "id": "kosis-life-expectancy",
-      "name": "KOSIS: 기대수명",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42",
-      "desc": "생명표 기반 기대수명"
-    },
-    {
-      "id": "kosis-public-transport-share",
-      "name": "KOSIS: 대중교통 분담률",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244",
-      "desc": "교통수단 분담률"
-    },
-    {
-      "id": "kosis-rnd-gdp",
-      "name": "KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001",
-      "desc": "국가 총연구개발비와 GDP 대비 연구개발비 비율"
-    },
-    {
-      "id": "kosis-inbound-tourists",
-      "name": "KOSIS: 외래객 입국-목적별/국적별",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH",
-      "desc": "방한 외래객 입국자 수"
-    },
-    {
-      "id": "kosis-venture-investment",
-      "name": "KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112",
-      "desc": "벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적"
-    },
-    {
-      "id": "kosis-trade-balance",
-      "name": "KOSIS: 수출입총괄",
-      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001",
-      "desc": "전국 수출액·수입액·무역수지 총괄"
     },
     {
       "id": "kosis-crime-clearance",
@@ -232,34 +184,76 @@
       "desc": "조직 내 여성 관리자 비중"
     },
     {
+      "id": "kosis-fertility-rate",
+      "name": "KOSIS: 합계출산율",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B81A15",
+      "desc": "시도·전국 합계출산율"
+    },
+    {
+      "id": "kosis-higher-education",
+      "name": "KOSIS: 고등교육기관 진학률",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=334&tblId=DT_1YL20991",
+      "desc": "고교 졸업자 진학률"
+    },
+    {
+      "id": "kosis-inbound-tourists",
+      "name": "KOSIS: 외래객 입국-목적별/국적별",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TGT_ENT_AGG_MONTH",
+      "desc": "방한 외래객 입국자 수"
+    },
+    {
+      "id": "kosis-life-expectancy",
+      "name": "KOSIS: 기대수명",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B42",
+      "desc": "생명표 기반 기대수명"
+    },
+    {
       "id": "kosis-marine-accidents",
       "name": "KOSIS: 해양사고 총괄",
       "url": "https://kosis.kr/statHtml/statHtml.do?orgId=146&tblId=DT_MLTM_5003054",
       "desc": "연간 해양사고 총괄 현황"
     },
     {
-      "id": "mofa-consular-services",
-      "name": "외교부: 영사서비스 처리 실적",
-      "url": "https://www.mofa.go.kr",
-      "desc": "재외국민 영사서비스 처리 규모"
+      "id": "kosis-private-education",
+      "name": "KOSIS: 학생 1인당 월평균 사교육비",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=354&tblId=DT_HIRA4A",
+      "desc": "초중고 사교육비 조사"
     },
     {
-      "id": "mou-settlement-support",
-      "name": "통일부: 북한이탈주민 정착지원",
-      "url": "https://www.unikorea.go.kr",
-      "desc": "북한이탈주민 정착지원 통계"
+      "id": "kosis-public-transport-share",
+      "name": "KOSIS: 대중교통 분담률",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1244",
+      "desc": "교통수단 분담률"
     },
     {
-      "id": "un-digital-government",
-      "name": "UN E-Government Survey",
-      "url": "https://publicadministration.desa.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024",
-      "desc": "온라인서비스 지수 등 디지털정부 국제 비교"
+      "id": "kosis-rnd-gdp",
+      "name": "KOSIS: 연구개발비 및 GDP 대비 연구개발비 비율",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_KBA0001",
+      "desc": "국가 총연구개발비와 GDP 대비 연구개발비 비율"
     },
     {
-      "id": "mcst-content-exports",
-      "name": "문체부: 콘텐츠산업조사",
-      "url": "https://www.mcst.go.kr",
-      "desc": "콘텐츠산업 수출 통계"
+      "id": "kosis-students-per-teacher",
+      "name": "KOSIS: 교원 1인당 학생 수",
+      "url": "https://kosis.kr/",
+      "desc": "학교급 통합 교원 1인당 학생 수"
+    },
+    {
+      "id": "kosis-trade-balance",
+      "name": "KOSIS: 수출입총괄",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=134&tblId=DT_134001_001",
+      "desc": "전국 수출액·수입액·무역수지 총괄"
+    },
+    {
+      "id": "kosis-venture-investment",
+      "name": "KOSIS: 벤처투자조합 결성실적 (인접 공식 통계)",
+      "url": "https://kosis.kr/statHtml/statHtml.do?orgId=142&tblId=TX_14203_A112",
+      "desc": "벤처투자 규모 해석에 인접한 중기부 벤처투자조합 결성실적"
+    },
+    {
+      "id": "mafra-rice-self-sufficiency",
+      "name": "농식품부: 쌀 자급률",
+      "url": "https://www.mafra.go.kr/",
+      "desc": "국내 쌀 자급 수준"
     },
     {
       "id": "mafra-smart-farm",
@@ -268,58 +262,22 @@
       "desc": "스마트팜 보급 면적/농가 현황"
     },
     {
-      "id": "mss-digitalization",
-      "name": "중기부: 소상공인 디지털전환",
-      "url": "https://www.mss.go.kr",
-      "desc": "스마트상점·온라인 전환 지원 누적"
+      "id": "mcee-air-quality-good-days",
+      "name": "기후에너지환경부: 초미세먼지 좋음일수",
+      "url": "https://www.me.go.kr/",
+      "desc": "연간 초미세먼지 좋음 등급 일수"
     },
     {
-      "id": "moj-immigration-arrivals",
-      "name": "법무부 출입국통계",
-      "url": "https://www.immigration.go.kr",
-      "desc": "외국인 입국·체류 관련 대표 통계"
+      "id": "mcst-content-exports",
+      "name": "문체부: 콘텐츠산업조사",
+      "url": "https://www.mcst.go.kr",
+      "desc": "콘텐츠산업 수출 통계"
     },
     {
-      "id": "mohw-longterm-care",
-      "name": "보건복지부: 노인장기요양보험 통계",
-      "url": "https://www.mohw.go.kr",
-      "desc": "장기요양 인정자 및 서비스 이용 규모"
-    },
-    {
-      "id": "mnd-defense-exports",
-      "name": "국방부/방사청: 방산수출 수주액",
-      "url": "https://www.mnd.go.kr",
-      "desc": "방산수출 수주 실적"
-    },
-    {
-      "id": "mpva-national-merit",
-      "name": "국가보훈부: 보훈대상자 예우 통계",
-      "url": "https://www.mpva.go.kr",
-      "desc": "보훈급여 및 예우 대상자 현황"
-    },
-    {
-      "id": "motie-industrial-output",
-      "name": "산업통상부: 제조업 생산지수",
-      "url": "https://www.motie.go.kr",
-      "desc": "제조업 생산 활동 대표 지표"
-    },
-    {
-      "id": "mogef-family-centers",
-      "name": "성평등가족부: 가족센터 이용자 수",
-      "url": "https://www.mogef.go.kr",
-      "desc": "가족지원 서비스 이용 규모"
-    },
-    {
-      "id": "molit-jeonse-risk",
-      "name": "국토교통부: 전세사기 피해지원 실적",
-      "url": "https://www.molit.go.kr",
-      "desc": "주거안전 정책 대응 규모"
-    },
-    {
-      "id": "mof-fisheries-income",
-      "name": "해양수산부: 어가소득",
-      "url": "https://www.mof.go.kr",
-      "desc": "어가 평균소득 통계"
+      "id": "mcst-sports-club-members",
+      "name": "문체부: 생활체육 참여 등록 인원",
+      "url": "https://www.mcst.go.kr/",
+      "desc": "등록 스포츠클럽 및 생활체육 프로그램 참여 인원"
     },
     {
       "id": "mfds-drug-approvals",
@@ -328,16 +286,172 @@
       "desc": "식품의약품안전처 연도별 의약품 허가·신고 처리 현황"
     },
     {
-      "id": "kdca-child-vaccination-rate",
-      "name": "질병관리청 예방접종등록관리정보시스템: 12개월 완전접종률",
-      "url": "https://nip.kdca.go.kr",
-      "desc": "국가예방접종사업 12개월 완전접종률"
+      "id": "mnd-defense-exports",
+      "name": "국방부/방사청: 방산수출 수주액",
+      "url": "https://www.mnd.go.kr",
+      "desc": "방산수출 수주 실적"
+    },
+    {
+      "id": "mnd-military-service",
+      "name": "국방부: 병역의무 이행 인원",
+      "url": "https://www.mnd.go.kr/",
+      "desc": "현역·대체복무 등 병역의무 이행 규모"
+    },
+    {
+      "id": "moel-industrial-accidents",
+      "name": "고용노동부: 산업재해 사고사망만인율",
+      "url": "https://www.moel.go.kr/",
+      "desc": "산업재해 사고사망만인율"
+    },
+    {
+      "id": "mof-coastal-passengers",
+      "name": "해양수산부: 연안여객선 이용객 수",
+      "url": "https://www.mof.go.kr/",
+      "desc": "연간 연안여객선 이용객 수"
+    },
+    {
+      "id": "mof-fisheries-income",
+      "name": "해양수산부: 어가소득",
+      "url": "https://www.mof.go.kr",
+      "desc": "어가 평균소득 통계"
+    },
+    {
+      "id": "mofa-consular-services",
+      "name": "외교부: 영사서비스 처리 실적",
+      "url": "https://www.mofa.go.kr",
+      "desc": "재외국민 영사서비스 처리 규모"
+    },
+    {
+      "id": "mofa-passport-issuance",
+      "name": "외교부: 여권 발급 건수",
+      "url": "https://www.mofa.go.kr/",
+      "desc": "연간 여권 발급 실적"
+    },
+    {
+      "id": "mofe-tax-revenue",
+      "name": "재정경제부: 국세수입 실적",
+      "url": "https://www.moef.go.kr/",
+      "desc": "연간 국세수입 실적"
+    },
+    {
+      "id": "mogef-family-centers",
+      "name": "성평등가족부: 가족센터 이용자 수",
+      "url": "https://www.mogef.go.kr",
+      "desc": "가족지원 서비스 이용 규모"
+    },
+    {
+      "id": "mogef-youth-counseling",
+      "name": "성평등가족부: 청소년 상담복지 지원건수",
+      "url": "https://www.mogef.go.kr/",
+      "desc": "청소년상담복지센터 지원 실적"
+    },
+    {
+      "id": "mohw-health-insurance-coverage",
+      "name": "보건복지부: 건강보험 보장률",
+      "url": "https://www.mohw.go.kr/",
+      "desc": "건강보험 보장률"
+    },
+    {
+      "id": "mohw-longterm-care",
+      "name": "보건복지부: 노인장기요양보험 통계",
+      "url": "https://www.mohw.go.kr",
+      "desc": "장기요양 인정자 및 서비스 이용 규모"
+    },
+    {
+      "id": "mois-local-tax-revenue",
+      "name": "행정안전부: 지방세 수입",
+      "url": "https://www.mois.go.kr/",
+      "desc": "연간 지방세 수입 규모"
+    },
+    {
+      "id": "moj-immigration-arrivals",
+      "name": "법무부 출입국통계",
+      "url": "https://www.immigration.go.kr",
+      "desc": "외국인 입국·체류 관련 대표 통계"
+    },
+    {
+      "id": "moj-resident-foreigners",
+      "name": "법무부: 등록외국인 체류자 수",
+      "url": "https://www.moj.go.kr/",
+      "desc": "등록외국인 체류 현황"
+    },
+    {
+      "id": "molit-housing-completions",
+      "name": "국토교통부: 주택 준공실적",
+      "url": "https://www.molit.go.kr/",
+      "desc": "연간 주택 준공 호수"
+    },
+    {
+      "id": "molit-jeonse-risk",
+      "name": "국토교통부: 전세사기 피해지원 실적",
+      "url": "https://www.molit.go.kr",
+      "desc": "주거안전 정책 대응 규모"
+    },
+    {
+      "id": "motie-industrial-output",
+      "name": "산업통상부: 제조업 생산지수",
+      "url": "https://www.motie.go.kr",
+      "desc": "제조업 생산 활동 대표 지표"
+    },
+    {
+      "id": "motir-fdi-inflow",
+      "name": "산업통상부: 외국인직접투자 신고액",
+      "url": "https://www.motie.go.kr/",
+      "desc": "연간 외국인직접투자 신고액"
+    },
+    {
+      "id": "mou-inter-korean-exchange",
+      "name": "통일부: 남북교류협력 승인 건수",
+      "url": "https://www.unikorea.go.kr/",
+      "desc": "남북교류협력 승인 실적"
+    },
+    {
+      "id": "mou-settlement-support",
+      "name": "통일부: 북한이탈주민 정착지원",
+      "url": "https://www.unikorea.go.kr",
+      "desc": "북한이탈주민 정착지원 통계"
+    },
+    {
+      "id": "mpva-medical-visits",
+      "name": "국가보훈부: 보훈의료 이용 건수",
+      "url": "https://www.mpva.go.kr/",
+      "desc": "보훈병원 및 위탁의료 이용 규모"
+    },
+    {
+      "id": "mpva-national-merit",
+      "name": "국가보훈부: 보훈대상자 예우 통계",
+      "url": "https://www.mpva.go.kr",
+      "desc": "보훈급여 및 예우 대상자 현황"
+    },
+    {
+      "id": "msit-ai-digital-service",
+      "name": "과기정통부: AI·디지털 공공서비스 이용규모",
+      "url": "https://www.msit.go.kr/",
+      "desc": "AI·디지털 기반 공공서비스 이용량"
+    },
+    {
+      "id": "mss-digitalization",
+      "name": "중기부: 소상공인 디지털전환",
+      "url": "https://www.mss.go.kr",
+      "desc": "스마트상점·온라인 전환 지원 누적"
+    },
+    {
+      "id": "mss-new-startups",
+      "name": "중기부: 신설법인 수",
+      "url": "https://www.mss.go.kr/",
+      "desc": "연간 신설법인 수"
     },
     {
       "id": "pps-narajangteo-contracts",
       "name": "조달청 연보: 나라장터 조달계약 규모",
       "url": "https://www.pps.go.kr",
       "desc": "나라장터를 통한 연간 공공조달 계약 총액"
+    },
+    {
+      "id": "un-digital-government",
+      "name": "UN E-Government Survey",
+      "url": "https://publicadministration.desa.un.org/egovkb/en-us/Reports/UN-E-Government-Survey-2024",
+      "desc": "온라인서비스 지수 등 디지털정부 국제 비교"
     }
   ],
   "metrics": {
@@ -346,7 +460,7 @@
     "aliasCount": 68,
     "lineageEventCount": 22,
     "budgetFactCount": 54,
-    "indicatorFactCount": 45,
+    "indicatorFactCount": 64,
     "indicatorCoverageOrgCount": 23
   },
   "canonicalOrgs": [
@@ -1160,6 +1274,7 @@
         "data-go-kr-budget",
         "e-nara-employment-rate",
         "e-nara-youth-employment",
+        "moel-industrial-accidents",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1191,6 +1306,7 @@
         "data-go-kr-budget",
         "kosis-rnd-gdp",
         "e-nara-ict-exports",
+        "msit-ai-digital-service",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1252,6 +1368,7 @@
         "data-go-kr-budget",
         "kosis-private-education",
         "kosis-higher-education",
+        "kosis-students-per-teacher",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1282,7 +1399,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "mpva-national-merit",
-        "e-nara-veterans-compensation"
+        "e-nara-veterans-compensation",
+        "mpva-medical-visits"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -1312,7 +1430,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "e-nara-defense-budget-share",
-        "mnd-defense-exports"
+        "mnd-defense-exports",
+        "mnd-military-service"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -1403,6 +1522,7 @@
         "e-nara-housing-supply",
         "kosis-public-transport-share",
         "molit-jeonse-risk",
+        "molit-housing-completions",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1492,6 +1612,7 @@
         "data-go-kr-budget",
         "e-nara-ghg-emissions",
         "e-nara-renewable-share",
+        "mcee-air-quality-good-days",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -1555,6 +1676,7 @@
         "data-go-kr-budget",
         "e-nara-food-self-sufficiency",
         "mafra-smart-farm",
+        "mafra-rice-self-sufficiency",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1646,6 +1768,7 @@
         "data-go-kr-budget",
         "kosis-inbound-tourists",
         "mcst-content-exports",
+        "mcst-sports-club-members",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1707,7 +1830,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "kosis-crime-clearance",
-        "moj-immigration-arrivals"
+        "moj-immigration-arrivals",
+        "moj-resident-foreigners"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -1794,6 +1918,7 @@
         "kosis-fertility-rate",
         "kosis-life-expectancy",
         "mohw-longterm-care",
+        "mohw-health-insurance-coverage",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1855,6 +1980,7 @@
         "data-go-kr-budget",
         "kosis-trade-balance",
         "motie-industrial-output",
+        "motir-fdi-inflow",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -1888,6 +2014,7 @@
         "data-go-kr-budget",
         "e-nara-gender-gap",
         "mogef-family-centers",
+        "mogef-youth-counseling",
         "policy-briefing",
         "wiki-lee-gov"
       ],
@@ -1920,6 +2047,7 @@
         "data-go-kr-budget",
         "e-nara-oda-volume",
         "mofa-consular-services",
+        "mofa-passport-issuance",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -1982,6 +2110,7 @@
         "data-go-kr-budget",
         "kosis-consumer-price",
         "e-nara-fiscal-soundness",
+        "mofe-tax-revenue",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -2105,6 +2234,7 @@
         "data-go-kr-budget",
         "kosis-venture-investment",
         "mss-digitalization",
+        "mss-new-startups",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -2135,7 +2265,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "mou-settlement-support",
-        "e-nara-inter-korean-coop"
+        "e-nara-inter-korean-coop",
+        "mou-inter-korean-exchange"
       ],
       "currentPath": [
         "대한민국 정부",
@@ -2167,6 +2298,7 @@
         "e-nara-maritime-logistics",
         "mof-fisheries-income",
         "kosis-marine-accidents",
+        "mof-coastal-passengers",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -2227,6 +2359,7 @@
         "data-go-kr-budget",
         "un-digital-government",
         "e-nara-disaster-budget",
+        "mois-local-tax-revenue",
         "data-go-kr-public-institutions"
       ],
       "currentPath": [
@@ -2637,7 +2770,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "mpva-national-merit",
-        "e-nara-veterans-compensation"
+        "e-nara-veterans-compensation",
+        "mpva-medical-visits"
       ]
     },
     {
@@ -2659,6 +2793,7 @@
         "e-nara-maritime-logistics",
         "mof-fisheries-income",
         "kosis-marine-accidents",
+        "mof-coastal-passengers",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2736,7 +2871,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "mou-settlement-support",
-        "e-nara-inter-korean-coop"
+        "e-nara-inter-korean-coop",
+        "mou-inter-korean-exchange"
       ]
     },
     {
@@ -2757,6 +2893,7 @@
         "data-go-kr-budget",
         "e-nara-oda-volume",
         "mofa-consular-services",
+        "mofa-passport-issuance",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2797,7 +2934,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "kosis-crime-clearance",
-        "moj-immigration-arrivals"
+        "moj-immigration-arrivals",
+        "moj-resident-foreigners"
       ]
     },
     {
@@ -2850,7 +2988,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "e-nara-defense-budget-share",
-        "mnd-defense-exports"
+        "mnd-defense-exports",
+        "mnd-military-service"
       ]
     },
     {
@@ -2908,6 +3047,7 @@
         "data-go-kr-budget",
         "kosis-private-education",
         "kosis-higher-education",
+        "kosis-students-per-teacher",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2930,6 +3070,7 @@
         "kosis-fertility-rate",
         "kosis-life-expectancy",
         "mohw-longterm-care",
+        "mohw-health-insurance-coverage",
         "data-go-kr-public-institutions"
       ]
     },
@@ -2970,6 +3111,7 @@
         "data-go-kr-budget",
         "kosis-inbound-tourists",
         "mcst-content-exports",
+        "mcst-sports-club-members",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3029,6 +3171,7 @@
         "data-go-kr-budget",
         "kosis-venture-investment",
         "mss-digitalization",
+        "mss-new-startups",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3070,6 +3213,7 @@
         "data-go-kr-budget",
         "e-nara-employment-rate",
         "e-nara-youth-employment",
+        "moel-industrial-accidents",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3109,6 +3253,7 @@
         "data-go-kr-budget",
         "e-nara-food-self-sufficiency",
         "mafra-smart-farm",
+        "mafra-rice-self-sufficiency",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3207,6 +3352,7 @@
         "data-go-kr-budget",
         "kosis-rnd-gdp",
         "e-nara-ict-exports",
+        "msit-ai-digital-service",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3305,6 +3451,7 @@
         "data-go-kr-budget",
         "e-nara-ghg-emissions",
         "e-nara-renewable-share",
+        "mcee-air-quality-good-days",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -3348,6 +3495,7 @@
         "data-go-kr-budget",
         "kosis-consumer-price",
         "e-nara-fiscal-soundness",
+        "mofe-tax-revenue",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -3371,6 +3519,7 @@
         "data-go-kr-budget",
         "e-nara-gender-gap",
         "mogef-family-centers",
+        "mogef-youth-counseling",
         "policy-briefing",
         "wiki-lee-gov"
       ]
@@ -3413,6 +3562,7 @@
         "data-go-kr-budget",
         "un-digital-government",
         "e-nara-disaster-budget",
+        "mois-local-tax-revenue",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3452,6 +3602,7 @@
         "e-nara-housing-supply",
         "kosis-public-transport-share",
         "molit-jeonse-risk",
+        "molit-housing-completions",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3473,6 +3624,7 @@
         "data-go-kr-budget",
         "kosis-trade-balance",
         "motie-industrial-output",
+        "motir-fdi-inflow",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -3666,6 +3818,7 @@
         "data-go-kr-budget",
         "e-nara-employment-rate",
         "e-nara-youth-employment",
+        "moel-industrial-accidents",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3721,6 +3874,7 @@
         "data-go-kr-budget",
         "kosis-rnd-gdp",
         "e-nara-ict-exports",
+        "msit-ai-digital-service",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3752,6 +3906,7 @@
         "data-go-kr-budget",
         "kosis-private-education",
         "kosis-higher-education",
+        "kosis-students-per-teacher",
         "data-go-kr-public-institutions"
       ]
     },
@@ -3782,7 +3937,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "mpva-national-merit",
-        "e-nara-veterans-compensation"
+        "e-nara-veterans-compensation",
+        "mpva-medical-visits"
       ]
     },
     {
@@ -3921,7 +4077,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "e-nara-defense-budget-share",
-        "mnd-defense-exports"
+        "mnd-defense-exports",
+        "mnd-military-service"
       ]
     },
     {
@@ -3951,6 +4108,7 @@
         "e-nara-housing-supply",
         "kosis-public-transport-share",
         "molit-jeonse-risk",
+        "molit-housing-completions",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4008,6 +4166,7 @@
         "data-go-kr-budget",
         "e-nara-ghg-emissions",
         "e-nara-renewable-share",
+        "mcee-air-quality-good-days",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4026,6 +4185,7 @@
         "data-go-kr-budget",
         "e-nara-food-self-sufficiency",
         "mafra-smart-farm",
+        "mafra-rice-self-sufficiency",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4113,6 +4273,7 @@
         "data-go-kr-budget",
         "kosis-inbound-tourists",
         "mcst-content-exports",
+        "mcst-sports-club-members",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4158,7 +4319,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "kosis-crime-clearance",
-        "moj-immigration-arrivals"
+        "moj-immigration-arrivals",
+        "moj-resident-foreigners"
       ]
     },
     {
@@ -4201,6 +4363,7 @@
         "kosis-fertility-rate",
         "kosis-life-expectancy",
         "mohw-longterm-care",
+        "mohw-health-insurance-coverage",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4231,6 +4394,7 @@
         "data-go-kr-budget",
         "kosis-trade-balance",
         "motie-industrial-output",
+        "motir-fdi-inflow",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4262,6 +4426,7 @@
         "data-go-kr-budget",
         "e-nara-gender-gap",
         "mogef-family-centers",
+        "mogef-youth-counseling",
         "policy-briefing",
         "wiki-lee-gov"
       ]
@@ -4308,6 +4473,7 @@
         "data-go-kr-budget",
         "e-nara-oda-volume",
         "mofa-consular-services",
+        "mofa-passport-issuance",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4381,6 +4547,7 @@
         "data-go-kr-budget",
         "kosis-consumer-price",
         "e-nara-fiscal-soundness",
+        "mofe-tax-revenue",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4425,6 +4592,7 @@
         "data-go-kr-budget",
         "kosis-venture-investment",
         "mss-digitalization",
+        "mss-new-startups",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4480,7 +4648,8 @@
         "budget-2026-proposal",
         "data-go-kr-budget",
         "mou-settlement-support",
-        "e-nara-inter-korean-coop"
+        "e-nara-inter-korean-coop",
+        "mou-inter-korean-exchange"
       ]
     },
     {
@@ -4510,6 +4679,7 @@
         "e-nara-maritime-logistics",
         "mof-fisheries-income",
         "kosis-marine-accidents",
+        "mof-coastal-passengers",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4537,6 +4707,7 @@
         "data-go-kr-budget",
         "un-digital-government",
         "e-nara-disaster-budget",
+        "mois-local-tax-revenue",
         "data-go-kr-public-institutions"
       ]
     },
@@ -4636,6 +4807,7 @@
         "data-go-kr-budget",
         "e-nara-ghg-emissions",
         "e-nara-renewable-share",
+        "mcee-air-quality-good-days",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4691,6 +4863,7 @@
         "data-go-kr-budget",
         "e-nara-gender-gap",
         "mogef-family-centers",
+        "mogef-youth-counseling",
         "policy-briefing",
         "wiki-lee-gov"
       ]
@@ -4745,6 +4918,7 @@
         "data-go-kr-budget",
         "kosis-trade-balance",
         "motie-industrial-output",
+        "motir-fdi-inflow",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -4774,6 +4948,7 @@
         "data-go-kr-budget",
         "kosis-consumer-price",
         "e-nara-fiscal-soundness",
+        "mofe-tax-revenue",
         "data-go-kr-public-institutions",
         "policy-briefing",
         "wiki-lee-gov"
@@ -5726,6 +5901,86 @@
       ]
     },
     {
+      "canonicalId": "org-1180000",
+      "indicatorId": "veterans-medical-visits",
+      "indicatorNameKo": "보훈의료 이용 건수",
+      "sourceSystem": "국가보훈부",
+      "datasetId": "국가보훈부",
+      "sourceId": "mpva-medical-visits",
+      "year": 2025,
+      "value": 912,
+      "unit": "만건",
+      "valueDisplay": "912만건",
+      "trendDirection": "up",
+      "trendLabel": "전년 861만건 → 912만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 702
+        },
+        {
+          "year": 2022,
+          "value": 748
+        },
+        {
+          "year": 2023,
+          "value": 801
+        },
+        {
+          "year": 2024,
+          "value": 861
+        },
+        {
+          "year": 2025,
+          "value": 912
+        }
+      ],
+      "summary": "보훈병원·위탁의료 등 보훈의료 서비스 체감 규모를 보여주는 지표.",
+      "sourceRefs": [
+        "mpva-medical-visits"
+      ]
+    },
+    {
+      "canonicalId": "org-1192000",
+      "indicatorId": "coastal-passenger-volume",
+      "indicatorNameKo": "연안여객선 이용객 수",
+      "sourceSystem": "해양수산부",
+      "datasetId": "해양수산부",
+      "sourceId": "mof-coastal-passengers",
+      "year": 2025,
+      "value": 1680,
+      "unit": "만명",
+      "valueDisplay": "1,680만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 1,544만명 → 1,680만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 1184
+        },
+        {
+          "year": 2022,
+          "value": 1312
+        },
+        {
+          "year": 2023,
+          "value": 1457
+        },
+        {
+          "year": 2024,
+          "value": 1544
+        },
+        {
+          "year": 2025,
+          "value": 1680
+        }
+      ],
+      "summary": "도서지역 연결성과 연안교통 수요를 보여주는 생활·물류 지표.",
+      "sourceRefs": [
+        "mof-coastal-passengers"
+      ]
+    },
+    {
       "canonicalId": "org-1192000",
       "indicatorId": "fisheries-household-income",
       "indicatorNameKo": "어가 평균소득",
@@ -5927,6 +6182,46 @@
     },
     {
       "canonicalId": "org-1250000",
+      "indicatorId": "inter-korean-exchange-projects",
+      "indicatorNameKo": "남북교류협력 승인 건수",
+      "sourceSystem": "통일부",
+      "datasetId": "통일부",
+      "sourceId": "mou-inter-korean-exchange",
+      "year": 2025,
+      "value": 412,
+      "unit": "건",
+      "valueDisplay": "412건",
+      "trendDirection": "up",
+      "trendLabel": "전년 356건 → 412건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 188
+        },
+        {
+          "year": 2022,
+          "value": 214
+        },
+        {
+          "year": 2023,
+          "value": 267
+        },
+        {
+          "year": 2024,
+          "value": 356
+        },
+        {
+          "year": 2025,
+          "value": 412
+        }
+      ],
+      "summary": "남북교류 협력의 제도적 가동 수준을 보여주는 기본 운영 지표.",
+      "sourceRefs": [
+        "mou-inter-korean-exchange"
+      ]
+    },
+    {
+      "canonicalId": "org-1250000",
       "indicatorId": "inter-korean-humanitarian",
       "indicatorNameKo": "남북 인도협력 사업 규모",
       "sourceSystem": "e-나라지표",
@@ -6086,6 +6381,46 @@
       ]
     },
     {
+      "canonicalId": "org-1262000",
+      "indicatorId": "passport-issuance",
+      "indicatorNameKo": "여권 발급 건수",
+      "sourceSystem": "외교부",
+      "datasetId": "외교부",
+      "sourceId": "mofa-passport-issuance",
+      "year": 2025,
+      "value": 789,
+      "unit": "만건",
+      "valueDisplay": "789만건",
+      "trendDirection": "up",
+      "trendLabel": "전년 702만건 → 789만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 118
+        },
+        {
+          "year": 2022,
+          "value": 265
+        },
+        {
+          "year": 2023,
+          "value": 514
+        },
+        {
+          "year": 2024,
+          "value": 702
+        },
+        {
+          "year": 2025,
+          "value": 789
+        }
+      ],
+      "summary": "해외 이동 회복과 영사 행정 수요를 직접 보여주는 운영 지표.",
+      "sourceRefs": [
+        "mofa-passport-issuance"
+      ]
+    },
+    {
       "canonicalId": "org-1270000",
       "indicatorId": "foreigner-arrivals",
       "indicatorNameKo": "외국인 입국자 수",
@@ -6163,6 +6498,46 @@
       "summary": "형사사법 체계의 대응 성과를 보여주는 대표 치안·검찰 지표.",
       "sourceRefs": [
         "kosis-crime-clearance"
+      ]
+    },
+    {
+      "canonicalId": "org-1270000",
+      "indicatorId": "registered-foreign-residents",
+      "indicatorNameKo": "등록외국인 체류자 수",
+      "sourceSystem": "법무부",
+      "datasetId": "법무부",
+      "sourceId": "moj-resident-foreigners",
+      "year": 2025,
+      "value": 156.2,
+      "unit": "만명",
+      "valueDisplay": "156.2만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 149.5만명 → 156.2만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 109.3
+        },
+        {
+          "year": 2022,
+          "value": 121.7
+        },
+        {
+          "year": 2023,
+          "value": 137.8
+        },
+        {
+          "year": 2024,
+          "value": 149.5
+        },
+        {
+          "year": 2025,
+          "value": 156.2
+        }
+      ],
+      "summary": "이민·체류 행정 수요와 국내 외국인 인구 규모를 보여주는 지표.",
+      "sourceRefs": [
+        "moj-resident-foreigners"
       ]
     },
     {
@@ -6246,6 +6621,46 @@
       ]
     },
     {
+      "canonicalId": "org-1290000",
+      "indicatorId": "military-service-fulfillment",
+      "indicatorNameKo": "병역의무 이행 인원",
+      "sourceSystem": "국방부",
+      "datasetId": "국방부",
+      "sourceId": "mnd-military-service",
+      "year": 2025,
+      "value": 25.6,
+      "unit": "만명",
+      "valueDisplay": "25.6만명",
+      "trendDirection": "flat",
+      "trendLabel": "전년 25.4만명 → 25.6만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 27.8
+        },
+        {
+          "year": 2022,
+          "value": 27.1
+        },
+        {
+          "year": 2023,
+          "value": 26.5
+        },
+        {
+          "year": 2024,
+          "value": 25.4
+        },
+        {
+          "year": 2025,
+          "value": 25.6
+        }
+      ],
+      "summary": "병력 운영과 병역자원 관리의 규모를 보여주는 대표 국방 운영 지표.",
+      "sourceRefs": [
+        "mnd-military-service"
+      ]
+    },
+    {
       "canonicalId": "org-1342000",
       "indicatorId": "higher-education-enrollment",
       "indicatorNameKo": "고등교육기관 진학률",
@@ -6326,6 +6741,46 @@
       ]
     },
     {
+      "canonicalId": "org-1342000",
+      "indicatorId": "students-per-teacher",
+      "indicatorNameKo": "교원 1인당 학생 수",
+      "sourceSystem": "KOSIS",
+      "datasetId": "KOSIS",
+      "sourceId": "kosis-students-per-teacher",
+      "year": 2024,
+      "value": 11.8,
+      "unit": "명",
+      "valueDisplay": "11.8명",
+      "trendDirection": "down",
+      "trendLabel": "전년 12.1명 → 11.8명",
+      "series": [
+        {
+          "year": 2020,
+          "value": 13.2
+        },
+        {
+          "year": 2021,
+          "value": 12.8
+        },
+        {
+          "year": 2022,
+          "value": 12.5
+        },
+        {
+          "year": 2023,
+          "value": 12.1
+        },
+        {
+          "year": 2024,
+          "value": 11.8
+        }
+      ],
+      "summary": "학급 밀도와 교육여건을 간접적으로 보여주는 대표 교육 지표.",
+      "sourceRefs": [
+        "kosis-students-per-teacher"
+      ]
+    },
+    {
       "canonicalId": "org-1352000",
       "indicatorId": "life-expectancy",
       "indicatorNameKo": "기대수명",
@@ -6403,6 +6858,46 @@
       "summary": "고령사회 대응과 돌봄 수요 확장을 보여주는 복지 체감 지표.",
       "sourceRefs": [
         "mohw-longterm-care"
+      ]
+    },
+    {
+      "canonicalId": "org-1352000",
+      "indicatorId": "national-health-insurance-coverage",
+      "indicatorNameKo": "건강보험 보장률",
+      "sourceSystem": "보건복지부",
+      "datasetId": "보건복지부",
+      "sourceId": "mohw-health-insurance-coverage",
+      "year": 2024,
+      "value": 65.7,
+      "unit": "%",
+      "valueDisplay": "65.7%",
+      "trendDirection": "up",
+      "trendLabel": "전년 64.9% → 65.7%",
+      "series": [
+        {
+          "year": 2020,
+          "value": 64.5
+        },
+        {
+          "year": 2021,
+          "value": 64.3
+        },
+        {
+          "year": 2022,
+          "value": 64.8
+        },
+        {
+          "year": 2023,
+          "value": 64.9
+        },
+        {
+          "year": 2024,
+          "value": 65.7
+        }
+      ],
+      "summary": "의료비 보장 수준과 건강보험 정책의 체감 성과를 보여주는 지표.",
+      "sourceRefs": [
+        "mohw-health-insurance-coverage"
       ]
     },
     {
@@ -6523,6 +7018,86 @@
       "summary": "한국 방문 외래객 규모. 관광산업 회복과 문화매력 확산을 보여준다.",
       "sourceRefs": [
         "kosis-inbound-tourists"
+      ]
+    },
+    {
+      "canonicalId": "org-1371000",
+      "indicatorId": "sports-club-members",
+      "indicatorNameKo": "생활체육 참여 등록 인원",
+      "sourceSystem": "문체부",
+      "datasetId": "문체부",
+      "sourceId": "mcst-sports-club-members",
+      "year": 2025,
+      "value": 685,
+      "unit": "만명",
+      "valueDisplay": "685만명",
+      "trendDirection": "up",
+      "trendLabel": "전년 641만명 → 685만명",
+      "series": [
+        {
+          "year": 2021,
+          "value": 514
+        },
+        {
+          "year": 2022,
+          "value": 559
+        },
+        {
+          "year": 2023,
+          "value": 603
+        },
+        {
+          "year": 2024,
+          "value": 641
+        },
+        {
+          "year": 2025,
+          "value": 685
+        }
+      ],
+      "summary": "생활체육 저변 확대와 체육정책 체감도를 보여주는 대표 지표.",
+      "sourceRefs": [
+        "mcst-sports-club-members"
+      ]
+    },
+    {
+      "canonicalId": "org-1421000",
+      "indicatorId": "new-startups",
+      "indicatorNameKo": "신설법인 수",
+      "sourceSystem": "중소벤처기업부",
+      "datasetId": "중소벤처기업부",
+      "sourceId": "mss-new-startups",
+      "year": 2025,
+      "value": 12.6,
+      "unit": "만개",
+      "valueDisplay": "12.6만개",
+      "trendDirection": "up",
+      "trendLabel": "전년 11.9만개 → 12.6만개",
+      "series": [
+        {
+          "year": 2021,
+          "value": 10.3
+        },
+        {
+          "year": 2022,
+          "value": 10.9
+        },
+        {
+          "year": 2023,
+          "value": 11.2
+        },
+        {
+          "year": 2024,
+          "value": 11.9
+        },
+        {
+          "year": 2025,
+          "value": 12.6
+        }
+      ],
+      "summary": "창업 생태계의 유입과 사업활동 활력을 보여주는 기초 지표.",
+      "sourceRefs": [
+        "mss-new-startups"
       ]
     },
     {
@@ -6687,6 +7262,46 @@
     },
     {
       "canonicalId": "org-1492000",
+      "indicatorId": "industrial-accident-rate",
+      "indicatorNameKo": "산업재해 사고사망만인율",
+      "sourceSystem": "고용노동부",
+      "datasetId": "고용노동부",
+      "sourceId": "moel-industrial-accidents",
+      "year": 2025,
+      "value": 0.38,
+      "unit": "명/만인",
+      "valueDisplay": "0.38",
+      "trendDirection": "down",
+      "trendLabel": "전년 0.43 → 0.38",
+      "series": [
+        {
+          "year": 2021,
+          "value": 0.52
+        },
+        {
+          "year": 2022,
+          "value": 0.49
+        },
+        {
+          "year": 2023,
+          "value": 0.46
+        },
+        {
+          "year": 2024,
+          "value": 0.43
+        },
+        {
+          "year": 2025,
+          "value": 0.38
+        }
+      ],
+      "summary": "산업안전 정책 성과를 보여주는 대표 안전 지표.",
+      "sourceRefs": [
+        "moel-industrial-accidents"
+      ]
+    },
+    {
+      "canonicalId": "org-1492000",
       "indicatorId": "youth-employment-rate",
       "indicatorNameKo": "청년 고용률",
       "sourceSystem": "e-나라지표",
@@ -6767,6 +7382,46 @@
     },
     {
       "canonicalId": "org-1543000",
+      "indicatorId": "rice-self-sufficiency",
+      "indicatorNameKo": "쌀 자급률",
+      "sourceSystem": "농식품부",
+      "datasetId": "농식품부",
+      "sourceId": "mafra-rice-self-sufficiency",
+      "year": 2024,
+      "value": 93.1,
+      "unit": "%",
+      "valueDisplay": "93.1%",
+      "trendDirection": "up",
+      "trendLabel": "전년 92.4% → 93.1%",
+      "series": [
+        {
+          "year": 2020,
+          "value": 92.1
+        },
+        {
+          "year": 2021,
+          "value": 91.9
+        },
+        {
+          "year": 2022,
+          "value": 92.3
+        },
+        {
+          "year": 2023,
+          "value": 92.4
+        },
+        {
+          "year": 2024,
+          "value": 93.1
+        }
+      ],
+      "summary": "주곡 공급 안정성과 식량안보를 보여주는 핵심 보조 지표.",
+      "sourceRefs": [
+        "mafra-rice-self-sufficiency"
+      ]
+    },
+    {
+      "canonicalId": "org-1543000",
       "indicatorId": "smart-farm-area",
       "indicatorNameKo": "스마트팜 보급면적",
       "sourceSystem": "농식품부",
@@ -6803,6 +7458,46 @@
       "summary": "디지털 농업 전환의 확산 수준을 보여주는 대표 사업 지표.",
       "sourceRefs": [
         "mafra-smart-farm"
+      ]
+    },
+    {
+      "canonicalId": "org-1721000",
+      "indicatorId": "ai-digital-service-users",
+      "indicatorNameKo": "AI·디지털 공공서비스 이용 규모",
+      "sourceSystem": "과기정통부",
+      "datasetId": "과기정통부",
+      "sourceId": "msit-ai-digital-service",
+      "year": 2025,
+      "value": 3280,
+      "unit": "만건",
+      "valueDisplay": "3,280만건",
+      "trendDirection": "up",
+      "trendLabel": "전년 2,610만건 → 3,280만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 840
+        },
+        {
+          "year": 2022,
+          "value": 1320
+        },
+        {
+          "year": 2023,
+          "value": 1890
+        },
+        {
+          "year": 2024,
+          "value": 2610
+        },
+        {
+          "year": 2025,
+          "value": 3280
+        }
+      ],
+      "summary": "AI·데이터 기반 공공서비스와 디지털 전환 성과를 보여주는 운영 지표.",
+      "sourceRefs": [
+        "msit-ai-digital-service"
       ]
     },
     {
@@ -6923,6 +7618,46 @@
       "summary": "국가예방접종사업의 도달률을 보여주는 대표 운영지표. 질병관리청이 직접 관리하는 예방접종 등록자료 기반이다.",
       "sourceRefs": [
         "kdca-child-vaccination-rate"
+      ]
+    },
+    {
+      "canonicalId": "org-mcee-2025",
+      "indicatorId": "air-quality-good-days",
+      "indicatorNameKo": "초미세먼지 좋음일수",
+      "sourceSystem": "기후에너지환경부",
+      "datasetId": "기후에너지환경부",
+      "sourceId": "mcee-air-quality-good-days",
+      "year": 2025,
+      "value": 212,
+      "unit": "일",
+      "valueDisplay": "212일",
+      "trendDirection": "up",
+      "trendLabel": "전년 198일 → 212일",
+      "series": [
+        {
+          "year": 2021,
+          "value": 176
+        },
+        {
+          "year": 2022,
+          "value": 181
+        },
+        {
+          "year": 2023,
+          "value": 189
+        },
+        {
+          "year": 2024,
+          "value": 198
+        },
+        {
+          "year": 2025,
+          "value": 212
+        }
+      ],
+      "summary": "대기질 개선 체감도를 직관적으로 보여주는 생활밀착형 환경 지표.",
+      "sourceRefs": [
+        "mcee-air-quality-good-days"
       ]
     },
     {
@@ -7086,6 +7821,46 @@
       ]
     },
     {
+      "canonicalId": "org-moef-2026",
+      "indicatorId": "tax-revenue-collected",
+      "indicatorNameKo": "국세수입 실적",
+      "sourceSystem": "재정경제부",
+      "datasetId": "재정경제부",
+      "sourceId": "mofe-tax-revenue",
+      "year": 2025,
+      "value": 382.4,
+      "unit": "조원",
+      "valueDisplay": "382.4조원",
+      "trendDirection": "up",
+      "trendLabel": "전년 344.1조 → 382.4조",
+      "series": [
+        {
+          "year": 2021,
+          "value": 293.5
+        },
+        {
+          "year": 2022,
+          "value": 395.9
+        },
+        {
+          "year": 2023,
+          "value": 344.1
+        },
+        {
+          "year": 2024,
+          "value": 367.3
+        },
+        {
+          "year": 2025,
+          "value": 382.4
+        }
+      ],
+      "summary": "내국세 징수 실적을 통해 재정 여력과 경기 흐름을 함께 읽을 수 있는 대표 지표.",
+      "sourceRefs": [
+        "mofe-tax-revenue"
+      ]
+    },
+    {
       "canonicalId": "org-mogef-2025",
       "indicatorId": "family-center-users",
       "indicatorNameKo": "가족센터 이용자 수",
@@ -7166,6 +7941,46 @@
       ]
     },
     {
+      "canonicalId": "org-mogef-2025",
+      "indicatorId": "youth-counseling-cases",
+      "indicatorNameKo": "청소년 상담복지 지원건수",
+      "sourceSystem": "성평등가족부",
+      "datasetId": "성평등가족부",
+      "sourceId": "mogef-youth-counseling",
+      "year": 2025,
+      "value": 486,
+      "unit": "만건",
+      "valueDisplay": "486만건",
+      "trendDirection": "up",
+      "trendLabel": "전년 441만건 → 486만건",
+      "series": [
+        {
+          "year": 2021,
+          "value": 312
+        },
+        {
+          "year": 2022,
+          "value": 348
+        },
+        {
+          "year": 2023,
+          "value": 391
+        },
+        {
+          "year": 2024,
+          "value": 441
+        },
+        {
+          "year": 2025,
+          "value": 486
+        }
+      ],
+      "summary": "청소년·가족 지원망의 실제 이용 규모를 보여주는 운영 지표.",
+      "sourceRefs": [
+        "mogef-youth-counseling"
+      ]
+    },
+    {
       "canonicalId": "org-mois-2025",
       "indicatorId": "digital-government-index",
       "indicatorNameKo": "디지털정부 온라인서비스 지수",
@@ -7243,6 +8058,86 @@
       "summary": "재난 예방·대응 체계에 투입되는 지방정부 재정 규모.",
       "sourceRefs": [
         "e-nara-disaster-budget"
+      ]
+    },
+    {
+      "canonicalId": "org-mois-2025",
+      "indicatorId": "local-tax-revenue",
+      "indicatorNameKo": "지방세 수입",
+      "sourceSystem": "행정안전부",
+      "datasetId": "행정안전부",
+      "sourceId": "mois-local-tax-revenue",
+      "year": 2025,
+      "value": 122.6,
+      "unit": "조원",
+      "valueDisplay": "122.6조원",
+      "trendDirection": "up",
+      "trendLabel": "전년 118.4조 → 122.6조",
+      "series": [
+        {
+          "year": 2021,
+          "value": 105.9
+        },
+        {
+          "year": 2022,
+          "value": 112.7
+        },
+        {
+          "year": 2023,
+          "value": 115.6
+        },
+        {
+          "year": 2024,
+          "value": 118.4
+        },
+        {
+          "year": 2025,
+          "value": 122.6
+        }
+      ],
+      "summary": "지방재정 기반과 지방정부 재정여력을 보여주는 핵심 지표.",
+      "sourceRefs": [
+        "mois-local-tax-revenue"
+      ]
+    },
+    {
+      "canonicalId": "org-molit-2025",
+      "indicatorId": "housing-completions",
+      "indicatorNameKo": "주택 준공실적",
+      "sourceSystem": "국토교통부",
+      "datasetId": "국토교통부",
+      "sourceId": "molit-housing-completions",
+      "year": 2025,
+      "value": 43.8,
+      "unit": "만호",
+      "valueDisplay": "43.8만호",
+      "trendDirection": "up",
+      "trendLabel": "전년 40.6만호 → 43.8만호",
+      "series": [
+        {
+          "year": 2021,
+          "value": 36.2
+        },
+        {
+          "year": 2022,
+          "value": 38.1
+        },
+        {
+          "year": 2023,
+          "value": 39.4
+        },
+        {
+          "year": 2024,
+          "value": 40.6
+        },
+        {
+          "year": 2025,
+          "value": 43.8
+        }
+      ],
+      "summary": "실제 주택 공급 성과를 보여주는 대표 실물 지표.",
+      "sourceRefs": [
+        "molit-housing-completions"
       ]
     },
     {
@@ -7359,6 +8254,46 @@
       "summary": "도시권 이동에서 대중교통이 차지하는 비중. 교통정책·탄소감축과 함께 본다.",
       "sourceRefs": [
         "kosis-public-transport-share"
+      ]
+    },
+    {
+      "canonicalId": "org-motir-2025",
+      "indicatorId": "fdi-inflow",
+      "indicatorNameKo": "외국인직접투자 신고액",
+      "sourceSystem": "산업통상부",
+      "datasetId": "산업통상부",
+      "sourceId": "motir-fdi-inflow",
+      "year": 2025,
+      "value": 327,
+      "unit": "억달러",
+      "valueDisplay": "327억달러",
+      "trendDirection": "up",
+      "trendLabel": "전년 304억달러 → 327억달러",
+      "series": [
+        {
+          "year": 2021,
+          "value": 295.1
+        },
+        {
+          "year": 2022,
+          "value": 304.5
+        },
+        {
+          "year": 2023,
+          "value": 284.7
+        },
+        {
+          "year": 2024,
+          "value": 304
+        },
+        {
+          "year": 2025,
+          "value": 327
+        }
+      ],
+      "summary": "산업 경쟁력과 투자 매력도를 보여주는 대표 통상·투자 지표.",
+      "sourceRefs": [
+        "motir-fdi-inflow"
       ]
     },
     {
