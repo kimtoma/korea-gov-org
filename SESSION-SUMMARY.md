@@ -1,6 +1,6 @@
 # 세션 요약 — 대한민국 정부조직도 (비공식)
 
-> 2026-04-07 · 기준 정렬/검증 자동화 반영 (v0 → v23)
+> 2026-04-14 · 정책지표/공공기관/상세 패널 구조 개선 반영
 
 ## 프로젝트 개요
 
@@ -30,7 +30,7 @@
 | Wikipedia 공식 사진 | 17장 (장관급) |
 | 공식 홈페이지 URL | 49개 |
 | 예산 데이터 | 주요 부처 + 청 단위 (신설예정은 집계 제외) |
-| 데이터 출처 | 8개 |
+| 데이터 출처 | 11개+ |
 
 ## 버전 이력 (v0 → v23)
 
@@ -118,3 +118,17 @@ korea-gov-org/
 **kimtoma** — [kimtoma.com](https://kimtoma.com) · [LinkedIn](https://www.linkedin.com/in/kimkyungsoo/)
 
 AI 어시스턴트: Claude Opus 4.6 (1M context)
+
+
+## 최근 UI 구조 업데이트 (v32)
+- 상세 패널 정보 순서를 사용 맥락 중심으로 재배치
+  1. 소관 업무
+  2. 기관장
+  3. 내부 조직
+  4. 산하기관
+  5. 소속 공공기관
+  6. 대표 정책지표
+  7. 근거 출처
+  8. Data Backbone
+- 대표 정책지표 카드를 1열 전체폭으로 확대해 시계열/배지/근거 메타 가독성 강화
+- 예산의 phase / dataset / source status / amount basis를 Data Backbone 하단으로 이동
