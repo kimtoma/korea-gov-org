@@ -154,12 +154,12 @@ body{font-family:var(--font);background:var(--gray-5);color:var(--gray-90);overf
 .detail-history-item{padding:10px 12px;background:var(--gray-5);border:1px solid var(--gray-10);border-radius:var(--radius-sm);}
 .detail-history-date{font-size:11px;font-weight:700;color:var(--primary-60);margin-bottom:4px;}
 .detail-history-summary{font-size:12px;color:var(--gray-70);line-height:1.5;}
-.detail-indicator-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-.detail-indicator-card{padding:12px;border-radius:var(--radius-sm);background:linear-gradient(180deg,var(--gray-0),var(--gray-5));border:1px solid var(--gray-10);}
+.detail-indicator-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+.detail-indicator-card{padding:14px 16px;border-radius:var(--radius-sm);background:linear-gradient(180deg,var(--gray-0),var(--gray-5));border:1px solid var(--gray-10);}
 .detail-indicator-name{font-size:12px;font-weight:700;color:var(--gray-80);line-height:1.4;}
 .detail-indicator-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:8px;}
 .detail-indicator-year{font-size:11px;color:var(--gray-40);white-space:nowrap;}
-.detail-indicator-value{font-size:22px;font-weight:800;color:var(--gray-90);line-height:1.1;}
+.detail-indicator-value{font-size:28px;font-weight:800;color:var(--gray-90);line-height:1.05;}
 .detail-indicator-meta{font-size:11px;color:var(--gray-45);margin-top:2px;}
 .detail-indicator-summary{font-size:12px;color:var(--gray-65);line-height:1.5;margin-top:8px;}
 .detail-indicator-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
@@ -4448,35 +4448,10 @@ function showDetail(data,options={}){
   // 업무 설명
   if(data.desc)h+=`<div class="detail-section"><h3>소관 업무</h3><p class="detail-desc">${data.desc}</p></div>`;
 
-  // 데이터 백본
-  if(data.identifiers||data.effective||data.history?.length){
-    h+=`<div class="detail-section"><h3>Data Backbone</h3>${renderMetaCards([
-      data.identifiers?.orgCode?{label:"Org Code",value:data.identifiers.orgCode}:null,
-      data.identifiers?.orgCodeType?{label:"Identifier Type",value:data.identifiers.orgCodeType}:null,
-      data.effective?.from?{label:"Effective From",value:data.effective.from}:null,
-      data.effective?.status?{label:"Status",value:data.effective.status}:null,
-      data.identifiers?.predecessorOrgCode?{label:"Predecessor",value:data.identifiers.predecessorOrgCode}:null,
-      data.identifiers?.parentOrgCode?{label:"Parent Code",value:data.identifiers.parentOrgCode}:null,
-    ])}</div>`;
-  }
-
   // 예산
   if(data.budget){
-    h+=`<div class="detail-section"><h3>예산 (${data.budgetMeta?.fiscalYear||2026})</h3><div class="detail-budget"><span class="label">총 예산</span> ${data.budget}</div>`;
-    if(data.budgetMeta){
-      h+=`${renderMetaCards([
-        {label:"Phase",value:data.budgetMeta.phase},
-        {label:"Dataset",value:data.budgetMeta.datasetId},
-        {label:"Source Status",value:data.budgetMeta.status},
-        {label:"Amount Basis",value:data.budgetMeta.amountBasis}
-      ])}`;
-      if(data.budgetMeta.sourceRefs?.length)h+=`<div style="margin-top:8px">${renderSourceRefs(data.budgetMeta.sourceRefs)}</div>`;
-    }
-    h+=`</div>`;
+    h+=`<div class="detail-section"><h3>예산 (${data.budgetMeta?.fiscalYear||2026})</h3><div class="detail-budget"><span class="label">총 예산</span> ${data.budget}</div></div>`;
   }
-
-  // 대표 정책지표
-  if(data.policyIndicators?.length)h+=`<div class="detail-section"><h3>대표 정책지표</h3>${renderPolicyIndicators(data.policyIndicators)}</div>`;
 
   // 기관장
   if(data.head)h+=`<div class="detail-section"><h3>기관장</h3>${personHTML(data.head)}</div>`;
@@ -4515,7 +4490,27 @@ function showDetail(data,options={}){
     h+=`</div></div>`;
   }
 
+  // 대표 정책지표
+  if(data.policyIndicators?.length)h+=`<div class="detail-section"><h3>대표 정책지표</h3>${renderPolicyIndicators(data.policyIndicators)}</div>`;
+
+  // 근거 출처
   if(data.sourceRefs?.length)h+=`<div class="detail-section"><h3>근거 출처</h3>${renderSourceRefs(data.sourceRefs)}</div>`;
+
+  // 데이터 백본
+  if(data.identifiers||data.effective||data.history?.length||data.budgetMeta){
+    h+=`<div class="detail-section"><h3>Data Backbone</h3>${renderMetaCards([
+      data.identifiers?.orgCode?{label:"Org Code",value:data.identifiers.orgCode}:null,
+      data.identifiers?.orgCodeType?{label:"Identifier Type",value:data.identifiers.orgCodeType}:null,
+      data.effective?.from?{label:"Effective From",value:data.effective.from}:null,
+      data.effective?.status?{label:"Status",value:data.effective.status}:null,
+      data.identifiers?.predecessorOrgCode?{label:"Predecessor",value:data.identifiers.predecessorOrgCode}:null,
+      data.identifiers?.parentOrgCode?{label:"Parent Code",value:data.identifiers.parentOrgCode}:null,
+      data.budgetMeta?.phase?{label:"Budget Phase",value:data.budgetMeta.phase}:null,
+      data.budgetMeta?.datasetId?{label:"Budget Dataset",value:data.budgetMeta.datasetId}:null,
+      data.budgetMeta?.status?{label:"Budget Source Status",value:data.budgetMeta.status}:null,
+      data.budgetMeta?.amountBasis?{label:"Amount Basis",value:data.budgetMeta.amountBasis}:null,
+    ])}${data.budgetMeta?.sourceRefs?.length?`<div style="margin-top:8px">${renderSourceRefs(data.budgetMeta.sourceRefs)}</div>`:""}</div>`;
+  }
   h+=`</div>`;panel.innerHTML=h;
   if(syncHash)updateHash(hashName);
 }
