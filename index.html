@@ -5079,9 +5079,33 @@ function loadFromHash(){
 // ══════════════════════════════════════
 // INIT
 // ══════════════════════════════════════
+// URL params for shareable previews: ?view=org|radial, ?budget=1, ?theme=dark|light
+// One-shot — does not persist to localStorage so a shared link doesn't override the visitor's saved theme.
+(function applyUrlParams(){
+  const params=new URLSearchParams(location.search);
+  const pTheme=params.get("theme");
+  if(pTheme==="dark"||pTheme==="light"){
+    document.documentElement.setAttribute("data-theme",pTheme);
+    colorMap=pTheme==="dark"?colorMapDark:colorMapLight;
+  }
+  const pBudget=params.get("budget");
+  if(pBudget==="1"||pBudget==="true"){
+    budgetMode=true;
+    document.getElementById("budgetToggle").classList.add("active");
+  }
+  const pView=params.get("view");
+  if(pView==="org"){
+    currentView="org";
+    document.querySelectorAll(".view-btn").forEach(b=>b.classList.toggle("active",b.dataset.view==="org"));
+    document.getElementById("radialView").classList.remove("active");
+    document.getElementById("radialView").style.display="none";
+    document.getElementById("orgView").style.display="block";
+    document.getElementById("orgView").classList.add("active");
+  }
+})();
 // Mobile: start legend collapsed
 if(window.innerWidth<768)document.getElementById("legend").classList.add("collapsed");
-renderRadial();
+if(currentView==="radial")renderRadial();else renderOrgChart();
 loadFromHash();
 window.addEventListener("resize",()=>{if(currentView==="radial")renderRadial();});
 window.addEventListener("hashchange",()=>loadFromHash());
