@@ -9,7 +9,9 @@
 
 - `index.html` — 모든 것이 인라인 (CSS, 데이터, JS/D3 차트)
 - `data.js` — 데이터 원본 참조용 (index.html에 인라인 복사본 존재)
+- `data/` — Phase 2 정규화 산출물 (`normalization-foundation.json` + `policy-indicators/*.json` + `sources.json`)
 - `data-sources/` — 공공데이터포털 CSV 원본 (git 미추적, 참조용)
+- `scripts/` — `validate-data.mjs`, `build-normalization-foundation.mjs`, `sync-policy-indicators.mjs`
 - `favicon.svg`, `og-image.png/.svg` — 정적 에셋
 - `CHANGELOG.md` — v0~v24 변경 이력
 - `AGENTS.md` — 이 파일 (Codex 작업 지침)
@@ -18,7 +20,7 @@
 ## 아키텍처 (index.html 내부 순서)
 
 1. `<head>` — 메타태그, OG, favicon, D3 CDN, CSS
-2. `<style>` — 전체 CSS (KRDS 토큰, 반응형 미디어쿼리 3단계)
+2. `<style>` — 전체 CSS (청와대 컬러 토큰, 반응형 미디어쿼리 3단계)
 3. `<body>` — topbar (view-toggle + budget-toggle), radialView(SVG + hover-tooltip + legend), orgView(div), sheetBackdrop, detailPanel, sources modal
 4. `<script>` 1번째 — 데이터 (people, govData, sources)
 5. `<script>` 2번째 — 앱 로직 (budget utils, view switching, hover highlight, detail panel, radial tree, org chart, bottom sheet swipe, init)
@@ -47,6 +49,9 @@
 ## 딥링크 & 공유
 
 - URL 해시 `#기관명` → `loadFromHash()` → `showNodeDetail()`
+- 쿼리 파라미터 (v33~, INIT의 `applyUrlParams` IIFE) — 공유용 일회성 미리보기, localStorage 미수정
+  - `?view=org|radial`, `?budget=1|true`, `?theme=dark|light`
+  - 해시와 결합 가능 (`?view=org&budget=1#국방부`)
 - `shareOrg(name)` → clipboard 복사 + 토스트
 - `showDetail(data,{syncHash,hashName})` / `hideDetail({syncHash})` 단일 진입점으로 해시 동기화
 
@@ -69,7 +74,7 @@ URL: https://korea-gov-org.pages.dev
 - `index.html` 안의 인라인 데이터와 `data.js`가 별도로 존재 — 양쪽 다 수정해야 동기화
 - `node scripts/validate-data.mjs`로 동기화/무결성(헤드참조·중복·예산포맷·집계수치) 검증
 - 예산 문자열 파싱: "110.4조" → 1,104,000억, "5,200억" → 5200 (`parseBudget()`)
-- Wikipedia 사진 URL 패턴: `W + "경로/200px-파일명"`
+- Wikipedia 사진 URL 패턴: `W + "경로/250px-파일명"` (Wikimedia Commons는 화이트리스트 너비만 리사이즈; 250은 120 다음 단계)
 - 명칭변경 부처는 새 도메인 사용 (motir, mcee, kmcc, mods)
 - 공식 영문명/약어는 공공데이터포털 정부조직도 기구정보 CSV 기준 (정부조직법 2025-10-01)
 - `publicInstitutions[]`는 공기업+준정부기관만 포함, 기타공공기관 제외
